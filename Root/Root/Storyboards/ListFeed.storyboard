@@ -42,7 +42,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="360" height="106"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4oP-uG-HOo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="252" height="106"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="251" height="106"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ehr-YI-b7B">
                                                                     <rect key="frame" x="0.0" y="0.0" width="99" height="56"/>
@@ -85,9 +85,10 @@
                                                             </subviews>
                                                         </stackView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SvM-bd-miA">
-                                                            <rect key="frame" x="252" y="0.0" width="108" height="106"/>
+                                                            <rect key="frame" x="251" y="0.0" width="109" height="106"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="108" id="Scu-mX-T44"/>
+                                                                <constraint firstAttribute="width" constant="109" id="4rm-n7-seJ"/>
+                                                                <constraint firstAttribute="height" constant="106" id="F3V-lQ-ewo"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
