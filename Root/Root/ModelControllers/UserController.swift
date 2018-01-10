@@ -13,7 +13,9 @@ class UserController {
     
     static let shared = UserController()
     
-    func createUserWith(username: String, fullName: String, profilePicture: Data, homeTown: String, interests: [String], isArtist: Bool, completion: @escaping (Bool) -> Void) {
+    var loggedInUser: User?
+    
+    func createUserWith(username: String, fullName: String, profilePicture: Data, bio: String, homeTown: String, interests: [String], websiteURL: String, isArtist: Bool, completion: @escaping (Bool) -> Void) {
         
         CKContainer.default().fetchUserRecordID { (appleUserRecordID, error) in
             if let error = error {
@@ -24,7 +26,7 @@ class UserController {
             
             let refToAppleUser = CKReference(recordID: appleUserRecordID, action: .deleteSelf)
             
-            let user = User(username: username, fullName: fullName, profilePicture: profilePicture, homeTown: homeTown, interests: interests, isArtist: isArtist, appleUserRef: refToAppleUser)
+            let user = User(username: username, fullName: fullName, profilePicture: profilePicture, bio: bio, homeTown: homeTown, interests: interests, websiteURL: websiteURL, isArtist: isArtist, appleUserRef: refToAppleUser)
             
             let record = CKRecord(user: user)
             
@@ -33,13 +35,13 @@ class UserController {
                     print("There was an error fetching current user record ID. \(error)")
                     completion(false) ; return
                 }
-                
+                // apple gives us the record right back so that we can use it/access the metadata that now exists
                 guard let record = record,
                     let user = User(ckRecord: record)
                     else { completion(false) ; return }
-                // FIXME: set a property on the singleton for loggedInUser?
+                self.loggedInUser = user
                 completion(true)
-            
+                
             })
         }
     }
@@ -69,11 +71,12 @@ class UserController {
                 guard let currentUserRecord = records?.first,
                 let user = User(ckRecord: currentUserRecord)
                     else { completion(false) ; return }
-                // FIXME: set a property on the singleton for loggedInUser?
+                self.loggedInUser = user
                 completion(true)
             })
         }
     }
 
+    // FIXME: UPDATE USER
     
 }

@@ -59,6 +59,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="opJ-W0-zOc" kind="show" id="DUN-9N-vOE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.55383675230061347" colorSpace="calibratedWhite"/>
@@ -82,6 +85,9 @@
                                         <state key="normal" title="Artist">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="hDP-Pt-0vW" kind="show" id="BoW-xz-VtF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.55000000000000004" colorSpace="calibratedWhite"/>
@@ -112,6 +118,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gRo-ba-z1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="645.60000000000002" y="-151.57421289355324"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Zkl-hq-ZOD">
+            <objects>
+                <viewController id="opJ-W0-zOc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f27-AG-V4h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="dw8-lf-t0e"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PWc-2Y-hmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1490" y="-630"/>
         </scene>
         <!--Create Email, Password Screen-->
         <scene sceneID="PYH-ox-BLn">
@@ -222,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ncl-kR-oD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1399" y="-152"/>
+            <point key="canvasLocation" x="1417" y="292"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="1BV-Dy-oib">
@@ -380,7 +401,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojZ-Ce-bXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2136.8000000000002" y="-152.47376311844079"/>
+            <point key="canvasLocation" x="2161" y="292"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Zg4-Qx-zJx">
@@ -448,7 +469,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KXH-PD-tHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2847.1999999999998" y="-151.57421289355324"/>
+            <point key="canvasLocation" x="2942" y="292"/>
         </scene>
     </scenes>
     <resources>

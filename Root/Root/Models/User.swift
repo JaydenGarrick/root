@@ -26,7 +26,7 @@ class User {
     var cloudKitRecordID: CKRecordID?
     let appleUserRef: CKReference
     
-    init(username: String, fullName: String, profilePicture: Data, bio: String = "", homeTown: String, interests: [String], websiteURL: String = "", isArtist: Bool, appleUserRef: CKReference) {
+    init(username: String, fullName: String, profilePicture: Data, bio: String, homeTown: String, interests: [String], websiteURL: String, isArtist: Bool, appleUserRef: CKReference) {
         
         self.username = username
         self.fullName = fullName
