@@ -25,6 +25,8 @@ class ArtistCreateProfPicVC: UIViewController, UIImagePickerControllerDelegate {
     // MARK: - IBActions
     
     @IBAction func addProfPictButtonTapped(_ sender: UIButton) {
+        let pickerController = UIImagePickerController()
+//        pickerController.
         
     }
     
@@ -33,7 +35,10 @@ class ArtistCreateProfPicVC: UIViewController, UIImagePickerControllerDelegate {
         super.viewDidLoad()
 
     }
-
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+//        <#code#>
+    }
     
     // MARK: - Navigation
     

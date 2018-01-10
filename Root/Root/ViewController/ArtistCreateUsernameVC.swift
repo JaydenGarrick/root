@@ -14,6 +14,7 @@ class ArtistCreateUsernameVC: UIViewController {
     
     // MARK: - IBOutlets
     
+    @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var hometownTextField: UITextField!
@@ -21,9 +22,21 @@ class ArtistCreateUsernameVC: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         
     }
     
+    func setUserLabel() {
+        guard let isArtist = self.isArtist
+            else { return }
+        if isArtist == true {
+//            userLabel.text
+        }
+    }
     
     // MARK: - Navigation
     
