@@ -8,12 +8,13 @@
 
 import Foundation
 import CloudKit
+import MapKit
 
-class Event {
+class Event: NSObject {
     var name: String
     var eventImage: Data
     var dateAndTime: Date
-    var description: String
+    var eventDescription: String
     var venue: String
     var artists: [User] = []
     var comments: [Comment] = []
@@ -25,7 +26,7 @@ class Event {
         self.name = name
         self.eventImage = eventImage
         self.dateAndTime = dateAndTime
-        self.description = description
+        self.eventDescription = description
         self.venue = venue
         self.creatorID = creatorID
     }
@@ -45,12 +46,38 @@ class Event {
         self.name = name
         self.eventImage = eventImage
         self.dateAndTime = dateAndTime
-        self.description = description
+        self.eventDescription = description
         self.venue = venue
         self.creatorID = creatorID
         
     }
     
+}
+
+// Mapkit Annotation Protcol
+extension Event: MKAnnotation {
+    
+    var coordinate: CLLocationCoordinate2D {
+        let geocoder = CLGeocoder()
+        var returnedCoordinate = CLLocationCoordinate2D()
+        geocoder.geocodeAddressString(venue) { (placemarks, error) in
+            if let error = error {
+                print("Geocoder error from venue name: \(error.localizedDescription)")
+            }
+            let placemark = placemarks?.first
+            guard let coordinate = placemark?.location?.coordinate else { return }
+            returnedCoordinate = coordinate
+        }
+        return returnedCoordinate
+    }
+    
+    var title: String? {
+        return name
+    }
+    
+    var subtitle: String? {
+        return venue
+    }
 }
 
 // Turn Event model object into CKRecord before being sent to Apple's servers
@@ -65,7 +92,7 @@ extension CKRecord {
         self.setValue(event.name, forKey: "name")
         self.setValue(event.eventImage, forKey: "eventImage")
         self.setValue(event.dateAndTime, forKey: "dateAndTime")
-        self.setValue(event.description, forKey: "description")
+        self.setValue(event.eventDescription, forKey: "description")
         self.setValue(event.venue, forKey: "venue")
         self.setValue(event.creatorID, forKey: "creatorID")
         

@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="93q-ly-TxZ">
+                            <navigationBar alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93q-ly-TxZ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.95287805795669556" blue="0.94816809892654419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="1" green="0.95287805800000003" blue="0.94816809889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" red="1" green="0.95287805795669556" blue="0.94816809892654419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -28,9 +27,8 @@
                                     <navigationItem id="6dB-az-AXw"/>
                                 </items>
                             </navigationBar>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Gxx-4W-b2U">
-                                <rect key="frame" x="16" y="44" width="343" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Gxx-4W-b2U">
+                                <rect key="frame" x="16" y="48" width="343" height="29"/>
                                 <segments>
                                     <segment title="Local Feed"/>
                                     <segment title="Interest Feed"/>
@@ -44,12 +42,23 @@
                                 <rect key="frame" x="84" y="0.0" width="206" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="mutedStandard" zoomEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcy-Sp-KFn">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="mutedStandard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcy-Sp-KFn">
                                 <rect key="frame" x="0.0" y="80" width="375" height="587"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95287805795669556" blue="0.94816809892654419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="93q-ly-TxZ" firstAttribute="trailing" secondItem="3Z5-zS-7Xq" secondAttribute="trailing" id="2w1-aw-bBI"/>
+                            <constraint firstItem="3Z5-zS-7Xq" firstAttribute="trailing" secondItem="Gxx-4W-b2U" secondAttribute="trailing" constant="16" id="E19-I0-vlS"/>
+                            <constraint firstItem="vcy-Sp-KFn" firstAttribute="top" secondItem="Gxx-4W-b2U" secondAttribute="bottom" constant="4" id="Egd-Kw-ubW"/>
+                            <constraint firstItem="vcy-Sp-KFn" firstAttribute="leading" secondItem="3Z5-zS-7Xq" secondAttribute="leading" id="L4b-aL-WPG"/>
+                            <constraint firstItem="vcy-Sp-KFn" firstAttribute="trailing" secondItem="3Z5-zS-7Xq" secondAttribute="trailing" id="MCJ-DO-p2v"/>
+                            <constraint firstItem="Gxx-4W-b2U" firstAttribute="top" secondItem="93q-ly-TxZ" secondAttribute="bottom" constant="4" id="Zbr-1a-xsS"/>
+                            <constraint firstItem="vcy-Sp-KFn" firstAttribute="bottom" secondItem="3Z5-zS-7Xq" secondAttribute="bottom" id="eDn-om-xCP"/>
+                            <constraint firstItem="Gxx-4W-b2U" firstAttribute="leading" secondItem="3Z5-zS-7Xq" secondAttribute="leading" constant="16" id="kue-D1-Mjh"/>
+                            <constraint firstItem="93q-ly-TxZ" firstAttribute="top" secondItem="tX0-vx-h8F" secondAttribute="top" id="qHS-hR-FRA"/>
+                            <constraint firstItem="93q-ly-TxZ" firstAttribute="leading" secondItem="3Z5-zS-7Xq" secondAttribute="leading" id="zFL-dD-wIY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3Z5-zS-7Xq"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="lhA-qa-Jl1"/>
