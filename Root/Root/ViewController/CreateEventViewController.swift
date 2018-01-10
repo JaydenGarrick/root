@@ -10,18 +10,41 @@ import UIKit
 
 class CreateEventViewController: UIViewController {
 
+    @IBOutlet weak var eventPictureImageView: UIImageView!
+    @IBOutlet weak var nameOfArtistLabel: UILabel!
+    @IBOutlet weak var titleOfEventTextField: UITextField!
+    @IBOutlet weak var eventDescriptionTextView: UITextView!
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var timeDateTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func paintButtonTapped(_ sender: UIButton) {
     }
     
-
+    @IBAction func musicButtonTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func photoButtonTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func poetryButtonTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func sketchButtonTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func ceramicButtonTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func doneButtonTapped(_ sender: UIButton) {
+    }
+    
     /*
     // MARK: - Navigation
 

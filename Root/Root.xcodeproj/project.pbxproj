@@ -26,6 +26,7 @@
 		81EDF42220042E35006E69EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EDF42020042E35006E69EA /* LaunchScreen.storyboard */; };
 		CA47E0572005785800B6222F /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA47E0562005785800B6222F /* EventTableViewCell.swift */; };
 		CAFF0D4D200681F300A3657D /* CreateEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFF0D4C200681F300A3657D /* CreateEvent.storyboard */; };
+		CAFF0D4F20068EAD00A3657D /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		81EDF42320042E35006E69EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA47E0562005785800B6222F /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		CAFF0D4C200681F300A3657D /* CreateEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateEvent.storyboard; sourceTree = "<group>"; };
+		CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				819B5F712006839A00106459 /* MapFeedViewController.swift */,
+				CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				81EDF41820042E35006E69EA /* AppDelegate.swift in Sources */,
 				811F270E20052E3E00A9B47C /* EventController.swift in Sources */,
 				819B5F722006839A00106459 /* MapFeedViewController.swift in Sources */,
+				CAFF0D4F20068EAD00A3657D /* CreateEventViewController.swift in Sources */,
 				811F26FF20052AE200A9B47C /* User.swift in Sources */,
 				811F270120052AFC00A9B47C /* Comment.swift in Sources */,
 			);
