@@ -25,6 +25,7 @@
 		81EDF41F20042E35006E69EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EDF41E20042E35006E69EA /* Assets.xcassets */; };
 		81EDF42220042E35006E69EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EDF42020042E35006E69EA /* LaunchScreen.storyboard */; };
 		CA47E0572005785800B6222F /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA47E0562005785800B6222F /* EventTableViewCell.swift */; };
+		CAFF0D4D200681F300A3657D /* CreateEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFF0D4C200681F300A3657D /* CreateEvent.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		81EDF42120042E35006E69EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81EDF42320042E35006E69EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA47E0562005785800B6222F /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		CAFF0D4C200681F300A3657D /* CreateEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateEvent.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				811F270B20052E1600A9B47C /* Profile.storyboard */,
 				811F270920052E0000A9B47C /* MapFeed.storyboard */,
 				811F270720052BEB00A9B47C /* ListFeed.storyboard */,
+				CAFF0D4C200681F300A3657D /* CreateEvent.storyboard */,
 				81EDF42020042E35006E69EA /* LaunchScreen.storyboard */,
 				811F27182005309300A9B47C /* LaunchScreenCopy.storyboard */,
 			);
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				811F27192005309300A9B47C /* LaunchScreenCopy.storyboard in Resources */,
+				CAFF0D4D200681F300A3657D /* CreateEvent.storyboard in Resources */,
 				811F270820052BEB00A9B47C /* ListFeed.storyboard in Resources */,
 				81EDF42220042E35006E69EA /* LaunchScreen.storyboard in Resources */,
 				81EDF41F20042E35006E69EA /* Assets.xcassets in Resources */,
