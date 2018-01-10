@@ -124,7 +124,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem id="kpc-aq-dG9">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lSH-hg-tte"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lSH-hg-tte">
+                                            <connections>
+                                                <segue destination="Q6M-eL-ORs" kind="show" id="Uj5-lQ-WCo"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -166,6 +170,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sZ-qU-Q6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="197.59999999999999" y="-415.14242878560725"/>
+        </scene>
+        <!--CreateEvent-->
+        <scene sceneID="OTp-V1-Iv1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CreateEvent" id="Q6M-eL-ORs" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uad-Jh-UDV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="755" y="-473"/>
         </scene>
     </scenes>
 </document>
