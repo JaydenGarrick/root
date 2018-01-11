@@ -29,6 +29,7 @@
 		B7DE16B7200690B6003C8126 /* CreateInterestsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B6200690B6003C8126 /* CreateInterestsVC.swift */; };
 		B7DE16B9200690D8003C8126 /* CreateProfPicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */; };
 		B7FCED812007DC7C00690301 /* ListFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FCED802007DC7C00690301 /* ListFeedViewController.swift */; };
+		CA1EF4172008045C007BD1CD /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1EF4162008045C007BD1CD /* ProfileTableViewController.swift */; };
 		CA47E0572005785800B6222F /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA47E0562005785800B6222F /* EventTableViewCell.swift */; };
 		CAFF0D4D200681F300A3657D /* CreateEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFF0D4C200681F300A3657D /* CreateEvent.storyboard */; };
 		CAFF0D4F20068EAD00A3657D /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */; };
@@ -60,6 +61,7 @@
 		B7DE16B6200690B6003C8126 /* CreateInterestsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInterestsVC.swift; sourceTree = "<group>"; };
 		B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfPicVC.swift; sourceTree = "<group>"; };
 		B7FCED802007DC7C00690301 /* ListFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFeedViewController.swift; sourceTree = "<group>"; };
+		CA1EF4162008045C007BD1CD /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		CA47E0562005785800B6222F /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		CAFF0D4C200681F300A3657D /* CreateEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateEvent.storyboard; sourceTree = "<group>"; };
 		CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */,
 				CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */,
 				B7FCED802007DC7C00690301 /* ListFeedViewController.swift */,
+				CA1EF4162008045C007BD1CD /* ProfileTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				811F271220052E5E00A9B47C /* CommentController.swift in Sources */,
 				811F271020052E4D00A9B47C /* UserController.swift in Sources */,
 				811F26FD20052AD100A9B47C /* Event.swift in Sources */,
+				CA1EF4172008045C007BD1CD /* ProfileTableViewController.swift in Sources */,
 				B7DE16B9200690D8003C8126 /* CreateProfPicVC.swift in Sources */,
 				B7DE16B7200690B6003C8126 /* CreateInterestsVC.swift in Sources */,
 				81EDF41820042E35006E69EA /* AppDelegate.swift in Sources */,
