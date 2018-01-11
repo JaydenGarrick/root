@@ -30,6 +30,7 @@
 		B7DE16B9200690D8003C8126 /* CreateProfPicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */; };
 		CA47E0572005785800B6222F /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA47E0562005785800B6222F /* EventTableViewCell.swift */; };
 		CAFF0D4D200681F300A3657D /* CreateEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFF0D4C200681F300A3657D /* CreateEvent.storyboard */; };
+		CAFF0D4F20068EAD00A3657D /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfPicVC.swift; sourceTree = "<group>"; };
 		CA47E0562005785800B6222F /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		CAFF0D4C200681F300A3657D /* CreateEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateEvent.storyboard; sourceTree = "<group>"; };
+		CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				B7DE16B42006908C003C8126 /* CreateUsernameVC.swift */,
 				B7DE16B6200690B6003C8126 /* CreateInterestsVC.swift */,
 				B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */,
+				CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				811F270E20052E3E00A9B47C /* EventController.swift in Sources */,
 				819B5F722006839A00106459 /* MapFeedViewController.swift in Sources */,
 				B7DE16B52006908C003C8126 /* CreateUsernameVC.swift in Sources */,
+				CAFF0D4F20068EAD00A3657D /* CreateEventViewController.swift in Sources */,
 				811F26FF20052AE200A9B47C /* User.swift in Sources */,
 				811F270120052AFC00A9B47C /* Comment.swift in Sources */,
 			);
