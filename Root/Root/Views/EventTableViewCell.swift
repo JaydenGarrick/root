@@ -17,6 +17,5 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var eventPictureImageView: UIImageView!
     
     
-    
 
 }
