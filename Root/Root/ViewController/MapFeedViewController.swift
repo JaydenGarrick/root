@@ -65,10 +65,10 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         }
         
         let detailViewButton = UIButton()
-        detailViewButton.backgroundColor = .black
         view.canShowCallout = true
         view.rightCalloutAccessoryView = detailViewButton
         view.annotation = annotation
+        detailViewButton.backgroundColor = .black
         
         return view
     }

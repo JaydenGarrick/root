@@ -12,12 +12,23 @@ import MapKit
 
 class EventController {
     
+// MARK: - Properties
+    
+    // CloudKit
+    let publicDataBase = CKContainer.default().publicCloudDatabase
+    
+    // Shared Instance
     static let shared = EventController()
     
+    // Local DataSources
+    var fetchedEvents: [Event] = []
     var createdEvent: Event?
+    
+// MARK: - CRUD
     
     func createEventWith(name: String, eventImage: Data, dataAndTime: Date, description: String, venue: String, artist: [User], completion: @escaping (Bool) -> Void) {
         
+        // Fetch User ID
         CKContainer.default().fetchUserRecordID { (creatorRecordID, error) in
             if let error = error {
                 print("Error fetching current recordID while creating event. Error : \(error.localizedDescription)")
@@ -27,8 +38,9 @@ class EventController {
                 
                 let refToCreatorID = CKReference(recordID: creatorRecordID, action: .deleteSelf)
             
-            // FIXME: - Event model changed, will have to update VVVVVV
             
+            
+            // Geocoding venue into coordinates
             let geocoder = CLGeocoder()
             var coordinate: CLLocationCoordinate2D?
             geocoder.geocodeAddressString(venue, completionHandler: { (placemarks, error) in
@@ -41,25 +53,85 @@ class EventController {
                 guard let tempCoordinate = placemarks.first?.location?.coordinate else { completion(false) ; return }
                 coordinate = tempCoordinate
             })
-            guard let newCoordinate = coordinate else { completion(false) ; return }
-            let event = Event(name: name, eventImage: eventImage, dateAndTime: dataAndTime, description: description, venue: venue, creatorID: refToCreatorID, coordinate: newCoordinate)
-                
-                let eventRecord = CKRecord(event: event)
-                
-                CKContainer.default().publicCloudDatabase.save(eventRecord, completionHandler: { (record, error) in
-                    if let error = error {
-                        print("Error fetching current event ID while creating event. \(error.localizedDescription)")
-                        completion(false) ; return
-                    }
-                    
-                    guard let record = record,
-                        let event = Event(ckRecord: record)
-                        else { completion(false) ; return }
-                    self.createdEvent = event
-                    completion(true)
-                })
+            guard let eventCoordinate = coordinate else { completion(false) ; return }
             
+            // Initializing event
+            let event = Event(name: name, eventImage: eventImage, dateAndTime: dataAndTime, description: description, venue: venue, creatorID: refToCreatorID, coordinate: eventCoordinate)
+                
+            
+                // Saving event
+            self.save(event: event, completion: { (success) in
+                if success {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+            })
         }
+    }
+    
+    
+    func fetchEvents(usersLocation: CLLocationCoordinate2D, completion: @escaping ((Bool) -> Void)) {
+        // FIXME: - Add a predicate that only fetches events in 50 mile radius
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "Event", predicate: predicate)
+        CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                print("Error fetching events: \(error.localizedDescription)")
+                completion(false)
+            } else {
+                guard let records = records else { completion(false) ; return }
+                var arrayOfEvents: [Event] = []
+                for record in records {
+                    guard let event = Event(ckRecord: record) else { completion(false) ; return }
+                    arrayOfEvents.append(event)
+                }
+                self.fetchedEvents = arrayOfEvents
+                completion(true)
+            }
+        }
+    }
+    
+    func save(event: Event, completion: @escaping ((Bool)->Void)) {
+        let record = CKRecord(event: event)
+        
+        publicDataBase.save(record) { (_, error) in
+            if let error = error {
+                print("Error saving event: \(error.localizedDescription)")
+                completion(false)
+            } else {
+                completion(true)
+            }
+        }
+    }
+    
+    func deleteEvent(event: Event, completion: @escaping ((Bool)->Void)) {
+        guard let recordID = event.ckRecordID else { completion(false) ; return }
+        
+        publicDataBase.delete(withRecordID: recordID) { (_, error) in
+            if let error = error {
+                completion(false)
+                print("Error deleting event from public database: \(error.localizedDescription)")
+            } else {
+                completion(true)
+            }
+        }
+        
         
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
