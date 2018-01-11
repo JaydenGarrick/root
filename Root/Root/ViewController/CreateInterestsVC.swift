@@ -1,5 +1,5 @@
 //
-//  ArtistCreateInterestsVC.swift
+//  CreateInterestsVC.swift
 //  Root
 //
 //  Created by Frank Martin Jr on 1/10/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArtistCreateInterestsVC: UIViewController {
+class CreateInterestsVC: UIViewController {
 
     // MARK: - Properties
     var isArtist: Bool?
@@ -87,8 +87,8 @@ class ArtistCreateInterestsVC: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "ToArtistCreateProfPicSegue" {
-            guard let destinationVC = segue.destination as? ArtistCreateProfPicVC
+        if segue.identifier == "ToCreateProfPicSegue" {
+            guard let destinationVC = segue.destination as? CreateProfPicVC
                 else { return }
             
             destinationVC.isArtist = self.isArtist

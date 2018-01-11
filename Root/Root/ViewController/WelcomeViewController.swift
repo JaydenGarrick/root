@@ -31,13 +31,13 @@ class WelcomeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "ToArtSeekerCreateUsernameSegue" {
-            guard let destinationVC = segue.destination as? ArtistCreateUsernameVC else { return }
+            guard let destinationVC = segue.destination as? CreateUsernameVC else { return }
             let isArtist: Bool = false
             destinationVC.isArtist = isArtist
         }
         
         if segue.identifier == "ToArtistCreateUsernameSegue" {
-            guard let destinationVC = segue.destination as? ArtistCreateUsernameVC else { return }
+            guard let destinationVC = segue.destination as? CreateUsernameVC else { return }
             let isArtist: Bool = true
             destinationVC.isArtist = isArtist
         }

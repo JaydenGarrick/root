@@ -1,5 +1,5 @@
 //
-//  ArtistCreateUsernameVC.swift
+//  CreateUsernameVC.swift
 //  Root
 //
 //  Created by Frank Martin Jr on 1/10/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArtistCreateUsernameVC: UIViewController {
+class CreateUsernameVC: UIViewController {
     
     var isArtist: Bool?
     
@@ -18,6 +18,7 @@ class ArtistCreateUsernameVC: UIViewController {
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var hometownTextField: UITextField!
+    
     
     override func viewDidLoad() {
         
@@ -42,8 +43,8 @@ class ArtistCreateUsernameVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "ToArtistCreateInterestsSegue" {
-            guard let destinationVC = segue.destination as? ArtistCreateInterestsVC
+        if segue.identifier == "ToCreateInterestsSegue" {
+            guard let destinationVC = segue.destination as? CreateInterestsVC
                 else { return }
             
             let fullName = fullNameTextField.text

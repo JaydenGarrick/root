@@ -1,5 +1,5 @@
 //
-//  ArtistCreateProfPicVC.swift
+//  CreateProfPicVC.swift
 //  Root
 //
 //  Created by Frank Martin Jr on 1/10/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArtistCreateProfPicVC: UIViewController, UIImagePickerControllerDelegate {
+class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate {
 
     // MARK: - Properties
     
@@ -37,7 +37,7 @@ class ArtistCreateProfPicVC: UIViewController, UIImagePickerControllerDelegate {
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//        <#code#>
+//        
     }
     
     // MARK: - Navigation

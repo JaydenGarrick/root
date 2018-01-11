@@ -25,9 +25,9 @@
 		81EDF41F20042E35006E69EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EDF41E20042E35006E69EA /* Assets.xcassets */; };
 		81EDF42220042E35006E69EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EDF42020042E35006E69EA /* LaunchScreen.storyboard */; };
 		B7DE16B320069053003C8126 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B220069053003C8126 /* WelcomeViewController.swift */; };
-		B7DE16B52006908C003C8126 /* ArtistCreateUsernameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B42006908C003C8126 /* ArtistCreateUsernameVC.swift */; };
-		B7DE16B7200690B6003C8126 /* ArtistCreateInterestsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B6200690B6003C8126 /* ArtistCreateInterestsVC.swift */; };
-		B7DE16B9200690D8003C8126 /* ArtistCreateProfPicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B8200690D8003C8126 /* ArtistCreateProfPicVC.swift */; };
+		B7DE16B52006908C003C8126 /* CreateUsernameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B42006908C003C8126 /* CreateUsernameVC.swift */; };
+		B7DE16B7200690B6003C8126 /* CreateInterestsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B6200690B6003C8126 /* CreateInterestsVC.swift */; };
+		B7DE16B9200690D8003C8126 /* CreateProfPicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */; };
 		CA47E0572005785800B6222F /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA47E0562005785800B6222F /* EventTableViewCell.swift */; };
 		CAFF0D4D200681F300A3657D /* CreateEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFF0D4C200681F300A3657D /* CreateEvent.storyboard */; };
 /* End PBXBuildFile section */
@@ -54,9 +54,9 @@
 		81EDF42120042E35006E69EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81EDF42320042E35006E69EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7DE16B220069053003C8126 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		B7DE16B42006908C003C8126 /* ArtistCreateUsernameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCreateUsernameVC.swift; sourceTree = "<group>"; };
-		B7DE16B6200690B6003C8126 /* ArtistCreateInterestsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCreateInterestsVC.swift; sourceTree = "<group>"; };
-		B7DE16B8200690D8003C8126 /* ArtistCreateProfPicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCreateProfPicVC.swift; sourceTree = "<group>"; };
+		B7DE16B42006908C003C8126 /* CreateUsernameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameVC.swift; sourceTree = "<group>"; };
+		B7DE16B6200690B6003C8126 /* CreateInterestsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInterestsVC.swift; sourceTree = "<group>"; };
+		B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfPicVC.swift; sourceTree = "<group>"; };
 		CA47E0562005785800B6222F /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		CAFF0D4C200681F300A3657D /* CreateEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateEvent.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,9 +130,9 @@
 			children = (
 				819B5F712006839A00106459 /* MapFeedViewController.swift */,
 				B7DE16B220069053003C8126 /* WelcomeViewController.swift */,
-				B7DE16B42006908C003C8126 /* ArtistCreateUsernameVC.swift */,
-				B7DE16B6200690B6003C8126 /* ArtistCreateInterestsVC.swift */,
-				B7DE16B8200690D8003C8126 /* ArtistCreateProfPicVC.swift */,
+				B7DE16B42006908C003C8126 /* CreateUsernameVC.swift */,
+				B7DE16B6200690B6003C8126 /* CreateInterestsVC.swift */,
+				B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -268,12 +268,12 @@
 				811F271220052E5E00A9B47C /* CommentController.swift in Sources */,
 				811F271020052E4D00A9B47C /* UserController.swift in Sources */,
 				811F26FD20052AD100A9B47C /* Event.swift in Sources */,
-				B7DE16B9200690D8003C8126 /* ArtistCreateProfPicVC.swift in Sources */,
-				B7DE16B7200690B6003C8126 /* ArtistCreateInterestsVC.swift in Sources */,
+				B7DE16B9200690D8003C8126 /* CreateProfPicVC.swift in Sources */,
+				B7DE16B7200690B6003C8126 /* CreateInterestsVC.swift in Sources */,
 				81EDF41820042E35006E69EA /* AppDelegate.swift in Sources */,
 				811F270E20052E3E00A9B47C /* EventController.swift in Sources */,
 				819B5F722006839A00106459 /* MapFeedViewController.swift in Sources */,
-				B7DE16B52006908C003C8126 /* ArtistCreateUsernameVC.swift in Sources */,
+				B7DE16B52006908C003C8126 /* CreateUsernameVC.swift in Sources */,
 				811F26FF20052AE200A9B47C /* User.swift in Sources */,
 				811F270120052AFC00A9B47C /* Comment.swift in Sources */,
 			);
