@@ -21,6 +21,8 @@
 		811F27172005301000A9B47C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F27162005301000A9B47C /* CloudKit.framework */; };
 		811F27192005309300A9B47C /* LaunchScreenCopy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811F27182005309300A9B47C /* LaunchScreenCopy.storyboard */; };
 		819B5F722006839A00106459 /* MapFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B5F712006839A00106459 /* MapFeedViewController.swift */; };
+		819B5F752007EA5800106459 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B5F742007EA5800106459 /* extensions.swift */; };
+		819B5F792007EDDC00106459 /* EventDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819B5F782007EDDC00106459 /* EventDetail.storyboard */; };
 		81EDF41820042E35006E69EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDF41720042E35006E69EA /* AppDelegate.swift */; };
 		81EDF41F20042E35006E69EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EDF41E20042E35006E69EA /* Assets.xcassets */; };
 		81EDF42220042E35006E69EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EDF42020042E35006E69EA /* LaunchScreen.storyboard */; };
@@ -50,6 +52,8 @@
 		811F27162005301000A9B47C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		811F27182005309300A9B47C /* LaunchScreenCopy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenCopy.storyboard; sourceTree = "<group>"; };
 		819B5F712006839A00106459 /* MapFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeedViewController.swift; sourceTree = "<group>"; };
+		819B5F742007EA5800106459 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		819B5F782007EDDC00106459 /* EventDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventDetail.storyboard; sourceTree = "<group>"; };
 		81EDF41420042E35006E69EA /* Root.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Root.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EDF41720042E35006E69EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81EDF41E20042E35006E69EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 			children = (
 				81EDF41E20042E35006E69EA /* Assets.xcassets */,
 				81EDF42320042E35006E69EA /* Info.plist */,
+				819B5F742007EA5800106459 /* extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -97,6 +102,7 @@
 				CAFF0D4C200681F300A3657D /* CreateEvent.storyboard */,
 				81EDF42020042E35006E69EA /* LaunchScreen.storyboard */,
 				811F27182005309300A9B47C /* LaunchScreenCopy.storyboard */,
+				819B5F782007EDDC00106459 /* EventDetail.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -258,6 +264,7 @@
 				811F270620052B7700A9B47C /* TabBarController.storyboard in Resources */,
 				811F270420052B4300A9B47C /* CreateAccount.storyboard in Resources */,
 				811F270C20052E1600A9B47C /* Profile.storyboard in Resources */,
+				819B5F792007EDDC00106459 /* EventDetail.storyboard in Resources */,
 				811F270A20052E0000A9B47C /* MapFeed.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +287,7 @@
 				81EDF41820042E35006E69EA /* AppDelegate.swift in Sources */,
 				811F270E20052E3E00A9B47C /* EventController.swift in Sources */,
 				819B5F722006839A00106459 /* MapFeedViewController.swift in Sources */,
+				819B5F752007EA5800106459 /* extensions.swift in Sources */,
 				B7DE16B52006908C003C8126 /* CreateUsernameVC.swift in Sources */,
 				CAFF0D4F20068EAD00A3657D /* CreateEventViewController.swift in Sources */,
 				811F26FF20052AE200A9B47C /* User.swift in Sources */,
