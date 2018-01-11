@@ -14,7 +14,7 @@ class User {
     
     let username: String
     let fullName: String
-    var profilePicture: Data
+    var profilePicture: Data?
     var bio: String
     var homeTown: String
     var interests: [String]
@@ -26,7 +26,20 @@ class User {
     var cloudKitRecordID: CKRecordID?
     let appleUserRef: CKReference
     
-    init(username: String, fullName: String, profilePicture: Data, bio: String, homeTown: String, interests: [String], websiteURL: String, isArtist: Bool, appleUserRef: CKReference) {
+    fileprivate var temporaryPhotoURL: URL {
+        
+        // Must write to temporary directory to be able to pass image file path url to CKAsset
+        
+        let temporaryDirectory = NSTemporaryDirectory()
+        let temporaryDirectoryURL = URL(fileURLWithPath: temporaryDirectory)
+        let fileURL = temporaryDirectoryURL.appendingPathComponent(UUID().uuidString).appendingPathExtension("jpg")
+        
+        try? profilePicture?.write(to: fileURL, options: [.atomic])
+        
+        return fileURL
+    }
+    
+    init(username: String, fullName: String, profilePicture: Data?, bio: String, homeTown: String, interests: [String], websiteURL: String, isArtist: Bool, appleUserRef: CKReference) {
         
         self.username = username
         self.fullName = fullName
@@ -46,7 +59,7 @@ class User {
         
         guard let username = ckRecord["username"] as? String,
             let fullName = ckRecord["fullName"] as? String,
-            let profilePicture = ckRecord["profilePicture"] as? Data,
+            let profilePicture = ckRecord["profilePicture"] as? CKAsset,
             let bio = ckRecord["bio"] as? String,
             let homeTown = ckRecord["homeTown"] as? String,
             let interests = ckRecord["interests"] as? [String],
@@ -55,9 +68,11 @@ class User {
             let appleUserRef = ckRecord["appleUserRef"] as? CKReference
             else { return nil }
         
+        let photoData = try? Data(contentsOf: profilePicture.fileURL)
+    
         self.username = username
         self.fullName = fullName
-        self.profilePicture = profilePicture
+        self.profilePicture = photoData
         self.bio = bio
         self.homeTown = homeTown
         self.interests = interests
@@ -75,13 +90,13 @@ extension CKRecord {
     convenience init(user: User) {
         
         let recordID = user.cloudKitRecordID ?? CKRecordID(recordName: UUID().uuidString)
+        let asset = CKAsset(fileURL: user.temporaryPhotoURL)
         
         self.init(recordType: "User", recordID: recordID)
         
         self.setValue(user.username, forKey: "username")
         self.setValue(user.fullName, forKey: "fullName")
-//        let asset = CKAsset(fileURL: <#T##URL#>)
-        self.setValue(user.profilePicture, forKey: "profilePicture")
+        self.setValue(asset, forKey: "profilePicture")
         self.setValue(user.bio, forKey: "bio")
         self.setValue(user.homeTown, forKey: "homeTown")
         self.setValue(user.interests, forKey: "interests")

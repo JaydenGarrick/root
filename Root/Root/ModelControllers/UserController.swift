@@ -30,20 +30,38 @@ class UserController {
             
             let record = CKRecord(user: user)
             
-            CKContainer.default().publicCloudDatabase.save(record, completionHandler: { (record, error) in
+            self.modifyRecords([record], perRecordCompletion: nil, completion: { (records, error) in
                 if let error = error {
                     print("There was an error saving the current record. \(error)")
                     completion(false) ; return
                 }
                 // apple gives us the record right back so that we can use it/access the metadata that now exists
-                guard let record = record,
+                guard let records = records,
+                    let record = records.first,
                     let user = User(ckRecord: record)
                     else { completion(false) ; return }
                 self.loggedInUser = user
                 completion(true)
-                
             })
+            
         }
+    }
+    
+    func modifyRecords(_ records: [CKRecord], perRecordCompletion: ((_ record: CKRecord?, _ error: Error?) -> Void)?, completion: ((_ records: [CKRecord]?, _ error: Error?) -> Void)?) {
+        
+        let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
+        operation.savePolicy = .changedKeys
+        operation.queuePriority = .high
+        operation.qualityOfService = .userInteractive
+        
+        operation.perRecordCompletionBlock = perRecordCompletion
+        
+        operation.modifyRecordsCompletionBlock = { (records, recordIDs, error) -> Void in
+            (completion?(records, error))!
+        }
+        
+        CKContainer.default().publicCloudDatabase.add(operation)
+        
     }
     
     func fetchCurrentUser(completion: @escaping(Bool) -> Void) {
@@ -69,14 +87,14 @@ class UserController {
                 }
                 
                 guard let currentUserRecord = records?.first,
-                let user = User(ckRecord: currentUserRecord)
+                    let user = User(ckRecord: currentUserRecord)
                     else { completion(false) ; return }
                 self.loggedInUser = user
                 completion(true)
             })
         }
     }
-
+    
     // FIXME: UPDATE USER
     
 }
