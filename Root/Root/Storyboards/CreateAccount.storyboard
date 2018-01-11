@@ -421,6 +421,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="CcV-up-0J1" eventType="touchUpInside" id="yic-n4-iAe"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Website URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vLo-pp-ebQ">
                                 <rect key="frame" x="74" y="406" width="227" height="30"/>
@@ -445,15 +448,15 @@
                                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddProfPicTempImage" translatesAutoresizingMaskIntoConstraints="NO" id="LlF-ir-zFa" userLabel="Prof Picture">
-                                <rect key="frame" x="117" y="216" width="142.5" height="140"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqa-Ch-dDX">
                                 <rect key="frame" x="117" y="216" width="142.5" height="140"/>
                                 <connections>
                                     <action selector="addProfPictButtonTapped:" destination="CcV-up-0J1" eventType="touchUpInside" id="3Gp-XO-Fu0"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddProfPicTempImage" translatesAutoresizingMaskIntoConstraints="NO" id="LlF-ir-zFa" userLabel="Prof Picture">
+                                <rect key="frame" x="117" y="216" width="142.5" height="140"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -486,6 +489,7 @@
                         <viewLayoutGuide key="safeArea" id="fDS-0w-WVt"/>
                     </view>
                     <connections>
+                        <outlet property="profilePictureImageView" destination="LlF-ir-zFa" id="nZ8-27-ujD"/>
                         <outlet property="userLabel" destination="FEW-DY-282" id="r81-He-o9c"/>
                         <outlet property="websiteURLTextField" destination="vLo-pp-ebQ" id="VTJ-QZ-0vy"/>
                     </connections>
