@@ -19,6 +19,7 @@ class CreateInterestsVC: UIViewController {
     var interests: [String] = []
     
     // MARK: - IBOutlets
+    @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var interestsTextView: UITextView!
     
     // MARK: - IBActions
@@ -71,9 +72,22 @@ class CreateInterestsVC: UIViewController {
     override func viewDidLoad() {
 
         super.viewDidLoad()
-        
+     
+        setUserLabel()
+    
     }
-
+    
+    func setUserLabel() {
+        guard let isArtist = self.isArtist
+            else { return }
+        if isArtist == true {
+            userLabel?.text = "Artist"
+        }
+        else if isArtist == false {
+            userLabel?.text = "Art Seeker"
+        }
+    }
+    
     func updateInterestsTextView() {
         var textFieldText: String = ""
         for interest in self.interests {

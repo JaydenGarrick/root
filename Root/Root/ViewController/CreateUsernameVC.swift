@@ -23,6 +23,9 @@ class CreateUsernameVC: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        setUserLabel()
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
@@ -35,7 +38,10 @@ class CreateUsernameVC: UIViewController {
         guard let isArtist = self.isArtist
             else { return }
         if isArtist == true {
-//            userLabel.text
+            userLabel?.text = "Artist"
+        }
+        else if isArtist == false {
+            userLabel?.text = "Art Seeker"
         }
     }
     
