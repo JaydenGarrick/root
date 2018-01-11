@@ -20,6 +20,7 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate {
     
     // MARK: - IBOutlets
     
+    @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var websiteURLTextField: UITextField!
     
     // MARK: - IBActions
@@ -34,6 +35,18 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate {
     
         super.viewDidLoad()
 
+        setUserLabel()
+    }
+    
+    func setUserLabel() {
+        guard let isArtist = self.isArtist
+            else { return }
+        if isArtist == true {
+            self.userLabel.text = "Artist"
+        }
+        else if isArtist == false {
+            userLabel.text = "Art Seeker"
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
