@@ -80,6 +80,7 @@ extension CKRecord {
         
         self.setValue(user.username, forKey: "username")
         self.setValue(user.fullName, forKey: "fullName")
+//        let asset = CKAsset(fileURL: <#T##URL#>)
         self.setValue(user.profilePicture, forKey: "profilePicture")
         self.setValue(user.bio, forKey: "bio")
         self.setValue(user.homeTown, forKey: "homeTown")

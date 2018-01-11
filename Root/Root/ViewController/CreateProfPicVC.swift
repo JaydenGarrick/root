@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -69,10 +70,18 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
             else { return }
         
         UserController.shared.createUserWith(username: username, fullName: fullName, profilePicture: profilePictureAsDatablah, bio: "", homeTown: hometown, interests: interests, websiteURL: websiteURL, isArtist: isArtist) { (success) in
-            guard let user = UserController.shared.loggedInUser else { return }
-            print(user.username, user.fullName, user.bio, user.homeTown, user.appleUserRef, user.isArtist)
+            if success {
+                guard let user = UserController.shared.loggedInUser else { return }
+                print(user.username, user.fullName, user.bio, user.homeTown, user.appleUserRef, user.isArtist)
+                
+                self.navigationController?.dismiss(animated: true, completion: nil)
+                
+            } else {
+                // present alert advising user that they could not create an account
+            }
         }
     }
+    
     // MARK: - Image picker delegate methods
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -85,29 +94,42 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
         let profilePictureAsData = UIImagePNGRepresentation(profilePicture)
         self.profilePictureAsData = profilePictureAsData
         
+//        let url = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent((NSUUID().uuidString+".dat")
+//
+//        do {
+//            try profilePictureAsData.write(to: tempURL, options: .atomicWrite)
+//        } catch let e as NSError {
+//            print("Error! \(e)");
+//            return
+//        }
+
+//        let url = info[UIImagePickerControllerImageURL] as? URL
+//        print("url: \(url)")
+//        let asset = CKAsset(fileURL: info[UIImagePickerControllerReferenceURL]) as? URL
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-    
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        guard let username = self.username,
-            let fullName = self.fullName,
-            let profilePicture = self.profilePictureAsData,
-            let hometown = self.hometown,
-            let interests = self.interests,
-            let websiteURL = websiteURLTextField.text,
-            let isArtist = self.isArtist
-            else { return }
-        
-        UserController.shared.createUserWith(username: username, fullName: fullName, profilePicture: profilePicture, bio: "", homeTown: hometown, interests: interests, websiteURL: websiteURL, isArtist: isArtist) { (success) in
-            
-        }
-        
-    }
+//
+//    // MARK: - Navigation
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        guard let username = self.username,
+//            let fullName = self.fullName,
+//            let profilePicture = self.profilePictureAsData,
+//            let hometown = self.hometown,
+//            let interests = self.interests,
+//            let websiteURL = websiteURLTextField.text,
+//            let isArtist = self.isArtist
+//            else { return }
+//
+//        UserController.shared.createUserWith(username: username, fullName: fullName, profilePicture: profilePicture, bio: "", homeTown: hometown, interests: interests, websiteURL: websiteURL, isArtist: isArtist) { (success) in
+//
+//        }
+//
+//    }
     
 }

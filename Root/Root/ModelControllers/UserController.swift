@@ -32,7 +32,7 @@ class UserController {
             
             CKContainer.default().publicCloudDatabase.save(record, completionHandler: { (record, error) in
                 if let error = error {
-                    print("There was an error fetching current user record ID. \(error)")
+                    print("There was an error saving the current record. \(error)")
                     completion(false) ; return
                 }
                 // apple gives us the record right back so that we can use it/access the metadata that now exists
