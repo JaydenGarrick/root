@@ -28,7 +28,21 @@ class EventController {
                 let refToCreatorID = CKReference(recordID: creatorRecordID, action: .deleteSelf)
             
             // FIXME: - Event model changed, will have to update VVVVVV
-                let event = Event(name: name, eventImage: eventImage, dateAndTime: dataAndTime, description: description, venue: venue, creatorID: refToCreatorID)
+            
+            let geocoder = CLGeocoder()
+            var coordinate: CLLocationCoordinate2D?
+            geocoder.geocodeAddressString(venue, completionHandler: { (placemarks, error) in
+                if let error = error {
+                    print("Error geocoding while creating event: \(error.localizedDescription)")
+                    completion(false)
+                    return
+                }
+                guard let placemarks = placemarks else { completion(false) ; return }
+                guard let tempCoordinate = placemarks.first?.location?.coordinate else { completion(false) ; return }
+                coordinate = tempCoordinate
+            })
+            guard let newCoordinate = coordinate else { completion(false) ; return }
+            let event = Event(name: name, eventImage: eventImage, dateAndTime: dataAndTime, description: description, venue: venue, creatorID: refToCreatorID, coordinate: newCoordinate)
                 
                 let eventRecord = CKRecord(event: event)
                 
