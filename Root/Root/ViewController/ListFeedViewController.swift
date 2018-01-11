@@ -15,9 +15,13 @@ class ListFeedViewController: UIViewController {
 
         UserController.shared.fetchCurrentUser { (success) in
             if !success {
-                let createAccountStoryboard = UIStoryboard(name: "CreateAccount", bundle: nil)
-                let welcomeViewController = createAccountStoryboard.instantiateViewController(withIdentifier: "createAccountNavController")
-                self.present(welcomeViewController, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    
+                    let createAccountStoryboard = UIStoryboard(name: "CreateAccount", bundle: nil)
+                    let welcomeViewController = createAccountStoryboard.instantiateViewController(withIdentifier: "createAccountNavController")
+                    self.present(welcomeViewController, animated: true, completion: nil)
+                    
+                }
             }
         }
     }

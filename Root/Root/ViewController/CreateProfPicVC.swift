@@ -32,7 +32,7 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     @IBAction func addProfPictButtonTapped(_ sender: UIButton) {
         
-        pickerController.allowsEditing = false
+        pickerController.allowsEditing = true
         pickerController.sourceType = .photoLibrary
         pickerController.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(pickerController, animated: true, completion: nil)
@@ -62,19 +62,21 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
         
         guard let username = self.username,
             let fullName = self.fullName,
-            let profilePictureAsDatablah = self.profilePictureAsData,
+            let profilePictureAsData = self.profilePictureAsData,
             let hometown = self.hometown,
             let interests = self.interests,
             let websiteURL = websiteURLTextField.text,
             let isArtist = self.isArtist
             else { return }
         
-        UserController.shared.createUserWith(username: username, fullName: fullName, profilePicture: profilePictureAsDatablah, bio: "", homeTown: hometown, interests: interests, websiteURL: websiteURL, isArtist: isArtist) { (success) in
+        UserController.shared.createUserWith(username: username, fullName: fullName, profilePicture: profilePictureAsData, bio: "", homeTown: hometown, interests: interests, websiteURL: websiteURL, isArtist: isArtist) { (success) in
             if success {
                 guard let user = UserController.shared.loggedInUser else { return }
                 print(user.username, user.fullName, user.bio, user.homeTown, user.appleUserRef, user.isArtist)
                 
-                self.navigationController?.dismiss(animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    self.navigationController?.dismiss(animated: true, completion: nil)
+                }
                 
             } else {
                 // present alert advising user that they could not create an account
@@ -89,8 +91,11 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
         guard let profilePicture = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
         profilePictureImageView.contentMode = .scaleAspectFit
         profilePictureImageView.image = profilePicture
-        dismiss(animated: true, completion: nil)
-        profilePictureImageView.alpha = 1
+        DispatchQueue.main.async {
+            
+            self.dismiss(animated: true, completion: nil)
+            self.profilePictureImageView.alpha = 1
+        }
         let profilePictureAsData = UIImagePNGRepresentation(profilePicture)
         self.profilePictureAsData = profilePictureAsData
         
