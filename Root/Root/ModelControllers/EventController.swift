@@ -27,49 +27,39 @@ class EventController {
     var createdEvent: Event?
     
     // MARK: - CRUD
-    
     func createEventWith(name: String, eventImage: Data, dataAndTime: Date, description: String, venue: String, artist: [User], completion: @escaping (Bool) -> Void) {
         
         // Fetch User ID
-        CKContainer.default().fetchUserRecordID { (creatorRecordID, error) in
+        guard let refToCreatorID = UserController.shared.loggedInUser?.appleUserRef else { completion(false) ; return }
+    
+        // Geocoding venue into coordinates
+        let geocoder = CLGeocoder()
+        var coordinate: CLLocationCoordinate2D?
+        geocoder.geocodeAddressString(venue, completionHandler: { (placemarks, error) in
             if let error = error {
-                print("Error fetching current recordID while creating event. Error : \(error.localizedDescription)")
-                completion(false) ;  return }
-            
-            guard let creatorRecordID = creatorRecordID else { completion(false) ; return }
-            
-            let refToCreatorID = CKReference(recordID: creatorRecordID, action: .deleteSelf)
-            
-            
-            
-            // Geocoding venue into coordinates
-            let geocoder = CLGeocoder()
-            var coordinate: CLLocationCoordinate2D?
-            geocoder.geocodeAddressString(venue, completionHandler: { (placemarks, error) in
-                if let error = error {
-                    print("Error geocoding while creating event: \(error.localizedDescription)")
-                    completion(false)
-                    return
-                }
-                guard let placemarks = placemarks else { completion(false) ; return }
-                guard let tempCoordinate = placemarks.first?.location?.coordinate else { completion(false) ; return }
-                coordinate = tempCoordinate
-            })
-            guard let eventCoordinate = coordinate else { completion(false) ; return }
-            
-            // Initializing event
-            let event = Event(name: name, eventImage: eventImage, dateAndTime: dataAndTime, description: description, venue: venue, creatorID: refToCreatorID, coordinate: eventCoordinate)
-            
-            
-            // Saving event
-            self.save(event: event, completion: { (success) in
-                if success {
-                    completion(true)
-                } else {
-                    completion(false)
-                }
-            })
-        }
+                print("Error geocoding while creating event: \(error.localizedDescription)")
+                completion(false)
+                return
+            }
+            guard let placemarks = placemarks else { completion(false) ; return }
+            guard let tempCoordinate = placemarks.first?.location?.coordinate else { completion(false) ; return }
+            coordinate = tempCoordinate
+        })
+        guard let eventCoordinate = coordinate else { completion(false) ; return }
+        
+        // Initializing event
+        let event = Event(name: name, eventImage: eventImage, dateAndTime: dataAndTime, description: description, venue: venue, creatorID: refToCreatorID, coordinate: eventCoordinate)
+        
+        
+        // Saving event
+        self.save(event: event, completion: { (success) in
+            if success {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        })
+        
     }
     
     
@@ -81,8 +71,9 @@ class EventController {
         let maxLongitudePredicate = NSPredicate(format: "longitude < %f", userLocation.coordinate.longitude + 0.724)
         let minLatitudePredicate = NSPredicate(format: "latitude > %f", userLocation.coordinate.latitude - 0.724)
         let minLongitudePredicate = NSPredicate(format: "longitude > %f", userLocation.coordinate.longitude - 0.724)
+        //let pred = NSPredicate(format: "appleUserRef IN %f", EventController.shared.fetchedEvents)
         let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [maxLatitudePredicate, maxLongitudePredicate, minLatitudePredicate, minLongitudePredicate])
-
+        
         
         let query = CKQuery(recordType: "Event", predicate: compoundPredicate)
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in

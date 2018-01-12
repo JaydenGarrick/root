@@ -11,9 +11,13 @@ import CloudKit
 
 class UserController {
     
+    // CloudKit
+    let publicDataBase = CKContainer.default().publicCloudDatabase
+    
     static let shared = UserController()
     
     var loggedInUser: User?
+    
     
     func createUserWith(username: String, fullName: String, profilePicture: Data, bio: String, homeTown: String, interests: [String], websiteURL: String, isArtist: Bool, completion: @escaping (Bool) -> Void) {
         
@@ -64,6 +68,7 @@ class UserController {
         
     }
     
+    // Fetches current User
     func fetchCurrentUser(completion: @escaping(Bool) -> Void) {
         
         // Fetch the apple user record ID tied to the user's iCloud account
@@ -93,6 +98,27 @@ class UserController {
                 completion(true)
             })
         }
+    }
+    
+    // Fetches user based on event
+    func fetchEventCreator(event: Event, completion: @escaping((User?)->Void)) {
+        
+        let eventRefID = event.creatorID
+        
+        let predicate = NSPredicate(format: "cloudKitRecordID == %@", eventRefID)
+        
+        let query = CKQuery(recordType: "User", predicate: predicate)
+        publicDataBase.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                print("Error getting user from event: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            guard let records = records,
+            let fetchedUser = User(ckRecord: records[0]) else { completion(nil) ; return }
+            completion(fetchedUser)
+        }
+
     }
     
     // FIXME: UPDATE USER

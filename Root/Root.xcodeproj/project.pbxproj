@@ -19,6 +19,7 @@
 		811F271220052E5E00A9B47C /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F271120052E5E00A9B47C /* CommentController.swift */; };
 		811F27172005301000A9B47C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F27162005301000A9B47C /* CloudKit.framework */; };
 		811F27192005309300A9B47C /* LaunchScreenCopy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811F27182005309300A9B47C /* LaunchScreenCopy.storyboard */; };
+		81943DD320097B3900A1F67C /* EventDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81943DD220097B3800A1F67C /* EventDetailTableViewController.swift */; };
 		819B5F722006839A00106459 /* MapFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B5F712006839A00106459 /* MapFeedViewController.swift */; };
 		819B5F752007EA5800106459 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B5F742007EA5800106459 /* extensions.swift */; };
 		819B5F792007EDDC00106459 /* EventDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819B5F782007EDDC00106459 /* EventDetail.storyboard */; };
@@ -51,6 +52,7 @@
 		811F27142005300F00A9B47C /* Root.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Root.entitlements; sourceTree = "<group>"; };
 		811F27162005301000A9B47C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		811F27182005309300A9B47C /* LaunchScreenCopy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenCopy.storyboard; sourceTree = "<group>"; };
+		81943DD220097B3800A1F67C /* EventDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewController.swift; sourceTree = "<group>"; };
 		819B5F712006839A00106459 /* MapFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeedViewController.swift; sourceTree = "<group>"; };
 		819B5F742007EA5800106459 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		819B5F782007EDDC00106459 /* EventDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventDetail.storyboard; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */,
 				B7FCED802007DC7C00690301 /* ListFeedViewController.swift */,
 				CA1EF4162008045C007BD1CD /* ProfileTableViewController.swift */,
+				81943DD220097B3800A1F67C /* EventDetailTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				B7FCED812007DC7C00690301 /* ListFeedViewController.swift in Sources */,
 				CA47E0572005785800B6222F /* EventTableViewCell.swift in Sources */,
 				B7DE16B320069053003C8126 /* WelcomeViewController.swift in Sources */,
+				81943DD320097B3900A1F67C /* EventDetailTableViewController.swift in Sources */,
 				811F271220052E5E00A9B47C /* CommentController.swift in Sources */,
 				811F271020052E4D00A9B47C /* UserController.swift in Sources */,
 				811F26FD20052AD100A9B47C /* Event.swift in Sources */,
