@@ -42,6 +42,7 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
         setUserLabel()
         pickerController.delegate = self

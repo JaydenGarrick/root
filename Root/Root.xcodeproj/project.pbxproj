@@ -14,7 +14,6 @@
 		811F270620052B7700A9B47C /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811F270520052B7700A9B47C /* TabBarController.storyboard */; };
 		811F270820052BEB00A9B47C /* ListFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811F270720052BEB00A9B47C /* ListFeed.storyboard */; };
 		811F270A20052E0000A9B47C /* MapFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811F270920052E0000A9B47C /* MapFeed.storyboard */; };
-		811F270C20052E1600A9B47C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811F270B20052E1600A9B47C /* Profile.storyboard */; };
 		811F270E20052E3E00A9B47C /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F270D20052E3E00A9B47C /* EventController.swift */; };
 		811F271020052E4D00A9B47C /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F270F20052E4D00A9B47C /* UserController.swift */; };
 		811F271220052E5E00A9B47C /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F271120052E5E00A9B47C /* CommentController.swift */; };
@@ -32,6 +31,7 @@
 		B7DE16B9200690D8003C8126 /* CreateProfPicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */; };
 		B7FCED812007DC7C00690301 /* ListFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FCED802007DC7C00690301 /* ListFeedViewController.swift */; };
 		CA1EF4172008045C007BD1CD /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1EF4162008045C007BD1CD /* ProfileTableViewController.swift */; };
+		CA1EF41B20091DFE007BD1CD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1EF41A20091DFE007BD1CD /* Profile.storyboard */; };
 		CA47E0572005785800B6222F /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA47E0562005785800B6222F /* EventTableViewCell.swift */; };
 		CAFF0D4D200681F300A3657D /* CreateEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFF0D4C200681F300A3657D /* CreateEvent.storyboard */; };
 		CAFF0D4F20068EAD00A3657D /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */; };
@@ -45,7 +45,6 @@
 		811F270520052B7700A9B47C /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
 		811F270720052BEB00A9B47C /* ListFeed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ListFeed.storyboard; sourceTree = "<group>"; };
 		811F270920052E0000A9B47C /* MapFeed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapFeed.storyboard; sourceTree = "<group>"; };
-		811F270B20052E1600A9B47C /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		811F270D20052E3E00A9B47C /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		811F270F20052E4D00A9B47C /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		811F271120052E5E00A9B47C /* CommentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfPicVC.swift; sourceTree = "<group>"; };
 		B7FCED802007DC7C00690301 /* ListFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFeedViewController.swift; sourceTree = "<group>"; };
 		CA1EF4162008045C007BD1CD /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		CA1EF41A20091DFE007BD1CD /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		CA47E0562005785800B6222F /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		CAFF0D4C200681F300A3657D /* CreateEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateEvent.storyboard; sourceTree = "<group>"; };
 		CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 			children = (
 				811F270320052B4300A9B47C /* CreateAccount.storyboard */,
 				811F270520052B7700A9B47C /* TabBarController.storyboard */,
-				811F270B20052E1600A9B47C /* Profile.storyboard */,
+				CA1EF41A20091DFE007BD1CD /* Profile.storyboard */,
 				811F270920052E0000A9B47C /* MapFeed.storyboard */,
 				811F270720052BEB00A9B47C /* ListFeed.storyboard */,
 				CAFF0D4C200681F300A3657D /* CreateEvent.storyboard */,
@@ -261,12 +261,12 @@
 			files = (
 				811F27192005309300A9B47C /* LaunchScreenCopy.storyboard in Resources */,
 				CAFF0D4D200681F300A3657D /* CreateEvent.storyboard in Resources */,
+				CA1EF41B20091DFE007BD1CD /* Profile.storyboard in Resources */,
 				811F270820052BEB00A9B47C /* ListFeed.storyboard in Resources */,
 				81EDF42220042E35006E69EA /* LaunchScreen.storyboard in Resources */,
 				81EDF41F20042E35006E69EA /* Assets.xcassets in Resources */,
 				811F270620052B7700A9B47C /* TabBarController.storyboard in Resources */,
 				811F270420052B4300A9B47C /* CreateAccount.storyboard in Resources */,
-				811F270C20052E1600A9B47C /* Profile.storyboard in Resources */,
 				819B5F792007EDDC00106459 /* EventDetail.storyboard in Resources */,
 				811F270A20052E0000A9B47C /* MapFeed.storyboard in Resources */,
 			);

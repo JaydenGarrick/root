@@ -82,9 +82,7 @@ class EventController {
         let minLatitudePredicate = NSPredicate(format: "latitude > %f", userLocation.coordinate.latitude - 0.724)
         let minLongitudePredicate = NSPredicate(format: "longitude > %f", userLocation.coordinate.longitude - 0.724)
         let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [maxLatitudePredicate, maxLongitudePredicate, minLatitudePredicate, minLongitudePredicate])
-        
-        
-        
+
         
         let query = CKQuery(recordType: "Event", predicate: compoundPredicate)
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in

@@ -165,7 +165,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vdW-2Z-TdQ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ListFeed" id="DfN-Qj-WJv"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="DfN-Qj-WJv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sZ-qU-Q6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
