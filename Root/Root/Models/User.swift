@@ -90,13 +90,13 @@ extension CKRecord {
     convenience init(user: User) {
         
         let recordID = user.cloudKitRecordID ?? CKRecordID(recordName: UUID().uuidString)
-        let asset = CKAsset(fileURL: user.temporaryPhotoURL)
+        let profilePictureAsset = CKAsset(fileURL: user.temporaryPhotoURL)
         
         self.init(recordType: "User", recordID: recordID)
         
         self.setValue(user.username, forKey: "username")
         self.setValue(user.fullName, forKey: "fullName")
-        self.setValue(asset, forKey: "profilePicture")
+        self.setValue(profilePictureAsset, forKey: "profilePicture")
         self.setValue(user.bio, forKey: "bio")
         self.setValue(user.homeTown, forKey: "homeTown")
         self.setValue(user.interests, forKey: "interests")

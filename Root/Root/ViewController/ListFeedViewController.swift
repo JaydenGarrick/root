@@ -22,6 +22,8 @@ class ListFeedViewController: UIViewController {
                     self.present(welcomeViewController, animated: true, completion: nil)
                     
                 }
+            } else {
+                print(UserController.shared.loggedInUser?.cloudKitRecordID, UserController.shared.loggedInUser?.fullName, UserController.shared.loggedInUser?.appleUserRef)
             }
         }
     }
@@ -29,7 +31,7 @@ class ListFeedViewController: UIViewController {
 
     /*
     // MARK: - Navigation
-
+ain 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
