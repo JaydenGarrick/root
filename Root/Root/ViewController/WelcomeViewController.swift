@@ -17,6 +17,8 @@ class WelcomeViewController: UIViewController {
     }
     override func viewDidLoad() {
         
+        self.hideKeyboardWhenTappedAround()
+        
         super.viewDidLoad()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()

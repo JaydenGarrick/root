@@ -25,40 +25,22 @@
                                     <navigationItem title="Add Event" id="9WA-Jj-LSv"/>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8G-tO-p7I" userLabel="Done Button">
-                                <rect key="frame" x="169" y="637" width="37" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleColor" red="0.14117647059999999" green="0.61568627450000002" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="doneButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="a5z-ze-bEd"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N1R-EH-whg">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AddProfPicTempImage" translatesAutoresizingMaskIntoConstraints="NO" id="N1R-EH-whg">
                                 <rect key="frame" x="0.0" y="44" width="375" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" text="(name of artist)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abf-dJ-ahW">
-                                <rect key="frame" x="10" y="277" width="355" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title of event..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QeD-3f-ir6">
-                                <rect key="frame" x="10" y="310" width="355" height="30"/>
+                                <rect key="frame" x="10" y="306" width="355" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.29638805650684941" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter event description..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fz4-di-hWI">
-                                <rect key="frame" x="10" y="352" width="355" height="71"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="fz4-di-hWI">
+                                <rect key="frame" x="10" y="348" width="355" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.2963880565" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter location..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="alp-0p-kmJ">
@@ -70,79 +52,83 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter date/time..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AnC-xq-PJO">
-                                <rect key="frame" x="10" y="477" width="355" height="30"/>
+                                <rect key="frame" x="10" y="473" width="355" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.2963880565" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="L8W-GU-3hZ">
-                                <rect key="frame" x="65" y="515" width="246" height="79"/>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfD-mW-5da" userLabel="Add Event Button">
+                                <rect key="frame" x="1" y="44" width="375" height="223"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8G-tO-p7I" userLabel="Done Button">
+                                <rect key="frame" x="170" y="630" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.14117647059999999" green="0.61568627450000002" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="a5z-ze-bEd"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Baa-h7-xfD">
+                                <rect key="frame" x="55" y="522" width="126" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="QJR-6Y-ChQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="246" height="32"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="EeU-z9-tDP">
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="32"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEl-fN-xcV" userLabel="Paint Button">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7w-yR-pxz">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                <color key="backgroundColor" red="0.75272142890000004" green="0.71018975969999998" blue="0.66565769910000006" alpha="0.65606271400000005" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="paintbrush"/>
-                                                <connections>
-                                                    <action selector="paintButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="R31-BA-938"/>
-                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtE-OD-llf" userLabel="Music Button">
-                                                <rect key="frame" x="107" y="0.0" width="32" height="32"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nve-i1-POJ">
+                                                <rect key="frame" x="47" y="0.0" width="32" height="32"/>
+                                                <color key="backgroundColor" red="0.75272142890000004" green="0.71018975969999998" blue="0.66565769910000006" alpha="0.65606271400000005" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="musical-note-1"/>
-                                                <connections>
-                                                    <action selector="musicButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="qgB-rs-I2W"/>
-                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Py4-ef-aH4" userLabel="Photo Button">
-                                                <rect key="frame" x="214" y="0.0" width="32" height="32"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKq-td-vM5">
+                                                <rect key="frame" x="94" y="0.0" width="32" height="32"/>
+                                                <color key="backgroundColor" red="0.75272142890000004" green="0.71018975969999998" blue="0.66565769910000006" alpha="0.65606271400000005" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="photo-camera"/>
-                                                <connections>
-                                                    <action selector="photoButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="eOB-8x-N0x"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="zCe-hy-914">
-                                        <rect key="frame" x="0.0" y="47" width="246" height="32"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fIx-nj-vq3">
+                                        <rect key="frame" x="0.0" y="42" width="126" height="32"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDr-Rw-AGf" userLabel="Poetry Button">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wo4-2Q-Lwd">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                <color key="backgroundColor" red="0.75272142890000004" green="0.71018975969999998" blue="0.66565769910000006" alpha="0.65606271400000005" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="poetry"/>
-                                                <connections>
-                                                    <action selector="poetryButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="ST6-mT-fkH"/>
-                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wrf-m6-Xez" userLabel="Sketch Button">
-                                                <rect key="frame" x="107" y="0.0" width="32" height="32"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tM1-7Y-aJN">
+                                                <rect key="frame" x="47" y="0.0" width="32" height="32"/>
+                                                <color key="backgroundColor" red="0.75272142890000004" green="0.71018975969999998" blue="0.66565769910000006" alpha="0.65606271400000005" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="sketch"/>
-                                                <connections>
-                                                    <action selector="sketchButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="AZ2-dk-vRa"/>
-                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4c-5o-DbV" userLabel="Ceramics Button">
-                                                <rect key="frame" x="214" y="0.0" width="32" height="32"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wt-xI-eQF">
+                                                <rect key="frame" x="94" y="0.0" width="32" height="32"/>
+                                                <color key="backgroundColor" red="0.75272142890000004" green="0.71018975969999998" blue="0.66565769910000006" alpha="0.65606271400000005" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="ceramic"/>
-                                                <connections>
-                                                    <action selector="ceramicButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="3Mz-9D-O5h"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfD-mW-5da">
-                                <rect key="frame" x="0.0" y="44" width="375" height="223"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" text="(name of artist)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abf-dJ-ahW">
+                                <rect key="frame" x="10" y="277" width="355" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.55000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Add Event Photo">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.99963706731796265" green="0.9766877293586731" blue="0.97943061590194702" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="HgF-pN-lUa"/>
@@ -162,6 +148,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AddProfPicTempImage" width="141" height="142"/>
         <image name="ceramic" width="32" height="32"/>
         <image name="musical-note-1" width="32" height="32"/>
         <image name="paintbrush" width="32" height="32"/>
