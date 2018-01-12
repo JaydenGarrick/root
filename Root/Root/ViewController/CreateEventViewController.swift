@@ -20,6 +20,7 @@ class CreateEventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dismissKeyboard()
 
         // Do any additional setup after loading the view.
     }

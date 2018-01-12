@@ -17,6 +17,8 @@ class EventController {
     // CloudKit
     let publicDataBase = CKContainer.default().publicCloudDatabase
     
+    let locationManager = CLLocationManager()
+    
     // Shared Instance
     static let shared = EventController()
     
@@ -73,8 +75,18 @@ class EventController {
     
     func fetchEvents(usersLocation: CLLocationCoordinate2D, completion: @escaping ((Bool) -> Void)) {
         // FIXME: - Add a predicate that only fetches events in 50 mile radius
-        let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: "Event", predicate: predicate)
+        guard let userLocation = locationManager.location else { completion(false); return}
+        
+        let maxLatitudePredicate = NSPredicate(format: "latitude < %f", userLocation.coordinate.latitude + 0.724)
+        let maxLongitudePredicate = NSPredicate(format: "longitude < %f", userLocation.coordinate.longitude + 0.724)
+        let minLatitudePredicate = NSPredicate(format: "latitude > %f", userLocation.coordinate.latitude - 0.724)
+        let minLongitudePredicate = NSPredicate(format: "longitude > %f", userLocation.coordinate.longitude - 0.724)
+        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [maxLatitudePredicate, maxLongitudePredicate, minLatitudePredicate, minLongitudePredicate])
+
+
+
+        
+        let query = CKQuery(recordType: "Event", predicate: compoundPredicate)
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
             if let error = error {
                 print("Error fetching events: \(error.localizedDescription)")
