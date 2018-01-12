@@ -22,6 +22,8 @@ class CreateUsernameVC: UIViewController {
     
     override func viewDidLoad() {
         
+        self.hideKeyboardWhenTappedAround()
+        
         super.viewDidLoad()
         
         setUserLabel()

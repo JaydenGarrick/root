@@ -12,6 +12,15 @@ class ListFeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dismissKeyboard()
+        
+        guard let userImageData = UIImagePNGRepresentation(#imageLiteral(resourceName: "photo-camera")) else { print("not success") ; return }
+        
+        EventController.shared.createEventWith(name: "Test", eventImage: userImageData, dataAndTime: Date(), description: "Test123", venue: "Kilby Court", artist: [UserController.shared.loggedInUser!]) { (success) in
+            if success {
+                print("Success!")
+            }
+        }
 
         UserController.shared.fetchCurrentUser { (success) in
             if !success {
