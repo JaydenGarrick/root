@@ -12,10 +12,12 @@ import MapKit
 
 class EventController {
     
-// MARK: - Properties
+    // MARK: - Properties
     
     // CloudKit
     let publicDataBase = CKContainer.default().publicCloudDatabase
+    
+    let locationManager = CLLocationManager()
     
     // Shared Instance
     static let shared = EventController()
@@ -24,7 +26,7 @@ class EventController {
     var fetchedEvents: [Event] = []
     var createdEvent: Event?
     
-// MARK: - CRUD
+    // MARK: - CRUD
     
     func createEventWith(name: String, eventImage: Data, dataAndTime: Date, description: String, venue: String, artist: [User], completion: @escaping (Bool) -> Void) {
         
@@ -33,10 +35,10 @@ class EventController {
             if let error = error {
                 print("Error fetching current recordID while creating event. Error : \(error.localizedDescription)")
                 completion(false) ;  return }
-                
-                guard let creatorRecordID = creatorRecordID else { completion(false) ; return }
-                
-                let refToCreatorID = CKReference(recordID: creatorRecordID, action: .deleteSelf)
+            
+            guard let creatorRecordID = creatorRecordID else { completion(false) ; return }
+            
+            let refToCreatorID = CKReference(recordID: creatorRecordID, action: .deleteSelf)
             
             
             
@@ -57,9 +59,9 @@ class EventController {
             
             // Initializing event
             let event = Event(name: name, eventImage: eventImage, dateAndTime: dataAndTime, description: description, venue: venue, creatorID: refToCreatorID, coordinate: eventCoordinate)
-                
             
-                // Saving event
+            
+            // Saving event
             self.save(event: event, completion: { (success) in
                 if success {
                     completion(true)
@@ -73,8 +75,18 @@ class EventController {
     
     func fetchEvents(usersLocation: CLLocationCoordinate2D, completion: @escaping ((Bool) -> Void)) {
         // FIXME: - Add a predicate that only fetches events in 50 mile radius
-        let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: "Event", predicate: predicate)
+        guard let userLocation = locationManager.location else { completion(false); return}
+        
+        let maxLatitudePredicate = NSPredicate(format: "latitude < %f", userLocation.coordinate.latitude + 0.724)
+        let maxLongitudePredicate = NSPredicate(format: "longitude < %f", userLocation.coordinate.longitude + 0.724)
+        let minLatitudePredicate = NSPredicate(format: "latitude > %f", userLocation.coordinate.latitude - 0.724)
+        let minLongitudePredicate = NSPredicate(format: "longitude > %f", userLocation.coordinate.longitude - 0.724)
+        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [maxLatitudePredicate, maxLongitudePredicate, minLatitudePredicate, minLongitudePredicate])
+        
+        
+        
+        
+        let query = CKQuery(recordType: "Event", predicate: compoundPredicate)
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
             if let error = error {
                 print("Error fetching events: \(error.localizedDescription)")

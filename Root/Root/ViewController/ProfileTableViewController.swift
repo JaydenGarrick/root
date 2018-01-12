@@ -13,20 +13,20 @@ class ProfileTableViewController: UITableViewController {
    
     var loggedInUser: User?
     
-    @IBOutlet weak var artistProfileImageView: UIImageView!
-    @IBOutlet weak var artistNameLabel: UILabel!
-    @IBOutlet weak var bioLabel: UILabel!
+//    @IBOutlet weak var artistProfileImageView: UIImageView!
+//    @IBOutlet weak var artistNameLabel: UILabel!
+//    @IBOutlet weak var bioLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let user = loggedInUser {
-            guard let imageData = user.profilePicture else { return }
-            let profilePictureImage = UIImage(data: imageData)
-            artistProfileImageView.image = profilePictureImage
-            artistNameLabel.text = user.username
-            bioLabel.text = "Fix me"
-        }
+//        if let user = loggedInUser {
+//            guard let imageData = user.profilePicture else { return }
+//            let profilePictureImage = UIImage(data: imageData)
+//            artistProfileImageView.image = profilePictureImage
+//            artistNameLabel.text = user.username
+//            bioLabel.text = "Fix me"
+//        }
     }
     
     
@@ -38,19 +38,19 @@ class ProfileTableViewController: UITableViewController {
 //        return 0
 //    }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-    
-    
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-     
-     // Configure the cell...
-     
-     return cell
-     }
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
+//
+//
+//     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+//
+//     // Configure the cell...
+//
+//     return cell
+//     }
  
     
     /*
