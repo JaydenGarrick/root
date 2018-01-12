@@ -12,7 +12,7 @@ import MapKit
 
 class EventController {
     
-// MARK: - Properties
+    // MARK: - Properties
     
     // CloudKit
     let publicDataBase = CKContainer.default().publicCloudDatabase
@@ -26,7 +26,7 @@ class EventController {
     var fetchedEvents: [Event] = []
     var createdEvent: Event?
     
-// MARK: - CRUD
+    // MARK: - CRUD
     
     func createEventWith(name: String, eventImage: Data, dataAndTime: Date, description: String, venue: String, artist: [User], completion: @escaping (Bool) -> Void) {
         
@@ -35,10 +35,10 @@ class EventController {
             if let error = error {
                 print("Error fetching current recordID while creating event. Error : \(error.localizedDescription)")
                 completion(false) ;  return }
-                
-                guard let creatorRecordID = creatorRecordID else { completion(false) ; return }
-                
-                let refToCreatorID = CKReference(recordID: creatorRecordID, action: .deleteSelf)
+            
+            guard let creatorRecordID = creatorRecordID else { completion(false) ; return }
+            
+            let refToCreatorID = CKReference(recordID: creatorRecordID, action: .deleteSelf)
             
             
             
@@ -59,9 +59,9 @@ class EventController {
             
             // Initializing event
             let event = Event(name: name, eventImage: eventImage, dateAndTime: dataAndTime, description: description, venue: venue, creatorID: refToCreatorID, coordinate: eventCoordinate)
-                
             
-                // Saving event
+            
+            // Saving event
             self.save(event: event, completion: { (success) in
                 if success {
                     completion(true)
@@ -82,8 +82,6 @@ class EventController {
         let minLatitudePredicate = NSPredicate(format: "latitude > %f", userLocation.coordinate.latitude - 0.724)
         let minLongitudePredicate = NSPredicate(format: "longitude > %f", userLocation.coordinate.longitude - 0.724)
         let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [maxLatitudePredicate, maxLongitudePredicate, minLatitudePredicate, minLongitudePredicate])
-
-
 
         
         let query = CKQuery(recordType: "Event", predicate: compoundPredicate)
