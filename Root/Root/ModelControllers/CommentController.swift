@@ -30,11 +30,16 @@ class CommentController {
     
     }
     
-    func fetchCommentsForCurrent(event: Event) {
+    func fetchCommentsForCurrent(event: Event, comment: Comment) {
         
-//        let predicate = NSPredicate(format: ckRecordID, <#T##args: CVarArg...##CVarArg#>)
+    
+        let predicate = NSPredicate(format: "eventID == %@", comment.eventID )
         
-//        let query = CKQuery(recordType: "Comment", predicate: predicate)
+        let query = CKQuery(recordType: "Comment", predicate: predicate)
+        
+        publicDataBase.perform(query, inZoneWith: nil) { (records, error) in
+            
+        }
         
     }
     
