@@ -21,7 +21,6 @@ class Comment {
         self.text = text
         self.creatorID = creatorID
         self.eventID = eventID
-        
     }
     
     // CloudKit
