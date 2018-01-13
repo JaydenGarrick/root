@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Item-->
+        <!--Profile Table View Controller-->
         <scene sceneID="eM3-Ly-YLz">
             <objects>
                 <tableViewController id="ZzL-hz-Mi8" customClass="ProfileTableViewController" customModule="Root" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                         <sections>
                             <tableViewSection id="7Cw-2N-ibd">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="321" id="UQs-ZK-ROC" userLabel="Section1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="321" id="UQs-ZK-ROC" userLabel="Section1">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="321"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UQs-ZK-ROC" id="IDZ-52-d5Q">
@@ -63,7 +63,7 @@
                             </tableViewSection>
                             <tableViewSection id="nqA-4A-q9X">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="74" id="1mh-YI-FuY" userLabel="Bio/URL">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="74" id="1mh-YI-FuY" userLabel="Bio/URL">
                                         <rect key="frame" x="0.0" y="321" width="375" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1mh-YI-FuY" id="g2l-hj-2CE">
@@ -80,6 +80,9 @@
                                                     <rect key="frame" x="0.0" y="50" width="375" height="23.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                                     <state key="normal" title="(link)"/>
+                                                    <connections>
+                                                        <action selector="urlButtonTapped:" destination="ZzL-hz-Mi8" eventType="touchUpInside" id="YRh-dw-IoV"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -99,15 +102,15 @@
                             </tableViewSection>
                             <tableViewSection id="hJ2-if-joJ">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventFeedCell" rowHeight="111" id="b0z-0n-8u9" customClass="EventTableViewCell" customModule="Root" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="395" width="375" height="111"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventFeedCell" rowHeight="134" id="b0z-0n-8u9" customClass="EventTableViewCell" customModule="Root" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="395" width="375" height="134"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b0z-0n-8u9" id="dtq-fK-ZKa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Btg-oR-Rxr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="110.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventFeedCell" rowHeight="111" id="KRk-9M-5ws" customClass="EventTableViewCell" customModule="Root" customModuleProvider="target">
@@ -162,6 +165,7 @@
                                                                                         </subviews>
                                                                                     </stackView>
                                                                                 </subviews>
+                                                                                <color key="backgroundColor" red="0.99963706730000002" green="0.97668772940000004" blue="0.97943061590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             </stackView>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7w3-Kw-X4Z">
                                                                                 <rect key="frame" x="251" y="0.0" width="109" height="106"/>
@@ -206,7 +210,13 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="1RM-BF-jBo"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="1RM-BF-jBo"/>
+                    <connections>
+                        <outlet property="artistNameLabel" destination="wTB-TI-0WZ" id="hsu-Vo-MJi"/>
+                        <outlet property="artistProfileImageView" destination="VwI-rm-jHi" id="UOh-DY-iN2"/>
+                        <outlet property="bioLabel" destination="PlZ-fI-c1y" id="bKq-7s-AyU"/>
+                        <outlet property="urlButton" destination="Erc-lf-aJu" id="Z7w-Uv-HC8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LgE-Df-qzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

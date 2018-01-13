@@ -7,51 +7,66 @@
 //
 
 import UIKit
+import CloudKit
 
 class ProfileTableViewController: UITableViewController {
     
-   
-    var loggedInUser: User?
     
-//    @IBOutlet weak var artistProfileImageView: UIImageView!
-//    @IBOutlet weak var artistNameLabel: UILabel!
-//    @IBOutlet weak var bioLabel: UILabel!
+    
+    @IBOutlet weak var artistProfileImageView: UIImageView!
+    @IBOutlet weak var artistNameLabel: UILabel!
+    @IBOutlet weak var bioLabel: UILabel!
+    @IBOutlet weak var urlButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if let user = loggedInUser {
-//            guard let imageData = user.profilePicture else { return }
-//            let profilePictureImage = UIImage(data: imageData)
-//            artistProfileImageView.image = profilePictureImage
-//            artistNameLabel.text = user.username
-//            bioLabel.text = "Fix me"
-//        }
+        guard let user = UserController.shared.loggedInUser else { return }
+        guard let data = user.profilePicture else { return }
+        let image = UIImage(data: data)
+        let username = user.username
+        let websiteURLAsString = user.websiteURL
+        
+        
+        artistProfileImageView.image = image
+        artistNameLabel.text = username
+        bioLabel.text = user.bio
+        urlButton.titleLabel?.text = websiteURLAsString
+        print(user.username, user.bio)
+        
+        
+        
+        
     }
     
-    
+    @IBAction func urlButtonTapped(_ sender: UIButton) {
+        
+        
+        
+    }
     
     // MARK: - Table view data source
     
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//
-//        return 0
-//    }
+    //    override func numberOfSections(in tableView: UITableView) -> Int {
+    //
+    //        return 0
+    //    }
     
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
-//
-//
-//     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-//
-//     // Configure the cell...
-//
-//     return cell
-//     }
- 
+    //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    //        // #warning Incomplete implementation, return the number of rows
+    //        return 0
+    //    }
+    //
+    //
+    //     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    //     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+    //
+    //     // Configure the cell...
+    //
+    //     return cell
+    //     }
+    
     
     /*
      // Override to support conditional editing of the table view.
