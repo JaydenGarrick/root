@@ -41,6 +41,7 @@
                                 <rect key="frame" x="10" y="348" width="355" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.2963880565" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter location..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="alp-0p-kmJ">
@@ -59,12 +60,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfD-mW-5da" userLabel="Add Event Button">
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfD-mW-5da" userLabel="Add Profile Pic Button">
                                 <rect key="frame" x="1" y="44" width="375" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addProfilePictureButton:" destination="mYi-yj-EdP" eventType="touchUpInside" id="zVt-di-PIy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8G-tO-p7I" userLabel="Done Button">
                                 <rect key="frame" x="170" y="630" width="37" height="30"/>
@@ -77,7 +81,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Baa-h7-xfD">
-                                <rect key="frame" x="55" y="522" width="126" height="74"/>
+                                <rect key="frame" x="124" y="511" width="126" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="EeU-z9-tDP">
@@ -87,16 +91,25 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                 <color key="backgroundColor" red="0.75272142890000004" green="0.71018975969999998" blue="0.66565769910000006" alpha="0.65606271400000005" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="paintbrush"/>
+                                                <connections>
+                                                    <action selector="paintButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="byz-FG-Hp6"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nve-i1-POJ">
                                                 <rect key="frame" x="47" y="0.0" width="32" height="32"/>
                                                 <color key="backgroundColor" red="0.75272142890000004" green="0.71018975969999998" blue="0.66565769910000006" alpha="0.65606271400000005" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="musical-note-1"/>
+                                                <connections>
+                                                    <action selector="musicButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="yhN-N9-Hg8"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKq-td-vM5">
                                                 <rect key="frame" x="94" y="0.0" width="32" height="32"/>
                                                 <color key="backgroundColor" red="0.75272142890000004" green="0.71018975969999998" blue="0.66565769910000006" alpha="0.65606271400000005" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="photo-camera"/>
+                                                <connections>
+                                                    <action selector="photoButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="dEr-9T-Fti"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -107,16 +120,25 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                 <color key="backgroundColor" red="0.75272142890000004" green="0.71018975969999998" blue="0.66565769910000006" alpha="0.65606271400000005" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="poetry"/>
+                                                <connections>
+                                                    <action selector="poetryButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="zL5-Im-Jyf"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tM1-7Y-aJN">
                                                 <rect key="frame" x="47" y="0.0" width="32" height="32"/>
                                                 <color key="backgroundColor" red="0.75272142890000004" green="0.71018975969999998" blue="0.66565769910000006" alpha="0.65606271400000005" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="sketch"/>
+                                                <connections>
+                                                    <action selector="sketchButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="2uc-rM-Z8R"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wt-xI-eQF">
                                                 <rect key="frame" x="94" y="0.0" width="32" height="32"/>
                                                 <color key="backgroundColor" red="0.75272142890000004" green="0.71018975969999998" blue="0.66565769910000006" alpha="0.65606271400000005" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="ceramic"/>
+                                                <connections>
+                                                    <action selector="ceramicButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="WHL-YD-RX2"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -129,6 +151,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter date/time..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="piR-Pm-bZd">
+                                <rect key="frame" x="11" y="593" width="355" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.2963880565" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.99963706731796265" green="0.9766877293586731" blue="0.97943061590194702" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="HgF-pN-lUa"/>
@@ -140,6 +170,7 @@
                         <outlet property="nameOfArtistLabel" destination="Abf-dJ-ahW" id="BE8-g2-K2o"/>
                         <outlet property="timeDateTextField" destination="AnC-xq-PJO" id="DRf-di-rFR"/>
                         <outlet property="titleOfEventTextField" destination="QeD-3f-ir6" id="xLM-DQ-84l"/>
+                        <outlet property="typeOfEventTextField" destination="piR-Pm-bZd" id="ncb-lb-bqa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6eH-Og-5lS" userLabel="First Responder" sceneMemberID="firstResponder"/>
