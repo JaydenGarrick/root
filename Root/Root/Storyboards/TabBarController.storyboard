@@ -52,7 +52,7 @@
         <scene sceneID="Yq1-Bp-WKg">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" id="nDX-K9-gWC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="N3y-Kl-DtV"/>
+                    <tabBarItem key="tabBarItem" title="Profile" id="N3y-Kl-DtV"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KcP-wO-nGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
