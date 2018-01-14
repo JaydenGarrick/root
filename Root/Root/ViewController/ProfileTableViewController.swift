@@ -11,10 +11,15 @@ import CloudKit
 
 class ProfileTableViewController: UITableViewController {
     
+    // MARK: - Properties
+    var user: User?
+    
+    // MARK: - IBOutlets
     
     
-    @IBOutlet weak var artistProfileImageView: UIImageView!
-    @IBOutlet weak var artistNameLabel: UILabel!
+    @IBOutlet weak var barButtonItem: UIBarButtonItem!
+    @IBOutlet weak var userProfilePictureImageView: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
     @IBOutlet weak var urlButton: UIButton!
     
@@ -22,36 +27,77 @@ class ProfileTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let user = UserController.shared.loggedInUser else { return }
-        guard let data = user.profilePicture else { return }
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        
+        let font = UIFont.systemFont(ofSize: 33)
+        barButtonItem.setTitleTextAttributes([NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): font], for: .normal)
+        barButtonItem.setTitleTextAttributes([NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): font], for: .selected)
+        
+        
+        guard let user = UserController.shared.loggedInUser,
+            let data = user.profilePicture else { return }
+        
+        self.user = user
+        
         let image = UIImage(data: data)
         let username = user.username
         let websiteURLAsString = user.websiteURL
         
-        
-        artistProfileImageView.image = image
-        artistNameLabel.text = username
+        userProfilePictureImageView.image = image
+        usernameLabel.text = username
         bioLabel.text = user.bio
-        urlButton.titleLabel?.text = websiteURLAsString
+        urlButton.setTitle(websiteURLAsString, for: .normal)
         print(user.username, user.bio)
-        
-        
         
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.userProfilePictureImageView.layer.cornerRadius = self.userProfilePictureImageView.frame.size.width / 2
+        self.userProfilePictureImageView.clipsToBounds = true
+        
+    }
+    
+    @IBAction func editProfileButtonTapped(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let editProfileAlertAction = UIAlertAction(title: "Edit Profile", style: .default) { (action) in
+            let createAccountStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+            let editProfileTableViewController = createAccountStoryboard.instantiateViewController(withIdentifier: "editProfileTVC")
+//
+             self.present(editProfileTableViewController, animated: true, completion: nil)
+        }
+        let logOutAlertAction = UIAlertAction(title: "Log Out", style: .destructive) { (action) in
+            
+        }
+        alertController.addAction(editProfileAlertAction)
+        alertController.addAction(logOutAlertAction)
+        present(alertController, animated: true, completion: nil)
+        
+    }
+    
     @IBAction func urlButtonTapped(_ sender: UIButton) {
+        guard let user = self.user else { return }
+        guard let url = URL(string: user.websiteURL) else { return }
         
         
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
         
     }
     
     // MARK: - Table view data source
     
-    //    override func numberOfSections(in tableView: UITableView) -> Int {
-    //
-    //        return 0
-    //    }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        guard let user = self.user else { return 0 }
+        if user.isArtist == true {
+            return 3
+        } else if user.isArtist == false {
+            return 2
+        }
+            return 0
+        }
     
     //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     //        // #warning Incomplete implementation, return the number of rows
