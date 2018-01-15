@@ -87,7 +87,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7w-yR-pxz">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="0.0"/>
-                                                <color key="backgroundColor" red="0.75272142890000004" green="0.71018975969999998" blue="0.66565769910000006" alpha="0.65606271400000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
                                                 <state key="normal" image="paintbrush"/>
                                                 <connections>
                                                     <action selector="paintButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="byz-FG-Hp6"/>
@@ -95,7 +95,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nve-i1-POJ">
                                                 <rect key="frame" x="47" y="0.0" width="32" height="0.0"/>
-                                                <color key="backgroundColor" red="0.75272142890000004" green="0.71018975969999998" blue="0.66565769910000006" alpha="0.65606271400000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
                                                 <state key="normal" image="musical-note-1"/>
                                                 <connections>
                                                     <action selector="musicButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="yhN-N9-Hg8"/>
@@ -103,7 +103,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKq-td-vM5">
                                                 <rect key="frame" x="94" y="0.0" width="32" height="0.0"/>
-                                                <color key="backgroundColor" red="0.75272142890000004" green="0.71018975969999998" blue="0.66565769910000006" alpha="0.65606271400000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
                                                 <state key="normal" image="photo-camera"/>
                                                 <connections>
                                                     <action selector="photoButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="dEr-9T-Fti"/>
@@ -116,7 +116,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wo4-2Q-Lwd">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="0.0"/>
-                                                <color key="backgroundColor" red="0.75272142890000004" green="0.71018975969999998" blue="0.66565769910000006" alpha="0.65606271400000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
                                                 <state key="normal" image="poetry"/>
                                                 <connections>
                                                     <action selector="poetryButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="zL5-Im-Jyf"/>
@@ -124,7 +124,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tM1-7Y-aJN">
                                                 <rect key="frame" x="47" y="0.0" width="32" height="0.0"/>
-                                                <color key="backgroundColor" red="0.75272142890000004" green="0.71018975969999998" blue="0.66565769910000006" alpha="0.65606271400000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
                                                 <state key="normal" image="sketch"/>
                                                 <connections>
                                                     <action selector="sketchButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="2uc-rM-Z8R"/>
@@ -132,7 +132,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wt-xI-eQF">
                                                 <rect key="frame" x="94" y="0.0" width="32" height="0.0"/>
-                                                <color key="backgroundColor" red="0.75272142890000004" green="0.71018975969999998" blue="0.66565769910000006" alpha="0.65606271400000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
                                                 <state key="normal" image="ceramic"/>
                                                 <connections>
                                                     <action selector="ceramicButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="WHL-YD-RX2"/>

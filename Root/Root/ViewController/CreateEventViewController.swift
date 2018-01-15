@@ -9,13 +9,17 @@
 import UIKit
 import MapKit
 
-class CreateEventViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreateEventViewController: UIViewController {
 
+    
+    // MARK: - Constants and Variables
     var profilePictureAsData: Data? = nil
     let pickerController = UIImagePickerController()
     var interests: [String] = []
     var activityIndicator = UIActivityIndicatorView()
     
+   
+    // MARK: - IBOutlets
     @IBOutlet weak var eventPictureImageView: UIImageView!
     @IBOutlet weak var nameOfArtistLabel: UILabel!
     @IBOutlet weak var titleOfEventTextField: UITextField!
@@ -24,7 +28,6 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var typeOfEventTextField: UITextField!
     @IBOutlet weak var addVenueButton: UIButton!
     @IBOutlet weak var barItem: UINavigationBar!
-    
     @IBOutlet weak var interestsTextView: UITextField!
     
     override func viewDidLoad() {
@@ -36,6 +39,10 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
 
     }
 
+   
+    
+    
+    // MARK: - IBAction Functions
     @IBAction func addProfilePictureButton(_ sender: Any) {
         
         pickerController.allowsEditing = true
@@ -44,21 +51,6 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
         present(pickerController, animated: true, completion: nil)
         
     }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        guard let profilePicture = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
-        eventPictureImageView.contentMode = .scaleAspectFit
-        eventPictureImageView.image = profilePicture
-        DispatchQueue.main.async {
-            
-            self.dismiss(animated: true, completion: nil)
-            self.eventPictureImageView.alpha = 1
-        }
-        let profilePictureAsData = UIImagePNGRepresentation(profilePicture)
-        self.profilePictureAsData = profilePictureAsData
-    }
-    
     @IBAction func paintButtonTapped(_ sender: UIButton) {
         if self.interests.contains("#paintings") {
             return
@@ -140,6 +132,7 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
     }
     
   
+    
     func updateInterestsTextView() {
         var textFieldText: String = ""
         for interest in self.interests {
@@ -156,6 +149,7 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
     }
 }
 
+// MARK: - Delegate Functions
 extension CreateEventViewController: SearchViewControllerDelegate {
     func updateLongLat(long: Double, lat: Double) {
         let geocoder = CLGeocoder()
@@ -174,6 +168,23 @@ extension CreateEventViewController: SearchViewControllerDelegate {
     }
     
     
+}
+
+// MARK: - ImagePicker Delegate and Functions
+extension CreateEventViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        guard let profilePicture = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+        eventPictureImageView.contentMode = .scaleAspectFill
+        eventPictureImageView.image = profilePicture
+        DispatchQueue.main.async {
+            
+            self.dismiss(animated: true, completion: nil)
+            self.eventPictureImageView.alpha = 1
+        }
+        let profilePictureAsData = UIImagePNGRepresentation(profilePicture)
+        self.profilePictureAsData = profilePictureAsData
+    }
 }
 
 
