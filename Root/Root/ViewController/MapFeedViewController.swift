@@ -19,9 +19,13 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     
     
     override func viewDidLoad() {
+       
         super.viewDidLoad()
         
+        guard let data = UserController.shared.loggedInUser?.profilePicture else { return }
+        guard let user = UserController.shared.loggedInUser else { return  }
         
+    
         // CoreLocation
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -29,6 +33,7 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         locationManager.startUpdatingLocation()
         
         // MapKit
+        
         mapView.delegate = self
         mapView.showAnnotations(annotations, animated: true)
         
