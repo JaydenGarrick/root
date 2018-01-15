@@ -21,9 +21,9 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
     @IBOutlet weak var userProfilePictureImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var fullNameTextField: UITextField!
-    @IBOutlet weak var bioTextView: UITextView!
-    @IBOutlet weak var websiteTextField: UITextField!
-    @IBOutlet weak var interestsTextView: UITextView!
+    @IBOutlet weak var bioTextField: UITextField!
+    @IBOutlet weak var interestsTextField: UITextField!
+    @IBOutlet weak var websiteURLTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +40,10 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
         // Set user's properties on VC
         guard let user = UserController.shared.loggedInUser,
             let data = user.profilePicture else { return }
+        
+        if user.isArtist == false {
+            websiteURLTextField.isHidden = true
+        }
         self.profilePictureAsData = data
         let image = UIImage(data: data)
         let username = user.username
@@ -51,8 +55,8 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
         userProfilePictureImageView.image = image
         usernameLabel.text = username
         fullNameTextField.text = fullName
-        bioTextView.text = user.bio
-        websiteTextField.text? = websiteURLAsString
+        bioTextField.text = user.bio
+        websiteURLTextField.text = websiteURLAsString
         
         //        interestsTextView.text =
         
@@ -61,8 +65,8 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
     override func viewWillAppear(_ animated: Bool) {
     
         // Make profile picture image round
-        self.userProfilePictureImageView.layer.cornerRadius = self.userProfilePictureImageView.frame.size.width / 2
-        self.userProfilePictureImageView.clipsToBounds = true
+//        self.userProfilePictureImageView.layer.cornerRadius = self.userProfilePictureImageView.frame.size.width / 2
+//        self.userProfilePictureImageView.clipsToBounds = true
         
     }
     
@@ -78,8 +82,8 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
         guard let user = UserController.shared.loggedInUser,
             let fullName = self.fullNameTextField.text,
             // let profilePicture
-            let bio = self.bioTextView.text,
-            let websiteURL = self.websiteTextField.text,
+            let bio = self.bioTextField.text,
+            let websiteURL = self.websiteURLTextField.text,
             let profilePicture = self.profilePictureAsData
             else { return }
         
@@ -168,7 +172,7 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
         for interest in self.interests {
             textFieldText += " \(interest)"
         }
-        interestsTextView.text = textFieldText
+        interestsTextField.text = textFieldText
     }
     
     // MARK: - Table view data source

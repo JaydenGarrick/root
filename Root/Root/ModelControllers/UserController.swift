@@ -146,7 +146,5 @@ class UserController {
         }
 
     }
-    
-    // FIXME: UPDATE USER
-    
+
 }
