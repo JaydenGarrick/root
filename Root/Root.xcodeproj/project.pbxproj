@@ -102,15 +102,15 @@
 		811F26FB20051F6400A9B47C /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				811F270320052B4300A9B47C /* CreateAccount.storyboard */,
 				811F270520052B7700A9B47C /* TabBarController.storyboard */,
-				CA1EF41A20091DFE007BD1CD /* Profile.storyboard */,
-				811F270920052E0000A9B47C /* MapFeed.storyboard */,
+				811F270320052B4300A9B47C /* CreateAccount.storyboard */,
 				811F270720052BEB00A9B47C /* ListFeed.storyboard */,
 				CAFF0D4C200681F300A3657D /* CreateEvent.storyboard */,
+				819B5F782007EDDC00106459 /* EventDetail.storyboard */,
+				811F270920052E0000A9B47C /* MapFeed.storyboard */,
+				CA1EF41A20091DFE007BD1CD /* Profile.storyboard */,
 				81EDF42020042E35006E69EA /* LaunchScreen.storyboard */,
 				811F27182005309300A9B47C /* LaunchScreenCopy.storyboard */,
-				819B5F782007EDDC00106459 /* EventDetail.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -118,8 +118,8 @@
 		811F270220052B0300A9B47C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				811F26FC20052AD100A9B47C /* Event.swift */,
 				811F26FE20052AE200A9B47C /* User.swift */,
+				811F26FC20052AD100A9B47C /* Event.swift */,
 				811F270020052AFC00A9B47C /* Comment.swift */,
 			);
 			path = Models;
@@ -128,8 +128,8 @@
 		811F271320052E6200A9B47C /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
-				811F270D20052E3E00A9B47C /* EventController.swift */,
 				811F270F20052E4D00A9B47C /* UserController.swift */,
+				811F270D20052E3E00A9B47C /* EventController.swift */,
 				811F271120052E5E00A9B47C /* CommentController.swift */,
 			);
 			path = ModelControllers;
@@ -146,17 +146,8 @@
 		819B5F732006897B00106459 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				819B5F712006839A00106459 /* MapFeedViewController.swift */,
-				B7DE16B220069053003C8126 /* WelcomeViewController.swift */,
-				B7DE16B42006908C003C8126 /* CreateUsernameVC.swift */,
-				B7DE16B6200690B6003C8126 /* CreateInterestsVC.swift */,
-				B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */,
-				CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */,
-				B7FCED802007DC7C00690301 /* ListFeedViewController.swift */,
-				CA1EF4162008045C007BD1CD /* ProfileTableViewController.swift */,
-				B7FCED82200BFA6D00690301 /* EditProfileTableViewController.swift */,
-				81943DD220097B3800A1F67C /* EventDetailTableViewController.swift */,
-				817D0510200AC8EA0096390C /* SearchViewController.swift */,
+				B7FCED84200D0CC300690301 /* OnboardingViewControllers */,
+				B7FCED85200D0CED00690301 /* UI */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -191,6 +182,31 @@
 				811F26FA20051F1400A9B47C /* Resources */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		B7FCED84200D0CC300690301 /* OnboardingViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B7DE16B220069053003C8126 /* WelcomeViewController.swift */,
+				B7DE16B42006908C003C8126 /* CreateUsernameVC.swift */,
+				B7DE16B6200690B6003C8126 /* CreateInterestsVC.swift */,
+				B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */,
+			);
+			path = OnboardingViewControllers;
+			sourceTree = "<group>";
+		};
+		B7FCED85200D0CED00690301 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B7FCED802007DC7C00690301 /* ListFeedViewController.swift */,
+				819B5F712006839A00106459 /* MapFeedViewController.swift */,
+				CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */,
+				817D0510200AC8EA0096390C /* SearchViewController.swift */,
+				81943DD220097B3800A1F67C /* EventDetailTableViewController.swift */,
+				CA1EF4162008045C007BD1CD /* ProfileTableViewController.swift */,
+				B7FCED82200BFA6D00690301 /* EditProfileTableViewController.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		CA47E0552005782B00B6222F /* Views */ = {
