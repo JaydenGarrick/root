@@ -19,6 +19,7 @@
 		811F271220052E5E00A9B47C /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F271120052E5E00A9B47C /* CommentController.swift */; };
 		811F27172005301000A9B47C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F27162005301000A9B47C /* CloudKit.framework */; };
 		811F27192005309300A9B47C /* LaunchScreenCopy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811F27182005309300A9B47C /* LaunchScreenCopy.storyboard */; };
+		817D0511200AC8EA0096390C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D0510200AC8EA0096390C /* SearchViewController.swift */; };
 		81943DD320097B3900A1F67C /* EventDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81943DD220097B3800A1F67C /* EventDetailTableViewController.swift */; };
 		819B5F722006839A00106459 /* MapFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B5F712006839A00106459 /* MapFeedViewController.swift */; };
 		819B5F752007EA5800106459 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B5F742007EA5800106459 /* extensions.swift */; };
@@ -53,6 +54,7 @@
 		811F27142005300F00A9B47C /* Root.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Root.entitlements; sourceTree = "<group>"; };
 		811F27162005301000A9B47C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		811F27182005309300A9B47C /* LaunchScreenCopy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenCopy.storyboard; sourceTree = "<group>"; };
+		817D0510200AC8EA0096390C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		81943DD220097B3800A1F67C /* EventDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewController.swift; sourceTree = "<group>"; };
 		819B5F712006839A00106459 /* MapFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeedViewController.swift; sourceTree = "<group>"; };
 		819B5F742007EA5800106459 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				CA1EF4162008045C007BD1CD /* ProfileTableViewController.swift */,
 				B7FCED82200BFA6D00690301 /* EditProfileTableViewController.swift */,
 				81943DD220097B3800A1F67C /* EventDetailTableViewController.swift */,
+				817D0510200AC8EA0096390C /* SearchViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				CA47E0572005785800B6222F /* EventTableViewCell.swift in Sources */,
 				B7DE16B320069053003C8126 /* WelcomeViewController.swift in Sources */,
 				81943DD320097B3900A1F67C /* EventDetailTableViewController.swift in Sources */,
+				817D0511200AC8EA0096390C /* SearchViewController.swift in Sources */,
 				811F271220052E5E00A9B47C /* CommentController.swift in Sources */,
 				811F271020052E4D00A9B47C /* UserController.swift in Sources */,
 				811F26FD20052AD100A9B47C /* Event.swift in Sources */,
