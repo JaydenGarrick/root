@@ -20,6 +20,7 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var barButtonItem: UIBarButtonItem!
     @IBOutlet weak var userProfilePictureImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
     @IBOutlet weak var urlButton: UIButton!
     
@@ -27,14 +28,14 @@ class ProfileTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationController?.navigationBar.isTranslucent = true
+//        self.navigationController?.view.backgroundColor = .red
         
-        let font = UIFont.systemFont(ofSize: 33)
-        barButtonItem.setTitleTextAttributes([NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): font], for: .normal)
-        barButtonItem.setTitleTextAttributes([NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): font], for: .selected)
+//        let font = UIFont.systemFont(ofSize: 33)
+//        barButtonItem.setTitleTextAttributes([NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): font], for: .normal)
+//        barButtonItem.setTitleTextAttributes([NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): font], for: .selected)
         
         
         guard let user = UserController.shared.loggedInUser,
@@ -48,6 +49,7 @@ class ProfileTableViewController: UITableViewController {
         
         userProfilePictureImageView.image = image
         usernameLabel.text = username
+        fullNameLabel.text = user.fullName
         bioLabel.text = user.bio
         urlButton.setTitle(websiteURLAsString, for: .normal)
         print(user.username, user.bio)
@@ -56,17 +58,34 @@ class ProfileTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.userProfilePictureImageView.layer.cornerRadius = self.userProfilePictureImageView.frame.size.width / 2
-        self.userProfilePictureImageView.clipsToBounds = true
-        
+//        self.userProfilePictureImageView.layer.cornerRadius = self.userProfilePictureImageView.frame.size.width / 2
+//        self.userProfilePictureImageView.clipsToBounds = true
+
+        guard let user = UserController.shared.loggedInUser,
+            let data = user.profilePicture else { return }
+
+        self.user = user
+
+        let image = UIImage(data: data)
+        let username = user.username
+        let websiteURLAsString = user.websiteURL
+
+        userProfilePictureImageView.image = image
+        usernameLabel.text = username
+        fullNameLabel.text = user.fullName
+        bioLabel.text = user.bio
+        urlButton.setTitle(websiteURLAsString, for: .normal)
+        print(user.username, user.bio)
+
+
     }
-    
+//
     @IBAction func editProfileButtonTapped(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let editProfileAlertAction = UIAlertAction(title: "Edit Profile", style: .default) { (action) in
             let createAccountStoryboard = UIStoryboard(name: "Profile", bundle: nil)
             let editProfileTableViewController = createAccountStoryboard.instantiateViewController(withIdentifier: "editProfileTVC")
-//
+
              self.present(editProfileTableViewController, animated: true, completion: nil)
         }
         let logOutAlertAction = UIAlertAction(title: "Log Out", style: .destructive) { (action) in

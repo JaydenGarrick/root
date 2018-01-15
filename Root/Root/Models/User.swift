@@ -13,7 +13,7 @@ import CloudKit
 class User {
     
     let username: String
-    let fullName: String
+    var fullName: String
     var profilePicture: Data?
     var bio: String
     var homeTown: String
@@ -22,6 +22,8 @@ class User {
     var eventsCreated: [Event] = []
     var eventsParticipatedIn: [Event] = []
     var isArtist: Bool
+    
+    var ownedEventReferences: [CKReference] = []
     
     var cloudKitRecordID: CKRecordID?
     let appleUserRef: CKReference
@@ -79,7 +81,8 @@ class User {
         self.websiteURL = websiteURL
         self.isArtist = isArtist
         self.appleUserRef = appleUserRef
-        
+        self.cloudKitRecordID = ckRecord.recordID
+        // Set the ownedEventReferences array
     }
     
 }
@@ -103,6 +106,11 @@ extension CKRecord {
         self.setValue(user.websiteURL, forKey: "websiteURL")
         self.setValue(user.isArtist, forKey: "isArtist")
         self.setValue(user.appleUserRef, forKey: "appleUserRef")
+        
+        if user.eventsCreated.count > 1 {
+            self.setValue(user.ownedEventReferences, forKey: "whatever")
+        }
+        
         
     }
     

@@ -13,14 +13,17 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
     // MARK: - Properties
     
     let pickerController = UIImagePickerController()
-    
+    var profilePictureAsData: Data? = nil
+    var interests: [String] = []
     
     // MARK: -IBOutlets
     
     @IBOutlet weak var userProfilePictureImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var bioTextView: UITextView!
-    @IBOutlet weak var websiteTextField: UITextField!
+    @IBOutlet weak var fullNameTextField: UITextField!
+    @IBOutlet weak var bioTextField: UITextField!
+    @IBOutlet weak var interestsTextField: UITextField!
+    @IBOutlet weak var websiteURLTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,26 +36,37 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
         
         pickerController.delegate = self
         
+        
         // Set user's properties on VC
         guard let user = UserController.shared.loggedInUser,
             let data = user.profilePicture else { return }
         
+        if user.isArtist == false {
+            websiteURLTextField.isHidden = true
+        }
+        self.profilePictureAsData = data
         let image = UIImage(data: data)
         let username = user.username
+        let fullName = user.fullName
         let websiteURLAsString = user.websiteURL
+        self.interests = user.interests
+        updateInterestsTextView()
         
         userProfilePictureImageView.image = image
         usernameLabel.text = username
-        bioTextView.text = user.bio
-        websiteTextField.text? = websiteURLAsString
+        fullNameTextField.text = fullName
+        bioTextField.text = user.bio
+        websiteURLTextField.text = websiteURLAsString
+        
+        //        interestsTextView.text =
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
     
         // Make profile picture image round
-        self.userProfilePictureImageView.layer.cornerRadius = self.userProfilePictureImageView.frame.size.width / 2
-        self.userProfilePictureImageView.clipsToBounds = true
+//        self.userProfilePictureImageView.layer.cornerRadius = self.userProfilePictureImageView.frame.size.width / 2
+//        self.userProfilePictureImageView.clipsToBounds = true
         
     }
     
@@ -63,21 +77,115 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
         dismiss(animated: true, completion: nil)
     }
     
+    
+    @IBAction func saveBarButtonTapped(_ sender: UIBarButtonItem) {
+        guard let user = UserController.shared.loggedInUser,
+            let fullName = self.fullNameTextField.text,
+            // let profilePicture
+            let bio = self.bioTextField.text,
+            let websiteURL = self.websiteURLTextField.text,
+            let profilePicture = self.profilePictureAsData
+            else { return }
+        
+        
+        UserController.shared.updateUser(user: user, fullName: fullName, profilePicture: profilePicture, bio: bio, homeTown: user.homeTown, interests: self.interests, websiteURL: websiteURL) { (success) in
+            DispatchQueue.main.async {
+                print("success")
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
     @IBAction func imagePickerButtonTapped(_ sender: UIButton) {
         self.present(pickerController, animated: true, completion: nil)
+    }
+    
+    @IBAction func paintButtonTapped(_ sender: UIButton) {
+        if self.interests.contains("#paintings") {
+            return
+        }
+        self.interests.append("#paintings")
+        updateInterestsTextView()
+    }
+    
+    @IBAction func musicButtonTapped(_ sender: UIButton) {
+        if self.interests.contains("#music") {
+            return
+        }
+        
+        self.interests.append("#music")
+        updateInterestsTextView()
+    }
+    
+    @IBAction func photographyButtonTapped(_ sender: UIButton) {
+        if self.interests.contains("#photography") {
+            return
+        }
+        self.interests.append("#photography")
+        updateInterestsTextView()
+    }
+    
+    @IBAction func sketchButtonTapped(_ sender: UIButton) {
+        if self.interests.contains("#sketch") {
+            return
+        }
+        interests.append("#poetry")
+        updateInterestsTextView()
+    }
+    
+    @IBAction func potteryButtonTapped(_ sender: UIButton) {
+        if self.interests.contains("#pottery") {
+            return
+        }
+        interests.append("#pottery")
+        updateInterestsTextView()
+    }
+    
+    
+    // MARK: - Image picker delegate methods
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        pickerController.allowsEditing = true
+        pickerController.sourceType = .photoLibrary
+        pickerController.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        
+        guard let profilePicture = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+        //        userProfilePictureImageView.contentMode = .scaleAspectFit
+        userProfilePictureImageView.image = profilePicture
+        
+        DispatchQueue.main.async {
+            
+            self.dismiss(animated: true, completion: nil)
+            
+        }
+        let profilePictureAsData = UIImagePNGRepresentation(profilePicture)
+        self.profilePictureAsData = profilePictureAsData
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func updateInterestsTextView() {
+        
+        var textFieldText: String = ""
+        for interest in self.interests {
+            textFieldText += " \(interest)"
+        }
+        interestsTextField.text = textFieldText
     }
     
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         
-        guard let user = UserController.shared.loggedInUser else { return 0 }
-        if user.isArtist == true {
-            return 3
-        } else if user.isArtist == false {
-            return 2
-        }
-        return 0
+//        guard let user = UserController.shared.loggedInUser else { return 0 }
+//        if user.isArtist == true {
+//            return 3
+//        } else if user.isArtist == false {
+//            return 2
+//        }
+        return 3
     }
     
 }
