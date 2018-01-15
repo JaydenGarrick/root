@@ -221,6 +221,7 @@
                     <connections>
                         <outlet property="addVenueButton" destination="EW7-ya-JFn" id="nRB-aC-d8T"/>
                         <outlet property="barItem" destination="nIQ-Tx-9VM" id="PMM-8S-Q7V"/>
+                        <outlet property="eventDescriptionTextField" destination="qCm-P7-KA5" id="ha8-lB-QzB"/>
                         <outlet property="eventPictureImageView" destination="N1R-EH-whg" id="MX8-WR-u3F"/>
                         <outlet property="interestsTextView" destination="piR-Pm-bZd" id="Brs-bU-UtP"/>
                         <outlet property="nameOfArtistLabel" destination="Abf-dJ-ahW" id="BE8-g2-K2o"/>

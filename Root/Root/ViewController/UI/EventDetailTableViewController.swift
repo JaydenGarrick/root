@@ -10,10 +10,9 @@ import UIKit
 
 class EventDetailTableViewController: UITableViewController {
 
-    var event: Event?
-    var user: User? {
+    var event: Event? {
         didSet {
-           updateViews()
+            updateViews()
         }
     }
     
@@ -24,7 +23,7 @@ class EventDetailTableViewController: UITableViewController {
         
         UserController.shared.fetchEventCreator(event: event) { (user) in
             DispatchQueue.main.async {
-                self.user = user
+                
                 
             }
         }
@@ -93,7 +92,7 @@ class EventDetailTableViewController: UITableViewController {
     */
     
     func updateViews() {
-        //FIXME: - Write updateViews function
+        
     }
 
     /*

@@ -27,7 +27,7 @@ class EventController {
     var createdEvent: Event?
     
     // MARK: - CRUD
-    func createEventWith(name: String, eventImage: Data, dataAndTime: Date, description: String, venue: String, artist: [User], completion: @escaping (Bool) -> Void) {
+    func createEventWith(name: String, eventImage: Data, dataAndTime: Date, description: String, venue: String, artist: [User], typeOfEvent: String, completion: @escaping (Bool) -> Void) {
         
         // Fetch User ID
         guard let refToCreatorID = UserController.shared.loggedInUser?.appleUserRef else { completion(false) ; return }
@@ -35,7 +35,7 @@ class EventController {
         // Geocoding venue into coordinates
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(venue, completionHandler: { (placemarks, error) in
-            let coordinate: CLLocationCoordinate2D?
+            
             
             if let error = error {
                 print("Error geocoding while creating event: \(error.localizedDescription)")
@@ -43,13 +43,12 @@ class EventController {
                 return
             }
             guard let placemarks = placemarks else { completion(false) ; return }
-            guard let tempCoordinate = placemarks.first?.location?.coordinate else { completion(false) ; return }
+            guard let coordinate = placemarks.first?.location?.coordinate else { completion(false) ; return }
             
            
-           coordinate = tempCoordinate
             
             // Initializing event
-            let event = Event(name: name, eventImage: eventImage, dateAndTime: dataAndTime, description: description, venue: venue, creatorID: refToCreatorID, coordinate: coordinate!)
+            let event = Event(name: name, eventImage: eventImage, dateAndTime: dataAndTime, description: description, venue: venue, creatorID: refToCreatorID, typeOfEvent: typeOfEvent, coordinate: coordinate)
             
             
             // Saving event

@@ -22,9 +22,7 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
        
         super.viewDidLoad()
         
-        guard let data = UserController.shared.loggedInUser?.profilePicture else { return }
-        guard let user = UserController.shared.loggedInUser else { return  }
-        
+    
     
         // CoreLocation
         locationManager.delegate = self

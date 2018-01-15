@@ -25,11 +25,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bwL-18-dG0">
-                                <rect key="frame" x="0.0" y="128" width="375" height="539"/>
+                                <rect key="frame" x="0.0" y="147" width="375" height="520"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="539" id="VrW-Oz-jra"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventFeedCell" rowHeight="111" id="Jan-IU-thF" customClass="EventTableViewCell" customModule="Root" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="111"/>
@@ -64,7 +61,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="KoR-3E-d2D">
                                                                     <rect key="frame" x="0.0" y="86" width="234" height="20"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vAf-Kl-9Kp">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poetry" translatesAutoresizingMaskIntoConstraints="NO" id="vAf-Kl-9Kp">
                                                                             <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" secondItem="vAf-Kl-9Kp" secondAttribute="height" multiplier="1:1" id="dYX-jm-z6L"/>
@@ -112,19 +109,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bdG-Ob-VMc">
-                                <rect key="frame" x="16" y="44" width="343" height="29"/>
-                                <segments>
-                                    <segment title="Local Feed"/>
-                                    <segment title="Interest Feed"/>
-                                </segments>
-                                <color key="tintColor" red="0.14117647058823529" green="0.61568627450980395" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </segmentedControl>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Xu-x4-gYR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="barTintColor" red="1" green="0.94500058890000005" blue="0.94022583959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem id="kpc-aq-dG9">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lSH-hg-tte">
+                                        <barButtonItem key="rightBarButtonItem" title="New event" id="lSH-hg-tte">
+                                            <color key="tintColor" red="0.15343365070000001" green="0.65313899519999996" blue="0.59311699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <segue destination="Q6M-eL-ORs" kind="show" id="Uj5-lQ-WCo"/>
                                             </connections>
@@ -136,36 +127,47 @@
                                 <rect key="frame" x="138" y="0.0" width="100" height="44"/>
                             </imageView>
                             <searchBar contentMode="redraw" placeholder="Filter" translatesAutoresizingMaskIntoConstraints="NO" id="R8h-Rf-94h">
-                                <rect key="frame" x="0.0" y="72" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="91" width="375" height="56"/>
+                                <color key="backgroundColor" red="0.15343365070000001" green="0.65313899519999996" blue="0.59311699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.15343365070000001" green="0.65313899519999996" blue="0.59311699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="1" green="0.94500058890000005" blue="0.94022583959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bdG-Ob-VMc">
+                                <rect key="frame" x="17" y="52" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Local Feed"/>
+                                    <segment title="Interest Feed"/>
+                                </segments>
+                                <color key="tintColor" red="0.14117647058823529" green="0.61568627450980395" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.94500058890000005" blue="0.94022583959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="0Xu-x4-gYR" firstAttribute="trailing" secondItem="R8h-Rf-94h" secondAttribute="trailing" id="9GJ-Oi-fRV"/>
-                            <constraint firstItem="0Xu-x4-gYR" firstAttribute="leading" secondItem="bwL-18-dG0" secondAttribute="leading" id="Iam-ED-CdW"/>
-                            <constraint firstItem="R8h-Rf-94h" firstAttribute="top" secondItem="bdG-Ob-VMc" secondAttribute="bottom" id="JNa-RS-eFP"/>
-                            <constraint firstItem="vdW-2Z-TdQ" firstAttribute="trailing" secondItem="bdG-Ob-VMc" secondAttribute="trailing" constant="16" id="Lkd-U9-Ods"/>
-                            <constraint firstItem="bwL-18-dG0" firstAttribute="top" secondItem="R8h-Rf-94h" secondAttribute="bottom" id="Um4-x5-Esr"/>
-                            <constraint firstItem="vdW-2Z-TdQ" firstAttribute="trailing" secondItem="Whc-9E-Xf1" secondAttribute="trailing" constant="137.5" id="VQd-25-4dN"/>
-                            <constraint firstItem="R8h-Rf-94h" firstAttribute="centerX" secondItem="S7B-VW-TK6" secondAttribute="centerX" id="W2i-H7-kNp"/>
-                            <constraint firstItem="0Xu-x4-gYR" firstAttribute="leading" secondItem="R8h-Rf-94h" secondAttribute="leading" id="Z5G-dR-dCb"/>
-                            <constraint firstAttribute="trailing" secondItem="R8h-Rf-94h" secondAttribute="trailing" id="dwb-q0-1Ou"/>
-                            <constraint firstItem="Whc-9E-Xf1" firstAttribute="top" secondItem="S7B-VW-TK6" secondAttribute="top" id="esw-eR-bIm"/>
-                            <constraint firstItem="Whc-9E-Xf1" firstAttribute="centerX" secondItem="S7B-VW-TK6" secondAttribute="centerX" id="g0T-Kb-JKw"/>
-                            <constraint firstItem="bdG-Ob-VMc" firstAttribute="leading" secondItem="vdW-2Z-TdQ" secondAttribute="leading" constant="16" id="iSK-1B-17t"/>
-                            <constraint firstItem="R8h-Rf-94h" firstAttribute="leading" secondItem="vdW-2Z-TdQ" secondAttribute="leading" id="k49-BR-IA5"/>
-                            <constraint firstItem="bdG-Ob-VMc" firstAttribute="centerX" secondItem="S7B-VW-TK6" secondAttribute="centerX" id="o1i-ow-4Q6"/>
-                            <constraint firstItem="0Xu-x4-gYR" firstAttribute="trailing" secondItem="bwL-18-dG0" secondAttribute="trailing" id="pbF-rw-jlX"/>
-                            <constraint firstItem="0Xu-x4-gYR" firstAttribute="top" secondItem="Whc-9E-Xf1" secondAttribute="top" id="qlb-9V-qaN"/>
-                            <constraint firstItem="bdG-Ob-VMc" firstAttribute="top" secondItem="Whc-9E-Xf1" secondAttribute="bottom" id="s8x-jk-t8w"/>
-                            <constraint firstItem="R8h-Rf-94h" firstAttribute="top" secondItem="bdG-Ob-VMc" secondAttribute="bottom" id="tKD-uJ-ND1"/>
-                            <constraint firstItem="Whc-9E-Xf1" firstAttribute="leading" secondItem="vdW-2Z-TdQ" secondAttribute="leading" constant="137.5" id="u3T-ZI-5Yd"/>
-                            <constraint firstItem="bdG-Ob-VMc" firstAttribute="top" secondItem="0Xu-x4-gYR" secondAttribute="bottom" id="zvD-I6-cZ1"/>
+                            <constraint firstItem="0Xu-x4-gYR" firstAttribute="leading" secondItem="S7B-VW-TK6" secondAttribute="leading" id="1Kx-Wx-FzH"/>
+                            <constraint firstItem="0Xu-x4-gYR" firstAttribute="leading" secondItem="R8h-Rf-94h" secondAttribute="leading" id="5Nw-3A-QkA"/>
+                            <constraint firstItem="0Xu-x4-gYR" firstAttribute="bottom" secondItem="Whc-9E-Xf1" secondAttribute="bottom" id="7DO-uc-dMw"/>
+                            <constraint firstItem="bdG-Ob-VMc" firstAttribute="leading" secondItem="vdW-2Z-TdQ" secondAttribute="leading" constant="17" id="HrD-03-FeG"/>
+                            <constraint firstItem="0Xu-x4-gYR" firstAttribute="top" secondItem="S7B-VW-TK6" secondAttribute="top" id="IZ4-LV-Got"/>
+                            <constraint firstItem="0Xu-x4-gYR" firstAttribute="trailing" secondItem="R8h-Rf-94h" secondAttribute="trailing" id="Ni1-t1-xO2"/>
+                            <constraint firstItem="R8h-Rf-94h" firstAttribute="top" secondItem="bdG-Ob-VMc" secondAttribute="bottom" constant="11" id="WDI-vE-GD5"/>
+                            <constraint firstItem="Whc-9E-Xf1" firstAttribute="centerX" secondItem="bdG-Ob-VMc" secondAttribute="centerX" id="ajO-kn-65N"/>
+                            <constraint firstAttribute="trailing" secondItem="0Xu-x4-gYR" secondAttribute="trailing" id="bDm-37-0JQ"/>
+                            <constraint firstItem="0Xu-x4-gYR" firstAttribute="centerX" secondItem="Whc-9E-Xf1" secondAttribute="centerX" id="bPH-hY-1WU"/>
+                            <constraint firstItem="R8h-Rf-94h" firstAttribute="leading" secondItem="bwL-18-dG0" secondAttribute="leading" id="eXy-Jx-6Mm"/>
+                            <constraint firstItem="R8h-Rf-94h" firstAttribute="trailing" secondItem="bwL-18-dG0" secondAttribute="trailing" id="iaJ-nm-0Mv"/>
+                            <constraint firstItem="bwL-18-dG0" firstAttribute="bottom" secondItem="vdW-2Z-TdQ" secondAttribute="bottom" id="qGF-Tv-1xd"/>
+                            <constraint firstItem="Whc-9E-Xf1" firstAttribute="leading" secondItem="vdW-2Z-TdQ" secondAttribute="leading" constant="138" id="sE8-Dl-SwA"/>
+                            <constraint firstItem="bwL-18-dG0" firstAttribute="top" secondItem="R8h-Rf-94h" secondAttribute="bottom" id="wCi-4g-7qK"/>
+                            <constraint firstItem="0Xu-x4-gYR" firstAttribute="top" secondItem="Whc-9E-Xf1" secondAttribute="top" id="ygr-tP-wBZ"/>
+                            <constraint firstItem="bdG-Ob-VMc" firstAttribute="top" secondItem="Whc-9E-Xf1" secondAttribute="bottom" constant="8" symbolic="YES" id="zaT-SB-bUl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vdW-2Z-TdQ"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="DfN-Qj-WJv"/>
+                    <connections>
+                        <outlet property="tableView" destination="bwL-18-dG0" id="faG-jl-B03"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sZ-qU-Q6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,5 +181,16 @@
             </objects>
             <point key="canvasLocation" x="755" y="-473"/>
         </scene>
+        <!--EventDetail-->
+        <scene sceneID="vQ7-NI-KfB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EventDetail" id="guE-es-VaN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n3E-Wf-UVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846" y="-291"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="poetry" width="32" height="32"/>
+    </resources>
 </document>

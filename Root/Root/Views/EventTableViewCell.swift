@@ -8,13 +8,20 @@
 
 import UIKit
 
+protocol EventTableViewCellDelegate : class {
+    func printStatus()
+}
+
 class EventTableViewCell: UITableViewCell {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var dateEventLabel: UILabel!
     @IBOutlet weak var typeOfArtImageView: UIImageView!
     @IBOutlet weak var typeOfArtLabel: UILabel!
     @IBOutlet weak var eventPictureImageView: UIImageView!
+    
+    weak var delegate: EventTableViewCellDelegate?
     
     
 
