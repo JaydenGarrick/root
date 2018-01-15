@@ -51,6 +51,10 @@ class UserController {
         }
     }
     
+    func updateUser() {
+        
+    }
+    
     func modifyRecords(_ records: [CKRecord], perRecordCompletion: ((_ record: CKRecord?, _ error: Error?) -> Void)?, completion: ((_ records: [CKRecord]?, _ error: Error?) -> Void)?) {
         
         let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)

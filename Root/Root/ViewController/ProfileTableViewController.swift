@@ -13,7 +13,7 @@ class ProfileTableViewController: UITableViewController {
     
     // MARK: - Properties
     var user: User?
-    
+
     // MARK: - IBOutlets
     
     
