@@ -17,14 +17,16 @@ class CreateEventViewController: UIViewController {
     let pickerController = UIImagePickerController()
     var interests: [String] = []
     var activityIndicator = UIActivityIndicatorView()
+    let datePicker = UIDatePicker()
+    var dateOfEvent: Date? = Date()
     
    
     // MARK: - IBOutlets
     @IBOutlet weak var eventPictureImageView: UIImageView!
     @IBOutlet weak var nameOfArtistLabel: UILabel!
     @IBOutlet weak var titleOfEventTextField: UITextField!
-    @IBOutlet weak var eventDescriptionTextView: UITextView!
     @IBOutlet weak var timeDateTextField: UITextField!
+    @IBOutlet weak var eventDescriptionTextField: UITextField!
     @IBOutlet weak var typeOfEventTextField: UITextField!
     @IBOutlet weak var addVenueButton: UIButton!
     @IBOutlet weak var barItem: UINavigationBar!
@@ -32,7 +34,11 @@ class CreateEventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.hideKeyboardWhenTappedAround()
+        
+        createDatePicker()
+        
         pickerController.delegate = self
         barItem.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         nameOfArtistLabel.text = UserController.shared.loggedInUser?.username
@@ -111,20 +117,25 @@ class CreateEventViewController: UIViewController {
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
         view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
+        sender.isEnabled = false
         
         guard let name = titleOfEventTextField.text,
-            let description = eventDescriptionTextView.text,
+            let description = eventDescriptionTextField.text,
             let venue = addVenueButton.titleLabel?.text,
             let eventImageData = profilePictureAsData,
+            let dateOfEvent = dateOfEvent,
+            let typeOfEvent = typeOfEventTextField.text,
         let user = UserController.shared.loggedInUser else { return }
         
         
         
-        EventController.shared.createEventWith(name: name, eventImage: eventImageData, dataAndTime: Date(), description: description, venue: venue, artist: [user]) { (success) in
+        EventController.shared.createEventWith(name: name, eventImage: eventImageData, dataAndTime: dateOfEvent, description: description, venue: venue, artist: [user], typeOfEvent: typeOfEvent) { (success) in
             if success {
                 print("Success! :)")
-                self.dismiss(animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    
+                    self.dismiss(animated: true, completion: nil)
+                }
             } else {
                 print("Failure! :(")
             }
@@ -186,6 +197,38 @@ extension CreateEventViewController: UIImagePickerControllerDelegate, UINavigati
         self.profilePictureAsData = profilePictureAsData
     }
 }
+
+// MARK: - Setting up DatePicker as keyboard for Date
+extension CreateEventViewController {
+    
+    func createDatePicker() {
+        datePicker.datePickerMode = .dateAndTime
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([doneButton], animated: true)
+        
+        timeDateTextField.inputAccessoryView = toolbar
+        timeDateTextField.inputView = datePicker
+        
+    }
+    
+    
+    @objc func donePressed() {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        let dateAsString = dateFormatter.string(from: datePicker.date)
+        timeDateTextField.text = dateAsString
+        dateOfEvent = datePicker.date
+        
+        self.view.endEditing(true)
+    }
+}
+
+
 
 
 

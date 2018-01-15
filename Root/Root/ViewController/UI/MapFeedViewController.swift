@@ -21,11 +21,6 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     override func viewDidLoad() {
        
         super.viewDidLoad()
-        
-        guard let data = UserController.shared.loggedInUser?.profilePicture else { return }
-        guard let user = UserController.shared.loggedInUser else { return  }
-        
-    
         // CoreLocation
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -35,26 +30,11 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         // MapKit
         
         mapView.delegate = self
-        mapView.showAnnotations(annotations, animated: true)
-        
-        
+        mapView.showAnnotations(EventController.shared.fetchedEvents, animated: true)
 
-        
-       
-       
     }
 
-   
-    
-
-    
-    
-    
-    
-    
-    
-    
-    // IBActions
+    // MARK: - IBActions
     @IBAction func localFeedInterestFeedToggled(_ sender: Any) {
     }
     
@@ -67,67 +47,36 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         if view == nil {
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationID")
             view.canShowCallout = true
+        } else {
+            view.annotation = annotation
         }
         
-        let detailViewButton = UIButton()
+        let detailViewButton = UIButton(frame: CGRect(x: 0, y: 0, width: 59, height: 59))
+        detailViewButton.setImage(#imageLiteral(resourceName: "calendar"), for: .normal)
         view.canShowCallout = true
         view.rightCalloutAccessoryView = detailViewButton
         view.annotation = annotation
-        detailViewButton.backgroundColor = .black
-        
+       
         return view
     }
     
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.leftCalloutAccessoryView {
+            performSegue(withIdentifier: "MapFeed SegueWay", sender: view)
+        }
+    }
     
-    
-    
-    
-    
-    
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
-
-extension MapFeedViewController {
-    
-    var annotations: [MKPointAnnotation] {
-        
-        let devMtnPin = MKPointAnnotation()
-        let coordinate1 = CLLocationCoordinate2D(latitude: 40.761836, longitude: -111.890746)
-        devMtnPin.coordinate = coordinate1
-        devMtnPin.title = "DevMountain"
-        devMtnPin.subtitle = "Where Joe is the best mentor there ever was"
-        
-        
-        let kilbyCourtPin = MKPointAnnotation()
-        let coordinate2 = CLLocationCoordinate2D(latitude: 40.752619, longitude: -111.901073)
-        kilbyCourtPin.coordinate = coordinate2
-        kilbyCourtPin.title = "Kilby Court"
-        kilbyCourtPin.subtitle = "Place where sometimes a good band plays"
-
-        let theDepotPin = MKPointAnnotation()
-        let coordinate3 = CLLocationCoordinate2D(latitude: 40.769652, longitude: -111.903051)
-        theDepotPin.coordinate = coordinate3
-        theDepotPin.title = "The Depot"
-        theDepotPin.subtitle = "suh"
-        
-        
-        
-     
-    
-        return [devMtnPin, kilbyCourtPin, theDepotPin]
+        if segue.identifier == "MapFeed SegueWay" {
+            let destinationVC = segue.destination as? EventDetailTableViewController
+            let annotationView = sender as? MKAnnotation
+            
+        }
     }
     
-    
 }
+
 
 
 

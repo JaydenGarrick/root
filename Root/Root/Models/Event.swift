@@ -18,6 +18,7 @@ class Event: NSObject, MKAnnotation {
     var venue: String
     var artists: [User] = []
     var comments: [Comment] = []
+    var typeOfEvent: String
     
     
     // CloudKit
@@ -46,14 +47,16 @@ class Event: NSObject, MKAnnotation {
         return fileURL
     }
     
-    init(name: String, eventImage: Data?, dateAndTime: Date, description: String, venue: String, creatorID: CKReference, coordinate: CLLocationCoordinate2D) {
+    init(name: String, eventImage: Data?, dateAndTime: Date, description: String, venue: String, creatorID: CKReference, typeOfEvent:String, coordinate: CLLocationCoordinate2D) {
         self.name = name
         self.eventImage = eventImage
         self.dateAndTime = dateAndTime
         self.eventDescription = description
         self.venue = venue
         self.creatorID = creatorID
+        self.typeOfEvent = typeOfEvent
         self.coordinate = coordinate
+        
     }
     
     // CloudKit
@@ -68,6 +71,7 @@ class Event: NSObject, MKAnnotation {
             let creatorID = ckRecord["creatorID"] as? CKReference,
             // FIXME: - Change CKRecord for saving
             let latitude = ckRecord["latitude"] as? Double,
+            let typeOfEvent = ckRecord["typeOfEvent"] as? String,
             let longitude = ckRecord["longitude"] as? Double else { return nil }
         
         let imageData = try? Data(contentsOf: eventImage.fileURL)
@@ -78,6 +82,7 @@ class Event: NSObject, MKAnnotation {
         self.eventDescription = description
         self.venue = venue
         self.creatorID = creatorID
+        self.typeOfEvent = typeOfEvent
         self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
     }
@@ -102,6 +107,7 @@ extension CKRecord {
         self.setValue(event.eventDescription, forKey: "eventDescription")
         self.setValue(event.venue, forKey: "venue")
         self.setValue(event.creatorID, forKey: "creatorID")
+        self.setValue(event.typeOfEvent, forKey: "typeOfEvent")
         self.setValue(event.coordinate.latitude, forKey: "latitude")
         self.setValue(event.coordinate.longitude, forKey: "longitude")
         

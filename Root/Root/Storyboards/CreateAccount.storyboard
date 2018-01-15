@@ -265,7 +265,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwO-hX-Iuu">
                                                 <rect key="frame" x="0.0" y="0.0" width="77.5" height="78.5"/>
                                                 <color key="backgroundColor" red="0.75272142887115479" green="0.71018975973129272" blue="0.66565769910812378" alpha="0.65606271404109584" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" image="paintbrush"/>
+                                                <state key="normal" image="#paintings"/>
                                                 <connections>
                                                     <action selector="paintButtonTapped:" destination="ewb-hN-XoS" eventType="touchUpInside" id="TMs-t5-34h"/>
                                                 </connections>
@@ -273,7 +273,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTn-bc-SkY">
                                                 <rect key="frame" x="92.5" y="0.0" width="77.5" height="78.5"/>
                                                 <color key="backgroundColor" red="0.75272142887115479" green="0.71018975973129272" blue="0.66565769910812378" alpha="0.65606271404109584" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" image="musical-note-1"/>
+                                                <state key="normal" image="#music"/>
                                                 <connections>
                                                     <action selector="musicButtonTapped:" destination="ewb-hN-XoS" eventType="touchUpInside" id="scX-HL-FhU"/>
                                                 </connections>
@@ -281,7 +281,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYR-jC-zEp">
                                                 <rect key="frame" x="185" y="0.0" width="77.5" height="78.5"/>
                                                 <color key="backgroundColor" red="0.75272142887115479" green="0.71018975973129272" blue="0.66565769910812378" alpha="0.65606271404109584" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" image="photo-camera"/>
+                                                <state key="normal" image="#photography"/>
                                                 <connections>
                                                     <action selector="photographyButtonTapped:" destination="ewb-hN-XoS" eventType="touchUpInside" id="0Gk-jX-6Jl"/>
                                                 </connections>
@@ -294,7 +294,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASd-TT-t6I">
                                                 <rect key="frame" x="0.0" y="0.0" width="77.5" height="78.5"/>
                                                 <color key="backgroundColor" red="0.75272142887115479" green="0.71018975973129272" blue="0.66565769910812378" alpha="0.65606271404109584" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" image="poetry"/>
+                                                <state key="normal" image="#poetry"/>
                                                 <connections>
                                                     <action selector="poetryButtonTapped:" destination="ewb-hN-XoS" eventType="touchUpInside" id="xWL-5m-Ony"/>
                                                 </connections>
@@ -302,7 +302,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zu-ob-swv">
                                                 <rect key="frame" x="92.5" y="0.0" width="77.5" height="78.5"/>
                                                 <color key="backgroundColor" red="0.75272142887115479" green="0.71018975973129272" blue="0.66565769910812378" alpha="0.65606271404109584" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" image="sketch"/>
+                                                <state key="normal" image="#sketch"/>
                                                 <connections>
                                                     <action selector="sketchButtonTapped:" destination="ewb-hN-XoS" eventType="touchUpInside" id="iv0-tN-yvW"/>
                                                 </connections>
@@ -310,7 +310,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xb9-LG-nPA">
                                                 <rect key="frame" x="185" y="0.0" width="77.5" height="78.5"/>
                                                 <color key="backgroundColor" red="0.75272142887115479" green="0.71018975973129272" blue="0.66565769910812378" alpha="0.65606271404109584" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" image="ceramic"/>
+                                                <state key="normal" image="#pottery"/>
                                                 <connections>
                                                     <action selector="potteryButtonTapped:" destination="ewb-hN-XoS" eventType="touchUpInside" id="hr9-LL-lY3"/>
                                                 </connections>
@@ -519,17 +519,17 @@
         </scene>
     </scenes>
     <resources>
+        <image name="#music" width="32" height="32"/>
+        <image name="#paintings" width="32" height="32"/>
+        <image name="#photography" width="32" height="32"/>
+        <image name="#poetry" width="32" height="32"/>
+        <image name="#pottery" width="32" height="32"/>
+        <image name="#sketch" width="32" height="32"/>
         <image name="AddProfLaunch" width="676" height="449"/>
         <image name="AddProfPicTempImage" width="141" height="142"/>
         <image name="BikePicture" width="1512" height="2016"/>
         <image name="InitialWelcomePicture" width="1224" height="1632"/>
         <image name="WhatArtInterests" width="1504" height="2256"/>
-        <image name="ceramic" width="32" height="32"/>
-        <image name="musical-note-1" width="32" height="32"/>
-        <image name="paintbrush" width="32" height="32"/>
-        <image name="photo-camera" width="32" height="32"/>
-        <image name="poetry" width="32" height="32"/>
-        <image name="sketch" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="AsZ-8i-G6U"/>
