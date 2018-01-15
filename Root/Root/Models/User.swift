@@ -13,7 +13,7 @@ import CloudKit
 class User {
     
     let username: String
-    let fullName: String
+    var fullName: String
     var profilePicture: Data?
     var bio: String
     var homeTown: String
@@ -79,6 +79,7 @@ class User {
         self.websiteURL = websiteURL
         self.isArtist = isArtist
         self.appleUserRef = appleUserRef
+        self.cloudKitRecordID = ckRecord.recordID
         
     }
     

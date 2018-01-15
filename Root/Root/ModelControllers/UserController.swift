@@ -51,8 +51,29 @@ class UserController {
         }
     }
     
-    func updateUser() {
+    func updateUser(user: User, fullName: String, profilePicture: Data?, bio: String, homeTown: String, interests: [String], websiteURL: String, completion: @escaping (Bool)-> Void) {
         
+//        let updatedUser = User(username: user.username, fullName: fullName, profilePicture: profilePicture, bio: bio, homeTown: homeTown, interests: interests, websiteURL: websiteURL, isArtist: user.isArtist, appleUserRef: user.appleUserRef)
+        user.fullName = fullName
+        user.bio = bio
+        user.interests = interests
+        user.websiteURL = websiteURL
+        user.profilePicture = profilePicture
+        
+        let updatedUserRecord = CKRecord(user: user)
+        
+        var recordsToSave: [CKRecord] = []
+        recordsToSave.append(updatedUserRecord)
+        
+        let operation = CKModifyRecordsOperation(recordsToSave: recordsToSave, recordIDsToDelete: nil)
+        operation.savePolicy = .changedKeys
+        operation.queuePriority = .high
+        operation.qualityOfService = .userInteractive
+        operation.completionBlock = {
+            self.loggedInUser = user
+            completion(true)
+        }
+        publicDataBase.add(operation)
     }
     
     func modifyRecords(_ records: [CKRecord], perRecordCompletion: ((_ record: CKRecord?, _ error: Error?) -> Void)?, completion: ((_ records: [CKRecord]?, _ error: Error?) -> Void)?) {
@@ -65,6 +86,7 @@ class UserController {
         operation.perRecordCompletionBlock = perRecordCompletion
         
         operation.modifyRecordsCompletionBlock = { (records, recordIDs, error) -> Void in
+            
             (completion?(records, error))!
         }
         
