@@ -21,46 +21,23 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.dismissKeyboard()
+        self.hideKeyboardWhenTappedAround()
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        
         
         // Delegate / DataSource
         tableView.dataSource = self
         tableView.delegate = self
         locationManager.delegate = self
         
-        UserController.shared.fetchCurrentUser { (success) in
-            if !success {
-                DispatchQueue.main.async {
-                    
-                    let createAccountStoryboard = UIStoryboard(name: "CreateAccount", bundle: nil)
-                    let welcomeViewController = createAccountStoryboard.instantiateViewController(withIdentifier: "createAccountNavController")
-                    self.present(welcomeViewController, animated: true, completion: nil)
-                    
-                }
-            } else {
-                
-                // CoreLocation
-                self.locationManager.delegate = self
-                self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-                self.locationManager.requestWhenInUseAuthorization()
-                self.locationManager.startUpdatingLocation()
-                self.getUserLocation()
-                EventController.shared.fetchEvents(usersLocation: self.usersLocation, completion: { (success) in
-                    if success {
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                        }
-        
-                        print("Success! :)")
-                    } else {
-                        print("Failure :(")
-                    }
-                })
-                print("\(String(describing: UserController.shared.loggedInUser?.cloudKitRecordID)) \(String(describing: UserController.shared.loggedInUser?.fullName)), \(String(describing: UserController.shared.loggedInUser?.appleUserRef))")
-            }
-        }
+        performFetches()
+   
     }
-    
+ 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EventDetailIdentifier" {
@@ -96,24 +73,60 @@ extension ListFeedViewController: UITableViewDelegate, UITableViewDataSource, Ev
         cell.delegate = self
         let event = EventController.shared.fetchedEvents[indexPath.row]
         let eventImage = UIImage(data: event.eventImage!)
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = .full
         
         cell.eventPictureImageView.image = eventImage
-        cell.dateEventLabel.text = "\(event.dateAndTime)"
+        cell.dateEventLabel.text = dateFormatter.string(from: event.dateAndTime)
         cell.typeOfArtLabel.text = event.typeOfEvent
         //cell.artistNameLabel.text = event.artists[0].username
         cell.artistNameLabel.text = "Fix me"
-        //FIXME : - Update so type of event is right @bottom
+        //cell.eventPictureImageView.image = UIImage(named: event.typeOfEvent)
         return cell
     }
 }
 
 
-// MARK: - Corelocation - getting users location
+// MARK: - Corelocation And Fetch - getting users location
 extension ListFeedViewController {
     func getUserLocation() {
         func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             guard let coordinate = locations.last?.coordinate else { return }
             usersLocation = coordinate
+        }
+    }
+    
+    func performFetches() {
+        UserController.shared.fetchCurrentUser { (success) in
+            if !success {
+                DispatchQueue.main.async {
+                    
+                    let createAccountStoryboard = UIStoryboard(name: "CreateAccount", bundle: nil)
+                    let welcomeViewController = createAccountStoryboard.instantiateViewController(withIdentifier: "createAccountNavController")
+                    self.present(welcomeViewController, animated: true, completion: nil)
+                    
+                }
+            } else {
+                
+                // CoreLocation
+                self.locationManager.delegate = self
+                self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                self.locationManager.requestWhenInUseAuthorization()
+                self.locationManager.startUpdatingLocation()
+                self.getUserLocation()
+                EventController.shared.fetchEvents(usersLocation: self.usersLocation, completion: { (success) in
+                    if success {
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                        print("Success! :)")
+                    } else {
+                        print("Failure :(")
+                    }
+                })
+                print("\(String(describing: UserController.shared.loggedInUser?.cloudKitRecordID)) \(String(describing: UserController.shared.loggedInUser?.fullName)), \(String(describing: UserController.shared.loggedInUser?.appleUserRef))")
+            }
         }
     }
 }

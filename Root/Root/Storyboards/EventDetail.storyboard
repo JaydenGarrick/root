@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pLO-jD-01V">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Table View Controller-->
+        <!--Event Detail Table View Controller-->
         <scene sceneID="P4v-qo-ULv">
             <objects>
-                <tableViewController id="pLO-jD-01V" sceneMemberID="viewController">
+                <tableViewController id="pLO-jD-01V" customClass="EventDetailTableViewController" customModule="Root" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Yjv-xz-zaK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                         <sections>
                             <tableViewSection id="1Xl-wf-tic">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="349" id="qhs-du-Zuy">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="349" id="qhs-du-Zuy">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="349"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qhs-du-Zuy" id="Y80-cj-HYC">
@@ -64,7 +64,7 @@
                             </tableViewSection>
                             <tableViewSection id="VdC-JZ-UEm">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="130" id="JsY-U6-Mdm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="130" id="JsY-U6-Mdm">
                                         <rect key="frame" x="0.0" y="349" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JsY-U6-Mdm" id="ha6-Sb-XpA">
@@ -116,7 +116,7 @@
                             </tableViewSection>
                             <tableViewSection id="LIX-oS-vwm">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="GBs-xn-zXR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="100" id="GBs-xn-zXR">
                                         <rect key="frame" x="0.0" y="479" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GBs-xn-zXR" id="tBa-mP-mfb">
@@ -160,7 +160,7 @@
                             </tableViewSection>
                             <tableViewSection id="RgD-cu-zBk">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="30" id="nt8-YE-ive">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="30" id="nt8-YE-ive">
                                         <rect key="frame" x="0.0" y="579" width="375" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nt8-YE-ive" id="5la-yw-eKO">
@@ -186,6 +186,16 @@
                             <outlet property="delegate" destination="pLO-jD-01V" id="as4-39-ljy"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="artistWhoCreatedEventLabel" destination="42G-EU-hY3" id="dTI-P8-P1H"/>
+                        <outlet property="artistsWhoCreatedEventImageView" destination="WdV-9Z-VtF" id="E9g-gi-DhT"/>
+                        <outlet property="dateLabel" destination="JEG-Hh-LNV" id="54N-pW-Ke8"/>
+                        <outlet property="eventDescriptionLabel" destination="wqq-rG-iU1" id="Hw0-Li-Veg"/>
+                        <outlet property="eventImageView" destination="Urp-lq-77C" id="bjw-Xh-aCd"/>
+                        <outlet property="nameOfEventLabel" destination="Heq-hC-asK" id="tXH-Ib-XA6"/>
+                        <outlet property="nameOfVenueLabel" destination="bcZ-Yb-0kt" id="Cfr-f4-w91"/>
+                        <outlet property="streetAddressLabel" destination="twL-Yi-tZF" id="nuv-jP-slf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Hz-wd-0LL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

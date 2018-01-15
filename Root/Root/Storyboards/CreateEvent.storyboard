@@ -48,7 +48,7 @@
                                     <constraint firstAttribute="height" constant="30" id="VQP-Ju-eEJ"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter date/time..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AnC-xq-PJO">
@@ -58,7 +58,7 @@
                                     <constraint firstAttribute="height" constant="30" id="zX1-pM-Xqn"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfD-mW-5da" userLabel="Add Profile Pic Button">
@@ -71,7 +71,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8G-tO-p7I" userLabel="Done Button">
-                                <rect key="frame" x="169" y="630" width="37" height="30"/>
+                                <rect key="frame" x="166" y="624" width="43" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" red="0.14117647059999999" green="0.61568627450000002" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -87,24 +88,21 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7w-yR-pxz">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="0.0"/>
-                                                <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
-                                                <state key="normal" image="paintbrush"/>
+                                                <state key="normal" image="#paintings"/>
                                                 <connections>
                                                     <action selector="paintButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="byz-FG-Hp6"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nve-i1-POJ">
                                                 <rect key="frame" x="47" y="0.0" width="32" height="0.0"/>
-                                                <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
-                                                <state key="normal" image="musical-note-1"/>
+                                                <state key="normal" image="#music"/>
                                                 <connections>
                                                     <action selector="musicButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="yhN-N9-Hg8"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKq-td-vM5">
                                                 <rect key="frame" x="94" y="0.0" width="32" height="0.0"/>
-                                                <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
-                                                <state key="normal" image="photo-camera"/>
+                                                <state key="normal" image="#photography"/>
                                                 <connections>
                                                     <action selector="photoButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="dEr-9T-Fti"/>
                                                 </connections>
@@ -116,24 +114,21 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wo4-2Q-Lwd">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="0.0"/>
-                                                <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
-                                                <state key="normal" image="poetry"/>
+                                                <state key="normal" image="#poetry"/>
                                                 <connections>
                                                     <action selector="poetryButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="zL5-Im-Jyf"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tM1-7Y-aJN">
                                                 <rect key="frame" x="47" y="0.0" width="32" height="0.0"/>
-                                                <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
-                                                <state key="normal" image="sketch"/>
+                                                <state key="normal" image="#sketch"/>
                                                 <connections>
                                                     <action selector="sketchButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="2uc-rM-Z8R"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wt-xI-eQF">
                                                 <rect key="frame" x="94" y="0.0" width="32" height="0.0"/>
-                                                <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
-                                                <state key="normal" image="ceramic"/>
+                                                <state key="normal" image="#pottery"/>
                                                 <connections>
                                                     <action selector="ceramicButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="WHL-YD-RX2"/>
                                                 </connections>
@@ -152,13 +147,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="piR-Pm-bZd">
-                                <rect key="frame" x="10" y="593" width="355" height="30"/>
+                                <rect key="frame" x="10" y="587" width="355" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.2963880565" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kKa-NO-4yu"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EW7-ya-JFn">
@@ -176,7 +171,7 @@
                                     <constraint firstAttribute="height" constant="71" id="Shq-9a-2Jk"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
@@ -286,12 +281,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="#music" width="32" height="32"/>
+        <image name="#paintings" width="32" height="32"/>
+        <image name="#photography" width="32" height="32"/>
+        <image name="#poetry" width="32" height="32"/>
+        <image name="#pottery" width="32" height="32"/>
+        <image name="#sketch" width="32" height="32"/>
         <image name="AddEventImage" width="592" height="350"/>
-        <image name="ceramic" width="32" height="32"/>
-        <image name="musical-note-1" width="32" height="32"/>
-        <image name="paintbrush" width="32" height="32"/>
-        <image name="photo-camera" width="32" height="32"/>
-        <image name="poetry" width="32" height="32"/>
-        <image name="sketch" width="32" height="32"/>
     </resources>
 </document>
