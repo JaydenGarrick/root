@@ -131,7 +131,7 @@ class UserController {
         
         let eventRefID = event.creatorID
         
-        let predicate = NSPredicate(format: "cloudKitRecordID == %@", eventRefID)
+        let predicate = NSPredicate(format: "recordID == %@", eventRefID)
         
         let query = CKQuery(recordType: "User", predicate: predicate)
         publicDataBase.perform(query, inZoneWith: nil) { (records, error) in
@@ -141,7 +141,7 @@ class UserController {
                 return
             }
             guard let records = records,
-            let fetchedUser = User(ckRecord: records[0]) else { completion(nil) ; return }
+                let fetchedUser = User(ckRecord: records[0]) else { completion(nil) ; return }
             completion(fetchedUser)
         }
 
