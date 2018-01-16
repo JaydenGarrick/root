@@ -153,8 +153,10 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
         pickerController.sourceType = .photoLibrary
         pickerController.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         
-        guard let profilePicture = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+        guard let profilePicture = info[UIImagePickerControllerOriginalImage] as? UIImage,
+        let chosenImage = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
         //        userProfilePictureImageView.contentMode = .scaleAspectFit
+        userProfilePictureImageView.image = chosenImage
         userProfilePictureImageView.image = profilePicture
         
         DispatchQueue.main.async {
