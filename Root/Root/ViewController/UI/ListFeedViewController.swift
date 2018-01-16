@@ -40,13 +40,13 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
  
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "EventDetailIdentifier" {
-//            guard let indexPath = tableView.indexPathForSelectedRow else { return }
-//            let destinationVC = segue.destination as! EventDetailTableViewController
-//            let event = EventController.shared.fetchedEvents[indexPath.row]
-//            destinationVC.event = event
-//
-//        }
+        if segue.identifier == "EventDetailIdentifier" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let destinationVC = segue.destination as! EventDetailTableViewController
+            let event = EventController.shared.fetchedEvents[indexPath.row]
+            destinationVC.event = event
+
+        }
         
     }
 

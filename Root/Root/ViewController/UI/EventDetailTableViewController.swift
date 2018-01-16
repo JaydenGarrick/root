@@ -9,7 +9,7 @@
 import UIKit
 
 class EventDetailTableViewController: UITableViewController {
-
+    
     // MARK: - IBOutlets
     @IBOutlet weak var eventImageView: UIImageView!
     @IBOutlet weak var artistsWhoCreatedEventImageView: UIImageView!
@@ -21,65 +21,73 @@ class EventDetailTableViewController: UITableViewController {
     @IBOutlet weak var dateLabel: UILabel!
     
     
-    
     // MARK: - Constants and Variables
     var event: Event?
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.hideKeyboardWhenTappedAround()
-//        guard let event = event else { return }
+        guard let event = event else { return }
         
-//        UserController.shared.fetchEventCreator(event: event) { (user) in
-//            DispatchQueue.main.async {
-//
-//
-//            }
-//        }
         
-        updateViews()
+        UserController.shared.fetchEventCreator(event: event) { (user) in
+            guard let user = user else { return }
+            self.user = user
+            
+            DispatchQueue.main.async {
+                
+                self.updateViews()
+            }
+        }
+        
     }
- 
+    
     
     
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
-
+    //
+    //    override func numberOfSections(in tableView: UITableView) -> Int {
+    //        return 0
+    //    }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
+    //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    //        return 0
+    //    }
+    
+    
+    //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    //        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+    //
+    //        // Configure the cell...
+    //
+    //        return cell
+    //    }
     
     
     
     func updateViews() {
         guard let event = event,
+            let user = self.user,
             let eventImageData = event.eventImage,
-            let eventImage = UIImage(data: eventImageData)
+            let eventImage = UIImage(data: eventImageData),
+            let userProfilePicture = user.profilePicture,
+            let userProfilePictureAsImage = UIImage(data: userProfilePicture)
             else { return }
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .full
         let date = dateFormatter.string(from: event.dateAndTime)
         
-        
         eventImageView.image = eventImage
-        eventDescriptionLabel.text = event.description
+        artistsWhoCreatedEventImageView.image = userProfilePictureAsImage
+        artistWhoCreatedEventLabel.text = user.username
+        nameOfEventLabel.text = event.name
+        eventDescriptionLabel.text = event.eventDescription
         nameOfVenueLabel.text = event.venue
         streetAddressLabel.text = event.venue
         dateLabel.text = date
     }
-
+    
 }
