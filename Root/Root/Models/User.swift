@@ -67,8 +67,8 @@ class User {
             let interests = ckRecord["interests"] as? [String],
             let websiteURL = ckRecord["websiteURL"] as? String,
             let isArtist = ckRecord["isArtist"] as? Bool,
-            let appleUserRef = ckRecord["appleUserRef"] as? CKReference,
-            let ownedEventReferences = ckRecord["ownedEventReferences"] as? [CKReference]
+            let appleUserRef = ckRecord["appleUserRef"] as? CKReference
+//            let ownedEventReferences = ckRecord["ownedEventReferences"] as? [CKReference]
             else { return nil }
         
         let photoData = try? Data(contentsOf: profilePicture.fileURL)
@@ -84,7 +84,7 @@ class User {
         self.appleUserRef = appleUserRef
         self.cloudKitRecordID = ckRecord.recordID
         // Set the ownedEventReferences array
-        self.ownedEventReferences = ownedEventReferences
+//        self.ownedEventReferences = ownedEventReferences
     }
     
 }
@@ -108,10 +108,10 @@ extension CKRecord {
         self.setValue(user.websiteURL, forKey: "websiteURL")
         self.setValue(user.isArtist, forKey: "isArtist")
         self.setValue(user.appleUserRef, forKey: "appleUserRef")
-        
-        if user.eventsCreated.count > 1 {
-            self.setValue(user.ownedEventReferences, forKey: "ownedEventReferences")
-        }
+
+//        if user.eventsCreated.count > 1 {
+//            self.setValue(user.ownedEventReferences, forKey: "ownedEventReferences")
+//        }
         
         
     }
