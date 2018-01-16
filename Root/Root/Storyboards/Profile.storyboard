@@ -370,7 +370,7 @@
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUQ-M2-NlZ">
                                                                             <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                             <color key="backgroundColor" red="1" green="0.94467028141552445" blue="0.88566760990499416" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <state key="normal" image="paintbrush"/>
+                                                                            <state key="normal" image="#paintings"/>
                                                                             <connections>
                                                                                 <action selector="paintButtonTapped:" destination="uV8-cY-D4m" eventType="touchUpInside" id="Op8-Uh-90O"/>
                                                                             </connections>
@@ -378,7 +378,7 @@
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbG-3E-EQU">
                                                                             <rect key="frame" x="58" y="0.0" width="32" height="32"/>
                                                                             <color key="backgroundColor" red="1" green="0.94467028141552445" blue="0.88566760990499416" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <state key="normal" image="musical-note-1"/>
+                                                                            <state key="normal" image="#music"/>
                                                                             <connections>
                                                                                 <action selector="musicButtonTapped:" destination="uV8-cY-D4m" eventType="touchUpInside" id="sse-fe-Kr8"/>
                                                                             </connections>
@@ -386,7 +386,7 @@
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8W-ZV-sdz">
                                                                             <rect key="frame" x="116" y="0.0" width="32" height="32"/>
                                                                             <color key="backgroundColor" red="1" green="0.94467028141552445" blue="0.88566760990499416" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <state key="normal" image="photo-camera"/>
+                                                                            <state key="normal" image="#photography"/>
                                                                             <connections>
                                                                                 <action selector="photographyButtonTapped:" destination="uV8-cY-D4m" eventType="touchUpInside" id="ji4-1Y-gBE"/>
                                                                             </connections>
@@ -399,7 +399,7 @@
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhH-ms-Jrg">
                                                                             <rect key="frame" x="0.0" y="0.0" width="39.5" height="32"/>
                                                                             <color key="backgroundColor" red="1" green="0.94467028141552445" blue="0.88566760990499416" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <state key="normal" image="poetry"/>
+                                                                            <state key="normal" image="#poetry"/>
                                                                             <connections>
                                                                                 <action selector="sketchButtonTapped:" destination="uV8-cY-D4m" eventType="touchUpInside" id="gxy-vd-p9z"/>
                                                                             </connections>
@@ -407,7 +407,7 @@
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zat-h2-DXi">
                                                                             <rect key="frame" x="54.5" y="0.0" width="39" height="32"/>
                                                                             <color key="backgroundColor" red="1" green="0.94467028141552445" blue="0.88566760990499416" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <state key="normal" image="sketch"/>
+                                                                            <state key="normal" image="#sketch"/>
                                                                             <connections>
                                                                                 <action selector="potteryButtonTapped:" destination="uV8-cY-D4m" eventType="touchUpInside" id="TcX-ap-kYu"/>
                                                                             </connections>
@@ -415,7 +415,7 @@
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cc-5r-knl">
                                                                             <rect key="frame" x="108.5" y="0.0" width="39.5" height="32"/>
                                                                             <color key="backgroundColor" red="1" green="0.94467028141552445" blue="0.88566760990499416" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <state key="normal" image="ceramic"/>
+                                                                            <state key="normal" image="#pottery"/>
                                                                         </button>
                                                                     </subviews>
                                                                 </stackView>
@@ -515,11 +515,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ceramic" width="32" height="32"/>
-        <image name="musical-note-1" width="32" height="32"/>
-        <image name="paintbrush" width="32" height="32"/>
-        <image name="photo-camera" width="32" height="32"/>
-        <image name="poetry" width="32" height="32"/>
-        <image name="sketch" width="32" height="32"/>
+        <image name="#music" width="32" height="32"/>
+        <image name="#paintings" width="32" height="32"/>
+        <image name="#photography" width="32" height="32"/>
+        <image name="#poetry" width="32" height="32"/>
+        <image name="#pottery" width="32" height="32"/>
+        <image name="#sketch" width="32" height="32"/>
     </resources>
 </document>

@@ -146,5 +146,12 @@ class UserController {
         }
 
     }
+    
+    func fetchEventsFor(user: User) {
+//        let events =
+//        let predicate = NSPredicate(format: "events == %@",)
+//        let query = CKQuery(recordType: "User", predicate: predicate)
+        
+    }
 
 }
