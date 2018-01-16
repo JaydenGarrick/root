@@ -28,6 +28,8 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround()
+        
         // Clear navbar setup
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
