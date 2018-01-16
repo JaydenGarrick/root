@@ -59,13 +59,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v69-te-vZk">
                                 <rect key="frame" x="74" y="299" width="227" height="86"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imh-PN-RVW">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imh-PN-RVW" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="227" height="86"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                         <state key="normal" title="Art Seeker">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="hDP-Pt-0vW" kind="show" identifier="ToArtSeekerCreateUsernameSegue" id="2M2-sU-qXw"/>
                                         </connections>
@@ -87,12 +95,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XxP-yQ-wyw">
                                 <rect key="frame" x="74" y="422" width="227" height="86"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWy-y9-4oH">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWy-y9-4oH" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="227" height="86"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                         <state key="normal" title="Artist">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="hDP-Pt-0vW" kind="show" identifier="ToArtistCreateUsernameSegue" id="AsZ-8i-G6U"/>
                                         </connections>
@@ -159,7 +175,7 @@
                                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </variation>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Fullname..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hdk-gh-FMd">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Fullname..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hdk-gh-FMd" customClass="UITextFieldX" customModule="Root" customModuleProvider="target">
                                 <rect key="frame" x="74" y="272" width="227" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.55000000000000004" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -168,8 +184,14 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="users"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Username..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LQT-Ou-orN">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Username..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LQT-Ou-orN" customClass="UITextFieldX" customModule="Root" customModuleProvider="target">
                                 <rect key="frame" x="74" y="337" width="227" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.55000000000000004" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -178,8 +200,14 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="users"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter hometown..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="irk-q9-ITW">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter hometown..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="irk-q9-ITW" customClass="UITextFieldX" customModule="Root" customModuleProvider="target">
                                 <rect key="frame" x="74" y="402" width="227" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.55000000000000004" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -188,6 +216,12 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="home"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usb-Gh-L2m">
                                 <rect key="frame" x="0.0" y="614" width="375" height="36"/>
@@ -262,26 +296,50 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="eZR-kF-uG1">
                                         <rect key="frame" x="0.0" y="0.0" width="262.5" height="78.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwO-hX-Iuu">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwO-hX-Iuu" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="77.5" height="78.5"/>
                                                 <color key="backgroundColor" red="0.75272142887115479" green="0.71018975973129272" blue="0.66565769910812378" alpha="0.65606271404109584" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="#paintings"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="paintButtonTapped:" destination="ewb-hN-XoS" eventType="touchUpInside" id="TMs-t5-34h"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTn-bc-SkY">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTn-bc-SkY" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
                                                 <rect key="frame" x="92.5" y="0.0" width="77.5" height="78.5"/>
                                                 <color key="backgroundColor" red="0.75272142887115479" green="0.71018975973129272" blue="0.66565769910812378" alpha="0.65606271404109584" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="#music"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="musicButtonTapped:" destination="ewb-hN-XoS" eventType="touchUpInside" id="scX-HL-FhU"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYR-jC-zEp">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYR-jC-zEp" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
                                                 <rect key="frame" x="185" y="0.0" width="77.5" height="78.5"/>
                                                 <color key="backgroundColor" red="0.75272142887115479" green="0.71018975973129272" blue="0.66565769910812378" alpha="0.65606271404109584" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="#photography"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="photographyButtonTapped:" destination="ewb-hN-XoS" eventType="touchUpInside" id="0Gk-jX-6Jl"/>
                                                 </connections>
@@ -291,26 +349,59 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Z5G-ui-BHU">
                                         <rect key="frame" x="0.0" y="88.5" width="262.5" height="78.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASd-TT-t6I">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASd-TT-t6I" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="77.5" height="78.5"/>
                                                 <color key="backgroundColor" red="0.75272142887115479" green="0.71018975973129272" blue="0.66565769910812378" alpha="0.65606271404109584" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="#poetry"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="poetryButtonTapped:" destination="ewb-hN-XoS" eventType="touchUpInside" id="xWL-5m-Ony"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zu-ob-swv">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zu-ob-swv" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
                                                 <rect key="frame" x="92.5" y="0.0" width="77.5" height="78.5"/>
                                                 <color key="backgroundColor" red="0.75272142887115479" green="0.71018975973129272" blue="0.66565769910812378" alpha="0.65606271404109584" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="#sketch"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="sketchButtonTapped:" destination="ewb-hN-XoS" eventType="touchUpInside" id="iv0-tN-yvW"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xb9-LG-nPA">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xb9-LG-nPA" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
                                                 <rect key="frame" x="185" y="0.0" width="77.5" height="78.5"/>
                                                 <color key="backgroundColor" red="0.75272142887115479" green="0.71018975973129272" blue="0.66565769910812378" alpha="0.65606271404109584" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="#pottery"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="potteryButtonTapped:" destination="ewb-hN-XoS" eventType="touchUpInside" id="hr9-LL-lY3"/>
                                                 </connections>
@@ -454,7 +545,7 @@
                                     <action selector="addProfPictButtonTapped:" destination="CcV-up-0J1" eventType="touchUpInside" id="3Gp-XO-Fu0"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddProfPicTempImage" translatesAutoresizingMaskIntoConstraints="NO" id="LlF-ir-zFa" userLabel="Prof Picture">
+                            <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddProfPicTempImage" translatesAutoresizingMaskIntoConstraints="NO" id="LlF-ir-zFa" userLabel="Prof Picture" customClass="UIImageViewX" customModule="Root" customModuleProvider="target">
                                 <rect key="frame" x="117" y="216" width="142.5" height="140"/>
                             </imageView>
                         </subviews>
@@ -530,6 +621,8 @@
         <image name="BikePicture" width="1512" height="2016"/>
         <image name="InitialWelcomePicture" width="1224" height="1632"/>
         <image name="WhatArtInterests" width="1504" height="2256"/>
+        <image name="home" width="64" height="64"/>
+        <image name="users" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="AsZ-8i-G6U"/>
