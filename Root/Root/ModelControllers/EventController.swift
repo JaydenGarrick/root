@@ -30,12 +30,12 @@ class EventController {
     func createEventWith(name: String, eventImage: Data, dataAndTime: Date, description: String, venue: String, artist: [User], typeOfEvent: String, completion: @escaping (Bool) -> Void) {
         
         // Fetch User ID
-        guard let refToCreatorID = UserController.shared.loggedInUser?.appleUserRef else { completion(false) ; return }
-    
+//        guard let refToCreatorID = UserController.shared.loggedInUser?.appleUserRef else { completion(false) ; return }
+        guard let userRecordID = UserController.shared.loggedInUser?.cloudKitRecordID else { completion(false) ; return }
+        let refToCreator = CKReference(recordID: userRecordID, action: .none)
         // Geocoding venue into coordinates
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(venue, completionHandler: { (placemarks, error) in
-            
             
             if let error = error {
                 print("Error geocoding while creating event: \(error.localizedDescription)")
@@ -48,7 +48,7 @@ class EventController {
            
             
             // Initializing event
-            let event = Event(name: name, eventImage: eventImage, dateAndTime: dataAndTime, description: description, venue: venue, creatorID: refToCreatorID, typeOfEvent: typeOfEvent, coordinate: coordinate)
+            let event = Event(name: name, eventImage: eventImage, dateAndTime: dataAndTime, description: description, venue: venue, creatorID: refToCreator, typeOfEvent: typeOfEvent, coordinate: coordinate)
             
             
             // Saving event

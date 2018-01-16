@@ -17,7 +17,7 @@ class UserController {
     static let shared = UserController()
     
     var loggedInUser: User?
-    
+    var eventsCreated: [Event]?
     
     func createUserWith(username: String, fullName: String, profilePicture: Data, bio: String, homeTown: String, interests: [String], websiteURL: String, isArtist: Bool, completion: @escaping (Bool) -> Void) {
         
@@ -131,7 +131,7 @@ class UserController {
         
         let eventRefID = event.creatorID
         
-        let predicate = NSPredicate(format: "appleUserRef == %@", eventRefID)
+        let predicate = NSPredicate(format: "recordID == %@", eventRefID)
         
         let query = CKQuery(recordType: "User", predicate: predicate)
         publicDataBase.perform(query, inZoneWith: nil) { (records, error) in
@@ -141,16 +141,30 @@ class UserController {
                 return
             }
             guard let records = records,
-            let fetchedUser = User(ckRecord: records[0]) else { completion(nil) ; return }
+                let fetchedUser = User(ckRecord: records[0]) else { completion(nil) ; return }
             completion(fetchedUser)
         }
 
     }
     
-    func fetchEventsFor(user: User) {
-//        let events =
-//        let predicate = NSPredicate(format: "events == %@",)
-//        let query = CKQuery(recordType: "User", predicate: predicate)
+    func fetchEventsFor(user: User, completion: @escaping (Bool) -> Void) {
+        guard let creatorID = user.cloudKitRecordID else { completion(false) ; return }
+        let predicate = NSPredicate(format: "creatorID == %@", creatorID)
+        let query = CKQuery(recordType: "Event", predicate: predicate)
+        publicDataBase.perform(query, inZoneWith: nil) { (records, error) in
+            guard let records = records else { completion(false) ; return }
+            let eventsCreated = records.flatMap({Event(ckRecord: $0)})
+            UserController.shared.eventsCreated = eventsCreated
+            
+            // Below is the translation for the flatmap above.
+//            var eventsFetched: [Event] = []
+//            for record in records {
+//                guard let event = Event(ckRecord: record) else { completion(false) ; return }
+//
+//                print(event.name)
+//            }
+               completion(true)
+        }
         
     }
 

@@ -23,18 +23,18 @@ class EventDetailTableViewController: UITableViewController {
     
     // MARK: - Constants and Variables
     var event: Event?
-    var user: User?
+    var artist: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.hideKeyboardWhenTappedAround()
-        guard let event = event else { return }
         
+        guard let event = event else { return }
         
         UserController.shared.fetchEventCreator(event: event) { (user) in
             guard let user = user else { return }
-            self.user = user
+            self.artist = user
             
             DispatchQueue.main.async {
                 
@@ -43,8 +43,6 @@ class EventDetailTableViewController: UITableViewController {
         }
         
     }
-    
-    
     
     // MARK: - Table view data source
     //
@@ -65,11 +63,18 @@ class EventDetailTableViewController: UITableViewController {
     //        return cell
     //    }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToArtistProfileSegue" {
+            guard let destinationVC = segue.destination as? ArtistProfileTableViewController,
+                let artist = self.artist
+                else { return }
+            destinationVC.artist = artist
+        }
+    }
     
     func updateViews() {
         guard let event = event,
-            let user = self.user,
+            let user = self.artist,
             let eventImageData = event.eventImage,
             let eventImage = UIImage(data: eventImageData),
             let userProfilePicture = user.profilePicture,
