@@ -31,14 +31,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <searchBar contentMode="redraw" placeholder="Filter" translatesAutoresizingMaskIntoConstraints="NO" id="R8h-Rf-94h">
-                                <rect key="frame" x="0.0" y="91" width="375" height="56"/>
-                                <color key="backgroundColor" red="0.15343365070000001" green="0.65313899519999996" blue="0.59311699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="103" width="375" height="56"/>
+                                <color key="backgroundColor" red="1" green="0.95287805800000003" blue="0.94816809889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.15343365070000001" green="0.65313899519999996" blue="0.59311699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" red="1" green="0.94500058890000005" blue="0.94022583959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bwL-18-dG0">
-                                <rect key="frame" x="0.0" y="147" width="375" height="520"/>
+                                <rect key="frame" x="0.0" y="159" width="375" height="508"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventFeedCell" rowHeight="111" id="Jan-IU-thF" customClass="EventTableViewCell" customModule="Root" customModuleProvider="target">
@@ -86,7 +86,7 @@
                                                                                 <constraint firstAttribute="width" constant="211" id="Y4q-1a-uAH"/>
                                                                                 <constraint firstAttribute="height" constant="20" id="xwE-ir-3zj"/>
                                                                             </constraints>
-                                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -124,31 +124,34 @@
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bdG-Ob-VMc">
-                                <rect key="frame" x="16" y="63" width="343" height="29"/>
+                                <rect key="frame" x="16" y="69.5" width="343" height="29"/>
                                 <segments>
                                     <segment title="Local Feed"/>
                                     <segment title="Interest Feed"/>
                                 </segments>
                                 <color key="tintColor" red="0.14117647058823529" green="0.61568627450980395" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="feedToggled:" destination="fGt-rU-QmR" eventType="valueChanged" id="gow-31-Nsk"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.94500058890000005" blue="0.94022583959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bwL-18-dG0" firstAttribute="bottom" secondItem="vdW-2Z-TdQ" secondAttribute="bottom" id="5Jj-7v-njx"/>
                             <constraint firstItem="R8h-Rf-94h" firstAttribute="trailing" secondItem="vdW-2Z-TdQ" secondAttribute="trailing" id="DFj-dr-YWy"/>
-                            <constraint firstItem="vdW-2Z-TdQ" firstAttribute="trailing" secondItem="bdG-Ob-VMc" secondAttribute="trailing" constant="16" id="HQz-LZ-5GW"/>
                             <constraint firstItem="bwL-18-dG0" firstAttribute="leading" secondItem="vdW-2Z-TdQ" secondAttribute="leading" id="Hi5-31-eoG"/>
-                            <constraint firstItem="R8h-Rf-94h" firstAttribute="top" secondItem="bdG-Ob-VMc" secondAttribute="bottom" id="N7R-1H-Mrt"/>
-                            <constraint firstItem="bdG-Ob-VMc" firstAttribute="top" secondItem="S7B-VW-TK6" secondAttribute="top" constant="63" id="R6J-Re-8gg"/>
+                            <constraint firstItem="bdG-Ob-VMc" firstAttribute="top" secondItem="vdW-2Z-TdQ" secondAttribute="top" constant="5.5" id="WCg-3C-cZ9"/>
                             <constraint firstItem="bwL-18-dG0" firstAttribute="top" secondItem="R8h-Rf-94h" secondAttribute="bottom" id="XSB-RZ-luV"/>
-                            <constraint firstItem="bdG-Ob-VMc" firstAttribute="leading" secondItem="vdW-2Z-TdQ" secondAttribute="leading" constant="16" id="cl2-c7-TBc"/>
+                            <constraint firstItem="bdG-Ob-VMc" firstAttribute="leading" secondItem="vdW-2Z-TdQ" secondAttribute="leading" constant="16" id="jJK-uK-EeW"/>
+                            <constraint firstItem="vdW-2Z-TdQ" firstAttribute="trailing" secondItem="bdG-Ob-VMc" secondAttribute="trailing" constant="16" id="kxw-Jx-ogQ"/>
                             <constraint firstItem="bwL-18-dG0" firstAttribute="trailing" secondItem="vdW-2Z-TdQ" secondAttribute="trailing" id="lDa-p8-zhk"/>
+                            <constraint firstItem="R8h-Rf-94h" firstAttribute="top" secondItem="bdG-Ob-VMc" secondAttribute="bottom" constant="5.5" id="ll4-3X-utd"/>
                             <constraint firstItem="R8h-Rf-94h" firstAttribute="leading" secondItem="vdW-2Z-TdQ" secondAttribute="leading" id="tbr-hj-ej1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vdW-2Z-TdQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="Rxd-Sq-bWa">
-                        <barButtonItem key="rightBarButtonItem" title="Add Event" id="ead-6g-SqQ">
+                        <barButtonItem key="rightBarButtonItem" title="Create Event" id="ead-6g-SqQ">
                             <color key="tintColor" red="0.15343365070000001" green="0.65313899519999996" blue="0.59311699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="Q6M-eL-ORs" kind="show" id="NLO-Ze-sXp"/>
@@ -156,6 +159,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="createEventButton" destination="ead-6g-SqQ" id="cfB-fR-Aw5"/>
                         <outlet property="tableView" destination="bwL-18-dG0" id="faG-jl-B03"/>
                     </connections>
                 </viewController>

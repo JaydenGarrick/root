@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SnellRoundhand.ttc">
+            <string>SnellRoundhand-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -18,15 +23,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Copy of launch screen " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfU-0w-jOH">
-                                <rect key="frame" x="57" y="230" width="245" height="188"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="tsb-Bl-qZV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Root" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idg-K6-seM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="-2" height="2"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Idg-K6-seM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3MX-gg-TKF"/>
+                            <constraint firstItem="tsb-Bl-qZV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="G4K-EB-ivj"/>
+                            <constraint firstItem="Idg-K6-seM" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Knn-sP-HbZ"/>
+                            <constraint firstItem="tsb-Bl-qZV" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Lz2-Tg-fIK"/>
+                            <constraint firstItem="tsb-Bl-qZV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="eDI-N8-Rum"/>
+                            <constraint firstItem="Idg-K6-seM" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="s9H-0h-EgQ"/>
+                            <constraint firstItem="tsb-Bl-qZV" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tqf-xL-DBe"/>
+                            <constraint firstItem="Idg-K6-seM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wOs-7l-GcX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -35,4 +54,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchScreen" width="375" height="667"/>
+    </resources>
 </document>

@@ -13,6 +13,7 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     
     // Location Manager
     let locationManager = CLLocationManager()
+    var eventToPass: Event?
     
     // IBOutlets
     @IBOutlet weak var mapView: MKMapView!
@@ -21,6 +22,17 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     override func viewDidLoad() {
        
         super.viewDidLoad()
+        
+        // Customizing Navigation bar
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        
+        if UserController.shared.loggedInUser?.isArtist == false {
+            self.navigationController?.navigationBar.isHidden = true
+        }
+        
         // CoreLocation
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -62,17 +74,22 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
         if control == view.rightCalloutAccessoryView {
-            //performSegue(withIdentifier: "MapFeed SegueWay", sender: view)
-            print("Working!")
+            if let event = view.annotation as? Event {
+                
+                self.eventToPass = event
+                print(eventToPass?.name)
+                performSegue(withIdentifier: "MapFeedSegue", sender: self)
+            }
         }
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "MapFeed SegueWay" {
-//            let destinationVC = segue.destination as? EventDetailTableViewController
-//            let annotationView = sender as? MKAnnotation
+        if segue.identifier == "MapFeedSegue" {
+            let destinationVC = segue.destination as? EventDetailTableViewController
+            destinationVC?.event = eventToPass
             
         }
     }
