@@ -38,10 +38,15 @@ class ProfileTableViewController: UITableViewController {
 //        barButtonItem.setTitleTextAttributes([NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): font], for: .selected)
         
         
+        
         guard let user = UserController.shared.loggedInUser,
             let data = user.profilePicture else { return }
         
         self.user = user
+        
+        UserController.shared.fetchEventsFor(user: user) { (success) in
+            
+        }
         
         let image = UIImage(data: data)
         let username = user.username

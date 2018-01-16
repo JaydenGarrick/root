@@ -19,11 +19,13 @@ class User {
     var homeTown: String
     var interests: [String]
     var websiteURL: String
-    var eventsCreated: [Event] = []
-    var eventsParticipatedIn: [Event] = []
     var isArtist: Bool
+    //    var eventsCreated: [Event] = []
+    //    var eventsParticipatedIn: [Event] = []
     
-    var ownedEventReferences: [CKReference] = []
+    // Not MVP - use this when "participated in" feature added
+//    var eventsParticipatedInRefs: [CKReference] = []
+    
     
     var cloudKitRecordID: CKRecordID?
     let appleUserRef: CKReference
