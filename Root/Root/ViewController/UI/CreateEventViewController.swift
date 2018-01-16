@@ -50,6 +50,7 @@ class CreateEventViewController: UIViewController {
     
     // MARK: - IBAction Functions
     @IBAction func addProfilePictureButton(_ sender: Any) {
+            
         
         pickerController.allowsEditing = true
         pickerController.sourceType = .photoLibrary
@@ -185,7 +186,10 @@ extension CreateEventViewController: SearchViewControllerDelegate {
 extension CreateEventViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        guard let profilePicture = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+        guard let profilePicture = info[UIImagePickerControllerOriginalImage] as? UIImage,
+        let chosenImage = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
+        
+        eventPictureImageView.image = chosenImage
         eventPictureImageView.contentMode = .scaleAspectFill
         eventPictureImageView.image = profilePicture
         DispatchQueue.main.async {

@@ -89,9 +89,12 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
       
-        guard let profilePicture = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+        guard let profilePicture = info[UIImagePickerControllerOriginalImage] as? UIImage,
+        let chosenImage = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
+        
+        profilePictureImageView.image = chosenImage
         profilePictureImageView.contentMode = .scaleAspectFit
-        profilePictureImageView.image = profilePicture
+        //profilePictureImageView.image = profilePicture
         DispatchQueue.main.async {
             
             self.dismiss(animated: true, completion: nil)
