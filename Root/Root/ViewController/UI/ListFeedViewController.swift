@@ -12,17 +12,23 @@ import MapKit
 class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
 
     
+    // MARK: - Constants and Variables
+    
     // CoreLocation
     let locationManager = CLLocationManager()
     var usersLocation = CLLocationCoordinate2D()
     
     // IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var createEventButton: UIBarButtonItem!
+    
+    // MARK: - ViewDidLoad / ViewWillAppear
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
+       
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
@@ -37,8 +43,23 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
         performFetches()
    
     }
+    
+    // MARK - IBActions
+    
+    @IBAction func feedToggled(_ sender: UISegmentedControl) {
+//        if sender.selectedSegmentIndex == 1 {
+//            var interestArray: [Event] = []
+//            for event in EventController.shared.fetchedEvents {
+//                if event.typeOfEvent == UserController.shared.loggedInUser?.interests
+//            }
+//        }
+    }
+    
+  
+    
  
     // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EventDetailIdentifier" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
@@ -80,9 +101,8 @@ extension ListFeedViewController: UITableViewDelegate, UITableViewDataSource, Ev
         cell.eventPictureImageView.image = eventImage
         cell.dateEventLabel.text = dateFormatter.string(from: event.dateAndTime)
         cell.typeOfArtLabel.text = event.typeOfEvent
-        //cell.artistNameLabel.text = event.artists[0].username
-        cell.artistNameLabel.text = "Fix me"
-        //cell.eventPictureImageView.image = UIImage(named: event.typeOfEvent)
+        cell.artistNameLabel.text = event.name
+        cell.typeOfArtImageView.image = UIImage(named: event.typeOfEvent)
         return cell
     }
 }
@@ -119,6 +139,10 @@ extension ListFeedViewController {
                     if success {
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
+                            if UserController.shared.loggedInUser?.isArtist == false {
+                                self.navigationController?.navigationBar.isHidden = true
+                            }
+                            
                         }
                         print("Success! :)")
                     } else {

@@ -74,7 +74,7 @@ class EventController {
         let maxLongitudePredicate = NSPredicate(format: "longitude < %f", userLocation.coordinate.longitude + 0.724)
         let minLatitudePredicate = NSPredicate(format: "latitude > %f", userLocation.coordinate.latitude - 0.724)
         let minLongitudePredicate = NSPredicate(format: "longitude > %f", userLocation.coordinate.longitude - 0.724)
-        //let pred = NSPredicate(format: "appleUserRef IN %f", EventController.shared.fetchedEvents)
+       
         let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [maxLatitudePredicate, maxLongitudePredicate, minLatitudePredicate, minLongitudePredicate])
         
         

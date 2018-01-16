@@ -189,7 +189,7 @@ extension CreateEventViewController: UIImagePickerControllerDelegate, UINavigati
         eventPictureImageView.contentMode = .scaleAspectFill
         eventPictureImageView.image = profilePicture
         DispatchQueue.main.async {
-            
+
             self.dismiss(animated: true, completion: nil)
             self.eventPictureImageView.alpha = 1
         }
