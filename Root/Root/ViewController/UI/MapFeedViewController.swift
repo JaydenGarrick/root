@@ -28,7 +28,6 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         locationManager.startUpdatingLocation()
         
         // MapKit
-        
         mapView.delegate = self
         mapView.showAnnotations(EventController.shared.fetchedEvents, animated: true)
 
@@ -42,6 +41,7 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     
     // MARK: - Mapkit Delegate functions
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard let annotation = annotation as? Event else { return nil }
         var view: MKAnnotationView! = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationID")
         
         if view == nil {
@@ -53,6 +53,7 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         
         let detailViewButton = UIButton(frame: CGRect(x: 0, y: 0, width: 59, height: 59))
         detailViewButton.setImage(#imageLiteral(resourceName: "calendar"), for: .normal)
+        
         view.canShowCallout = true
         view.rightCalloutAccessoryView = detailViewButton
         view.annotation = annotation
@@ -61,16 +62,17 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        if control == view.leftCalloutAccessoryView {
-            performSegue(withIdentifier: "MapFeed SegueWay", sender: view)
+        if control == view.rightCalloutAccessoryView {
+            //performSegue(withIdentifier: "MapFeed SegueWay", sender: view)
+            print("Working!")
         }
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MapFeed SegueWay" {
-            let destinationVC = segue.destination as? EventDetailTableViewController
-            let annotationView = sender as? MKAnnotation
+//            let destinationVC = segue.destination as? EventDetailTableViewController
+//            let annotationView = sender as? MKAnnotation
             
         }
     }

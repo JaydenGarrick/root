@@ -23,24 +23,22 @@ class EventDetailTableViewController: UITableViewController {
     
     
     // MARK: - Constants and Variables
-    var event: Event? {
-        didSet {
-            updateViews()
-        }
-    }
+    var event: Event?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.hideKeyboardWhenTappedAround()
-        guard let event = event else { return }
+//        guard let event = event else { return }
         
-        UserController.shared.fetchEventCreator(event: event) { (user) in
-            DispatchQueue.main.async {
-                
-                
-            }
-        }
+//        UserController.shared.fetchEventCreator(event: event) { (user) in
+//            DispatchQueue.main.async {
+//
+//
+//            }
+//        }
+        
+        updateViews()
     }
  
     
@@ -64,18 +62,19 @@ class EventDetailTableViewController: UITableViewController {
         return cell
     }
     
-
-   
+    
+    
     func updateViews() {
         guard let event = event,
-        let eventImageData = event.eventImage else { return }
+            let eventImageData = event.eventImage,
+            let eventImage = UIImage(data: eventImageData)
+            else { return }
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .full
         let date = dateFormatter.string(from: event.dateAndTime)
         
         
-        let eventImage = UIImage(data: eventImageData)
         eventImageView.image = eventImage
         eventDescriptionLabel.text = event.description
         nameOfVenueLabel.text = event.venue

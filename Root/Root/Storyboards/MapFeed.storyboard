@@ -61,7 +61,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Z5-zS-7Xq"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="lhA-qa-Jl1"/>
+                    <tabBarItem key="tabBarItem" selectedImage="mapmarker" systemItem="mostRecent" id="lhA-qa-Jl1">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="mapView" destination="vcy-Sp-KFn" id="ra3-7f-6MI"/>
                     </connections>
@@ -79,4 +81,7 @@
             <point key="canvasLocation" x="1341" y="206"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mapmarker" width="16" height="16"/>
+    </resources>
 </document>

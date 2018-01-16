@@ -34,6 +34,8 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         
+        self.hideKeyboardWhenTappedAround()
+        
         pickerController.delegate = self
         
         
