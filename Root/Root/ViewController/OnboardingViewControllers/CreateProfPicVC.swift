@@ -18,6 +18,8 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
     var username: String?
     var hometown: String?
     var interests: [String]?
+    var activityIndicator = UIActivityIndicatorView()
+
     
     var profilePictureAsData: Data? = nil
     let pickerController = UIImagePickerController()
@@ -60,6 +62,13 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
     }
     
     @IBAction func doneButtonTapped(_ sender: UIButton) {
+        
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        sender.isEnabled = false
         
         guard let username = self.username,
             let fullName = self.fullName,
