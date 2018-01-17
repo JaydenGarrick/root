@@ -185,12 +185,12 @@ extension CreateEventViewController: SearchViewControllerDelegate {
 extension CreateEventViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        guard let profilePicture = info[UIImagePickerControllerOriginalImage] as? UIImage,
-        let chosenImage = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
+        guard let profilePicture = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
+       // let chosenImage = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
         
-        eventPictureImageView.image = chosenImage
-        eventPictureImageView.contentMode = .scaleAspectFill
         eventPictureImageView.image = profilePicture
+        eventPictureImageView.contentMode = .scaleAspectFill
+        //eventPictureImageView.image = profilePicture
         DispatchQueue.main.async {
 
             self.dismiss(animated: true, completion: nil)
