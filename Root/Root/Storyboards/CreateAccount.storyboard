@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -547,6 +548,9 @@
                             </button>
                             <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddProfPicTempImage" translatesAutoresizingMaskIntoConstraints="NO" id="LlF-ir-zFa" userLabel="Prof Picture" customClass="UIImageViewX" customModule="Root" customModuleProvider="target">
                                 <rect key="frame" x="117" y="216" width="152.5" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LlF-ir-zFa" secondAttribute="height" multiplier="25:23" id="zOG-aS-38g"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
