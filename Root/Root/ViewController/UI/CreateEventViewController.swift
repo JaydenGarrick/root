@@ -40,7 +40,6 @@ class CreateEventViewController: UIViewController {
         createDatePicker()
         
         pickerController.delegate = self
-        barItem.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         nameOfArtistLabel.text = UserController.shared.loggedInUser?.username
 
     }
