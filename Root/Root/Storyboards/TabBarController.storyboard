@@ -34,7 +34,7 @@
         <scene sceneID="vkG-0A-NSq">
             <objects>
                 <viewControllerPlaceholder storyboardName="ListFeed" id="PN3-82-3p5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gOd-jU-GdH"/>
+                    <tabBarItem key="tabBarItem" title="Feed" id="gOd-jU-GdH"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHa-4H-eBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,7 +44,7 @@
         <scene sceneID="LAV-PP-Z9m">
             <objects>
                 <viewControllerPlaceholder storyboardName="MapFeed" id="Std-7a-rCT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="DVT-NT-HYV"/>
+                    <tabBarItem key="tabBarItem" title="Map" id="DVT-NT-HYV"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkK-RH-OKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
