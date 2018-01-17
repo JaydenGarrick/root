@@ -29,6 +29,8 @@
 		81707D12200EA57600478691 /* UIViewAnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81707D08200EA57600478691 /* UIViewAnchorPoint.swift */; };
 		81707D13200EA57600478691 /* UISliderX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81707D09200EA57600478691 /* UISliderX.swift */; };
 		81707D14200EA57600478691 /* UITextFieldX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81707D0A200EA57600478691 /* UITextFieldX.swift */; };
+		81707D19200FAA4800478691 /* FetchItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81707D18200FAA4800478691 /* FetchItemsViewController.swift */; };
+		81707D1B200FAA7600478691 /* ListFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81707D1A200FAA7600478691 /* ListFeedViewController.swift */; };
 		817D0511200AC8EA0096390C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D0510200AC8EA0096390C /* SearchViewController.swift */; };
 		81943DD320097B3900A1F67C /* EventDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81943DD220097B3800A1F67C /* EventDetailTableViewController.swift */; };
 		819B5F722006839A00106459 /* MapFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B5F712006839A00106459 /* MapFeedViewController.swift */; };
@@ -41,7 +43,6 @@
 		B7DE16B52006908C003C8126 /* CreateUsernameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B42006908C003C8126 /* CreateUsernameVC.swift */; };
 		B7DE16B7200690B6003C8126 /* CreateInterestsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B6200690B6003C8126 /* CreateInterestsVC.swift */; };
 		B7DE16B9200690D8003C8126 /* CreateProfPicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */; };
-		B7FCED812007DC7C00690301 /* ListFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FCED802007DC7C00690301 /* ListFeedViewController.swift */; };
 		B7FCED83200BFA6D00690301 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FCED82200BFA6D00690301 /* EditProfileTableViewController.swift */; };
 		B7FCED87200E6BB100690301 /* ArtistProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FCED86200E6BB100690301 /* ArtistProfileTableViewController.swift */; };
 		CA1EF4172008045C007BD1CD /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1EF4162008045C007BD1CD /* ProfileTableViewController.swift */; };
@@ -75,6 +76,8 @@
 		81707D08200EA57600478691 /* UIViewAnchorPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAnchorPoint.swift; sourceTree = "<group>"; };
 		81707D09200EA57600478691 /* UISliderX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISliderX.swift; sourceTree = "<group>"; };
 		81707D0A200EA57600478691 /* UITextFieldX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldX.swift; sourceTree = "<group>"; };
+		81707D18200FAA4800478691 /* FetchItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchItemsViewController.swift; sourceTree = "<group>"; };
+		81707D1A200FAA7600478691 /* ListFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFeedViewController.swift; sourceTree = "<group>"; };
 		817D0510200AC8EA0096390C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		81943DD220097B3800A1F67C /* EventDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewController.swift; sourceTree = "<group>"; };
 		819B5F712006839A00106459 /* MapFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeedViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +92,6 @@
 		B7DE16B42006908C003C8126 /* CreateUsernameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameVC.swift; sourceTree = "<group>"; };
 		B7DE16B6200690B6003C8126 /* CreateInterestsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInterestsVC.swift; sourceTree = "<group>"; };
 		B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfPicVC.swift; sourceTree = "<group>"; };
-		B7FCED802007DC7C00690301 /* ListFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFeedViewController.swift; sourceTree = "<group>"; };
 		B7FCED82200BFA6D00690301 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		B7FCED86200E6BB100690301 /* ArtistProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistProfileTableViewController.swift; sourceTree = "<group>"; };
 		CA1EF4162008045C007BD1CD /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				B7DE16B42006908C003C8126 /* CreateUsernameVC.swift */,
 				B7DE16B6200690B6003C8126 /* CreateInterestsVC.swift */,
 				B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */,
+				81707D18200FAA4800478691 /* FetchItemsViewController.swift */,
 			);
 			path = OnboardingViewControllers;
 			sourceTree = "<group>";
@@ -238,7 +241,7 @@
 		B7FCED85200D0CED00690301 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B7FCED802007DC7C00690301 /* ListFeedViewController.swift */,
+				81707D1A200FAA7600478691 /* ListFeedViewController.swift */,
 				819B5F712006839A00106459 /* MapFeedViewController.swift */,
 				CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */,
 				817D0510200AC8EA0096390C /* SearchViewController.swift */,
@@ -346,11 +349,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				81707D0C200EA57600478691 /* UIViewX.swift in Sources */,
-				B7FCED812007DC7C00690301 /* ListFeedViewController.swift in Sources */,
 				CA47E0572005785800B6222F /* EventTableViewCell.swift in Sources */,
 				B7DE16B320069053003C8126 /* WelcomeViewController.swift in Sources */,
+				81707D19200FAA4800478691 /* FetchItemsViewController.swift in Sources */,
 				81943DD320097B3900A1F67C /* EventDetailTableViewController.swift in Sources */,
 				817D0511200AC8EA0096390C /* SearchViewController.swift in Sources */,
+				81707D1B200FAA7600478691 /* ListFeedViewController.swift in Sources */,
 				811F271220052E5E00A9B47C /* CommentController.swift in Sources */,
 				811F271020052E4D00A9B47C /* UserController.swift in Sources */,
 				811F26FD20052AD100A9B47C /* Event.swift in Sources */,

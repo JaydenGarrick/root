@@ -37,6 +37,17 @@
                                 <color key="barTintColor" red="1" green="0.94500058890000005" blue="0.94022583959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bdG-Ob-VMc">
+                                <rect key="frame" x="16" y="69.5" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Local Feed"/>
+                                    <segment title="Interest Feed"/>
+                                </segments>
+                                <color key="tintColor" red="0.14117647058823529" green="0.61568627450980395" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="feedToggled:" destination="fGt-rU-QmR" eventType="valueChanged" id="gow-31-Nsk"/>
+                                </connections>
+                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bwL-18-dG0">
                                 <rect key="frame" x="0.0" y="159" width="375" height="508"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,9 +107,6 @@
                                                         </stackView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SvM-bd-miA">
                                                             <rect key="frame" x="256" y="0.0" width="109" height="109.5"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="109" id="f9S-nj-P0d"/>
-                                                            </constraints>
                                                         </imageView>
                                                     </subviews>
                                                 </stackView>
@@ -123,17 +131,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bdG-Ob-VMc">
-                                <rect key="frame" x="16" y="69.5" width="343" height="29"/>
-                                <segments>
-                                    <segment title="Local Feed"/>
-                                    <segment title="Interest Feed"/>
-                                </segments>
-                                <color key="tintColor" red="0.14117647058823529" green="0.61568627450980395" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="feedToggled:" destination="fGt-rU-QmR" eventType="valueChanged" id="gow-31-Nsk"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.94500058890000005" blue="0.94022583959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

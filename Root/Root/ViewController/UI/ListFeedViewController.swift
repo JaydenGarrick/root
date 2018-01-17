@@ -40,7 +40,7 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
         tableView.delegate = self
         locationManager.delegate = self
         
-        performFetches()
+        
    
     }
     
@@ -85,7 +85,6 @@ extension ListFeedViewController: UITableViewDelegate, UITableViewDataSource, Ev
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return EventController.shared.fetchedEvents.count
     }
     
@@ -108,49 +107,4 @@ extension ListFeedViewController: UITableViewDelegate, UITableViewDataSource, Ev
 }
 
 
-// MARK: - Corelocation And Fetch - getting users location
-extension ListFeedViewController {
-    func getUserLocation() {
-        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            guard let coordinate = locations.last?.coordinate else { return }
-            usersLocation = coordinate
-        }
-    }
-    
-    func performFetches() {
-        UserController.shared.fetchCurrentUser { (success) in
-            if !success {
-                DispatchQueue.main.async {
-                    
-                    let createAccountStoryboard = UIStoryboard(name: "CreateAccount", bundle: nil)
-                    let welcomeViewController = createAccountStoryboard.instantiateViewController(withIdentifier: "createAccountNavController")
-                    self.present(welcomeViewController, animated: true, completion: nil)
-                    
-                }
-            } else {
-                
-                // CoreLocation
-                self.locationManager.delegate = self
-                self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-                self.locationManager.requestWhenInUseAuthorization()
-                self.locationManager.startUpdatingLocation()
-                self.getUserLocation()
-                EventController.shared.fetchEvents(usersLocation: self.usersLocation, completion: { (success) in
-                    if success {
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                            if UserController.shared.loggedInUser?.isArtist == false {
-                                self.navigationController?.navigationBar.isHidden = true
-                            }
-                            
-                        }
-                        print("Success! :)")
-                    } else {
-                        print("Failure :(")
-                    }
-                })
-                print("\(String(describing: UserController.shared.loggedInUser?.cloudKitRecordID)) \(String(describing: UserController.shared.loggedInUser?.fullName)), \(String(describing: UserController.shared.loggedInUser?.appleUserRef))")
-            }
-        }
-    }
-}
+
