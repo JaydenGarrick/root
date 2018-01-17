@@ -54,13 +54,21 @@ class FetchItemsViewController: UIViewController, CLLocationManagerDelegate {
                 
                 EventController.shared.fetchEvents(usersLocation: self.usersLocation, completion: { (success) in
                     if success {
+                        // Current date minus 24 hours
+                        let dateToCheckFromAsDouble = Date().timeIntervalSince1970 + 86400 // 86400 represents 24 hours
+                        let dateToCheckFrom = Date(timeIntervalSince1970: dateToCheckFromAsDouble)
+                        for event in EventController.shared.fetchedEvents {
+                            if event.dateAndTime > dateToCheckFrom  {
+                                EventController.shared.eventHappeningWithinTwentyFour.append(event)
+                            }
+                        }
                             self.performSegue(withIdentifier: "LaunchSegue", sender: self)
                             if UserController.shared.loggedInUser?.isArtist == false {
                                 self.navigationController?.navigationBar.isHidden = true
                             }
-                        print("Success! :)")
+                        print("Success fetching events within 50 miles! :)")
                     } else {
-                        print("Failure :(")
+                        print("Failure fetching events within 50 miles. :(")
                     }
                 })
                 print("\(String(describing: UserController.shared.loggedInUser?.cloudKitRecordID)) \(String(describing: UserController.shared.loggedInUser?.fullName)), \(String(describing: UserController.shared.loggedInUser?.appleUserRef))")
