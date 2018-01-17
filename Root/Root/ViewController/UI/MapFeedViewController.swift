@@ -47,6 +47,7 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         if localFeed == true {
             mapView.showAnnotations(EventController.shared.eventHappeningWithinTwentyFour, animated: true)
         } else {
+            mapView.removeAnnotations(EventController.shared.eventHappeningWithinTwentyFour)
             mapView.showAnnotations(interestArray, animated: true)
 
         }
@@ -59,7 +60,7 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         
         if sender.selectedSegmentIndex == 1 {
             localFeed = false
-            for event in EventController.shared.fetchedEvents {
+            for event in EventController.shared.eventHappeningWithinTwentyFour {
                 for interest in (UserController.shared.loggedInUser?.interests)! {
                     if event.typeOfEvent.trimmingCharacters(in: .whitespaces) == interest {
                         if interestArray.isEmpty {
@@ -71,14 +72,16 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
                                 }
                             }
                         }
+                       
                         print(interestArray.count)
                     }
-                    mapView.reloadInputViews()
                 }
+                mapView.removeAnnotations(EventController.shared.eventHappeningWithinTwentyFour)
+                mapView.addAnnotations(interestArray)
             }
         } else {
             localFeed = true
-            mapView.reloadInputViews()
+           mapView.addAnnotations(EventController.shared.eventHappeningWithinTwentyFour)
         }
     }
     
