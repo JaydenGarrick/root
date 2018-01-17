@@ -14,6 +14,8 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     // Location Manager
     let locationManager = CLLocationManager()
     var eventToPass: Event?
+    var localFeed: Bool = true
+    var interestArray: [Event] = []
     
     // IBOutlets
     @IBOutlet weak var mapView: MKMapView!
@@ -22,6 +24,7 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     override func viewDidLoad() {
        
         super.viewDidLoad()
+        print("\(EventController.shared.eventHappeningWithinTwentyFour.count) is the amount of events within 24hours")
         
         // Customizing Navigation bar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -41,12 +44,45 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         
         // MapKit
         mapView.delegate = self
-        mapView.showAnnotations(EventController.shared.fetchedEvents, animated: true)
+        if localFeed == true {
+            mapView.showAnnotations(EventController.shared.eventHappeningWithinTwentyFour, animated: true)
+        } else {
+            mapView.removeAnnotations(EventController.shared.eventHappeningWithinTwentyFour)
+            mapView.showAnnotations(interestArray, animated: true)
+
+        }
 
     }
 
     // MARK: - IBActions
-    @IBAction func localFeedInterestFeedToggled(_ sender: Any) {
+   
+    @IBAction func feedToggled(_ sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 1 {
+            localFeed = false
+            for event in EventController.shared.eventHappeningWithinTwentyFour {
+                for interest in (UserController.shared.loggedInUser?.interests)! {
+                    if event.typeOfEvent.trimmingCharacters(in: .whitespaces) == interest {
+                        if interestArray.isEmpty {
+                            interestArray.append(event)
+                        } else {
+                            for interestEvent in interestArray {
+                                if event.name != interestEvent.name {
+                                    interestArray.append(event)
+                                }
+                            }
+                        }
+                       
+                        print(interestArray.count)
+                    }
+                }
+                mapView.removeAnnotations(EventController.shared.eventHappeningWithinTwentyFour)
+                mapView.addAnnotations(interestArray)
+            }
+        } else {
+            localFeed = true
+           mapView.addAnnotations(EventController.shared.eventHappeningWithinTwentyFour)
+        }
     }
     
     
