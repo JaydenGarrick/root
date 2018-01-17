@@ -29,7 +29,7 @@
                                 </segments>
                                 <color key="tintColor" red="0.14117647059999999" green="0.61568627450000002" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <action selector="localFeedInterestFeedToggled:" destination="Jlf-vO-3yB" eventType="valueChanged" id="d6g-d1-uNA"/>
+                                    <action selector="feedToggled:" destination="Jlf-vO-3yB" eventType="valueChanged" id="n72-ut-1dk"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>

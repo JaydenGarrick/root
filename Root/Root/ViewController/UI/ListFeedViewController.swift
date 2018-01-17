@@ -13,6 +13,8 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
 
     
     // MARK: - Constants and Variables
+    var interestArray: [Event] = []
+    var localFeed: Bool = true
     
     // CoreLocation
     let locationManager = CLLocationManager()
@@ -47,12 +49,30 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
     // MARK - IBActions
     
     @IBAction func feedToggled(_ sender: UISegmentedControl) {
-//        if sender.selectedSegmentIndex == 1 {
-//            var interestArray: [Event] = []
-//            for event in EventController.shared.fetchedEvents {
-//                if event.typeOfEvent == UserController.shared.loggedInUser?.interests
-//            }
-//        }
+       
+        if sender.selectedSegmentIndex == 1 {
+            localFeed = false
+            for event in EventController.shared.fetchedEvents {
+                for interest in (UserController.shared.loggedInUser?.interests)! {
+                    if event.typeOfEvent.trimmingCharacters(in: .whitespaces) == interest {
+                        if interestArray.isEmpty {
+                            interestArray.append(event)
+                        } else {
+                            for interestEvent in interestArray {
+                                if event.name != interestEvent.name {
+                                    interestArray.append(event)
+                                }
+                            }
+                        }
+                        print(interestArray.count)
+                    }
+                    tableView.reloadData()
+                }
+            }
+        } else {
+            localFeed = true
+            tableView.reloadData()
+        }
     }
     
   
@@ -85,23 +105,43 @@ extension ListFeedViewController: UITableViewDelegate, UITableViewDataSource, Ev
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return EventController.shared.fetchedEvents.count
+        if localFeed == true {
+            return EventController.shared.fetchedEvents.count
+        } else {
+            return interestArray.count
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventFeedCell", for: indexPath) as! EventTableViewCell
         cell.delegate = self
-        let event = EventController.shared.fetchedEvents[indexPath.row]
-        let eventImage = UIImage(data: event.eventImage!)
-        let dateFormatter = DateFormatter()
+        if localFeed == true {
+            let event = EventController.shared.fetchedEvents[indexPath.row]
+            let eventImage = UIImage(data: event.eventImage!)
+            let dateFormatter = DateFormatter()
+            
+            dateFormatter.dateStyle = .full
+            
+            cell.eventPictureImageView.image = eventImage
+            cell.dateEventLabel.text = dateFormatter.string(from: event.dateAndTime)
+            cell.typeOfArtLabel.text = event.typeOfEvent
+            cell.artistNameLabel.text = event.name
+            cell.typeOfArtImageView.image = UIImage(named: event.typeOfEvent)
+        } else {
+            let event = interestArray[indexPath.row]
+            let eventImage = UIImage(data: event.eventImage!)
+            let dateFormatter = DateFormatter()
+            
+            dateFormatter.dateStyle = .full
+            
+            cell.eventPictureImageView.image = eventImage
+            cell.dateEventLabel.text = dateFormatter.string(from: event.dateAndTime)
+            cell.typeOfArtLabel.text = event.typeOfEvent
+            cell.artistNameLabel.text = event.name
+            cell.typeOfArtImageView.image = UIImage(named: event.typeOfEvent)
+        }
         
-        dateFormatter.dateStyle = .full
-        
-        cell.eventPictureImageView.image = eventImage
-        cell.dateEventLabel.text = dateFormatter.string(from: event.dateAndTime)
-        cell.typeOfArtLabel.text = event.typeOfEvent
-        cell.artistNameLabel.text = event.name
-        cell.typeOfArtImageView.image = UIImage(named: event.typeOfEvent)
         return cell
     }
 }

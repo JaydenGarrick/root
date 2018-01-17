@@ -25,6 +25,7 @@ class EventController {
     // Local DataSources
     var fetchedEvents: [Event] = []
     var createdEvent: Event?
+    var eventHappeningWithinTwentyFour: [Event] = []
     
     // MARK: - CRUD
     func createEventWith(name: String, eventImage: Data, dataAndTime: Date, description: String, venue: String, artist: [User], typeOfEvent: String, completion: @escaping (Bool) -> Void) {
