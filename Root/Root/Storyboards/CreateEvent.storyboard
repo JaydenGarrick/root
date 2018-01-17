@@ -25,7 +25,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddEventImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N1R-EH-whg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                 <constraints>
@@ -41,7 +40,6 @@
                             </label>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="piR-Pm-bZd">
                                 <rect key="frame" x="10" y="598" width="355" height="24"/>
-
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.2963880565" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
@@ -60,7 +58,6 @@
                                     <action selector="doneButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="a5z-ze-bEd"/>
                                 </connections>
                             </button>
-
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Baa-h7-xfD">
                                 <rect key="frame" x="116" y="497" width="144" height="84"/>
                                 <subviews>
@@ -69,25 +66,20 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7w-yR-pxz">
                                                 <rect key="frame" x="0.0" y="0.0" width="38" height="32"/>
-
                                                 <state key="normal" image="#paintings"/>
                                                 <connections>
                                                     <action selector="paintButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="byz-FG-Hp6"/>
                                                 </connections>
                                             </button>
-
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nve-i1-POJ">
                                                 <rect key="frame" x="53" y="0.0" width="38" height="32"/>
-
                                                 <state key="normal" image="#music"/>
                                                 <connections>
                                                     <action selector="musicButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="yhN-N9-Hg8"/>
                                                 </connections>
                                             </button>
-
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKq-td-vM5">
                                                 <rect key="frame" x="106" y="0.0" width="38" height="32"/>
-
                                                 <state key="normal" image="#photography"/>
                                                 <connections>
                                                     <action selector="photoButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="dEr-9T-Fti"/>
@@ -95,31 +87,25 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fIx-nj-vq3">
                                         <rect key="frame" x="0.0" y="52" width="144" height="32"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wo4-2Q-Lwd">
                                                 <rect key="frame" x="0.0" y="0.0" width="38" height="32"/>
-
                                                 <state key="normal" image="#poetry"/>
                                                 <connections>
                                                     <action selector="poetryButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="zL5-Im-Jyf"/>
                                                 </connections>
                                             </button>
-
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tM1-7Y-aJN">
                                                 <rect key="frame" x="53" y="0.0" width="38" height="32"/>
-
                                                 <state key="normal" image="#sketch"/>
                                                 <connections>
                                                     <action selector="sketchButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="2uc-rM-Z8R"/>
                                                 </connections>
                                             </button>
-
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wt-xI-eQF">
                                                 <rect key="frame" x="106" y="0.0" width="38" height="32"/>
-
                                                 <state key="normal" image="#pottery"/>
                                                 <connections>
                                                     <action selector="ceramicButtonTapped:" destination="mYi-yj-EdP" eventType="touchUpInside" id="WHL-YD-RX2"/>
@@ -132,13 +118,11 @@
                                     <constraint firstAttribute="width" secondItem="Baa-h7-xfD" secondAttribute="height" multiplier="63:37" id="xj0-5o-sNe"/>
                                 </constraints>
                             </stackView>
-
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="dk6-IC-XeC">
                                 <rect key="frame" x="10" y="350.5" width="355" height="138.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter title of event..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QeD-3f-ir6">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="24"/>
-
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="qN8-pf-Q1w"/>
@@ -147,10 +131,8 @@
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter description of event..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qCm-P7-KA5">
                                         <rect key="frame" x="0.0" y="35" width="355" height="24"/>
-
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="0.2963880565" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="Qeg-P6-9A8"/>
@@ -159,19 +141,15 @@
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter date/time..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AnC-xq-PJO">
                                         <rect key="frame" x="0.0" y="70" width="355" height="24"/>
-
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="0.2963880565" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EW7-ya-JFn">
                                         <rect key="frame" x="0.0" y="105" width="355" height="33.5"/>
-
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                         <state key="normal" title="Add Venue"/>
                                         <connections>
@@ -192,7 +170,6 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.94500058889389038" blue="0.94022583961486816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.15343365070000001" green="0.65313899519999996" blue="0.59311699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-
                         <constraints>
                             <constraint firstItem="piR-Pm-bZd" firstAttribute="top" secondItem="Baa-h7-xfD" secondAttribute="bottom" constant="17" id="3L8-PJ-S5h"/>
                             <constraint firstItem="Baa-h7-xfD" firstAttribute="top" secondItem="dk6-IC-XeC" secondAttribute="bottom" constant="8" id="6AR-Sq-fcp"/>
@@ -224,7 +201,6 @@
                             <constraint firstItem="EfD-mW-5da" firstAttribute="trailing" secondItem="N1R-EH-whg" secondAttribute="trailing" id="th7-vG-eUL"/>
                             <constraint firstItem="dk6-IC-XeC" firstAttribute="leading" secondItem="HgF-pN-lUa" secondAttribute="leading" constant="10" id="uIM-2Q-phP"/>
                         </constraints>
-
                         <viewLayoutGuide key="safeArea" id="HgF-pN-lUa"/>
                     </view>
                     <connections>

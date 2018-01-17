@@ -39,6 +39,7 @@ class FetchItemsViewController: UIViewController, CLLocationManagerDelegate {
     
     // Performs fetches
     func performFetches() {
+        
         UserController.shared.fetchCurrentUser { (success) in
            
             if !success {
@@ -54,7 +55,7 @@ class FetchItemsViewController: UIViewController, CLLocationManagerDelegate {
                 
                 EventController.shared.fetchEvents(usersLocation: self.usersLocation, completion: { (success) in
                     if success {
-                        // Current date minus 24 hours
+                        // Current date plus 24 hours
                         let dateToCheckFromAsDouble = Date().timeIntervalSince1970 + 86400 // 86400 represents 24 hours
                         let dateToCheckFrom = Date(timeIntervalSince1970: dateToCheckFromAsDouble)
                         for event in EventController.shared.fetchedEvents {

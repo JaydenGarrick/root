@@ -34,6 +34,7 @@ class CreateEventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         
         self.hideKeyboardWhenTappedAround()
         
@@ -134,7 +135,7 @@ class CreateEventViewController: UIViewController {
                 print("Success! :)")
                 DispatchQueue.main.async {
                     
-                    self.dismiss(animated: true, completion: nil)
+                   self.navigationController?.popViewController(animated: true)
                 }
             } else {
                 print("Failure! :(")

@@ -219,6 +219,7 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="" selectedImage="user" id="5ta-IJ-azW"/>
                     <navigationItem key="navigationItem" id="FND-q5-aOQ">
                         <barButtonItem key="rightBarButtonItem" title="..." id="pzX-XX-9j7">
                             <connections>
@@ -226,6 +227,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="barButtonItem" destination="pzX-XX-9j7" id="pj2-TS-Va6"/>
                         <outlet property="bioLabel" destination="PlZ-fI-c1y" id="bKq-7s-AyU"/>
@@ -521,5 +523,6 @@
         <image name="#poetry" width="32" height="32"/>
         <image name="#pottery" width="32" height="32"/>
         <image name="#sketch" width="32" height="32"/>
+        <image name="user" width="24" height="24"/>
     </resources>
 </document>
