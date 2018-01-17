@@ -63,7 +63,7 @@
                                                     <rect key="frame" x="10" y="0.5" width="365" height="109.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4oP-uG-HOo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="256" height="109.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="234" height="109.5"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ehr-YI-b7B">
                                                                     <rect key="frame" x="0.0" y="0.0" width="97.5" height="59.5"/>
@@ -105,8 +105,8 @@
                                                                 </stackView>
                                                             </subviews>
                                                         </stackView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SvM-bd-miA">
-                                                            <rect key="frame" x="256" y="0.0" width="109" height="109.5"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SvM-bd-miA">
+                                                            <rect key="frame" x="234" y="0.0" width="131" height="109.5"/>
                                                         </imageView>
                                                     </subviews>
                                                 </stackView>

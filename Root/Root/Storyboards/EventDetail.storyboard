@@ -59,7 +59,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfY-cH-BK1">
-                                                    <rect key="frame" x="112" y="176" width="150" height="100.5"/>
+                                                    <rect key="frame" x="112" y="176" width="152.5" height="140"/>
                                                     <connections>
                                                         <segue destination="krj-CN-MsH" kind="show" identifier="ToArtistProfileSegue" id="a1h-rK-tvs"/>
                                                     </connections>
@@ -69,11 +69,11 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Urp-lq-77C" secondAttribute="trailing" id="0Zg-Z9-Du6"/>
                                                 <constraint firstItem="Heq-hC-asK" firstAttribute="centerX" secondItem="42G-EU-hY3" secondAttribute="centerX" id="1Vl-5Z-sDh"/>
-                                                <constraint firstItem="UfY-cH-BK1" firstAttribute="width" secondItem="WdV-9Z-VtF" secondAttribute="width" id="325-zq-hLQ"/>
+                                                <constraint firstItem="UfY-cH-BK1" firstAttribute="width" secondItem="WdV-9Z-VtF" secondAttribute="width" constant="2.5" id="325-zq-hLQ"/>
                                                 <constraint firstItem="Heq-hC-asK" firstAttribute="leading" secondItem="42G-EU-hY3" secondAttribute="leading" id="GPa-Xr-02E"/>
-                                                <constraint firstItem="UfY-cH-BK1" firstAttribute="height" secondItem="WdV-9Z-VtF" secondAttribute="height" id="IHh-Au-feN"/>
+                                                <constraint firstItem="UfY-cH-BK1" firstAttribute="height" secondItem="WdV-9Z-VtF" secondAttribute="height" constant="39.5" id="IHh-Au-feN"/>
                                                 <constraint firstItem="Urp-lq-77C" firstAttribute="leading" secondItem="Y80-cj-HYC" secondAttribute="leading" id="J4C-IV-oHO"/>
-                                                <constraint firstItem="UfY-cH-BK1" firstAttribute="centerY" secondItem="WdV-9Z-VtF" secondAttribute="centerY" id="WKi-nd-Hfa"/>
+                                                <constraint firstItem="UfY-cH-BK1" firstAttribute="centerY" secondItem="WdV-9Z-VtF" secondAttribute="centerY" constant="19.75" id="WKi-nd-Hfa"/>
                                                 <constraint firstItem="Urp-lq-77C" firstAttribute="top" secondItem="Y80-cj-HYC" secondAttribute="top" constant="-22" id="Xec-fZ-93K"/>
                                                 <constraint firstItem="42G-EU-hY3" firstAttribute="top" secondItem="WdV-9Z-VtF" secondAttribute="bottom" constant="14.5" id="d2k-8e-4SP"/>
                                                 <constraint firstItem="WdV-9Z-VtF" firstAttribute="centerX" secondItem="Urp-lq-77C" secondAttribute="centerX" id="hGx-yq-rPh"/>
@@ -84,7 +84,7 @@
                                                 <constraint firstItem="Heq-hC-asK" firstAttribute="top" secondItem="42G-EU-hY3" secondAttribute="bottom" constant="6" id="r2T-5d-DWy"/>
                                                 <constraint firstItem="WdV-9Z-VtF" firstAttribute="width" secondItem="Urp-lq-77C" secondAttribute="width" multiplier="0.4" id="vSI-af-bCe"/>
                                                 <constraint firstItem="WdV-9Z-VtF" firstAttribute="centerY" secondItem="Urp-lq-77C" secondAttribute="centerY" constant="123" id="w3V-fA-enj"/>
-                                                <constraint firstItem="UfY-cH-BK1" firstAttribute="centerX" secondItem="WdV-9Z-VtF" secondAttribute="centerX" id="wNI-Xe-YaJ"/>
+                                                <constraint firstItem="UfY-cH-BK1" firstAttribute="centerX" secondItem="WdV-9Z-VtF" secondAttribute="centerX" constant="0.75" id="wNI-Xe-YaJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="42G-EU-hY3" secondAttribute="trailing" constant="16" id="wc0-U2-yVq"/>
                                             </constraints>
                                         </tableViewCellContentView>
