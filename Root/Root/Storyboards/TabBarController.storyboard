@@ -34,7 +34,7 @@
         <scene sceneID="vkG-0A-NSq">
             <objects>
                 <viewControllerPlaceholder storyboardName="ListFeed" id="PN3-82-3p5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" id="gOd-jU-GdH"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="list" selectedImage="list" id="gOd-jU-GdH"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHa-4H-eBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,7 +44,7 @@
         <scene sceneID="LAV-PP-Z9m">
             <objects>
                 <viewControllerPlaceholder storyboardName="MapFeed" id="Std-7a-rCT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="DVT-NT-HYV"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" selectedImage="map" id="DVT-NT-HYV"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkK-RH-OKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,11 +54,16 @@
         <scene sceneID="Yq1-Bp-WKg">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" id="nDX-K9-gWC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="N3y-Kl-DtV"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="user" selectedImage="user" id="N3y-Kl-DtV"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KcP-wO-nGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="295" y="742"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="list" width="24" height="24"/>
+        <image name="map" width="24" height="24"/>
+        <image name="user" width="24" height="24"/>
+    </resources>
 </document>
