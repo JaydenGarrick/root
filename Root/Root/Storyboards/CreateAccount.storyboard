@@ -547,7 +547,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddProfPicTempImage" translatesAutoresizingMaskIntoConstraints="NO" id="LlF-ir-zFa" userLabel="Prof Picture" customClass="UIImageViewX" customModule="Root" customModuleProvider="target">
-                                <rect key="frame" x="117" y="216" width="152.5" height="140"/>
+                                <rect key="frame" x="112" y="216" width="152.5" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LlF-ir-zFa" secondAttribute="height" multiplier="25:23" id="zOG-aS-38g"/>
                                 </constraints>
@@ -567,19 +567,18 @@
                             <constraint firstItem="xqa-Ch-dDX" firstAttribute="height" secondItem="Ef4-1M-gRn" secondAttribute="height" multiplier="0.21" id="JI9-Hp-Yvi"/>
                             <constraint firstItem="xqa-Ch-dDX" firstAttribute="centerX" secondItem="Ef4-1M-gRn" secondAttribute="centerX" id="Nvn-fA-xQH"/>
                             <constraint firstItem="Ef4-1M-gRn" firstAttribute="leading" secondItem="fDS-0w-WVt" secondAttribute="leading" id="OBJ-8t-q95"/>
-                            <constraint firstItem="LlF-ir-zFa" firstAttribute="leading" secondItem="xqa-Ch-dDX" secondAttribute="leading" id="QpZ-ye-kgm"/>
                             <constraint firstItem="Ef4-1M-gRn" firstAttribute="top" secondItem="ch9-nA-j9H" secondAttribute="top" id="TTQ-1b-XOE"/>
                             <constraint firstItem="Ef4-1M-gRn" firstAttribute="leading" secondItem="fDS-0w-WVt" secondAttribute="leading" id="cgu-dh-mGn"/>
-                            <constraint firstItem="LlF-ir-zFa" firstAttribute="width" secondItem="xqa-Ch-dDX" secondAttribute="width" constant="10" id="dqr-gP-lsh"/>
                             <constraint firstItem="Ef4-1M-gRn" firstAttribute="trailing" secondItem="fDS-0w-WVt" secondAttribute="trailing" id="e6t-E0-TjG"/>
                             <constraint firstItem="Ef4-1M-gRn" firstAttribute="trailing" secondItem="fDS-0w-WVt" secondAttribute="trailing" id="eVd-3R-9qa"/>
+                            <constraint firstItem="xqa-Ch-dDX" firstAttribute="centerY" secondItem="LlF-ir-zFa" secondAttribute="centerY" id="gFR-gs-PlR"/>
                             <constraint firstItem="FEW-DY-282" firstAttribute="trailing" secondItem="fDS-0w-WVt" secondAttribute="trailing" id="iVc-aX-Fz7"/>
                             <constraint firstItem="Ef4-1M-gRn" firstAttribute="bottom" secondItem="fDS-0w-WVt" secondAttribute="bottom" id="iZt-DY-Cbv"/>
                             <constraint firstItem="1eo-9f-b7F" firstAttribute="leading" secondItem="fDS-0w-WVt" secondAttribute="leading" id="is7-JI-h3b"/>
                             <constraint firstItem="xqa-Ch-dDX" firstAttribute="width" secondItem="Ef4-1M-gRn" secondAttribute="width" multiplier="0.38" id="jzk-Sy-bV6"/>
                             <constraint firstItem="vLo-pp-ebQ" firstAttribute="centerX" secondItem="fDS-0w-WVt" secondAttribute="centerX" id="mBz-Dj-0km"/>
                             <constraint firstItem="LlF-ir-zFa" firstAttribute="top" secondItem="xqa-Ch-dDX" secondAttribute="top" id="plL-OH-HHa"/>
-                            <constraint firstItem="LlF-ir-zFa" firstAttribute="trailing" secondItem="xqa-Ch-dDX" secondAttribute="trailing" constant="10" id="xXJ-X5-VDI"/>
+                            <constraint firstItem="xqa-Ch-dDX" firstAttribute="centerX" secondItem="LlF-ir-zFa" secondAttribute="centerX" id="q8X-ri-FQd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fDS-0w-WVt"/>
                     </view>
