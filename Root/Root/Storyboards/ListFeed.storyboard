@@ -20,7 +20,7 @@
         <!--ListFeed-->
         <scene sceneID="EOu-G7-OLw">
             <objects>
-                <viewController title="ListFeed" id="fGt-rU-QmR" customClass="ListFeedViewController" customModule="Root" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListFeed" title="ListFeed" id="fGt-rU-QmR" customClass="ListFeedViewController" customModule="Root" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S7B-VW-TK6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,7 +181,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Na7-xw-8Oc">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="A6C-lf-sSi" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ListFeedNavController" automaticallyAdjustsScrollViewInsets="NO" id="A6C-lf-sSi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="DfN-Qj-WJv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XFl-z5-ppe">

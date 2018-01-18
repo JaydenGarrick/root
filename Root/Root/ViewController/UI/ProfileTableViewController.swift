@@ -35,12 +35,12 @@ class ProfileTableViewController: UITableViewController {
         
         self.user = user
         
-        UserController.shared.fetchEventsFor(user: user) { (success) in
-            print("Succesfully fetched the events for the user")
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+//        UserController.shared.fetchEventsFor(user: user) { (success) in
+//            print("Succesfully fetched the events for the user")
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+//        }
         
         let image = UIImage(data: data)
         let username = user.username
