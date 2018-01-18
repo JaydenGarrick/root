@@ -43,6 +43,8 @@
 		B7DE16B52006908C003C8126 /* CreateUsernameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B42006908C003C8126 /* CreateUsernameVC.swift */; };
 		B7DE16B7200690B6003C8126 /* CreateInterestsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B6200690B6003C8126 /* CreateInterestsVC.swift */; };
 		B7DE16B9200690D8003C8126 /* CreateProfPicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */; };
+		B7F9EE9F200FFAFD0049A7FD /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F9EE9E200FFAFD0049A7FD /* CommentTableViewCell.swift */; };
+		B7F9EEA1201008FC0049A7FD /* CommentsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F9EEA0201008FC0049A7FD /* CommentsTableViewDataSource.swift */; };
 		B7FCED83200BFA6D00690301 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FCED82200BFA6D00690301 /* EditProfileTableViewController.swift */; };
 		B7FCED87200E6BB100690301 /* ArtistProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FCED86200E6BB100690301 /* ArtistProfileTableViewController.swift */; };
 		CA1EF4172008045C007BD1CD /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1EF4162008045C007BD1CD /* ProfileTableViewController.swift */; };
@@ -92,6 +94,8 @@
 		B7DE16B42006908C003C8126 /* CreateUsernameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameVC.swift; sourceTree = "<group>"; };
 		B7DE16B6200690B6003C8126 /* CreateInterestsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInterestsVC.swift; sourceTree = "<group>"; };
 		B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfPicVC.swift; sourceTree = "<group>"; };
+		B7F9EE9E200FFAFD0049A7FD /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		B7F9EEA0201008FC0049A7FD /* CommentsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewDataSource.swift; sourceTree = "<group>"; };
 		B7FCED82200BFA6D00690301 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		B7FCED86200E6BB100690301 /* ArtistProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistProfileTableViewController.swift; sourceTree = "<group>"; };
 		CA1EF4162008045C007BD1CD /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 				CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */,
 				817D0510200AC8EA0096390C /* SearchViewController.swift */,
 				81943DD220097B3800A1F67C /* EventDetailTableViewController.swift */,
+				B7F9EEA0201008FC0049A7FD /* CommentsTableViewDataSource.swift */,
 				CA1EF4162008045C007BD1CD /* ProfileTableViewController.swift */,
 				B7FCED82200BFA6D00690301 /* EditProfileTableViewController.swift */,
 				B7FCED86200E6BB100690301 /* ArtistProfileTableViewController.swift */,
@@ -257,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				CA47E0562005785800B6222F /* EventTableViewCell.swift */,
+				B7F9EE9E200FFAFD0049A7FD /* CommentTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -370,6 +376,8 @@
 				811F270E20052E3E00A9B47C /* EventController.swift in Sources */,
 				81707D0D200EA57600478691 /* UILabelX.swift in Sources */,
 				819B5F722006839A00106459 /* MapFeedViewController.swift in Sources */,
+				B7F9EEA1201008FC0049A7FD /* CommentsTableViewDataSource.swift in Sources */,
+				B7F9EE9F200FFAFD0049A7FD /* CommentTableViewCell.swift in Sources */,
 				819B5F752007EA5800106459 /* extensions.swift in Sources */,
 				81707D13200EA57600478691 /* UISliderX.swift in Sources */,
 				B7DE16B52006908C003C8126 /* CreateUsernameVC.swift in Sources */,

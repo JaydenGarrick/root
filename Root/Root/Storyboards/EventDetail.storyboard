@@ -29,7 +29,7 @@
                         <sections>
                             <tableViewSection id="1Xl-wf-tic">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="349" id="qhs-du-Zuy">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="349" id="qhs-du-Zuy">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="349"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qhs-du-Zuy" id="Y80-cj-HYC">
@@ -177,7 +177,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <prototypes>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="MzV-E3-9SI">
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentCell" rowHeight="40" id="MzV-E3-9SI" customClass="CommentTableViewCell" customModule="Root" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MzV-E3-9SI" id="PtE-02-9r2">
@@ -185,7 +185,9 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="(comment)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djf-3F-o7z">
+
                                                                         <rect key="frame" x="52" y="9" width="308" height="21"/>
+
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="308" id="GTw-8H-A6M"/>
                                                                         </constraints>
@@ -208,6 +210,10 @@
                                                                     <constraint firstAttribute="trailingMargin" secondItem="Djf-3F-o7z" secondAttribute="trailing" constant="-1" id="snE-4S-IX6"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
+                                                            <connections>
+                                                                <outlet property="commentTextLabel" destination="Djf-3F-o7z" id="h5C-I7-F1f"/>
+                                                                <outlet property="userProfilePicture" destination="xMU-qE-4vJ" id="ftk-ru-TKU"/>
+                                                            </connections>
                                                         </tableViewCell>
                                                     </prototypes>
                                                 </tableView>
@@ -232,13 +238,22 @@
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jug-gF-7ZY">
+                                                    <rect key="frame" x="334" y="0.0" width="31" height="30"/>
+                                                    <state key="normal" title="Post"/>
+                                                    <connections>
+                                                        <action selector="postComment:" destination="pLO-jD-01V" eventType="touchUpInside" id="Mfh-MT-Cfn"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="0.95287805800000003" blue="0.94816809889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
+
                                                 <constraint firstAttribute="trailing" secondItem="lPv-MF-ppR" secondAttribute="trailing" id="62f-JQ-Eda"/>
                                                 <constraint firstAttribute="bottom" secondItem="lPv-MF-ppR" secondAttribute="bottom" id="PFt-56-cMv"/>
                                                 <constraint firstItem="lPv-MF-ppR" firstAttribute="top" secondItem="5la-yw-eKO" secondAttribute="top" id="g1e-1e-85U"/>
                                                 <constraint firstItem="lPv-MF-ppR" firstAttribute="leading" secondItem="5la-yw-eKO" secondAttribute="leading" id="yAb-vu-Snp"/>
+
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -246,18 +261,20 @@
                             </tableViewSection>
                         </sections>
                         <connections>
-                            <outlet property="dataSource" destination="pLO-jD-01V" id="dkK-Xn-7ll"/>
+                            <outlet property="dataSource" destination="pLO-jD-01V" id="tLy-cW-FoN"/>
                             <outlet property="delegate" destination="pLO-jD-01V" id="as4-39-ljy"/>
                         </connections>
                     </tableView>
                     <connections>
                         <outlet property="artistWhoCreatedEventLabel" destination="42G-EU-hY3" id="dTI-P8-P1H"/>
                         <outlet property="artistsWhoCreatedEventImageView" destination="WdV-9Z-VtF" id="E9g-gi-DhT"/>
+                        <outlet property="commentsTableView" destination="SFh-hU-WCG" id="vcT-y1-zRt"/>
                         <outlet property="dateLabel" destination="JEG-Hh-LNV" id="54N-pW-Ke8"/>
                         <outlet property="eventDescriptionLabel" destination="wqq-rG-iU1" id="Hw0-Li-Veg"/>
                         <outlet property="eventImageView" destination="Urp-lq-77C" id="bjw-Xh-aCd"/>
                         <outlet property="nameOfEventLabel" destination="Heq-hC-asK" id="tXH-Ib-XA6"/>
                         <outlet property="nameOfVenueLabel" destination="bcZ-Yb-0kt" id="Cfr-f4-w91"/>
+                        <outlet property="newCommentTextField" destination="lPv-MF-ppR" id="ydr-ph-E8I"/>
                         <outlet property="streetAddressLabel" destination="twL-Yi-tZF" id="nuv-jP-slf"/>
                     </connections>
                 </tableViewController>
