@@ -58,7 +58,7 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     // MARK: - IBActions
    
     @IBAction func feedToggled(_ sender: UISegmentedControl) {
-        
+        interestArray = []
         if sender.selectedSegmentIndex == 1 {
             localFeed = false
             for event in EventController.shared.eventHappeningWithinTwentyFour {
