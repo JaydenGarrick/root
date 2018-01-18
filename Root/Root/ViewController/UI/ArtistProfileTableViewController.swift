@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 class ArtistProfileTableViewController: UITableViewController {
 
@@ -20,6 +21,7 @@ class ArtistProfileTableViewController: UITableViewController {
     @IBOutlet weak var artistUserNameLabel: UILabel!
     @IBOutlet weak var artistBioLabel: UILabel!
     @IBOutlet weak var artistWebsiteURLButton: UIButton!
+    @IBOutlet weak var artistLinkWebView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,8 @@ class ArtistProfileTableViewController: UITableViewController {
                 print(UserController.shared.eventsCreated?.count)
             }
         }
-        
+        let websiteURL = URL(string: (artistWebsiteURLButton.titleLabel?.text)!)
+        artistLinkWebView.load(URLRequest(url: websiteURL!))
     }
 
     

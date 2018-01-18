@@ -8,6 +8,7 @@
 
 import UIKit
 import CloudKit
+import WebKit
 
 class ProfileTableViewController: UITableViewController {
     
@@ -21,6 +22,7 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
     @IBOutlet weak var urlButton: UIButton!
+    @IBOutlet weak var linkWebView: WKWebView!
     
     
     override func viewDidLoad() {
@@ -53,6 +55,8 @@ class ProfileTableViewController: UITableViewController {
         urlButton.setTitle(websiteURLAsString, for: .normal)
         print(user.username, user.bio)
         
+        let websiteURL = URL(string: (urlButton.titleLabel?.text)!)
+       // linkWebView.load(URLRequest(url: websiteURL!))
         
     }
     
@@ -93,14 +97,6 @@ class ProfileTableViewController: UITableViewController {
         
     }
     
-    @IBAction func urlButtonTapped(_ sender: UIButton) {
-        guard let user = self.user else { return }
-        guard let url = URL(string: user.websiteURL) else { return }
-        
-        
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        
-    }
 }
     // MARK: - Table view data source
 
@@ -115,6 +111,20 @@ extension ProfileTableViewController {
         return 0
     }
     
+}
+
+
+// MARK: - WebView stuff
+extension ProfileTableViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "WebViewIdentifier" {
+            if let destinationVC = segue.destination as? WebViewController {
+                destinationVC.websiteURLAsString = urlButton.titleLabel?.text
+            }
+            
+        }
+    }
 }
 
 
