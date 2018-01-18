@@ -47,6 +47,8 @@ class ArtistProfileTableViewController: UITableViewController {
         
         
         
+        
+        
     }
     // MARK: - Table view data source
 
