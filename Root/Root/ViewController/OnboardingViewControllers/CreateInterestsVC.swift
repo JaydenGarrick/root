@@ -83,7 +83,7 @@ class CreateInterestsVC: UIViewController {
         guard let isArtist = self.isArtist
             else { return }
         if isArtist == true {
-            userLabel?.text = "Artist"
+            userLabel?.text = "Creator"
         }
         else if isArtist == false {
             userLabel?.text = "Art Seeker"

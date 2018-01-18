@@ -54,7 +54,7 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
         guard let isArtist = self.isArtist
             else { return }
         if isArtist == true {
-            self.userLabel.text = "Artist"
+            self.userLabel.text = "Creator"
         }
         else if isArtist == false {
             userLabel.text = "Art Seeker"

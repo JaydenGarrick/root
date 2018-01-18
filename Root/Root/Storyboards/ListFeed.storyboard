@@ -43,9 +43,11 @@
                                     <action selector="feedToggled:" destination="fGt-rU-QmR" eventType="valueChanged" id="gow-31-Nsk"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bwL-18-dG0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bwL-18-dG0">
                                 <rect key="frame" x="0.0" y="159" width="375" height="508"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="1" green="0.95287805800000003" blue="0.94816809889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.15343365070000001" green="0.65313899519999996" blue="0.59311699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="0.95287805800000003" blue="0.94816809889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventFeedCell" rowHeight="111" id="Jan-IU-thF" customClass="EventTableViewCell" customModule="Root" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="111"/>
@@ -127,6 +129,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.94500058890000005" blue="0.94022583959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.15343365070000001" green="0.65313899519999996" blue="0.59311699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bwL-18-dG0" firstAttribute="bottom" secondItem="vdW-2Z-TdQ" secondAttribute="bottom" id="5Jj-7v-njx"/>
                             <constraint firstItem="R8h-Rf-94h" firstAttribute="trailing" secondItem="vdW-2Z-TdQ" secondAttribute="trailing" id="DFj-dr-YWy"/>

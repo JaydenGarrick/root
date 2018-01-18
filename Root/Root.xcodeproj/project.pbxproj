@@ -36,6 +36,7 @@
 		819B5F722006839A00106459 /* MapFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B5F712006839A00106459 /* MapFeedViewController.swift */; };
 		819B5F752007EA5800106459 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B5F742007EA5800106459 /* extensions.swift */; };
 		819B5F792007EDDC00106459 /* EventDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819B5F782007EDDC00106459 /* EventDetail.storyboard */; };
+		819CF71720106363005FB0A6 /* UITextViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819CF71620106363005FB0A6 /* UITextViewX.swift */; };
 		81EDF41820042E35006E69EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDF41720042E35006E69EA /* AppDelegate.swift */; };
 		81EDF41F20042E35006E69EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EDF41E20042E35006E69EA /* Assets.xcassets */; };
 		81EDF42220042E35006E69EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EDF42020042E35006E69EA /* LaunchScreen.storyboard */; };
@@ -83,6 +84,7 @@
 		819B5F712006839A00106459 /* MapFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeedViewController.swift; sourceTree = "<group>"; };
 		819B5F742007EA5800106459 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		819B5F782007EDDC00106459 /* EventDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventDetail.storyboard; sourceTree = "<group>"; };
+		819CF71620106363005FB0A6 /* UITextViewX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewX.swift; sourceTree = "<group>"; };
 		81EDF41420042E35006E69EA /* Root.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Root.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EDF41720042E35006E69EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81EDF41E20042E35006E69EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				81707D02200EA57500478691 /* UIViewX.swift */,
 				81707D05200EA57500478691 /* UIViewXRadialGradient.swift */,
 				81707D07200EA57600478691 /* UIVisualEffectViewX.swift */,
+				819CF71620106363005FB0A6 /* UITextViewX.swift */,
 			);
 			path = IBDesignables;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				B7FCED83200BFA6D00690301 /* EditProfileTableViewController.swift in Sources */,
 				81707D0F200EA57600478691 /* UIViewXRadialGradient.swift in Sources */,
 				CAFF0D4F20068EAD00A3657D /* CreateEventViewController.swift in Sources */,
+				819CF71720106363005FB0A6 /* UITextViewX.swift in Sources */,
 				811F26FF20052AE200A9B47C /* User.swift in Sources */,
 				811F270120052AFC00A9B47C /* Comment.swift in Sources */,
 			);
