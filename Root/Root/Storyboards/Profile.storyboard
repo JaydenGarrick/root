@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -93,6 +94,7 @@
                                                     <state key="normal" title="(link)"/>
                                                     <connections>
                                                         <action selector="urlButtonTapped:" destination="ZzL-hz-Mi8" eventType="touchUpInside" id="YRh-dw-IoV"/>
+                                                        <segue destination="7XW-Wb-XeY" kind="show" id="Q2k-q6-hHF"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -516,6 +518,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0q-on-LfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1332.8" y="741.22938530734643"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="q9T-Oi-a4x">
+            <objects>
+                <viewController id="7XW-Wb-XeY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1nf-XE-alP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RcT-fB-cfE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.14117647059999999" green="0.61568627450000002" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RcT-fB-cfE" firstAttribute="trailing" secondItem="dbM-xB-i58" secondAttribute="trailing" id="6Gb-26-4or"/>
+                            <constraint firstItem="RcT-fB-cfE" firstAttribute="leading" secondItem="dbM-xB-i58" secondAttribute="leading" id="Asl-ye-f9N"/>
+                            <constraint firstItem="RcT-fB-cfE" firstAttribute="top" secondItem="1nf-XE-alP" secondAttribute="top" id="ZF9-LY-pPd"/>
+                            <constraint firstAttribute="bottom" secondItem="RcT-fB-cfE" secondAttribute="bottom" id="dKZ-LF-4so"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dbM-xB-i58"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LbD-ba-u7G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="797.60000000000002" y="1494.6026986506747"/>
         </scene>
     </scenes>
     <resources>
