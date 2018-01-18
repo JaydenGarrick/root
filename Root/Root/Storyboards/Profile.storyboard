@@ -519,10 +519,10 @@
             </objects>
             <point key="canvasLocation" x="1332.8" y="741.22938530734643"/>
         </scene>
-        <!--View Controller-->
+        <!--Artist Profile Table View Controller-->
         <scene sceneID="q9T-Oi-a4x">
             <objects>
-                <viewController id="7XW-Wb-XeY" sceneMemberID="viewController">
+                <viewController id="7XW-Wb-XeY" customClass="ArtistProfileTableViewController" customModule="Root" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1nf-XE-alP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -546,6 +546,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dbM-xB-i58"/>
                     </view>
+                    <connections>
+                        <outlet property="artistLinkWebView" destination="RcT-fB-cfE" id="ax9-kv-8PM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LbD-ba-u7G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
