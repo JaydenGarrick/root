@@ -8,8 +8,9 @@
 
 import UIKit
 import CloudKit
+import MapKit
 
-class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
     // MARK: - Properties
     
@@ -19,6 +20,8 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
     var hometown: String?
     var interests: [String]?
     var activityIndicator = UIActivityIndicatorView()
+    let locationManager = CLLocationManager()
+    var usersLocation = CLLocationCoordinate2D()
 
     
     var profilePictureAsData: Data? = nil
@@ -46,9 +49,15 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        getLocation()
+        
         setUserLabel()
         pickerController.delegate = self
     }
+    
     
     func setUserLabel() {
         guard let isArtist = self.isArtist
@@ -84,17 +93,41 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
                 guard let user = UserController.shared.loggedInUser else { return }
                 print(user.username, user.fullName, user.bio, user.homeTown, user.appleUserRef, user.isArtist)
                 
-                DispatchQueue.main.async {
-                    self.navigationController?.dismiss(animated: true, completion: nil)
-                }
                 
-            } else {
-                // present alert advising user that they could not create an account
+                EventController.shared.fetchEvents(usersLocation: self.usersLocation, completion: { (success) in
+                    if success {
+                        // Current date plus 24 hours
+                        let dateToCheckFromAsDouble = Date().timeIntervalSince1970 + 86400 // 86400 represents 24 hours
+                        let dateToCheckFrom = Date(timeIntervalSince1970: dateToCheckFromAsDouble)
+                        for event in EventController.shared.fetchedEvents {
+                            if event.dateAndTime > dateToCheckFrom  {
+                                EventController.shared.eventHappeningWithinTwentyFour.append(event)
+                            }
+                        }
+                        self.performSegue(withIdentifier: "SegueToTabBarID", sender: self)
+                        if UserController.shared.loggedInUser?.isArtist == false {
+                            self.navigationController?.navigationBar.isHidden = true
+                        }
+                        print("Success fetching events within 50 miles! :)")
+                        DispatchQueue.main.async {
+                            //                    self.navigationController?.dismiss(animated: true, completion: nil)
+                            self.performSegue(withIdentifier: "SegueToTabBarID", sender: self)
+                        }
+                        
+                        
+                    } else {
+                        print("Failure fetching events within 50 miles. :(")
+                    }
+                })
+                print("\(String(describing: UserController.shared.loggedInUser?.cloudKitRecordID)) \(String(describing: UserController.shared.loggedInUser?.fullName)), \(String(describing: UserController.shared.loggedInUser?.appleUserRef))")
+                
             }
         }
     }
-    
-    // MARK: - Image picker delegate methods
+
+
+
+// MARK: - Image picker delegate methods
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
       
@@ -112,42 +145,23 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
         let profilePictureAsData = UIImagePNGRepresentation(profilePicture)
         self.profilePictureAsData = profilePictureAsData
         
-//        let url = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent((NSUUID().uuidString+".dat")
-//
-//        do {
-//            try profilePictureAsData.write(to: tempURL, options: .atomicWrite)
-//        } catch let e as NSError {
-//            print("Error! \(e)");
-//            return
-//        }
 
-//        let url = info[UIImagePickerControllerImageURL] as? URL
-//        print("url: \(url)")
-//        let asset = CKAsset(fileURL: info[UIImagePickerControllerReferenceURL]) as? URL
         
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-//
-//    // MARK: - Navigation
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        guard let username = self.username,
-//            let fullName = self.fullName,
-//            let profilePicture = self.profilePictureAsData,
-//            let hometown = self.hometown,
-//            let interests = self.interests,
-//            let websiteURL = websiteURLTextField.text,
-//            let isArtist = self.isArtist
-//            else { return }
-//
-//        UserController.shared.createUserWith(username: username, fullName: fullName, profilePicture: profilePicture, bio: "", homeTown: hometown, interests: interests, websiteURL: websiteURL, isArtist: isArtist) { (success) in
-//
-//        }
-//
-//    }
+    
+    
+    // Gets the users current location
+    func getLocation() {
+        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            guard let coordinate = locations.last?.coordinate else { return }
+            usersLocation = coordinate
+        }
+    }
     
 }
+
+

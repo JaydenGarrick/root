@@ -628,11 +628,20 @@
                         <outlet property="profilePictureImageView" destination="LlF-ir-zFa" id="nZ8-27-ujD"/>
                         <outlet property="userLabel" destination="FEW-DY-282" id="r81-He-o9c"/>
                         <outlet property="websiteURLTextField" destination="vLo-pp-ebQ" id="VTJ-QZ-0vy"/>
+                        <segue destination="2St-R5-dLe" kind="presentation" identifier="SegueToTabBarID" id="NDG-kP-Wb7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KXH-PD-tHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3374" y="-168"/>
+        </scene>
+        <!--TabBarController-->
+        <scene sceneID="Xuy-yV-wzA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TabBarController" id="2St-R5-dLe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ewp-EL-MSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4028" y="-254"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="Ri7-92-3QV">
