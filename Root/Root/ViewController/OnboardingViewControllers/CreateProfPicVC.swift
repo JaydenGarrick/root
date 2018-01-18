@@ -72,56 +72,61 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     @IBAction func doneButtonTapped(_ sender: UIButton) {
         
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
-        view.addSubview(activityIndicator)
-        activityIndicator.startAnimating()
-        sender.isEnabled = false
-        
-        guard let username = self.username,
-            let fullName = self.fullName,
-            let profilePictureAsData = self.profilePictureAsData,
-            let hometown = self.hometown,
-            let interests = self.interests,
-            let websiteURL = websiteURLTextField.text,
-            let isArtist = self.isArtist
-            else { return }
-        
-        UserController.shared.createUserWith(username: username, fullName: fullName, profilePicture: profilePictureAsData, bio: "", homeTown: hometown, interests: interests, websiteURL: websiteURL, isArtist: isArtist) { (success) in
-            if success {
-                guard let user = UserController.shared.loggedInUser else { return }
-                print(user.username, user.fullName, user.bio, user.homeTown, user.appleUserRef, user.isArtist)
-                
-                
-                EventController.shared.fetchEvents(usersLocation: self.usersLocation, completion: { (success) in
-                    if success {
-                        // Current date plus 24 hours
-                        let dateToCheckFromAsDouble = Date().timeIntervalSince1970 + 86400 // 86400 represents 24 hours
-                        let dateToCheckFrom = Date(timeIntervalSince1970: dateToCheckFromAsDouble)
-                        for event in EventController.shared.fetchedEvents {
-                            if event.dateAndTime > dateToCheckFrom  {
-                                EventController.shared.eventHappeningWithinTwentyFour.append(event)
+        if profilePictureAsData == nil {
+            self.fillOutRequiredFields()
+        } else {
+            activityIndicator.center = self.view.center
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+            view.addSubview(activityIndicator)
+            activityIndicator.startAnimating()
+            sender.isEnabled = false
+            
+            guard let username = self.username,
+                let fullName = self.fullName,
+                let profilePictureAsData = self.profilePictureAsData,
+                let hometown = self.hometown,
+                let interests = self.interests,
+                let websiteURL = websiteURLTextField.text,
+                let isArtist = self.isArtist
+                else { return }
+            
+            UserController.shared.createUserWith(username: username, fullName: fullName, profilePicture: profilePictureAsData, bio: "", homeTown: hometown, interests: interests, websiteURL: websiteURL, isArtist: isArtist) { (success) in
+                if success {
+                    guard let user = UserController.shared.loggedInUser else { return }
+                    print(user.username, user.fullName, user.bio, user.homeTown, user.appleUserRef, user.isArtist)
+                    
+                    
+                    EventController.shared.fetchEvents(usersLocation: self.usersLocation, completion: { (success) in
+                        if success {
+                            // Current date plus 24 hours
+                            let dateToCheckFromAsDouble = Date().timeIntervalSince1970 + 86400 // 86400 represents 24 hours
+                            let dateToCheckFrom = Date(timeIntervalSince1970: dateToCheckFromAsDouble)
+                            for event in EventController.shared.fetchedEvents {
+                                if event.dateAndTime > dateToCheckFrom  {
+                                    EventController.shared.eventHappeningWithinTwentyFour.append(event)
+                                }
                             }
-                        }
-                        self.performSegue(withIdentifier: "SegueToTabBarID", sender: self)
-                        if UserController.shared.loggedInUser?.isArtist == false {
-                            self.navigationController?.navigationBar.isHidden = true
-                        }
-                        print("Success fetching events within 50 miles! :)")
-                        DispatchQueue.main.async {
-                            //                    self.navigationController?.dismiss(animated: true, completion: nil)
                             self.performSegue(withIdentifier: "SegueToTabBarID", sender: self)
+                            if UserController.shared.loggedInUser?.isArtist == false {
+                                self.navigationController?.navigationBar.isHidden = true
+                            }
+                            print("Success fetching events within 50 miles! :)")
+                            DispatchQueue.main.async {
+                                //                    self.navigationController?.dismiss(animated: true, completion: nil)
+                                self.performSegue(withIdentifier: "SegueToTabBarID", sender: self)
+                            }
+                            
+                            
+                        } else {
+                            print("Failure fetching events within 50 miles. :(")
                         }
-                        
-                        
-                    } else {
-                        print("Failure fetching events within 50 miles. :(")
-                    }
-                })
-                print("\(String(describing: UserController.shared.loggedInUser?.cloudKitRecordID)) \(String(describing: UserController.shared.loggedInUser?.fullName)), \(String(describing: UserController.shared.loggedInUser?.appleUserRef))")
-                
+                    })
+                    print("\(String(describing: UserController.shared.loggedInUser?.cloudKitRecordID)) \(String(describing: UserController.shared.loggedInUser?.fullName)), \(String(describing: UserController.shared.loggedInUser?.appleUserRef))")
+                    
+                }
             }
+            
         }
     }
 

@@ -26,14 +26,21 @@ class CreateInterestsVC: UIViewController {
     
     @IBAction func paintButtonTapped(_ sender: UIButton) {
         if self.interests.contains("#paintings") {
+            let indexPath = self.interests.index(of: "#paintings")
+            interests.remove(at: indexPath!)
+            updateInterestsTextView()
             return
         }
+        
         self.interests.append("#paintings")
         updateInterestsTextView()
     }
     
     @IBAction func musicButtonTapped(_ sender: UIButton) {
         if self.interests.contains("#music") {
+            let indexPath = self.interests.index(of: "#music")
+            interests.remove(at: indexPath!)
+            updateInterestsTextView()
             return
         }
         
@@ -42,6 +49,9 @@ class CreateInterestsVC: UIViewController {
     }
     @IBAction func photographyButtonTapped(_ sender: UIButton) {
         if self.interests.contains("#photography") {
+            let indexPath = self.interests.index(of: "#photography")
+            interests.remove(at: indexPath!)
+            updateInterestsTextView()
             return
         }
         self.interests.append("#photography")
@@ -49,6 +59,9 @@ class CreateInterestsVC: UIViewController {
     }
     @IBAction func poetryButtonTapped(_ sender: UIButton) {
         if self.interests.contains("#poetry") {
+            let indexPath = self.interests.index(of: "#poetry")
+            interests.remove(at: indexPath!)
+            updateInterestsTextView()
             return
         }
         interests.append("#poetry")
@@ -56,6 +69,9 @@ class CreateInterestsVC: UIViewController {
     }
     @IBAction func sketchButtonTapped(_ sender: UIButton) {
         if self.interests.contains("#sketch") {
+            let indexPath = self.interests.index(of: "#sketch")
+            interests.remove(at: indexPath!)
+            updateInterestsTextView()
             return
         }
         interests.append("#sketch")
@@ -63,6 +79,9 @@ class CreateInterestsVC: UIViewController {
     }
     @IBAction func potteryButtonTapped(_ sender: UIButton) {
         if self.interests.contains("#pottery") {
+            let indexPath = self.interests.index(of: "#pottery")
+            interests.remove(at: indexPath!)
+            updateInterestsTextView()
             return
         }
         interests.append("#pottery")
@@ -103,16 +122,20 @@ class CreateInterestsVC: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "ToCreateProfPicSegue" {
-            guard let destinationVC = segue.destination as? CreateProfPicVC
-                else { return }
-            
-            destinationVC.isArtist = self.isArtist
-            destinationVC.fullName = self.fullName
-            destinationVC.username = self.username
-            destinationVC.hometown = self.hometown
-            destinationVC.interests = self.interests
-            
+        if interestsTextView.text == "" {
+            self.fillOutRequiredFields()
+        } else {
+            if segue.identifier == "ToCreateProfPicSegue" {
+                guard let destinationVC = segue.destination as? CreateProfPicVC
+                    else { return }
+                
+                destinationVC.isArtist = self.isArtist
+                destinationVC.fullName = self.fullName
+                destinationVC.username = self.username
+                destinationVC.hometown = self.hometown
+                destinationVC.interests = self.interests
+                
+            }
         }
     }
     
