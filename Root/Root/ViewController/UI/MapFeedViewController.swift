@@ -100,7 +100,7 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         }
         
         let detailViewButton = UIButton(frame: CGRect(x: 0, y: 0, width: 59, height: 59))
-        detailViewButton.setImage(#imageLiteral(resourceName: "calendar"), for: .normal)
+        detailViewButton.setImage(#imageLiteral(resourceName: "add"), for: .normal)
         
         view.canShowCallout = true
         view.rightCalloutAccessoryView = detailViewButton
