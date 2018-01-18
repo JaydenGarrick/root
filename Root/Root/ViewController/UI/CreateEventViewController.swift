@@ -34,7 +34,7 @@ class CreateEventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
+        //self.navigationController?.isNavigationBarHidden = true
         
         self.hideKeyboardWhenTappedAround()
         
@@ -60,41 +60,55 @@ class CreateEventViewController: UIViewController {
     }
     @IBAction func paintButtonTapped(_ sender: UIButton) {
         if self.interests.contains("#paintings") {
+            self.interests.removeAll(keepingCapacity: false)
+            updateInterestsTextView()
             return
         }
+        self.interests.removeAll(keepingCapacity: false)
         self.interests.append("#paintings")
         updateInterestsTextView()
     }
     
     @IBAction func musicButtonTapped(_ sender: UIButton) {
         if self.interests.contains("#music") {
+            self.interests.removeAll(keepingCapacity: false)
+            updateInterestsTextView()
             return
         }
-        
+        self.interests.removeAll(keepingCapacity: false)
         self.interests.append("#music")
         updateInterestsTextView()
     }
     
     @IBAction func photoButtonTapped(_ sender: UIButton) {
         if self.interests.contains("#photography") {
+            self.interests.removeAll(keepingCapacity: false)
+            updateInterestsTextView()
             return
         }
+        self.interests.removeAll(keepingCapacity: false)
         self.interests.append("#photography")
         updateInterestsTextView()
     }
     
     @IBAction func poetryButtonTapped(_ sender: UIButton) {
         if self.interests.contains("#poetry") {
+            self.interests.removeAll(keepingCapacity: false)
+            updateInterestsTextView()
             return
         }
+        self.interests.removeAll(keepingCapacity: false)
         interests.append("#poetry")
         updateInterestsTextView()
     }
     
     @IBAction func sketchButtonTapped(_ sender: UIButton) {
         if self.interests.contains("#sketch") {
+            self.interests.removeAll(keepingCapacity: false)
+            updateInterestsTextView()
             return
         }
+        self.interests.removeAll(keepingCapacity: false)
         interests.append("#sketch")
         updateInterestsTextView()
     }
@@ -105,8 +119,11 @@ class CreateEventViewController: UIViewController {
     }
     @IBAction func ceramicButtonTapped(_ sender: UIButton) {
         if self.interests.contains("#pottery") {
+            self.interests.removeAll(keepingCapacity: false)
+            updateInterestsTextView()
             return
         }
+        self.interests.removeAll(keepingCapacity: false)
         interests.append("#pottery")
         updateInterestsTextView()
     }
