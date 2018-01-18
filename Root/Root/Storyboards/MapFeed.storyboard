@@ -46,7 +46,9 @@
                         <viewLayoutGuide key="safeArea" id="3Z5-zS-7Xq"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" selectedImage="map" id="F5O-8S-Hmc"/>
-                    <navigationItem key="navigationItem" id="Vte-4r-VXQ"/>
+                    <navigationItem key="navigationItem" id="Vte-4r-VXQ">
+                        <nil key="title"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="vcy-Sp-KFn" id="ra3-7f-6MI"/>
