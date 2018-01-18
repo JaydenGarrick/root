@@ -19,23 +19,40 @@ class EventDetailTableViewController: UITableViewController {
     @IBOutlet weak var nameOfVenueLabel: UILabel!
     @IBOutlet weak var streetAddressLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    
-    
+    @IBOutlet weak var newCommentTextField: UITextField!
+    @IBOutlet weak var commentsTableView: UITableView!
+   
     // MARK: - Constants and Variables
     var event: Event?
     var artist: User?
+    var commentDataSource: CommentsTableViewDataSource = CommentsTableViewDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        commentsTableView.delegate = self
+        commentsTableView.dataSource = self.commentDataSource
+
+        
         
         self.hideKeyboardWhenTappedAround()
         
         guard let event = event else { return }
         
+//        
+//        CommentController.shared.fetchCommentsForCurrent(event: event, completion: { (comments) in
+//            DispatchQueue.main.async {
+//                guard let comments = comments else { return }
+//
+//                self.commentDataSource.eventComments = comments
+//                print("number of event comments: \(comments.count)")
+//                self.commentsTableView.reloadData()
+//                
+//            }
+//        })
+
         UserController.shared.fetchEventCreator(event: event) { (user) in
             guard let user = user else { return }
             self.artist = user
-            
             DispatchQueue.main.async {
                 
                 self.updateViews()
@@ -44,25 +61,15 @@ class EventDetailTableViewController: UITableViewController {
         
     }
     
-    // MARK: - Table view data source
-    //
-    //    override func numberOfSections(in tableView: UITableView) -> Int {
-    //        return 0
-    //    }
+    // MARK: - IBActions
     
-    //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //        return 0
-    //    }
-    
-    
-    //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    //        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-    //
-    //        // Configure the cell...
-    //
-    //        return cell
-    //    }
-    
+    @IBAction func postComment(_ sender: UIButton) {
+        guard let text = newCommentTextField.text,
+        let event = event
+        else { return }
+        CommentController.shared.createNewCommentWith(text: text, event: event)
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToArtistProfileSegue" {
             guard let destinationVC = segue.destination as? ArtistProfileTableViewController,
@@ -70,6 +77,10 @@ class EventDetailTableViewController: UITableViewController {
                 else { return }
             destinationVC.artist = artist
         }
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
     
     func updateViews() {
