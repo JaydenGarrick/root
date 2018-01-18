@@ -84,7 +84,7 @@ class Event: NSObject, MKAnnotation {
         self.creatorID = creatorID
         self.typeOfEvent = typeOfEvent
         self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        
+        self.ckRecordID = ckRecord.recordID
     }
     
 }
