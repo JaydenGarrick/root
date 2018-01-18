@@ -35,7 +35,7 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
-        self.navigationController?.isToolbarHidden = false
+        //self.navigationController?.isToolbarHidden = false
         
         
         // Delegate / DataSource

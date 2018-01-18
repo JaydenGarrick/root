@@ -25,10 +25,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Whc-9E-Xf1">
-                                <rect key="frame" x="138" y="0.0" width="0.0" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <searchBar contentMode="redraw" placeholder="Filter" translatesAutoresizingMaskIntoConstraints="NO" id="R8h-Rf-94h">
                                 <rect key="frame" x="0.0" y="103" width="375" height="56"/>
                                 <color key="backgroundColor" red="1" green="0.95287805800000003" blue="0.94816809889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -48,7 +44,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bwL-18-dG0">
-                                <rect key="frame" x="0.0" y="159" width="375" height="459"/>
+                                <rect key="frame" x="0.0" y="159" width="375" height="508"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventFeedCell" rowHeight="111" id="Jan-IU-thF" customClass="EventTableViewCell" customModule="Root" customModuleProvider="target">
@@ -145,7 +141,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vdW-2Z-TdQ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" selectedImage="list" id="lcD-1m-sPN"/>
                     <navigationItem key="navigationItem" id="Rxd-Sq-bWa">
                         <barButtonItem key="rightBarButtonItem" title="Create Event" id="ead-6g-SqQ">
                             <color key="tintColor" red="0.15343365070000001" green="0.65313899519999996" blue="0.59311699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -154,14 +149,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="createEventButton" destination="ead-6g-SqQ" id="cfB-fR-Aw5"/>
                         <outlet property="tableView" destination="bwL-18-dG0" id="faG-jl-B03"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sZ-qU-Q6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationItem id="0yx-bJ-T6r"/>
             </objects>
             <point key="canvasLocation" x="536.79999999999995" y="-415.14242878560725"/>
         </scene>
@@ -204,6 +198,5 @@
     </scenes>
     <resources>
         <image name="#music" width="32" height="32"/>
-        <image name="list" width="24" height="24"/>
     </resources>
 </document>

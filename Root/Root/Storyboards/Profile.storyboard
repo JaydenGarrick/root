@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Profile Table View Controller-->
+        <!--Profile-->
         <scene sceneID="eM3-Ly-YLz">
             <objects>
                 <tableViewController id="ZzL-hz-Mi8" customClass="ProfileTableViewController" customModule="Root" customModuleProvider="target" sceneMemberID="viewController">
@@ -221,7 +221,7 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="" selectedImage="user" id="5ta-IJ-azW"/>
+                    <tabBarItem key="tabBarItem" title="Profile" selectedImage="user" id="5ta-IJ-azW"/>
                     <navigationItem key="navigationItem" id="FND-q5-aOQ">
                         <barButtonItem key="rightBarButtonItem" title="..." id="pzX-XX-9j7">
                             <connections>
