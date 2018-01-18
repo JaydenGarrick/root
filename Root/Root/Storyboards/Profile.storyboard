@@ -225,7 +225,8 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Profile" selectedImage="user" id="5ta-IJ-azW"/>
                     <navigationItem key="navigationItem" id="FND-q5-aOQ">
-                        <barButtonItem key="rightBarButtonItem" title="..." id="pzX-XX-9j7">
+                        <barButtonItem key="rightBarButtonItem" title="•••" id="pzX-XX-9j7">
+                            <color key="tintColor" red="0.15343365070000001" green="0.65313899519999996" blue="0.59311699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="editProfileButtonTapped:" destination="ZzL-hz-Mi8" id="NhK-r0-Xzv"/>
                             </connections>
@@ -478,11 +479,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="LfJ-hV-GUM">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="NaN-dM-7DW">
+                            <color key="tintColor" red="0.15343365070000001" green="0.65313899519999996" blue="0.59311699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancelBarButtonItemTapped:" destination="uV8-cY-D4m" id="Ya7-Zr-7qx"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="UJA-UV-835">
+                            <color key="tintColor" red="0.15343365070000001" green="0.65313899519999996" blue="0.59311699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="saveBarButtonTapped:" destination="uV8-cY-D4m" id="0ax-iZ-z9f"/>
                             </connections>
@@ -549,7 +552,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LbD-ba-u7G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="797.60000000000002" y="1494.6026986506747"/>
+            <point key="canvasLocation" x="929" y="1513"/>
         </scene>
     </scenes>
     <resources>
