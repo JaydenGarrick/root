@@ -102,9 +102,12 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         
         let detailViewButton = UIButton(frame: CGRect(x: 0, y: 0, width: 59, height: 59))
         detailViewButton.setImage(#imageLiteral(resourceName: "add"), for: .normal)
-        
+        let event = view.annotation as? Event
         view.canShowCallout = true
         view.rightCalloutAccessoryView = detailViewButton
+        //view.image = UIImage(named: event!.typeOfEvent.trimmingCharacters(in: .whitespaces))
+
+        print("\(event!.typeOfEvent.trimmingCharacters(in: .whitespaces))")
         view.annotation = annotation
        
         return view
@@ -121,7 +124,7 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
             }
         }
     }
-    
+ 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MapFeedSegue" {

@@ -235,6 +235,7 @@ extension CreateEventViewController {
         
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
         toolbar.setItems([doneButton], animated: true)
+        doneButton.tintColor = UIColor(named: "Tint")
         
         timeDateTextField.inputAccessoryView = toolbar
         timeDateTextField.inputView = datePicker
