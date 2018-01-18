@@ -132,37 +132,40 @@ class CreateEventViewController: UIViewController {
     
     @IBAction func doneButtonTapped(_ sender: UIButton) {
         
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
-        view.addSubview(activityIndicator)
-        activityIndicator.startAnimating()
-        sender.isEnabled = false
-        
-        guard let name = titleOfEventTextField.text,
-            let description = eventDescriptionTextField.text,
-            let venue = addVenueButton.titleLabel?.text,
-            let eventImageData = profilePictureAsData,
-            let dateOfEvent = dateOfEvent,
-            let typeOfEvent = typeOfEventTextField.text,
-        let user = UserController.shared.loggedInUser else { return }
-        
-        
-        
-        EventController.shared.createEventWith(name: name, eventImage: eventImageData, dataAndTime: dateOfEvent, description: description, venue: venue, artist: [user], typeOfEvent: typeOfEvent) { (success) in
-            if success {
-                print("Success! :)")
-                DispatchQueue.main.async {
-                    
-                   self.navigationController?.popViewController(animated: true)
+        if titleOfEventTextField.text == "" || eventDescriptionTextField.text == "" || addVenueButton.titleLabel?.text == "Add Venue" || profilePictureAsData == nil || timeDateTextField.text == "" || typeOfEventTextField.text == "" {
+            self.fillOutRequiredFields()
+        } else {
+            activityIndicator.center = self.view.center
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+            view.addSubview(activityIndicator)
+            activityIndicator.startAnimating()
+            sender.isEnabled = false
+            
+            guard let name = titleOfEventTextField.text,
+                let description = eventDescriptionTextField.text,
+                let venue = addVenueButton.titleLabel?.text,
+                let eventImageData = profilePictureAsData,
+                let dateOfEvent = dateOfEvent,
+                let typeOfEvent = typeOfEventTextField.text,
+                let user = UserController.shared.loggedInUser else { return }
+            
+            
+            
+            EventController.shared.createEventWith(name: name, eventImage: eventImageData, dataAndTime: dateOfEvent, description: description, venue: venue, artist: [user], typeOfEvent: typeOfEvent) { (success) in
+                if success {
+                    print("Success! :)")
+                    DispatchQueue.main.async {
+                        
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                } else {
+                    print("Failure! :(")
                 }
-            } else {
-                print("Failure! :(")
             }
         }
     }
     
-  
     
     func updateInterestsTextView() {
         var textFieldText: String = ""

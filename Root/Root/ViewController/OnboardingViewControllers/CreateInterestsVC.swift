@@ -103,16 +103,20 @@ class CreateInterestsVC: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "ToCreateProfPicSegue" {
-            guard let destinationVC = segue.destination as? CreateProfPicVC
-                else { return }
-            
-            destinationVC.isArtist = self.isArtist
-            destinationVC.fullName = self.fullName
-            destinationVC.username = self.username
-            destinationVC.hometown = self.hometown
-            destinationVC.interests = self.interests
-            
+        if interestsTextView.text == "" {
+            self.fillOutRequiredFields()
+        } else {
+            if segue.identifier == "ToCreateProfPicSegue" {
+                guard let destinationVC = segue.destination as? CreateProfPicVC
+                    else { return }
+                
+                destinationVC.isArtist = self.isArtist
+                destinationVC.fullName = self.fullName
+                destinationVC.username = self.username
+                destinationVC.hometown = self.hometown
+                destinationVC.interests = self.interests
+                
+            }
         }
     }
     

@@ -21,8 +21,9 @@ class CreateUsernameVC: UIViewController {
     
     
     override func viewDidLoad() {
-        
+       
         self.hideKeyboardWhenTappedAround()
+        
         
         super.viewDidLoad()
         
@@ -50,19 +51,22 @@ class CreateUsernameVC: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "ToCreateInterestsSegue" {
-            guard let destinationVC = segue.destination as? CreateInterestsVC
-                else { return }
-            
-            let fullName = fullNameTextField.text
-            let username = usernameTextField.text
-            let hometown = hometownTextField.text
-            
-            destinationVC.isArtist = self.isArtist
-            destinationVC.fullName = fullName
-            destinationVC.username = username
-            destinationVC.hometown = hometown
+        if fullNameTextField.text == "" || usernameTextField.text == "" || hometownTextField.text == "" {
+            self.fillOutRequiredFields()
+        } else {
+            if segue.identifier == "ToCreateInterestsSegue" {
+                guard let destinationVC = segue.destination as? CreateInterestsVC
+                    else { return }
+                
+                let fullName = fullNameTextField.text
+                let username = usernameTextField.text
+                let hometown = hometownTextField.text
+                
+                destinationVC.isArtist = self.isArtist
+                destinationVC.fullName = fullName
+                destinationVC.username = username
+                destinationVC.hometown = hometown
+            }
         }
         
     }
