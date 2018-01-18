@@ -139,7 +139,7 @@ extension ListFeedViewController: UITableViewDelegate, UITableViewDataSource, Ev
             dateFormatter.dateStyle = .full
             
             cell.eventPictureImageView.image = eventImage
-            cell.dateEventLabel.text = dateFormatter.string(from: event.dateAndTime)
+            cell.dateEventLabel.text = "\(event.venue) \(dateFormatter.string(from: event.dateAndTime))"
             cell.typeOfArtLabel.text = event.typeOfEvent
             cell.artistNameLabel.text = event.name
             cell.typeOfArtImageView.image = UIImage(named: event.typeOfEvent)
