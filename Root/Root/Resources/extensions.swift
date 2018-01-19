@@ -21,7 +21,7 @@ extension UIViewController {
     
     func fillOutRequiredFields() {
         
-        let missingFieldsAlertController = UIAlertController(title: "Whoops", message: "You missed filling out one or more of the fields", preferredStyle: .alert)
+        let missingFieldsAlertController = UIAlertController(title: "🌲", message: "You missed filling out one or more of the fields", preferredStyle: .alert)
         let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
         // FIXME : - Fix color
         missingFieldsAlertController.view.tintColor = UIColor(named: "Tint")
