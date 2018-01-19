@@ -275,10 +275,10 @@
             </objects>
             <point key="canvasLocation" x="1559" y="741"/>
         </scene>
-        <!--Artist Profile Table View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="q9T-Oi-a4x">
             <objects>
-                <viewController id="7XW-Wb-XeY" customClass="ArtistProfileTableViewController" customModule="Root" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7XW-Wb-XeY" customClass="WebViewController" customModule="Root" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1nf-XE-alP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -294,6 +294,7 @@
                             </wkWebView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="Tint"/>
                         <constraints>
                             <constraint firstItem="RcT-fB-cfE" firstAttribute="trailing" secondItem="dbM-xB-i58" secondAttribute="trailing" id="6Gb-26-4or"/>
                             <constraint firstItem="RcT-fB-cfE" firstAttribute="leading" secondItem="dbM-xB-i58" secondAttribute="leading" id="Asl-ye-f9N"/>
@@ -302,8 +303,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dbM-xB-i58"/>
                     </view>
+                    <navigationItem key="navigationItem" id="sYj-OJ-Y9m"/>
                     <connections>
-                        <outlet property="artistLinkWebView" destination="RcT-fB-cfE" id="ax9-kv-8PM"/>
+                        <outlet property="urlLinkWebView" destination="RcT-fB-cfE" id="geO-z1-wQg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LbD-ba-u7G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -333,9 +335,11 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Iw-Hv-tNM">
                                 <rect key="frame" x="5" y="449" width="365" height="19"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                <state key="normal" title="(link)"/>
+                                <state key="normal" title="(link)">
+                                    <color key="titleColor" name="Tint"/>
+                                </state>
                                 <connections>
-                                    <segue destination="7XW-Wb-XeY" kind="show" id="E2U-80-QK2"/>
+                                    <segue destination="7XW-Wb-XeY" kind="show" identifier="WebViewID" id="E2U-80-QK2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(fullname)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEa-nI-Zpt">
@@ -513,6 +517,9 @@
         <image name="#poetry" width="32" height="32"/>
         <image name="#pottery" width="32" height="32"/>
         <image name="#sketch" width="32" height="32"/>
+        <namedColor name="Tint">
+            <color red="0.14399999380111694" green="0.61400002241134644" blue="0.55000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Tint">
             <color red="0.14399999380111694" green="0.61400002241134644" blue="0.55000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
