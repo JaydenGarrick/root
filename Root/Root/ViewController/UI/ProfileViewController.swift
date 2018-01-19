@@ -76,6 +76,9 @@ class ProfileViewController: UIViewController {
         
     }
 
+    @IBAction func editProfileButtonTapped(_ sender: Any) {
+        self.editButtonTappedAlert()
+    }
     
     // MARK: - Navigation
     

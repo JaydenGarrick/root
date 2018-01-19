@@ -257,24 +257,6 @@
             </objects>
             <point key="canvasLocation" x="2312.8000000000002" y="740.7796101949026"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="pOe-OZ-uWn">
-            <objects>
-                <navigationController storyboardIdentifier="editProfileTVC" automaticallyAdjustsScrollViewInsets="NO" id="igd-6t-Mky" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4OU-Hk-uqJ">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="uV8-cY-D4m" kind="relationship" relationship="rootViewController" id="Hjb-iG-xap"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P0q-on-LfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1559" y="741"/>
-        </scene>
         <!--Web View Controller-->
         <scene sceneID="q9T-Oi-a4x">
             <objects>
@@ -476,6 +458,9 @@
                     <navigationItem key="navigationItem" id="Kh2-qt-M7t">
                         <barButtonItem key="rightBarButtonItem" title="•••" id="KqZ-s0-WtK">
                             <color key="tintColor" name="Tint"/>
+                            <connections>
+                                <action selector="editProfileButtonTapped:" destination="es8-fW-V8d" id="qzB-ff-yx1"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -485,6 +470,7 @@
                         <outlet property="urlButton" destination="5Iw-Hv-tNM" id="HHs-ef-13t"/>
                         <outlet property="userProfilePictureImageView" destination="mDU-3M-23N" id="sde-dW-4mh"/>
                         <outlet property="usernameLabel" destination="WoL-EA-13i" id="64i-T8-ryN"/>
+                        <segue destination="uV8-cY-D4m" kind="show" identifier="SegueID" id="GAH-pB-wdp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDw-H4-UQk" userLabel="First Responder" sceneMemberID="firstResponder"/>
