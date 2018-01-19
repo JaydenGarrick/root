@@ -76,13 +76,22 @@ class ProfileViewController: UIViewController {
         
     }
 
-    
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    @IBAction func editProfileButtonTapped(_ sender: Any) {
+        self.editButtonTappedAlert()
     }
     
-
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "WebViewID" {
+            if let destinationVC = segue.destination as? WebViewController {
+                let websiteURLAsString = urlButton.titleLabel!.text!
+                destinationVC.websiteURLAsString = websiteURLAsString
+            }
+        }
+    }
+    
+    
 }
 
 // MARK: - TableViewDelegate Functions

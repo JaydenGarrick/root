@@ -78,7 +78,7 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
     // MARK: - IBActions
     
     @IBAction func cancelBarButtonItemTapped(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     

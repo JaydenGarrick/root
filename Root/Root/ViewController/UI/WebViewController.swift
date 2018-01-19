@@ -18,8 +18,9 @@ class WebViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.tintColor = UIColor(named: "Tint")
         guard let websiteURLAsString = websiteURLAsString else { return }
-        guard let url = URL(string: websiteURLAsString) else { return }
+        guard let url = URL(string: "https://\(websiteURLAsString)") else { return }
         let request = URLRequest(url: url)
         urlLinkWebView.load(request)
 
