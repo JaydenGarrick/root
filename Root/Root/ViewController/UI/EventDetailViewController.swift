@@ -13,6 +13,7 @@ class EventDetailViewController: UIViewController {
     // MARK: - Constants and Variables
     var event: Event?
     var artist: User?
+    var loggedInUser: User?
     
     // MARK: - IBOutlets
     @IBOutlet weak var eventImageView: UIImageView!
@@ -23,12 +24,17 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var nameOfVenueLabel: UILabel!
     @IBOutlet weak var streetAddressLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var newCommentTextField: UITextField!
     @IBOutlet weak var commentsTableView: UITableView!
+    @IBOutlet weak var newCommentUserProfilePicture: UIImageView!
+    @IBOutlet weak var newCommentTextField: UITextField!
+    @IBOutlet weak var postCommentButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        self.commentsTableView.dataSource = self
+        self.commentsTableView.delegate = self
         
         guard let event = event else { return }
         
@@ -38,6 +44,12 @@ class EventDetailViewController: UIViewController {
             DispatchQueue.main.async {
                 self.updateViews()
             }
+            CommentController.shared.fetchCommentsForCurrent(event: event, completion: { (success) in
+              
+                DispatchQueue.main.async {
+                    self.commentsTableView.reloadData()
+                }
+            })
         }
     }
     
@@ -50,7 +62,16 @@ class EventDetailViewController: UIViewController {
         }
     }
     
-
+    @IBAction func postCommentButtonTapped(_ sender: UIButton) {
+        
+        guard let text = newCommentTextField.text,
+            let event = self.event,
+            let loggedInUser = UserController.shared.loggedInUser
+            else { return }
+        CommentController.shared.createNewCommentWith(text: text, event: event, loggedInUser: loggedInUser)
+        
+    }
+    
 }
 
 // MARK: - Update Views Function
@@ -84,13 +105,17 @@ extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return number of comments
-        return 0
+        return CommentController.shared.eventComments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SETIDENTIFIER", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as? CommentTableViewCell ?? CommentTableViewCell()
         
-        // Customize the comment cell here
+        let comment = CommentController.shared.eventComments[indexPath.row]
+//        let commentCreator = CommentController.shared.commentCreators[indexPath.row]
+        
+        cell.comment = comment
+        
         
         return cell
     }
