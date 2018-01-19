@@ -144,9 +144,24 @@ extension ListFeedViewController: UITableViewDelegate, UITableViewDataSource, Ev
             cell.artistNameLabel.text = event.name
             cell.typeOfArtImageView.image = UIImage(named: event.typeOfEvent)
         }
-        
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // Set initial state
+        cell.alpha = 0
+        let transform = CATransform3DTranslate(CATransform3DIdentity, -10, 10, 0)
+        cell.layer.transform = transform
+        // UIView animation method to change to the final state of the cell
+        UIView.animate(withDuration: 0.5) {
+            cell.alpha = 1.0
+            cell.layer.transform = CATransform3DIdentity
+        }
+        
+        
+    }
+    
+    
 }
 
 // Sets Image of NavBar
