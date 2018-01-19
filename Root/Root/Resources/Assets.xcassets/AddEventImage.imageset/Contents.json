@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Screen Shot 2018-01-14 at 9.55.49 PM.png",
+      "filename" : "AddEventImage.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "AddEventImage-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "AddEventImage-2.png",
       "scale" : "3x"
     }
   ],
