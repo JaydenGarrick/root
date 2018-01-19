@@ -119,7 +119,7 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
             if let event = view.annotation as? Event {
                 
                 self.eventToPass = event
-                print(eventToPass?.name)
+                print("\(String(describing: eventToPass?.name)) is the name of the event that is seguewaying")
                 performSegue(withIdentifier: "MapFeedSegue", sender: self)
             }
         }

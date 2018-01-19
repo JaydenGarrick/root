@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,6 +56,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="110.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C75-1I-cmv">
+                                                    <rect key="frame" x="8" y="8" width="359" height="94.5"/>
+                                                    <color key="backgroundColor" name="Tint"/>
+                                                </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xhd-rI-leY">
                                                     <rect key="frame" x="10" y="0.5" width="365" height="109.5"/>
                                                     <subviews>
@@ -108,15 +113,20 @@
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="0.9724242091178894" blue="0.97618740797042847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="C75-1I-cmv" secondAttribute="bottom" constant="8" id="6D2-6L-olX"/>
                                                 <constraint firstAttribute="bottom" secondItem="Xhd-rI-leY" secondAttribute="bottom" constant="0.5" id="D5g-QA-0pZ"/>
                                                 <constraint firstAttribute="trailing" secondItem="Xhd-rI-leY" secondAttribute="trailing" id="HoR-bf-HQu"/>
+                                                <constraint firstItem="C75-1I-cmv" firstAttribute="top" secondItem="B6b-y1-bC3" secondAttribute="top" constant="8" id="QDb-hS-E4g"/>
                                                 <constraint firstItem="Xhd-rI-leY" firstAttribute="top" secondItem="B6b-y1-bC3" secondAttribute="top" constant="0.5" id="SGg-zF-Um5"/>
                                                 <constraint firstItem="Xhd-rI-leY" firstAttribute="leading" secondItem="B6b-y1-bC3" secondAttribute="leading" constant="10" id="gm8-cm-1x4"/>
+                                                <constraint firstItem="C75-1I-cmv" firstAttribute="leading" secondItem="B6b-y1-bC3" secondAttribute="leading" constant="8" id="mCL-7Q-Gyd"/>
+                                                <constraint firstAttribute="trailing" secondItem="C75-1I-cmv" secondAttribute="trailing" constant="8" id="yUE-jf-wAu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.94500058889389038" blue="0.94022583961486816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="artistNameLabel" destination="f8P-Wy-3p9" id="3kL-h2-9JH"/>
+                                            <outlet property="backgroundShadowView" destination="C75-1I-cmv" id="O4z-o9-Rqn"/>
                                             <outlet property="dateEventLabel" destination="wnR-wW-IU2" id="PDZ-kT-QGs"/>
                                             <outlet property="eventPictureImageView" destination="SvM-bd-miA" id="RgW-GU-Tvk"/>
                                             <outlet property="typeOfArtImageView" destination="vAf-Kl-9Kp" id="Kha-B3-M5l"/>
@@ -200,5 +210,8 @@
     </scenes>
     <resources>
         <image name="#music" width="32" height="32"/>
+        <namedColor name="Tint">
+            <color red="0.14399999380111694" green="0.61400002241134644" blue="0.55000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
