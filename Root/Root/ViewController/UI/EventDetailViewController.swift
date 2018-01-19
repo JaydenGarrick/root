@@ -1,14 +1,18 @@
 //
-//  EventDetailTableViewController.swift
+//  EventDetailViewController.swift
 //  Root
 //
-//  Created by Jayden Garrick on 1/12/18.
+//  Created by Jayden Garrick on 1/18/18.
 //  Copyright © 2018 Jayden Garrick. All rights reserved.
 //
 
 import UIKit
 
-class EventDetailTableViewController: UITableViewController {
+class EventDetailViewController: UIViewController {
+
+    // MARK: - Constants and Variables
+    var event: Event?
+    var artist: User?
     
     // MARK: - IBOutlets
     @IBOutlet weak var eventImageView: UIImageView!
@@ -21,17 +25,13 @@ class EventDetailTableViewController: UITableViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var newCommentTextField: UITextField!
     @IBOutlet weak var commentsTableView: UITableView!
-   
-    // MARK: - Constants and Variables
-    var event: Event?
-    var artist: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
         guard let event = event else { return }
-
+        
         UserController.shared.fetchEventCreator(event: event) { (user) in
             guard let user = user else { return }
             self.artist = user
@@ -41,9 +41,6 @@ class EventDetailTableViewController: UITableViewController {
         }
     }
     
-    // MARK: - IBActions
- 
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToArtistProfileSegue" {
             guard let destinationVC = segue.destination as? ArtistProfileViewController,
@@ -53,10 +50,11 @@ class EventDetailTableViewController: UITableViewController {
         }
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
+
+}
+
+// MARK: - Update Views Function
+extension EventDetailViewController {
     func updateViews() {
         guard let event = event,
             let user = self.artist,
@@ -79,5 +77,25 @@ class EventDetailTableViewController: UITableViewController {
         streetAddressLabel.text = event.venue
         dateLabel.text = date
     }
-    
 }
+
+// MARK: - TableView Delegate and DataSource
+extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Return number of comments
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SETIDENTIFIER", for: indexPath)
+        
+        // Customize the comment cell here
+        
+        return cell
+    }
+}
+
+
+
+

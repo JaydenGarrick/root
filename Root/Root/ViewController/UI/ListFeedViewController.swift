@@ -86,7 +86,7 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EventDetailIdentifier" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let destinationVC = segue.destination as! EventDetailTableViewController
+            let destinationVC = segue.destination as! EventDetailViewController
             let event = EventController.shared.fetchedEvents[indexPath.row]
             destinationVC.event = event
 
