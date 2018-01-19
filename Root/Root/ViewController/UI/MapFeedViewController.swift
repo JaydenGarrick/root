@@ -128,7 +128,7 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MapFeedSegue" {
-            let destinationVC = segue.destination as? EventDetailTableViewController
+            let destinationVC = segue.destination as? EventDetailViewController
             destinationVC?.event = eventToPass
             
         }
