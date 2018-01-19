@@ -59,7 +59,7 @@ class FetchItemsViewController: UIViewController, CLLocationManagerDelegate {
                         let dateToCheckFromAsDouble = Date().timeIntervalSince1970 + 86400 // 86400 represents 24 hours
                         let dateToCheckFrom = Date(timeIntervalSince1970: dateToCheckFromAsDouble)
                         for event in EventController.shared.fetchedEvents {
-                            if event.dateAndTime > dateToCheckFrom  {
+                            if event.dateAndTime > dateToCheckFrom && event.dateAndTime < Date()  {
                                 EventController.shared.eventHappeningWithinTwentyFour.append(event)
                             }
                         }
