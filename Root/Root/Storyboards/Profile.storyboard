@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -272,7 +273,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0q-on-LfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671.2" y="740.7796101949026"/>
+            <point key="canvasLocation" x="1559" y="741"/>
         </scene>
         <!--Artist Profile Table View Controller-->
         <scene sceneID="q9T-Oi-a4x">
@@ -468,7 +469,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PKq-C6-0Qx"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cWP-Dd-Dgm"/>
+                    <navigationItem key="navigationItem" id="Kh2-qt-M7t">
+                        <barButtonItem key="rightBarButtonItem" title="•••" id="KqZ-s0-WtK">
+                            <color key="tintColor" name="Tint"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bioLabel" destination="KXe-kl-NNa" id="8eU-lm-wTd"/>
                         <outlet property="fullNameLabel" destination="dEa-nI-Zpt" id="tlR-SR-fYw"/>
@@ -480,7 +485,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDw-H4-UQk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="775.20000000000005" y="740.7796101949026"/>
+            <point key="canvasLocation" x="698" y="741"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RvR-pc-QD5">
@@ -508,5 +513,8 @@
         <image name="#poetry" width="32" height="32"/>
         <image name="#pottery" width="32" height="32"/>
         <image name="#sketch" width="32" height="32"/>
+        <namedColor name="Tint">
+            <color red="0.14399999380111694" green="0.61400002241134644" blue="0.55000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

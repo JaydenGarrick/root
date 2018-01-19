@@ -32,7 +32,6 @@
 		81707D19200FAA4800478691 /* FetchItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81707D18200FAA4800478691 /* FetchItemsViewController.swift */; };
 		81707D1B200FAA7600478691 /* ListFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81707D1A200FAA7600478691 /* ListFeedViewController.swift */; };
 		817D0511200AC8EA0096390C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D0510200AC8EA0096390C /* SearchViewController.swift */; };
-		81943DD320097B3900A1F67C /* EventDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81943DD220097B3800A1F67C /* EventDetailTableViewController.swift */; };
 		819B5F722006839A00106459 /* MapFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B5F712006839A00106459 /* MapFeedViewController.swift */; };
 		819B5F752007EA5800106459 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B5F742007EA5800106459 /* extensions.swift */; };
 		819B5F792007EDDC00106459 /* EventDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819B5F782007EDDC00106459 /* EventDetail.storyboard */; };
@@ -83,7 +82,6 @@
 		81707D18200FAA4800478691 /* FetchItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchItemsViewController.swift; sourceTree = "<group>"; };
 		81707D1A200FAA7600478691 /* ListFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFeedViewController.swift; sourceTree = "<group>"; };
 		817D0510200AC8EA0096390C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		81943DD220097B3800A1F67C /* EventDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewController.swift; sourceTree = "<group>"; };
 		819B5F712006839A00106459 /* MapFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeedViewController.swift; sourceTree = "<group>"; };
 		819B5F742007EA5800106459 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		819B5F782007EDDC00106459 /* EventDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventDetail.storyboard; sourceTree = "<group>"; };
@@ -256,7 +254,6 @@
 				817D0510200AC8EA0096390C /* SearchViewController.swift */,
 				81A238C62011801800CF2445 /* ProfileViewController.swift */,
 				B7FCED82200BFA6D00690301 /* EditProfileTableViewController.swift */,
-				81943DD220097B3800A1F67C /* EventDetailTableViewController.swift */,
 				81A238C82011848900CF2445 /* ArtistProfileViewController.swift */,
 				81A238CA201187C500CF2445 /* EventDetailViewController.swift */,
 				CA73062B20116280008A7C00 /* WebViewController.swift */,
@@ -364,7 +361,6 @@
 				CA47E0572005785800B6222F /* EventTableViewCell.swift in Sources */,
 				B7DE16B320069053003C8126 /* WelcomeViewController.swift in Sources */,
 				81707D19200FAA4800478691 /* FetchItemsViewController.swift in Sources */,
-				81943DD320097B3900A1F67C /* EventDetailTableViewController.swift in Sources */,
 				817D0511200AC8EA0096390C /* SearchViewController.swift in Sources */,
 				81707D1B200FAA7600478691 /* ListFeedViewController.swift in Sources */,
 				811F271220052E5E00A9B47C /* CommentController.swift in Sources */,
