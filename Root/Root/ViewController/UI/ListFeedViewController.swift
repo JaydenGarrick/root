@@ -48,7 +48,7 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
     }
     
     
-    // MARK - IBActions
+    // MARK: - IBActions
     
     @IBAction func feedToggled(_ sender: UISegmentedControl) {
        
@@ -62,12 +62,16 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
                             interestArray.append(event)
                         } else {
                             for interestEvent in interestArray {
-                                if event.name != interestEvent.name {
-                                    interestArray.append(event)
+                                if event == interestEvent {
+                                    // Need to return if one matches, and if none matches, append
+                                    return
+                                } else {
+                                    continue
                                 }
                             }
+                            interestArray.append(event)
                         }
-                        print(interestArray.count)
+                        print("\(interestArray.count) is the total number of items in the interest array")
                     }
                     tableView.reloadData()
                 }
@@ -104,7 +108,7 @@ extension ListFeedViewController: UITableViewDelegate, UITableViewDataSource, Ev
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 111
+        return 127
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -130,7 +134,7 @@ extension ListFeedViewController: UITableViewDelegate, UITableViewDataSource, Ev
             cell.dateEventLabel.text = dateFormatter.string(from: event.dateAndTime)
             cell.typeOfArtLabel.text = event.typeOfEvent
             cell.artistNameLabel.text = event.name
-            cell.typeOfArtImageView.image = UIImage(named: event.typeOfEvent)
+            //cell.typeOfArtImageView.image = UIImage(named: event.typeOfEvent)
         } else {
             let event = interestArray[indexPath.row]
             let eventImage = UIImage(data: event.eventImage!)
@@ -142,7 +146,7 @@ extension ListFeedViewController: UITableViewDelegate, UITableViewDataSource, Ev
             cell.dateEventLabel.text = "\(event.venue) \(dateFormatter.string(from: event.dateAndTime))"
             cell.typeOfArtLabel.text = event.typeOfEvent
             cell.artistNameLabel.text = event.name
-            cell.typeOfArtImageView.image = UIImage(named: event.typeOfEvent)
+            //cell.typeOfArtImageView.image = UIImage(named: event.typeOfEvent)
         }
         return cell
     }
@@ -150,7 +154,7 @@ extension ListFeedViewController: UITableViewDelegate, UITableViewDataSource, Ev
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         // Set initial state
         cell.alpha = 0
-        let transform = CATransform3DTranslate(CATransform3DIdentity, -10, 10, 0)
+        let transform = CATransform3DTranslate(CATransform3DIdentity, -5, 10, 0)
         cell.layer.transform = transform
         // UIView animation method to change to the final state of the cell
         UIView.animate(withDuration: 0.5) {

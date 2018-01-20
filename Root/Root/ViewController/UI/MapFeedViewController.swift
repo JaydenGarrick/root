@@ -94,7 +94,7 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         var view: MKAnnotationView! = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationID")
         
         if view == nil {
-            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationID")
+            view = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationID")
             view.canShowCallout = true
         } else {
             view.annotation = annotation
@@ -106,6 +106,24 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         view.canShowCallout = true
         view.rightCalloutAccessoryView = detailViewButton
         //view.image = UIImage(named: event!.typeOfEvent.trimmingCharacters(in: .whitespaces))
+        if event?.typeOfEvent == " #music" {
+            view.image = #imageLiteral(resourceName: "musicnote")
+        }
+        if event?.typeOfEvent == " #sketch" {
+            view.image = #imageLiteral(resourceName: "sketch")
+        }
+        if event?.typeOfEvent == " #paintings" {
+            view.image = #imageLiteral(resourceName: "paintbrush")
+        }
+        if event?.typeOfEvent == " #photography" {
+            view.image = #imageLiteral(resourceName: "camera")
+        }
+        if event?.typeOfEvent == " #poetry" {
+            view.image = #imageLiteral(resourceName: "poetry")
+        }
+        if event?.typeOfEvent == " #pottery" {
+            view.image = #imageLiteral(resourceName: "ceramic")
+        }
 
         print("\(event!.typeOfEvent.trimmingCharacters(in: .whitespaces))")
         view.annotation = annotation
