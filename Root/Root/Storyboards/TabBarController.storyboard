@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,7 +33,7 @@
         <scene sceneID="vkG-0A-NSq">
             <objects>
                 <viewControllerPlaceholder storyboardName="ListFeed" id="PN3-82-3p5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" id="gOd-jU-GdH"/>
+                    <tabBarItem key="tabBarItem" title="Feed" selectedImage="user" id="gOd-jU-GdH"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHa-4H-eBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,4 +60,7 @@
             <point key="canvasLocation" x="295" y="742"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="user" width="24" height="24"/>
+    </resources>
 </document>

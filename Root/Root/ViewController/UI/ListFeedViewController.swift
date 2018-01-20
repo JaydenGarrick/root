@@ -62,11 +62,14 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
                             interestArray.append(event)
                         } else {
                             for interestEvent in interestArray {
-                                if event != interestEvent {
-                                    interestArray.append(event)
+                                if event == interestEvent {
                                     // Need to return if one matches, and if none matches, append
+                                    return
+                                } else {
+                                    continue
                                 }
                             }
+                            interestArray.append(event)
                         }
                         print("\(interestArray.count) is the total number of items in the interest array")
                     }
