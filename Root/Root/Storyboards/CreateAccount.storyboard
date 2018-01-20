@@ -7,6 +7,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -183,6 +184,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Fullname..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hdk-gh-FMd" customClass="UITextFieldX" customModule="Root" customModuleProvider="target">
                                 <rect key="frame" x="74" y="272" width="227" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.55000000000000004" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" name="Tint"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="t01-Sb-Etg"/>
                                 </constraints>
@@ -199,6 +201,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Username..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LQT-Ou-orN" customClass="UITextFieldX" customModule="Root" customModuleProvider="target">
                                 <rect key="frame" x="74" y="337" width="227" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.55000000000000004" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" name="Tint"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Mfh-M5-jIB"/>
                                 </constraints>
@@ -215,6 +218,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter hometown..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="irk-q9-ITW" customClass="UITextFieldX" customModule="Root" customModuleProvider="target">
                                 <rect key="frame" x="74" y="402" width="227" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.55000000000000004" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" name="Tint"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="dpo-ee-MsG"/>
                                 </constraints>
@@ -553,6 +557,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Website URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vLo-pp-ebQ" customClass="UITextFieldX" customModule="Root" customModuleProvider="target">
                                 <rect key="frame" x="74" y="406" width="227" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.55000000000000004" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" name="Tint"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="1in-uu-Duy"/>
                                     <constraint firstAttribute="height" constant="30" id="3CW-56-jA6"/>
@@ -676,6 +681,9 @@
         <image name="WhatArtInterests" width="1504" height="2256"/>
         <image name="home" width="64" height="64"/>
         <image name="users" width="64" height="64"/>
+        <namedColor name="Tint">
+            <color red="0.14399999380111694" green="0.61400002241134644" blue="0.55000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="AsZ-8i-G6U"/>
