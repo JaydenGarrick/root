@@ -99,14 +99,17 @@
                                                                         <constraint firstItem="VVv-3Z-1d8" firstAttribute="leading" secondItem="at1-jG-bZt" secondAttribute="leading" constant="5" id="hoH-zW-GAG"/>
                                                                     </constraints>
                                                                 </stackView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gpe-fS-dMz" customClass="UIImageViewX" customModule="Root" customModuleProvider="target">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gpe-fS-dMz" customClass="UIImageViewX" customModule="Root" customModuleProvider="target">
                                                                     <rect key="frame" x="209.5" y="0.0" width="165.5" height="110.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="gpe-fS-dMz" secondAttribute="height" multiplier="3:2" id="eLg-YY-bvl"/>
                                                                     </constraints>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="3"/>
+                                                                            <real key="value" value="44"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="pulseDelay">
+                                                                            <real key="value" value="1"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
@@ -114,8 +117,6 @@
                                                             <constraints>
                                                                 <constraint firstItem="gpe-fS-dMz" firstAttribute="leading" secondItem="at1-jG-bZt" secondAttribute="trailing" id="6Ul-iP-M0d"/>
                                                                 <constraint firstAttribute="trailing" secondItem="gpe-fS-dMz" secondAttribute="trailing" id="al5-u9-205"/>
-                                                                <constraint firstAttribute="bottom" secondItem="gpe-fS-dMz" secondAttribute="bottom" constant="-8" id="seE-ON-YMC"/>
-                                                                <constraint firstItem="gpe-fS-dMz" firstAttribute="top" secondItem="W53-q6-g4v" secondAttribute="top" constant="-8" id="zod-bF-Lj3"/>
                                                             </constraints>
                                                         </stackView>
                                                     </subviews>
@@ -195,11 +196,11 @@
             </objects>
             <point key="canvasLocation" x="1347.2" y="-263.56821589205401"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Feed-->
         <scene sceneID="Na7-xw-8Oc">
             <objects>
                 <navigationController storyboardIdentifier="ListFeedNavController" automaticallyAdjustsScrollViewInsets="NO" id="A6C-lf-sSi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="DfN-Qj-WJv"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="list" id="DfN-Qj-WJv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XFl-z5-ppe">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -216,4 +217,7 @@
             <point key="canvasLocation" x="-169" y="-415"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="list" width="25" height="25"/>
+    </resources>
 </document>
