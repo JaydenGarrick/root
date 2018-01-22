@@ -29,10 +29,8 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        
         setImageOnNavBar()
-        
-        
-       
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
@@ -45,6 +43,10 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
         tableView.delegate = self
         locationManager.delegate = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
     

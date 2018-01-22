@@ -24,13 +24,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Filter" translatesAutoresizingMaskIntoConstraints="NO" id="R8h-Rf-94h">
-                                <rect key="frame" x="0.0" y="103" width="375" height="56"/>
-                                <color key="backgroundColor" red="1" green="0.95287805800000003" blue="0.94816809889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.15343365070000001" green="0.65313899519999996" blue="0.59311699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="barTintColor" red="1" green="0.94500058890000005" blue="0.94022583959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bdG-Ob-VMc">
                                 <rect key="frame" x="16" y="69.5" width="343" height="29"/>
                                 <segments>
@@ -43,7 +36,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bwL-18-dG0">
-                                <rect key="frame" x="0.0" y="159" width="375" height="508"/>
+                                <rect key="frame" x="0.0" y="102.5" width="375" height="564.5"/>
                                 <color key="backgroundColor" red="1" green="0.95287805800000003" blue="0.94816809889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.15343365070000001" green="0.65313899519999996" blue="0.59311699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.1441808939" green="0.61391872169999995" blue="0.54964023829999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -159,15 +152,12 @@
                         <color key="tintColor" red="0.15343365070000001" green="0.65313899519999996" blue="0.59311699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bwL-18-dG0" firstAttribute="bottom" secondItem="vdW-2Z-TdQ" secondAttribute="bottom" id="5Jj-7v-njx"/>
-                            <constraint firstItem="R8h-Rf-94h" firstAttribute="trailing" secondItem="vdW-2Z-TdQ" secondAttribute="trailing" id="DFj-dr-YWy"/>
                             <constraint firstItem="bwL-18-dG0" firstAttribute="leading" secondItem="vdW-2Z-TdQ" secondAttribute="leading" id="Hi5-31-eoG"/>
                             <constraint firstItem="bdG-Ob-VMc" firstAttribute="top" secondItem="vdW-2Z-TdQ" secondAttribute="top" constant="5.5" id="WCg-3C-cZ9"/>
-                            <constraint firstItem="bwL-18-dG0" firstAttribute="top" secondItem="R8h-Rf-94h" secondAttribute="bottom" id="XSB-RZ-luV"/>
+                            <constraint firstItem="bwL-18-dG0" firstAttribute="top" secondItem="bdG-Ob-VMc" secondAttribute="bottom" constant="5" id="XZe-eQ-4bB"/>
                             <constraint firstItem="bdG-Ob-VMc" firstAttribute="leading" secondItem="vdW-2Z-TdQ" secondAttribute="leading" constant="16" id="jJK-uK-EeW"/>
                             <constraint firstItem="vdW-2Z-TdQ" firstAttribute="trailing" secondItem="bdG-Ob-VMc" secondAttribute="trailing" constant="16" id="kxw-Jx-ogQ"/>
                             <constraint firstItem="bwL-18-dG0" firstAttribute="trailing" secondItem="vdW-2Z-TdQ" secondAttribute="trailing" id="lDa-p8-zhk"/>
-                            <constraint firstItem="R8h-Rf-94h" firstAttribute="top" secondItem="bdG-Ob-VMc" secondAttribute="bottom" constant="5.5" id="ll4-3X-utd"/>
-                            <constraint firstItem="R8h-Rf-94h" firstAttribute="leading" secondItem="vdW-2Z-TdQ" secondAttribute="leading" id="tbr-hj-ej1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vdW-2Z-TdQ"/>
                     </view>
