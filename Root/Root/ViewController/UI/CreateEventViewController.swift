@@ -199,8 +199,7 @@ extension CreateEventViewController: SearchViewControllerDelegate {
                 print("Error reverse geocoding while creating event: \(error.localizedDescription)")
             }
             guard let placemark = placemarks?.first else { return }
-            
-            self.addVenueButton.setTitle("\(placemark.name!), \(placemark.postalCode!), \(placemark.administrativeArea!), \(placemark.subThoroughfare!)", for: .normal)
+            self.addVenueButton.setTitle("\(placemark.name!), \(placemark.postalCode!), \(placemark.administrativeArea!), \(placemark.subThoroughfare!), \(placemark.locality!)", for: .normal)
             
         }
         
