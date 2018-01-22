@@ -36,7 +36,13 @@ class EventDetailViewController: UIViewController {
         self.commentsTableView.dataSource = self
         self.commentsTableView.delegate = self
         
-        guard let event = event else { return }
+        guard let event = event,
+            let loggedInUser = UserController.shared.loggedInUser,
+            let loggedInUserProfilePictureAsData = loggedInUser.profilePicture
+            else { return }
+        
+        let loggedInUserProfilePictureAsImage = UIImage(data: loggedInUserProfilePictureAsData)
+        newCommentUserProfilePicture.image = loggedInUserProfilePictureAsImage
         
         UserController.shared.fetchEventCreator(event: event) { (user) in
             guard let user = user else { return }
@@ -68,8 +74,12 @@ class EventDetailViewController: UIViewController {
             let event = self.event,
             let loggedInUser = UserController.shared.loggedInUser
             else { return }
-        CommentController.shared.createNewCommentWith(text: text, event: event, loggedInUser: loggedInUser)
-        
+        self.newCommentTextField.text = ""
+        CommentController.shared.createNewCommentWith(text: text, event: event, loggedInUser: loggedInUser) { (success) in
+                DispatchQueue.main.async {
+                    self.commentsTableView.reloadData()
+            }
+        }
     }
     
 }

@@ -54,6 +54,7 @@ extension CKRecord {
         self.setValue(comment.creatorID, forKey: "creatorID")
         self.setValue(comment.eventID, forKey: "eventID")
         
+        
     }
     
 }

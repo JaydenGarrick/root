@@ -18,7 +18,7 @@ class CommentController {
     var eventComments: [Comment] = []
     var commentCreators: [User] = []
     
-    func createNewCommentWith(text: String, event: Event, loggedInUser: User) {
+    func createNewCommentWith(text: String, event: Event, loggedInUser: User, completion: @escaping (Bool) ->Void) {
         
         guard let eventCKRecordID = event.ckRecordID,
             let userCKRecordID = loggedInUser.cloudKitRecordID else { return }
@@ -27,10 +27,14 @@ class CommentController {
         
         let newComment = Comment(text: text, creatorID: creatorID, eventID: eventID)
         
+        self.eventComments.append(newComment)
+        completion(true)
+        
         save(comment: newComment) { (success) in
-            
+            completion(true)
         }
         
+
     }
     
     func fetchCommentsForCurrent(event: Event, completion: @escaping (Bool?) -> Void) {
@@ -39,6 +43,10 @@ class CommentController {
         let predicate = NSPredicate(format: "eventID == %@", eventCKRecordID)
         
         let query = CKQuery(recordType: "Comment", predicate: predicate)
+        
+//        let sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+//
+//        query.sortDescriptors = sortDescriptors
         
         publicDataBase.perform(query, inZoneWith: nil) { (records, error) in
             guard let records = records else { return }
@@ -50,24 +58,20 @@ class CommentController {
 //                guard let comment = Comment(ckRecord: record) else { return }
 //                eventComments.append(comment)
 //            }
-            
-            //            var commentCreators: [User] = []
-            //            for record in records {
-            //                guard let comment = Comment(ckRecord: record) else { completion(false) ; return }
-            //                CommentController.shared.fetchCommentCreator(comment: comment, completion: { (commentCreator) in
-            //                    guard let commentCreator = commentCreator else { completion(false) ; return }
-            //                    commentCreators.append(commentCreator)
-            //                })
-            //                eventComments.append(comment)
-            //
-            //            }
-            //            self.commentCreators = commentCreators
+//            var sortedEventComments: [Comment] = []
+//
+//            for event in eventComments {
+//
+//            }
+//
+//            print(eventComments[0].timestamp)
+//
             self.eventComments = eventComments
+            
             completion(true)
         }
         
     }
-    
     
     func fetchCommentCreator(comment: Comment, completion: @escaping (User?) -> Void) {
         let commentCKRecordID = comment.creatorID
