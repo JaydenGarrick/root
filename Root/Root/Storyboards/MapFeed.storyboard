@@ -4,13 +4,12 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map Feed View Controller-->
+        <!--Map-->
         <scene sceneID="fQP-mU-i9R">
             <objects>
                 <viewController id="Jlf-vO-3yB" customClass="MapFeedViewController" customModule="Root" customModuleProvider="target" sceneMemberID="viewController">
@@ -45,7 +44,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Z5-zS-7Xq"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" selectedImage="map" id="F5O-8S-Hmc"/>
+                    <tabBarItem key="tabBarItem" title="Map" selectedImage="map" id="F5O-8S-Hmc"/>
                     <navigationItem key="navigationItem" id="Vte-4r-VXQ">
                         <nil key="title"/>
                     </navigationItem>
@@ -67,11 +66,11 @@
             </objects>
             <point key="canvasLocation" x="1680" y="205.99700149925039"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Map-->
         <scene sceneID="I8I-Ib-tmo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eFM-or-2j1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" selectedImage="mapmarker" systemItem="mostRecent" id="lhA-qa-Jl1">
+                    <tabBarItem key="tabBarItem" title="Map" image="map" selectedImage="map" id="lhA-qa-Jl1">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -90,7 +89,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="map" width="24" height="24"/>
-        <image name="mapmarker" width="16" height="16"/>
+        <image name="map" width="25" height="25"/>
     </resources>
 </document>

@@ -44,28 +44,15 @@ class CommentController {
         
         let query = CKQuery(recordType: "Comment", predicate: predicate)
         
-//        let sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-//
-//        query.sortDescriptors = sortDescriptors
+        let sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+
+        query.sortDescriptors = sortDescriptors
         
         publicDataBase.perform(query, inZoneWith: nil) { (records, error) in
             guard let records = records else { return }
             
             let eventComments = records.flatMap { Comment(ckRecord: $0) }
-            
-//            var eventComments = [Comment]()
-//            for record in records {
-//                guard let comment = Comment(ckRecord: record) else { return }
-//                eventComments.append(comment)
-//            }
-//            var sortedEventComments: [Comment] = []
-//
-//            for event in eventComments {
-//
-//            }
-//
-//            print(eventComments[0].timestamp)
-//
+
             self.eventComments = eventComments
             
             completion(true)
