@@ -43,7 +43,7 @@ class ArtistProfileViewController: UIViewController {
             }
         }
     }
-    
+
     
     func updateViews() {
         
@@ -57,7 +57,12 @@ class ArtistProfileViewController: UIViewController {
         artistWebsiteURLButton.setTitle("\(artist.websiteURL)", for: .normal)
     }
 
+    // MARK: - IBActions
+    @IBAction func profileActionButtonTapped(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Block User", message: nil, preferredStyle: .actionSheet)
+    }
 }
+
 
 
 // TableView DataSource and Delegate Methods
