@@ -17,7 +17,7 @@ class EventDetailViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var eventImageView: UIImageView!
-    @IBOutlet weak var artistsWhoCreatedEventImageView: UIImageView!
+    @IBOutlet weak var artistsWhoCreatedEventImageView: UIImageViewX!
     @IBOutlet weak var artistWhoCreatedEventLabel: UILabel!
     @IBOutlet weak var nameOfEventLabel: UILabel!
     @IBOutlet weak var eventDescriptionLabel: UILabel!
@@ -122,12 +122,16 @@ extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as? CommentTableViewCell ?? CommentTableViewCell()
         
         let comment = CommentController.shared.eventComments[indexPath.row]
+        //cell.commentCreatorProfileImageView.layer.cornerRadius = 18.5
 //        let commentCreator = CommentController.shared.commentCreators[indexPath.row]
         
         cell.comment = comment
         
-        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 53
     }
 }
 
