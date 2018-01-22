@@ -33,11 +33,9 @@ class CommentTableViewCell: UITableViewCell {
         guard let commentCreatorProfilePictureAsData = commentCreator.profilePicture,
             let comment = comment else { return }
         
-        
         let commentProfilePicture = UIImage(data: commentCreatorProfilePictureAsData)
         commentCreatorProfileImageView.image = commentProfilePicture
         commentTextLabel.text = comment.text
-        
         
     }
     
