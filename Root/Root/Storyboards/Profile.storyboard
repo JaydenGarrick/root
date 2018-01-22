@@ -161,7 +161,7 @@
                                                                             <color key="backgroundColor" red="1" green="0.94467028141552445" blue="0.88566760990499416" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <state key="normal" image="#poetry"/>
                                                                             <connections>
-                                                                                <action selector="sketchButtonTapped:" destination="uV8-cY-D4m" eventType="touchUpInside" id="gxy-vd-p9z"/>
+                                                                                <action selector="poetryButtonTapped:" destination="uV8-cY-D4m" eventType="touchUpInside" id="tad-Q9-419"/>
                                                                             </connections>
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zat-h2-DXi">
@@ -169,13 +169,16 @@
                                                                             <color key="backgroundColor" red="1" green="0.94467028141552445" blue="0.88566760990499416" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <state key="normal" image="#sketch"/>
                                                                             <connections>
-                                                                                <action selector="potteryButtonTapped:" destination="uV8-cY-D4m" eventType="touchUpInside" id="TcX-ap-kYu"/>
+                                                                                <action selector="sketchButtonTapped:" destination="uV8-cY-D4m" eventType="touchUpInside" id="nBC-KE-7q2"/>
                                                                             </connections>
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cc-5r-knl">
                                                                             <rect key="frame" x="108.5" y="0.0" width="39.5" height="32"/>
                                                                             <color key="backgroundColor" red="1" green="0.94467028141552445" blue="0.88566760990499416" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <state key="normal" image="#pottery"/>
+                                                                            <connections>
+                                                                                <action selector="potteryButtonTapped:" destination="uV8-cY-D4m" eventType="touchUpInside" id="k44-aO-br8"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                 </stackView>

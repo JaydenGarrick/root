@@ -59,6 +59,7 @@ class EventDetailViewController: UIViewController {
         }
     }
     
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToArtistProfileSegue" {
             guard let destinationVC = segue.destination as? ArtistProfileViewController,
@@ -68,6 +69,7 @@ class EventDetailViewController: UIViewController {
         }
     }
     
+    // MARK: - IBActions
     @IBAction func postCommentButtonTapped(_ sender: UIButton) {
         
         guard let text = newCommentTextField.text,
