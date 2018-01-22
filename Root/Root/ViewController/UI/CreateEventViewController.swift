@@ -154,6 +154,11 @@ class CreateEventViewController: UIViewController {
             
             EventController.shared.createEventWith(name: name, eventImage: eventImageData, dataAndTime: dateOfEvent, description: description, venue: venue, artist: [user], typeOfEvent: typeOfEvent) { (success) in
                 if success {
+                    
+                    // FIXME: - Geocode location here aswell
+                    let newEvent = Event(name: name, eventImage: eventImageData, dateAndTime: dateOfEvent, description: description, venue: venue, creatorID: (UserController.shared.loggedInUser?.appleUserRef)!, typeOfEvent: typeOfEvent, coordinate: CLLocationCoordinate2D(latitude: 40.761836, longitude: -111.890746))
+                    EventController.shared.fetchedEvents.append(newEvent)
+                    
                     print("Success! :)")
                     DispatchQueue.main.async {
                         

@@ -95,7 +95,7 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
         UserController.shared.updateUser(user: user, fullName: fullName, profilePicture: profilePicture, bio: bio, homeTown: user.homeTown, interests: self.interests, websiteURL: websiteURL) { (success) in
             DispatchQueue.main.async {
                 print("success")
-                self.dismiss(animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }
