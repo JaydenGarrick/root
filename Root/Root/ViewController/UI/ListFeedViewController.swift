@@ -30,6 +30,10 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
+        if UserController.shared.loggedInUser?.isArtist == false {
+            self.navigationItem.rightBarButtonItem = nil
+        }
+        
         setImageOnNavBar()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
