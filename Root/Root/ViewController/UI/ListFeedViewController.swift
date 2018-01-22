@@ -47,6 +47,10 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     
     // MARK: - IBActions
     
