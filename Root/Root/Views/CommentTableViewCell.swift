@@ -40,7 +40,9 @@ class CommentTableViewCell: UITableViewCell {
     }
     
 
+
     override func awakeFromNib() {
+
 
 //        // backgroundShadowView.backgroundColor = .whi
 //        // contentView.backgroundColor = UIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1.0)
@@ -50,8 +52,10 @@ class CommentTableViewCell: UITableViewCell {
 //        backgroundShadowView.layer.shadowOffset = CGSize(width: 0, height: 0)
 //        backgroundShadowView.layer.shadowOpacity = 0.8
 
+
         
     }
+
 
 }
 
