@@ -20,7 +20,7 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var artistsWhoCreatedEventImageView: UIImageViewX!
     @IBOutlet weak var artistWhoCreatedEventLabel: UILabel!
     @IBOutlet weak var nameOfEventLabel: UILabel!
-    @IBOutlet weak var eventDescriptionLabel: UILabel!
+    @IBOutlet weak var eventDescriptionLabel: UILabelX!
     @IBOutlet weak var nameOfVenueLabel: UILabel!
     @IBOutlet weak var streetAddressLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
