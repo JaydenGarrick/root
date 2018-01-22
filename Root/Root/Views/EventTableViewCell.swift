@@ -24,6 +24,7 @@ class EventTableViewCell: UITableViewCell {
     
     weak var delegate: EventTableViewCellDelegate?
     
+
     override func awakeFromNib() {
         // backgroundShadowView.backgroundColor = .whi
         // contentView.backgroundColor = UIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1.0)
@@ -34,5 +35,6 @@ class EventTableViewCell: UITableViewCell {
         backgroundShadowView.layer.shadowOpacity = 0.8
         
     }
+
 
 }
