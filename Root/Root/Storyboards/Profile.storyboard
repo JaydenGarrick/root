@@ -337,7 +337,7 @@
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="value" red="0.68444638324873097" green="0.68444638324873097" blue="0.68444638324873097" alpha="0.77330372431506844" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
@@ -400,9 +400,7 @@
                                                                         <constraint firstAttribute="bottom" secondItem="u7i-xm-qS6" secondAttribute="bottom" id="9FX-ng-HM8"/>
                                                                         <constraint firstAttribute="trailing" secondItem="u7i-xm-qS6" secondAttribute="trailing" id="C8S-Hi-XQN"/>
                                                                         <constraint firstItem="DGn-jm-bcS" firstAttribute="top" secondItem="Q37-eH-Ndr" secondAttribute="top" id="RN5-aQ-WWH"/>
-                                                                        <constraint firstItem="u7i-xm-qS6" firstAttribute="leading" secondItem="Q37-eH-Ndr" secondAttribute="leading" constant="5" id="aAD-Yn-5WY"/>
                                                                         <constraint firstAttribute="trailing" secondItem="DGn-jm-bcS" secondAttribute="trailing" id="dms-VE-ZeB"/>
-                                                                        <constraint firstItem="DGn-jm-bcS" firstAttribute="leading" secondItem="Q37-eH-Ndr" secondAttribute="leading" constant="5" id="mMh-8c-IKD"/>
                                                                     </constraints>
                                                                 </stackView>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Ua-WK-HlY" customClass="UIImageViewX" customModule="Root" customModuleProvider="target">
