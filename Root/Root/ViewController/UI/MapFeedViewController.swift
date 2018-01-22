@@ -33,10 +33,6 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         self.navigationController?.view.backgroundColor = .clear
         setImageOnNavBar()
         
-        if UserController.shared.loggedInUser?.isArtist == false {
-            self.navigationController?.navigationBar.isHidden = true
-        }
-        
         // CoreLocation
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
