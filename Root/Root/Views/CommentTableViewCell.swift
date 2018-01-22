@@ -49,7 +49,7 @@ class CommentTableViewCell: UITableViewCell {
         backgroundShadowView.layer.masksToBounds = false
         backgroundShadowView.layer.shadowColor = UIColor.black.withAlphaComponent(0.5).cgColor
         backgroundShadowView.layer.shadowOffset = CGSize(width: 0, height: -1)
-        backgroundShadowView.layer.shadowOpacity = 0.8
+        backgroundShadowView.layer.shadowOpacity = 0.2
 
 
         
