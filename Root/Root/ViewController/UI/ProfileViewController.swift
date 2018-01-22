@@ -52,6 +52,12 @@ class ProfileViewController: UIViewController {
         bioLabel.text = user.bio
         urlButton.setTitle(websiteURLAsString, for: .normal)
         
+        UserController.shared.fetchEventsFor(user: user) { (success) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
         
         
     }
@@ -75,7 +81,7 @@ class ProfileViewController: UIViewController {
         
         
     }
-
+    
     @IBAction func editProfileButtonTapped(_ sender: Any) {
         self.editButtonTappedAlert()
     }
@@ -89,23 +95,41 @@ class ProfileViewController: UIViewController {
                 destinationVC.websiteURLAsString = websiteURLAsString
             }
         }
+        
+        if segue.identifier == "ToEventDetailSegue" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let destinationVC = segue.destination as! EventDetailViewController
+            let event = EventController.shared.fetchedEvents[indexPath.row]
+            destinationVC.event = event
+        }
     }
-    
     
 }
 
-// MARK: - TableViewDelegate Functions
+
+// MARK: - TableViewDataSource Functions
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return # of comments
-        return 0
+        guard let eventsCreated = UserController.shared.eventsCreated else { return 0 }
+        return eventsCreated.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UPDATE IDENTIFIER", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EventFeedCell", for: indexPath) as! EventTableViewCell
         // configure cell with custom cell
+        guard let eventsCreated = UserController.shared.eventsCreated else { return UITableViewCell() }
+        let event = eventsCreated[indexPath.row]
+        let eventImage = UIImage(data: event.eventImage!)
+        let dateFormatter = DateFormatter()
         
+        dateFormatter.dateStyle = .full
+        
+        cell.eventPictureImageView.image = eventImage
+        cell.dateEventLabel.text = dateFormatter.string(from: event.dateAndTime)
+        cell.typeOfArtLabel.text = event.typeOfEvent
+        cell.artistNameLabel.text = event.name
         return cell
     }
 }

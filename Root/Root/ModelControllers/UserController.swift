@@ -149,11 +149,15 @@ class UserController {
     
     func fetchEventsFor(user: User, completion: @escaping (Bool) -> Void) {
         guard let creatorID = user.cloudKitRecordID else { completion(false) ; return }
+        
         let predicate = NSPredicate(format: "creatorID == %@", creatorID)
         let query = CKQuery(recordType: "Event", predicate: predicate)
+        
         publicDataBase.perform(query, inZoneWith: nil) { (records, error) in
             guard let records = records else { completion(false) ; return }
+            
             let eventsCreated = records.flatMap({Event(ckRecord: $0)})
+            
             UserController.shared.eventsCreated = eventsCreated
             
             // Below is the translation for the flatmap above.
