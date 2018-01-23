@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class ArtistProfileViewController: UIViewController {
 
@@ -59,7 +60,27 @@ class ArtistProfileViewController: UIViewController {
 
     // MARK: - IBActions
     @IBAction func profileActionButtonTapped(_ sender: UIButton) {
-        let alertController = UIAlertController(title: "Block User", message: nil, preferredStyle: .actionSheet)
+        let actionSheetAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let blockUserAction = UIAlertAction(title: "Block user", style: .destructive) { (action) in
+            let confirmationAlertController = UIAlertController(title: "Are you sure you want to block this user?", message: nil, preferredStyle: .alert)
+            let blockUserAction = UIAlertAction(title: "Block user", style: .destructive, handler: { (action) in
+                guard let artist = self.artist,
+                    let loggedInUser = UserController.shared.loggedInUser,
+                    let artistCloudKitRecordID = artist.cloudKitRecordID
+                    else { return }
+                let reference = CKReference(recordID: artistCloudKitRecordID, action: .none)
+                
+                
+            })
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
+                
+            })
+            confirmationAlertController.addAction(blockUserAction)
+            confirmationAlertController.addAction(cancelAction)
+            self.present(confirmationAlertController, animated: true, completion: nil)
+        }
+        actionSheetAlertController.addAction(blockUserAction)
+        self.present(actionSheetAlertController, animated: true, completion: nil)
     }
 }
 
