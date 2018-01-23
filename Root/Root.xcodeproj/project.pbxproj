@@ -39,8 +39,8 @@
 		81A238C72011801800CF2445 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A238C62011801800CF2445 /* ProfileViewController.swift */; };
 		81A238C92011848900CF2445 /* ArtistProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A238C82011848900CF2445 /* ArtistProfileViewController.swift */; };
 		81A238CB201187C500CF2445 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A238CA201187C500CF2445 /* EventDetailViewController.swift */; };
+		81A238CF2016B3E200CF2445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81A238CE2016B3E200CF2445 /* Assets.xcassets */; };
 		81EDF41820042E35006E69EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDF41720042E35006E69EA /* AppDelegate.swift */; };
-		81EDF41F20042E35006E69EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EDF41E20042E35006E69EA /* Assets.xcassets */; };
 		81EDF42220042E35006E69EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EDF42020042E35006E69EA /* LaunchScreen.storyboard */; };
 		B7DE16B320069053003C8126 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B220069053003C8126 /* WelcomeViewController.swift */; };
 		B7DE16B52006908C003C8126 /* CreateUsernameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B42006908C003C8126 /* CreateUsernameVC.swift */; };
@@ -89,9 +89,9 @@
 		81A238C62011801800CF2445 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		81A238C82011848900CF2445 /* ArtistProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistProfileViewController.swift; sourceTree = "<group>"; };
 		81A238CA201187C500CF2445 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		81A238CE2016B3E200CF2445 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81EDF41420042E35006E69EA /* Root.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Root.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EDF41720042E35006E69EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		81EDF41E20042E35006E69EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81EDF42120042E35006E69EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81EDF42320042E35006E69EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7DE16B220069053003C8126 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		811F26FA20051F1400A9B47C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				81EDF41E20042E35006E69EA /* Assets.xcassets */,
+				81A238CE2016B3E200CF2445 /* Assets.xcassets */,
 				81EDF42320042E35006E69EA /* Info.plist */,
 				819B5F742007EA5800106459 /* extensions.swift */,
 				81707D15200EA57D00478691 /* IBDesignables */,
@@ -341,8 +341,8 @@
 				CAFF0D4D200681F300A3657D /* CreateEvent.storyboard in Resources */,
 				CA1EF41B20091DFE007BD1CD /* Profile.storyboard in Resources */,
 				811F270820052BEB00A9B47C /* ListFeed.storyboard in Resources */,
+				81A238CF2016B3E200CF2445 /* Assets.xcassets in Resources */,
 				81EDF42220042E35006E69EA /* LaunchScreen.storyboard in Resources */,
-				81EDF41F20042E35006E69EA /* Assets.xcassets in Resources */,
 				811F270620052B7700A9B47C /* TabBarController.storyboard in Resources */,
 				811F270420052B4300A9B47C /* CreateAccount.storyboard in Resources */,
 				819B5F792007EDDC00106459 /* EventDetail.storyboard in Resources */,
