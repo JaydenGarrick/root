@@ -14,6 +14,7 @@ class ArtistProfileViewController: UIViewController {
     // MARK: - Properties
     
     var artist: User?
+    var usersLocation = CLLocationCoordinate2D()
     
     // MARK: - IBOutlets
     
@@ -67,7 +68,11 @@ class ArtistProfileViewController: UIViewController {
                 guard let artist = self.artist
                     else { return }
                 UserController.shared.block(user: artist, completion: { (success) in
-                    print("block completion")
+                    EventController.shared.fetchEvents(usersLocation: self.usersLocation, completion: { (success) in
+                        DispatchQueue.main.async {
+                            self.navigationController?.popToRootViewController(animated: true)
+                        }
+                    })
                 })
                 
             })

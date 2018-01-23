@@ -69,14 +69,16 @@ class EventController {
     
     func fetchEvents(usersLocation: CLLocationCoordinate2D, completion: @escaping ((Bool) -> Void)) {
         // FIXME: - Add a predicate that only fetches events in 50 mile radius
-        guard let userLocation = locationManager.location else { completion(false); return}
+        guard let userLocation = locationManager.location,
+            let loggedInUser = UserController.shared.loggedInUser
+            else { completion(false); return}
         
         let maxLatitudePredicate = NSPredicate(format: "latitude < %f", userLocation.coordinate.latitude + 0.724)
         let maxLongitudePredicate = NSPredicate(format: "longitude < %f", userLocation.coordinate.longitude + 0.724)
         let minLatitudePredicate = NSPredicate(format: "latitude > %f", userLocation.coordinate.latitude - 0.724)
         let minLongitudePredicate = NSPredicate(format: "longitude > %f", userLocation.coordinate.longitude - 0.724)
-       
-        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [maxLatitudePredicate, maxLongitudePredicate, minLatitudePredicate, minLongitudePredicate])
+        let blockedUsersPredicate = NSPredicate(format: "NOT(creatorID IN %@)", loggedInUser.blockedUsersRefs)
+        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [maxLatitudePredicate, maxLongitudePredicate, minLatitudePredicate, minLongitudePredicate, blockedUsersPredicate])
         
         
         let query = CKQuery(recordType: "Event", predicate: compoundPredicate)
