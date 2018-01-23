@@ -573,6 +573,7 @@
         </scene>
     </scenes>
     <resources>
+
         <namedColor name="CellBackground">
             <color red="1" green="0.97699999809265137" blue="0.97899997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

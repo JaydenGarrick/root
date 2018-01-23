@@ -28,6 +28,9 @@ class ArtistProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         // Update The Views
         updateViews()
         
@@ -41,6 +44,7 @@ class ArtistProfileViewController: UIViewController {
         
         UserController.shared.fetchEventsFor(user: artist) { (success) in
             DispatchQueue.main.async {
+                self.tableView.reloadData()
                 print("\(String(describing: UserController.shared.eventsCreated?.count)) is the total amount of events created by this artist!")
             }
         }
@@ -95,12 +99,23 @@ extension ArtistProfileViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return number of events this artist has created
-        return 0
+        guard let eventsCreated = UserController.shared.eventsCreated else { return 0 }
+        return eventsCreated.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SETIDENTIFIER", for: indexPath)
-        // Customize cell based on event
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EventFeedCell", for: indexPath) as! EventTableViewCell
+        guard let eventsCreated = UserController.shared.eventsCreated else { return UITableViewCell() }
+        let event = eventsCreated[indexPath.row]
+        let eventImage = UIImage(data: event.eventImage!)
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = .full
+        
+        cell.eventPictureImageView.image = eventImage
+        cell.dateEventLabel.text = dateFormatter.string(from: event.dateAndTime)
+        cell.typeOfArtLabel.text = event.typeOfEvent
+        cell.artistNameLabel.text = event.name
         return cell
     }
     
