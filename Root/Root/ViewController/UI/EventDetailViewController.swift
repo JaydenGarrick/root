@@ -29,7 +29,7 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var newCommentUserProfilePicture: UIImageView!
     @IBOutlet weak var newCommentTextField: UITextField!
     @IBOutlet weak var postCommentButton: UIButton!
-    @IBOutlet weak var scrollView: UIScrollView!
+  //  @IBOutlet weak var scrollView: UIScrollView!
     
     
     override func viewDidLoad() {
@@ -47,7 +47,7 @@ class EventDetailViewController: UIViewController {
             else { return }
         
         let loggedInUserProfilePictureAsImage = UIImage(data: loggedInUserProfilePictureAsData)
-        newCommentUserProfilePicture.image = loggedInUserProfilePictureAsImage
+        //newCommentUserProfilePicture.image = loggedInUserProfilePictureAsImage
         
         UserController.shared.fetchEventCreator(event: event) { (user) in
             guard let user = user else { return }
@@ -147,7 +147,7 @@ extension EventDetailViewController: UITextFieldDelegate {
     
     // FIXME: Get this working once constraints are redone
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        scrollView.setContentOffset(CGPoint(x:0, y:250), animated: true)
+        //scrollView.setContentOffset(CGPoint(x:0, y:250), animated: true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -156,7 +156,7 @@ extension EventDetailViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        scrollView.setContentOffset(CGPoint.init(x: 0, y: 0), animated: true)
+       // scrollView.setContentOffset(CGPoint.init(x: 0, y: 0), animated: true)
     }
     
     
