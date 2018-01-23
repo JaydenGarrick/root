@@ -90,20 +90,27 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
     
   
     
- 
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "EventDetailIdentifier" {
-            guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let destinationVC = segue.destination as! EventDetailViewController
-            let event = EventController.shared.fetchedEvents[indexPath.row]
-            destinationVC.event = event
-
+        if localFeed == true {
+            if segue.identifier == "EventDetailIdentifier" {
+                guard let indexPath = tableView.indexPathForSelectedRow else { return }
+                let destinationVC = segue.destination as! EventDetailViewController
+                let event = EventController.shared.fetchedEvents[indexPath.row]
+                destinationVC.event = event
+                
+            }
+        } else {
+            if segue.identifier == "EventDetailIdentifier" {
+                guard let indexPath = tableView.indexPathForSelectedRow else { return }
+                let destinationVC = segue.destination as! EventDetailViewController
+                let event = interestArray[indexPath.row]
+                destinationVC.event = event
+            }
         }
-        
     }
-
 }
 
 // MARK: TableView Delegate and DateSource Functions

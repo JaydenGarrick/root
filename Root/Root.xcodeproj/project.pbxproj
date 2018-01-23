@@ -40,6 +40,23 @@
 		81A238C92011848900CF2445 /* ArtistProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A238C82011848900CF2445 /* ArtistProfileViewController.swift */; };
 		81A238CB201187C500CF2445 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A238CA201187C500CF2445 /* EventDetailViewController.swift */; };
 		81A238CF2016B3E200CF2445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81A238CE2016B3E200CF2445 /* Assets.xcassets */; };
+		81A23963201798F900CF2445 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A2394D201798F900CF2445 /* IQNSArray+Sort.swift */; };
+		81A23964201798F900CF2445 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A2394E201798F900CF2445 /* IQUIScrollView+Additions.swift */; };
+		81A23965201798F900CF2445 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A2394F201798F900CF2445 /* IQUITextFieldView+Additions.swift */; };
+		81A23966201798F900CF2445 /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A23950201798F900CF2445 /* IQUIView+Hierarchy.swift */; };
+		81A23967201798F900CF2445 /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A23951201798F900CF2445 /* IQUIViewController+Additions.swift */; };
+		81A23968201798F900CF2445 /* IQUIWindow+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A23952201798F900CF2445 /* IQUIWindow+Hierarchy.swift */; };
+		81A23969201798F900CF2445 /* IQKeyboardManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A23954201798F900CF2445 /* IQKeyboardManagerConstants.swift */; };
+		81A2396A201798F900CF2445 /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A23955201798F900CF2445 /* IQKeyboardManagerConstantsInternal.swift */; };
+		81A2396B201798F900CF2445 /* IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A23956201798F900CF2445 /* IQKeyboardManager.swift */; };
+		81A2396C201798F900CF2445 /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A23958201798F900CF2445 /* IQKeyboardReturnKeyHandler.swift */; };
+		81A2396D201798F900CF2445 /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A2395A201798F900CF2445 /* IQTextView.swift */; };
+		81A2396E201798F900CF2445 /* IQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A2395C201798F900CF2445 /* IQBarButtonItem.swift */; };
+		81A2396F201798F900CF2445 /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A2395D201798F900CF2445 /* IQPreviousNextView.swift */; };
+		81A23970201798F900CF2445 /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A2395E201798F900CF2445 /* IQTitleBarButtonItem.swift */; };
+		81A23971201798F900CF2445 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A2395F201798F900CF2445 /* IQToolbar.swift */; };
+		81A23972201798F900CF2445 /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A23960201798F900CF2445 /* IQUIView+IQKeyboardToolbar.swift */; };
+		81A23973201798F900CF2445 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 81A23962201798F900CF2445 /* IQKeyboardManager.bundle */; };
 		81EDF41820042E35006E69EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDF41720042E35006E69EA /* AppDelegate.swift */; };
 		81EDF42220042E35006E69EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EDF42020042E35006E69EA /* LaunchScreen.storyboard */; };
 		B7DE16B320069053003C8126 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B220069053003C8126 /* WelcomeViewController.swift */; };
@@ -90,6 +107,24 @@
 		81A238C82011848900CF2445 /* ArtistProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistProfileViewController.swift; sourceTree = "<group>"; };
 		81A238CA201187C500CF2445 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		81A238CE2016B3E200CF2445 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		81A2394D201798F900CF2445 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQNSArray+Sort.swift"; sourceTree = "<group>"; };
+		81A2394E201798F900CF2445 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
+		81A2394F201798F900CF2445 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
+		81A23950201798F900CF2445 /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
+		81A23951201798F900CF2445 /* IQUIViewController+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIViewController+Additions.swift"; sourceTree = "<group>"; };
+		81A23952201798F900CF2445 /* IQUIWindow+Hierarchy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIWindow+Hierarchy.swift"; sourceTree = "<group>"; };
+		81A23954201798F900CF2445 /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
+		81A23955201798F900CF2445 /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
+		81A23956201798F900CF2445 /* IQKeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQKeyboardManager.swift; sourceTree = "<group>"; };
+		81A23957201798F900CF2445 /* IQKeyboardManagerSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManagerSwift.h; sourceTree = "<group>"; };
+		81A23958201798F900CF2445 /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
+		81A2395A201798F900CF2445 /* IQTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTextView.swift; sourceTree = "<group>"; };
+		81A2395C201798F900CF2445 /* IQBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQBarButtonItem.swift; sourceTree = "<group>"; };
+		81A2395D201798F900CF2445 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQPreviousNextView.swift; sourceTree = "<group>"; };
+		81A2395E201798F900CF2445 /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
+		81A2395F201798F900CF2445 /* IQToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQToolbar.swift; sourceTree = "<group>"; };
+		81A23960201798F900CF2445 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
+		81A23962201798F900CF2445 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
 		81EDF41420042E35006E69EA /* Root.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Root.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EDF41720042E35006E69EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81EDF42120042E35006E69EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -125,6 +160,7 @@
 				81A238CE2016B3E200CF2445 /* Assets.xcassets */,
 				81EDF42320042E35006E69EA /* Info.plist */,
 				819B5F742007EA5800106459 /* extensions.swift */,
+				81A2394B201798F900CF2445 /* IQKeyboardManagerSwift */,
 				81707D15200EA57D00478691 /* IBDesignables */,
 			);
 			path = Resources;
@@ -199,6 +235,72 @@
 				B7FCED85200D0CED00690301 /* UI */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		81A2394B201798F900CF2445 /* IQKeyboardManagerSwift */ = {
+			isa = PBXGroup;
+			children = (
+				81A2394C201798F900CF2445 /* Categories */,
+				81A23953201798F900CF2445 /* Constants */,
+				81A23956201798F900CF2445 /* IQKeyboardManager.swift */,
+				81A23957201798F900CF2445 /* IQKeyboardManagerSwift.h */,
+				81A23958201798F900CF2445 /* IQKeyboardReturnKeyHandler.swift */,
+				81A23959201798F900CF2445 /* IQTextView */,
+				81A2395B201798F900CF2445 /* IQToolbar */,
+				81A23961201798F900CF2445 /* Resources */,
+			);
+			name = IQKeyboardManagerSwift;
+			path = "../../../../../../../../IQKeyboardManager-master/IQKeyboardManagerSwift";
+			sourceTree = "<group>";
+		};
+		81A2394C201798F900CF2445 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				81A2394D201798F900CF2445 /* IQNSArray+Sort.swift */,
+				81A2394E201798F900CF2445 /* IQUIScrollView+Additions.swift */,
+				81A2394F201798F900CF2445 /* IQUITextFieldView+Additions.swift */,
+				81A23950201798F900CF2445 /* IQUIView+Hierarchy.swift */,
+				81A23951201798F900CF2445 /* IQUIViewController+Additions.swift */,
+				81A23952201798F900CF2445 /* IQUIWindow+Hierarchy.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		81A23953201798F900CF2445 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				81A23954201798F900CF2445 /* IQKeyboardManagerConstants.swift */,
+				81A23955201798F900CF2445 /* IQKeyboardManagerConstantsInternal.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		81A23959201798F900CF2445 /* IQTextView */ = {
+			isa = PBXGroup;
+			children = (
+				81A2395A201798F900CF2445 /* IQTextView.swift */,
+			);
+			path = IQTextView;
+			sourceTree = "<group>";
+		};
+		81A2395B201798F900CF2445 /* IQToolbar */ = {
+			isa = PBXGroup;
+			children = (
+				81A2395C201798F900CF2445 /* IQBarButtonItem.swift */,
+				81A2395D201798F900CF2445 /* IQPreviousNextView.swift */,
+				81A2395E201798F900CF2445 /* IQTitleBarButtonItem.swift */,
+				81A2395F201798F900CF2445 /* IQToolbar.swift */,
+				81A23960201798F900CF2445 /* IQUIView+IQKeyboardToolbar.swift */,
+			);
+			path = IQToolbar;
+			sourceTree = "<group>";
+		};
+		81A23961201798F900CF2445 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				81A23962201798F900CF2445 /* IQKeyboardManager.bundle */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		81EDF40B20042E35006E69EA = {
@@ -338,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				811F27192005309300A9B47C /* LaunchScreenCopy.storyboard in Resources */,
+				81A23973201798F900CF2445 /* IQKeyboardManager.bundle in Resources */,
 				CAFF0D4D200681F300A3657D /* CreateEvent.storyboard in Resources */,
 				CA1EF41B20091DFE007BD1CD /* Profile.storyboard in Resources */,
 				811F270820052BEB00A9B47C /* ListFeed.storyboard in Resources */,
@@ -361,25 +464,39 @@
 				CA47E0572005785800B6222F /* EventTableViewCell.swift in Sources */,
 				B7DE16B320069053003C8126 /* WelcomeViewController.swift in Sources */,
 				81707D19200FAA4800478691 /* FetchItemsViewController.swift in Sources */,
+				81A2396E201798F900CF2445 /* IQBarButtonItem.swift in Sources */,
 				817D0511200AC8EA0096390C /* SearchViewController.swift in Sources */,
 				81707D1B200FAA7600478691 /* ListFeedViewController.swift in Sources */,
 				811F271220052E5E00A9B47C /* CommentController.swift in Sources */,
+				81A23966201798F900CF2445 /* IQUIView+Hierarchy.swift in Sources */,
+				81A23972201798F900CF2445 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
+				81A23968201798F900CF2445 /* IQUIWindow+Hierarchy.swift in Sources */,
 				811F271020052E4D00A9B47C /* UserController.swift in Sources */,
+				81A2396A201798F900CF2445 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
+				81A2396D201798F900CF2445 /* IQTextView.swift in Sources */,
+				81A23971201798F900CF2445 /* IQToolbar.swift in Sources */,
+				81A23965201798F900CF2445 /* IQUITextFieldView+Additions.swift in Sources */,
+				81A23963201798F900CF2445 /* IQNSArray+Sort.swift in Sources */,
 				811F26FD20052AD100A9B47C /* Event.swift in Sources */,
 				B7DE16B9200690D8003C8126 /* CreateProfPicVC.swift in Sources */,
 				81707D12200EA57600478691 /* UIViewAnchorPoint.swift in Sources */,
 				81707D0E200EA57600478691 /* UIButtonX.swift in Sources */,
 				B7DE16B7200690B6003C8126 /* CreateInterestsVC.swift in Sources */,
+				81A2396F201798F900CF2445 /* IQPreviousNextView.swift in Sources */,
 				81EDF41820042E35006E69EA /* AppDelegate.swift in Sources */,
 				81707D10200EA57600478691 /* UIImageViewX.swift in Sources */,
 				81707D14200EA57600478691 /* UITextFieldX.swift in Sources */,
 				CA73062C20116280008A7C00 /* WebViewController.swift in Sources */,
 				811F270E20052E3E00A9B47C /* EventController.swift in Sources */,
+				81A23969201798F900CF2445 /* IQKeyboardManagerConstants.swift in Sources */,
 				81707D0D200EA57600478691 /* UILabelX.swift in Sources */,
+				81A23967201798F900CF2445 /* IQUIViewController+Additions.swift in Sources */,
+				81A2396C201798F900CF2445 /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				819B5F722006839A00106459 /* MapFeedViewController.swift in Sources */,
 				B7F9EE9F200FFAFD0049A7FD /* CommentTableViewCell.swift in Sources */,
 				819B5F752007EA5800106459 /* extensions.swift in Sources */,
 				81707D13200EA57600478691 /* UISliderX.swift in Sources */,
+				81A23970201798F900CF2445 /* IQTitleBarButtonItem.swift in Sources */,
 				B7DE16B52006908C003C8126 /* CreateUsernameVC.swift in Sources */,
 				81707D0B200EA57600478691 /* UIViewControllerX.swift in Sources */,
 				81707D11200EA57600478691 /* UIVisualEffectViewX.swift in Sources */,
@@ -390,8 +507,10 @@
 				819CF71720106363005FB0A6 /* UITextViewX.swift in Sources */,
 				81A238C72011801800CF2445 /* ProfileViewController.swift in Sources */,
 				81A238C92011848900CF2445 /* ArtistProfileViewController.swift in Sources */,
+				81A2396B201798F900CF2445 /* IQKeyboardManager.swift in Sources */,
 				811F26FF20052AE200A9B47C /* User.swift in Sources */,
 				811F270120052AFC00A9B47C /* Comment.swift in Sources */,
+				81A23964201798F900CF2445 /* IQUIScrollView+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
