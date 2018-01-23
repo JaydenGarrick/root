@@ -14,6 +14,7 @@ class EventDetailViewController: UIViewController {
     var event: Event?
     var artist: User?
     var loggedInUser: User?
+    static let bottomSpacing: CGFloat = 20.0
     
     // MARK: - IBOutlets
     @IBOutlet weak var eventImageView: UIImageView!
@@ -28,13 +29,17 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var newCommentUserProfilePicture: UIImageView!
     @IBOutlet weak var newCommentTextField: UITextField!
     @IBOutlet weak var postCommentButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        
+        // Delegate
         self.commentsTableView.dataSource = self
         self.commentsTableView.delegate = self
+        newCommentTextField.delegate = self
         
         guard let event = event,
             let loggedInUser = UserController.shared.loggedInUser,
@@ -57,8 +62,9 @@ class EventDetailViewController: UIViewController {
                 }
             })
         }
+        
     }
-    
+        
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToArtistProfileSegue" {
@@ -124,8 +130,6 @@ extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as? CommentTableViewCell ?? CommentTableViewCell()
         
         let comment = CommentController.shared.eventComments[indexPath.row]
-        //cell.commentCreatorProfileImageView.layer.cornerRadius = 18.5
-//        let commentCreator = CommentController.shared.commentCreators[indexPath.row]
         
         cell.comment = comment
         
@@ -135,6 +139,27 @@ extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 53
     }
+}
+
+// MARK: - TextField Delegate
+extension EventDetailViewController: UITextFieldDelegate {
+    
+    
+    // FIXME: Get this working once constraints are redone
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        scrollView.setContentOffset(CGPoint(x:0, y:250), animated: true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        scrollView.setContentOffset(CGPoint.init(x: 0, y: 0), animated: true)
+    }
+    
+    
 }
 
 
