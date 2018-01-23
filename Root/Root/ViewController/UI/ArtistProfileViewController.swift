@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class ArtistProfileViewController: UIViewController {
 
@@ -43,7 +44,7 @@ class ArtistProfileViewController: UIViewController {
             }
         }
     }
-    
+
     
     func updateViews() {
         
@@ -57,7 +58,32 @@ class ArtistProfileViewController: UIViewController {
         artistWebsiteURLButton.setTitle("\(artist.websiteURL)", for: .normal)
     }
 
+    // MARK: - IBActions
+    @IBAction func profileActionButtonTapped(_ sender: UIButton) {
+        let actionSheetAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let blockUserAction = UIAlertAction(title: "Block user", style: .destructive) { (action) in
+            let confirmationAlertController = UIAlertController(title: "Are you sure you want to block this user?", message: nil, preferredStyle: .alert)
+            let blockUserAction = UIAlertAction(title: "Block user", style: .destructive, handler: { (action) in
+                guard let artist = self.artist,
+                    let loggedInUser = UserController.shared.loggedInUser,
+                    let artistCloudKitRecordID = artist.cloudKitRecordID
+                    else { return }
+                let reference = CKReference(recordID: artistCloudKitRecordID, action: .none)
+                
+                
+            })
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
+                
+            })
+            confirmationAlertController.addAction(blockUserAction)
+            confirmationAlertController.addAction(cancelAction)
+            self.present(confirmationAlertController, animated: true, completion: nil)
+        }
+        actionSheetAlertController.addAction(blockUserAction)
+        self.present(actionSheetAlertController, animated: true, completion: nil)
+    }
 }
+
 
 
 // TableView DataSource and Delegate Methods

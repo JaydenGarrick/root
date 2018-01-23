@@ -171,5 +171,18 @@ class UserController {
         }
         
     }
-
+    
+    func block() {
+        guard let loggedInUser = UserController.shared.loggedInUser,
+            let userCloudKitRecordID = UserController.shared.loggedInUser?.cloudKitRecordID else { return }
+      
+        let newBlockedUserRef = CKReference(recordID: userCloudKitRecordID, action: .none)
+        loggedInUser.blockedUsersRefs?.append(newBlockedUserRef)
+        
+        let records = [CKRecord(user: loggedInUser)]
+        self.modifyRecords(records, perRecordCompletion: nil) { (records, error) in
+            
+        }
+        
+    }
 }

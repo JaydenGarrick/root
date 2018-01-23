@@ -58,8 +58,6 @@ class ProfileViewController: UIViewController {
             }
         }
         
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,9 +95,11 @@ class ProfileViewController: UIViewController {
         }
         
         if segue.identifier == "ToEventDetailSegue" {
-            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            guard let indexPath = tableView.indexPathForSelectedRow,
+                let eventsCreated = UserController.shared.eventsCreated
+                else { return }
             let destinationVC = segue.destination as! EventDetailViewController
-            let event = EventController.shared.fetchedEvents[indexPath.row]
+            let event = eventsCreated[indexPath.row]
             destinationVC.event = event
         }
     }
@@ -133,14 +133,6 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 }
-
-
-
-
-
-
-
-
 
 
 

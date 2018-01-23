@@ -29,6 +29,7 @@ class User {
     
     var cloudKitRecordID: CKRecordID?
     let appleUserRef: CKReference
+    var blockedUsersRefs: [CKReference]?
     
     fileprivate var temporaryPhotoURL: URL {
         
@@ -110,6 +111,7 @@ extension CKRecord {
         self.setValue(user.websiteURL, forKey: "websiteURL")
         self.setValue(user.isArtist, forKey: "isArtist")
         self.setValue(user.appleUserRef, forKey: "appleUserRef")
+        self.setValue(user.blockedUsersRefs, forKey: "blockedUserRefs")
 
 //        if user.eventsCreated.count > 1 {
 //            self.setValue(user.ownedEventReferences, forKey: "ownedEventReferences")

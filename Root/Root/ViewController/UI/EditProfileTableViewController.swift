@@ -106,6 +106,9 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
     
     @IBAction func paintButtonTapped(_ sender: UIButton) {
         if self.interests.contains("#paintings") {
+            let indexPath = self.interests.index(of: "#paintings")
+            interests.remove(at: indexPath!)
+            updateInterestsTextView()
             return
         }
         self.interests.append("#paintings")
@@ -114,34 +117,57 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
     
     @IBAction func musicButtonTapped(_ sender: UIButton) {
         if self.interests.contains("#music") {
+            let indexPath = self.interests.index(of: "#music")
+            interests.remove(at: indexPath!)
+            updateInterestsTextView()
             return
         }
-        
         self.interests.append("#music")
         updateInterestsTextView()
     }
     
     @IBAction func photographyButtonTapped(_ sender: UIButton) {
         if self.interests.contains("#photography") {
+            let indexPath = self.interests.index(of: "#photography")
+            interests.remove(at: indexPath!)
+            updateInterestsTextView()
             return
         }
         self.interests.append("#photography")
         updateInterestsTextView()
     }
     
-    @IBAction func sketchButtonTapped(_ sender: UIButton) {
-        if self.interests.contains("#sketch") {
+    @IBAction func poetryButtonTapped(_ sender: UIButton) {
+        if self.interests.contains("#poetry") {
+            let indexPath = self.interests.index(of: "#poetry")
+            interests.remove(at: indexPath!)
+            updateInterestsTextView()
             return
         }
-        interests.append("#poetry")
+        self.interests.append("#poetry")
+        updateInterestsTextView()
+    
+    }
+    
+    @IBAction func sketchButtonTapped(_ sender: UIButton) {
+        if self.interests.contains("#sketch") {
+            let indexPath = self.interests.index(of: "#sketch")
+            interests.remove(at: indexPath!)
+            updateInterestsTextView()
+            return
+        }
+        self.interests.append("#sketch")
         updateInterestsTextView()
     }
     
     @IBAction func potteryButtonTapped(_ sender: UIButton) {
         if self.interests.contains("#pottery") {
+            let indexPath = self.interests.index(of: "#pottery")
+            interests.remove(at: indexPath!)
+            updateInterestsTextView()
             return
         }
-        interests.append("#pottery")
+        self.interests.append("#pottery")
         updateInterestsTextView()
     }
     
