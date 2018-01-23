@@ -70,8 +70,8 @@ class User {
             let interests = ckRecord["interests"] as? [String],
             let websiteURL = ckRecord["websiteURL"] as? String,
             let isArtist = ckRecord["isArtist"] as? Bool,
-            let appleUserRef = ckRecord["appleUserRef"] as? CKReference,
-            let blockedUsersRefs = ckRecord["blockedUsersRefs"] as? [CKReference]
+            let appleUserRef = ckRecord["appleUserRef"] as? CKReference
+            //let blockedUsersRefs = ckRecord["blockedUsersRefs"] as? [CKReference]
 //            let ownedEventReferences = ckRecord["ownedEventReferences"] as? [CKReference]
             else { return nil }
         
@@ -87,7 +87,7 @@ class User {
         self.isArtist = isArtist
         self.appleUserRef = appleUserRef
         self.cloudKitRecordID = ckRecord.recordID
-        self.blockedUsersRefs = blockedUsersRefs
+        //self.blockedUsersRefs = blockedUsersRefs
         // Set the ownedEventReferences array
 //        self.ownedEventReferences = ownedEventReferences
     }

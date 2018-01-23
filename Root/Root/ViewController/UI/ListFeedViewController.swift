@@ -27,6 +27,7 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
     // MARK: - ViewDidLoad / ViewWillAppear
     
     override func viewDidLoad() {
+    
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
