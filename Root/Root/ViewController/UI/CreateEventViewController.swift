@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class CreateEventViewController: UIViewController {
+class CreateEventViewController: UIViewController, UITextFieldDelegate {
 
     
     // MARK: - Constants and Variables
@@ -46,6 +46,13 @@ class CreateEventViewController: UIViewController {
         nameOfArtistLabel.text = UserController.shared.loggedInUser?.username
 
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
 
    
     

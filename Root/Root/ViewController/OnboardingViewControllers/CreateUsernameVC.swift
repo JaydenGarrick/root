@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateUsernameVC: UIViewController {
+class CreateUsernameVC: UIViewController, UITextFieldDelegate {
     
     var isArtist: Bool?
     
@@ -24,6 +24,10 @@ class CreateUsernameVC: UIViewController {
        
         self.hideKeyboardWhenTappedAround()
         
+        fullNameTextField.delegate = self
+        usernameTextField.delegate = self
+        hometownTextField.delegate = self
+        
         
         super.viewDidLoad()
         
@@ -35,6 +39,11 @@ class CreateUsernameVC: UIViewController {
         self.navigationController?.view.backgroundColor = .clear
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func setUserLabel() {

@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +40,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xby-ZP-xMo">
                                 <rect key="frame" x="0.0" y="76" width="375" height="591"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="tintColor" name="Tint"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -49,6 +50,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" name="Tint"/>
                         <constraints>
                             <constraint firstItem="xjd-5a-dtM" firstAttribute="top" secondItem="xby-ZP-xMo" secondAttribute="bottom" id="0Nz-T5-6rH"/>
                             <constraint firstItem="xby-ZP-xMo" firstAttribute="leading" secondItem="g3i-Qj-nM0" secondAttribute="leading" id="6v5-dV-dBJ"/>
@@ -184,6 +186,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="f6G-cU-wL9" id="AVi-eb-XF2"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter description of event..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y62-VL-ovS">
                                         <rect key="frame" x="0.0" y="64.5" width="355" height="24"/>
@@ -191,6 +196,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="f6G-cU-wL9" id="UAn-Kd-7ft"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter date/time..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L0X-vs-49s">
                                         <rect key="frame" x="0.0" y="98.5" width="355" height="24"/>
@@ -198,6 +206,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="f6G-cU-wL9" id="bGb-qY-AIN"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fal-DP-DYP">
                                         <rect key="frame" x="0.0" y="132.5" width="355" height="33"/>
@@ -261,5 +272,8 @@
         <image name="#pottery" width="32" height="32"/>
         <image name="#sketch" width="32" height="32"/>
         <image name="AddEventImage" width="207" height="121"/>
+        <namedColor name="Tint">
+            <color red="0.14399999380111694" green="0.61400002241134644" blue="0.55000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
