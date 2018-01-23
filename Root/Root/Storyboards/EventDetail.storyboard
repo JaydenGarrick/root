@@ -50,7 +50,9 @@
                                 </connections>
                             </button>
 
+
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sh2-bK-SWe">
+
 
                                 <rect key="frame" x="0.0" y="497" width="375" height="137"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,7 +69,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pBX-bB-DHJ" userLabel="backgroundShadowView">
                                                     <rect key="frame" x="0.0" y="4" width="375" height="44"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8LR-6o-447" customClass="UIImageViewX" customModule="Root" customModuleProvider="target">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8LR-6o-447" customClass="UIImageViewX" customModule="Root" customModuleProvider="target">
                                                             <rect key="frame" x="2" y="3" width="38" height="38"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="8LR-6o-447" secondAttribute="height" multiplier="1:1" id="A5t-yr-Be3"/>
@@ -428,7 +430,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u0O-aS-hTT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+
             <point key="canvasLocation" x="880.79999999999995" y="-591.45427286356824"/>
+
         </scene>
         <!--Web View Controller-->
         <scene sceneID="hyd-WR-diS">
@@ -467,8 +471,10 @@
             <color red="1" green="0.97600001096725464" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
 
+
         <namedColor name="Pink">
             <color red="1" green="0.95300000905990601" blue="0.94800001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+
 
         </namedColor>
         <namedColor name="Tint">
