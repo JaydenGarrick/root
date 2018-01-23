@@ -87,6 +87,7 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     // MARK: - Mapkit Delegate functions
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard let annotation = annotation as? Event else { return nil }
+        
         var view: MKAnnotationView! = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationID")
         
         if view == nil {
@@ -99,26 +100,27 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         let detailViewButton = UIButton(frame: CGRect(x: 0, y: 0, width: 59, height: 59))
         detailViewButton.setImage(#imageLiteral(resourceName: "add"), for: .normal)
         let event = view.annotation as? Event
+        
         view.canShowCallout = true
         view.rightCalloutAccessoryView = detailViewButton
         //view.image = UIImage(named: event!.typeOfEvent.trimmingCharacters(in: .whitespaces))
         if event?.typeOfEvent == " #music" {
-            view.image = #imageLiteral(resourceName: "musicnote")
+            view.image = #imageLiteral(resourceName: "AnnotationMusic")
         }
         if event?.typeOfEvent == " #sketch" {
-            view.image = #imageLiteral(resourceName: "sketch")
+            view.image = #imageLiteral(resourceName: "AnnotationSketch")
         }
         if event?.typeOfEvent == " #paintings" {
-            view.image = #imageLiteral(resourceName: "paintbrush")
+            view.image = #imageLiteral(resourceName: "AnnotationPaint")
         }
         if event?.typeOfEvent == " #photography" {
-            view.image = #imageLiteral(resourceName: "camera")
+            view.image = #imageLiteral(resourceName: "AnnotationPhotog")
         }
         if event?.typeOfEvent == " #poetry" {
-            view.image = #imageLiteral(resourceName: "poetry")
+            view.image = #imageLiteral(resourceName: "AnnotationPoetry")
         }
         if event?.typeOfEvent == " #pottery" {
-            view.image = #imageLiteral(resourceName: "ceramic")
+            view.image = #imageLiteral(resourceName: "AnnotationCeramic")
         }
 
         print("\(event!.typeOfEvent.trimmingCharacters(in: .whitespaces))")
@@ -126,6 +128,7 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
        
         return view
     }
+    
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
