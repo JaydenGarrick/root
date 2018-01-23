@@ -64,12 +64,11 @@ class ArtistProfileViewController: UIViewController {
         let blockUserAction = UIAlertAction(title: "Block user", style: .destructive) { (action) in
             let confirmationAlertController = UIAlertController(title: "Are you sure you want to block this user?", message: nil, preferredStyle: .alert)
             let blockUserAction = UIAlertAction(title: "Block user", style: .destructive, handler: { (action) in
-                guard let artist = self.artist,
-                    let loggedInUser = UserController.shared.loggedInUser,
-                    let artistCloudKitRecordID = artist.cloudKitRecordID
+                guard let artist = self.artist
                     else { return }
-                let reference = CKReference(recordID: artistCloudKitRecordID, action: .none)
-                
+                UserController.shared.block(user: artist, completion: { (success) in
+                    print("block completion")
+                })
                 
             })
             let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (action) in

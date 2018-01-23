@@ -29,7 +29,7 @@ class User {
     
     var cloudKitRecordID: CKRecordID?
     let appleUserRef: CKReference
-    var blockedUsersRefs: [CKReference]?
+    var blockedUsersRefs: [CKReference] = []
     
     fileprivate var temporaryPhotoURL: URL {
         
@@ -70,7 +70,8 @@ class User {
             let interests = ckRecord["interests"] as? [String],
             let websiteURL = ckRecord["websiteURL"] as? String,
             let isArtist = ckRecord["isArtist"] as? Bool,
-            let appleUserRef = ckRecord["appleUserRef"] as? CKReference
+            let appleUserRef = ckRecord["appleUserRef"] as? CKReference,
+            let blockedUsersRefs = ckRecord["blockedUsersRefs"] as? [CKReference]
 //            let ownedEventReferences = ckRecord["ownedEventReferences"] as? [CKReference]
             else { return nil }
         
@@ -86,13 +87,14 @@ class User {
         self.isArtist = isArtist
         self.appleUserRef = appleUserRef
         self.cloudKitRecordID = ckRecord.recordID
+        self.blockedUsersRefs = blockedUsersRefs
         // Set the ownedEventReferences array
 //        self.ownedEventReferences = ownedEventReferences
     }
     
 }
 
-// Turn the User model object into a CKRecrod before giving it to Apple's servers
+// Turn the User model object into a CKRecord before giving it to Apple's servers
 extension CKRecord {
     
     convenience init(user: User) {
@@ -111,12 +113,7 @@ extension CKRecord {
         self.setValue(user.websiteURL, forKey: "websiteURL")
         self.setValue(user.isArtist, forKey: "isArtist")
         self.setValue(user.appleUserRef, forKey: "appleUserRef")
-        self.setValue(user.blockedUsersRefs, forKey: "blockedUserRefs")
-
-//        if user.eventsCreated.count > 1 {
-//            self.setValue(user.ownedEventReferences, forKey: "ownedEventReferences")
-//        }
-        
+        self.setValue(user.blockedUsersRefs, forKey: "blockedUsersRefs")
         
     }
     
