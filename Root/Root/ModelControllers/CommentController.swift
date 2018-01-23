@@ -38,11 +38,14 @@ class CommentController {
     }
     
     func fetchCommentsForCurrent(event: Event, completion: @escaping (Bool?) -> Void) {
-        guard let eventCKRecordID = event.ckRecordID else { return }
+        guard let eventCKRecordID = event.ckRecordID,
+        let loggedInUser = UserController.shared.loggedInUser
+        else { return }
         
-        let predicate = NSPredicate(format: "eventID == %@", eventCKRecordID)
-        
-        let query = CKQuery(recordType: "Comment", predicate: predicate)
+        let eventIDPredicate = NSPredicate(format: "eventID == %@", eventCKRecordID)
+        let blockedPredicate = NSPredicate(format: "NOT(creatorID IN %@)", loggedInUser.blockedUsersRefs)
+        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [eventIDPredicate, blockedPredicate])
+        let query = CKQuery(recordType: "Comment", predicate: compoundPredicate)
         
         let sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
 

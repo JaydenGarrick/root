@@ -70,12 +70,12 @@ class User {
             let interests = ckRecord["interests"] as? [String],
             let websiteURL = ckRecord["websiteURL"] as? String,
             let isArtist = ckRecord["isArtist"] as? Bool,
-            let appleUserRef = ckRecord["appleUserRef"] as? CKReference,
-            let blockedUsersRefs = ckRecord["blockedUsersRefs"] as? [CKReference]
+            let appleUserRef = ckRecord["appleUserRef"] as? CKReference
 //            let ownedEventReferences = ckRecord["ownedEventReferences"] as? [CKReference]
             else { return nil }
         
         let photoData = try? Data(contentsOf: profilePicture.fileURL)
+        let blockedUsersRefs = ckRecord["blockedUsersRefs"] as? [CKReference] ?? []
     
         self.username = username
         self.fullName = fullName
