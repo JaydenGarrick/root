@@ -89,7 +89,7 @@ class User {
         self.isArtist = isArtist
         self.appleUserRef = appleUserRef
         self.cloudKitRecordID = ckRecord.recordID
-        //self.blockedUsersRefs = blockedUsersRefs
+        self.blockedUsersRefs = blockedUsersRefs
         // Set the ownedEventReferences array
 //        self.ownedEventReferences = ownedEventReferences
     }
