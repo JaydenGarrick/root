@@ -16,6 +16,7 @@ class ListFeedViewController: UIViewController {
     var interestArray: [Event] = []
     var localFeed: Bool = true
     let blockedUserNotification = Notification.Name("User Was Blocked")
+    var refreshControl: UIRefreshControl!
     
     
     // CoreLocation
@@ -39,8 +40,8 @@ class ListFeedViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         getLocation()
-       
         NotificationCenter.default.addObserver(self, selector: #selector(userWasBlocked(notification:)), name: blockedUserNotification, object: nil)
+       
     
         
         if UserController.shared.loggedInUser?.isArtist == false {
@@ -59,6 +60,15 @@ class ListFeedViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         locationManager.delegate = self
+        
+        // Set up Refresh Control for refresh on pulldown
+        tableView.alwaysBounceVertical = true
+        tableView.bounces = true
+        refreshControl = UIRefreshControl()
+        refreshControl.tintColor = UIColor(named: "Tint")
+        refreshControl.addTarget(self, action: #selector(didPullForRefresh), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+        
         
     }
     
@@ -231,6 +241,19 @@ extension ListFeedViewController: CLLocationManagerDelegate {
             guard let coordinate = locations.last?.coordinate else { return }
             usersLocation = coordinate
         }
+    }
+    
+    @objc func didPullForRefresh() {
+        
+        EventController.shared.fetchEvents(usersLocation: usersLocation) { (success) in
+            if success {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.refreshControl.endRefreshing()
+                }
+            }
+        }
+        
     }
 }
 
