@@ -33,6 +33,21 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var websiteURLTextField: UITextField!
     
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+        websiteURLTextField.delegate = self
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        getLocation()
+        
+        setUserLabel()
+        pickerController.delegate = self
+    }
+    
     // MARK: - IBActions
     
     @IBAction func addProfPictButtonTapped(_ sender: UIButton) {
@@ -43,22 +58,6 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
         present(pickerController, animated: true, completion: nil)
         
     }
-    
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
-        
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-        getLocation()
-        
-        setUserLabel()
-        pickerController.delegate = self
-    }
-    
-    
     func setUserLabel() {
         guard let isArtist = self.isArtist
             else { return }
@@ -168,5 +167,18 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
     }
     
 }
+
+extension CreateProfPicVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        
+        return true
+    }
+}
+
+
+
+
+
 
 
