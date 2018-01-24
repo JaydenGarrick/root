@@ -139,6 +139,10 @@ extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 53
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+    }
 }
 
 // MARK: - TextField Delegate
