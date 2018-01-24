@@ -42,7 +42,17 @@ class CreateUsernameVC: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        if textField == fullNameTextField {
+            usernameTextField.becomeFirstResponder()
+        }
+        
+        if textField == usernameTextField {
+            hometownTextField.becomeFirstResponder()
+        }
+        
+        if textField == hometownTextField {
+            performSegue(withIdentifier: "ToCreateInterestsSegue", sender: self)
+        }
         return true
     }
     
