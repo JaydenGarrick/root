@@ -14,6 +14,7 @@ class EventDetailViewController: UIViewController {
     var event: Event?
     var artist: User?
     var loggedInUser: User?
+    let blockedUserNotification = Notification.Name("User Was Blocked")
     static let bottomSpacing: CGFloat = 20.0
     
     // MARK: - IBOutlets
@@ -140,10 +141,35 @@ extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource 
         return 53
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let blockAction = UITableViewRowAction(style: .normal, title: "Block user") { (rowAction, indexPath) in
+            let confirmationAlertController = UIAlertController(title: "Are you sure you want to block this user?", message: nil, preferredStyle: .alert)
+            let blockAction = UIAlertAction(title: "Block user", style: .destructive, handler: { (action) in
+                guard let event = self.event else { return }
+                let comment = CommentController.shared.eventComments[indexPath.row]
+                CommentController.shared.fetchCommentCreator(comment: comment, completion: { (user) in
+                    guard let user = user else { return }
+                    UserController.shared.block(user: user, completion: { (success) in
+                        CommentController.shared.fetchCommentsForCurrent(event: event, completion: { (success) in
+                            DispatchQueue.main.async {
+                                NotificationCenter.default.post(name: self.blockedUserNotification, object: self)
+                                tableView.reloadData()
+                            }
+                        })
+                    })
+                })
+            })
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
+            })
+            confirmationAlertController.addAction(blockAction)
+            confirmationAlertController.addAction(cancelAction)
+            self.present(confirmationAlertController, animated: true, completion: nil)
+        }
+        blockAction.backgroundColor = .red
+        return [blockAction]
     }
 }
+
 
 // MARK: - TextField Delegate
 extension EventDetailViewController: UITextFieldDelegate {
