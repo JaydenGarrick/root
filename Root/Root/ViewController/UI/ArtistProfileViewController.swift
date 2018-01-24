@@ -97,11 +97,21 @@ class ArtistProfileViewController: UIViewController {
         actionSheetAlertController.addAction(blockUserAction)
         self.present(actionSheetAlertController, animated: true, completion: nil)
     }
+   
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "WebSegue" {
+            guard let destinationVC = segue.destination as? WebViewController else { return }
+            let urlAsString = (artistWebsiteURLButton.titleLabel?.text)!
+            destinationVC.websiteURLAsString = urlAsString
+        }
+    }
 }
 
 
 
-// TableView DataSource and Delegate Methods
+
+// MARK : - TableView DataSource and Delegate Methods
 extension ArtistProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
