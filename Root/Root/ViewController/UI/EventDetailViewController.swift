@@ -57,6 +57,12 @@ class EventDetailViewController: UIViewController {
         //let loggedInUserProfilePictureAsImage = UIImage(data: loggedInUserProfilePictureAsData)
         //newCommentUserProfilePicture.image = loggedInUserProfilePictureAsImage
         
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "Tint")
+        
         UserController.shared.fetchEventCreator(event: event) { (user) in
             guard let user = user else { return }
             self.artist = user

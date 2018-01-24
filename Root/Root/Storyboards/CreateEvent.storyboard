@@ -104,27 +104,33 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9H3-Av-E3T">
-                                <rect key="frame" x="50" y="502" width="275" height="77"/>
+                                <rect key="frame" x="50" y="467.5" width="275" height="111.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="112-Uo-rTM">
-                                        <rect key="frame" x="49.5" y="0.0" width="176" height="28.5"/>
+
+                                        <rect key="frame" x="49.5" y="0.0" width="176" height="46"/>
+
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOn-BK-UIZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="32" height="28.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="46"/>
                                                 <state key="normal" image="#paintings"/>
                                                 <connections>
                                                     <action selector="paintButtonTapped:" destination="f6G-cU-wL9" eventType="touchUpInside" id="L5w-IY-GRz"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfk-WD-VJM">
-                                                <rect key="frame" x="72" y="0.0" width="32" height="28.5"/>
+
+                                                <rect key="frame" x="72" y="0.0" width="32" height="46"/>
+
                                                 <state key="normal" image="#music"/>
                                                 <connections>
                                                     <action selector="musicButtonTapped:" destination="f6G-cU-wL9" eventType="touchUpInside" id="nxB-va-EnZ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwS-Qr-dIu">
-                                                <rect key="frame" x="144" y="0.0" width="32" height="28.5"/>
+
+                                                <rect key="frame" x="144" y="0.0" width="32" height="46"/>
+
                                                 <state key="normal" image="#photography"/>
                                                 <connections>
                                                     <action selector="photoButtonTapped:" destination="f6G-cU-wL9" eventType="touchUpInside" id="RlN-9G-DF7"/>
@@ -133,24 +139,30 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="tPw-o5-E02">
-                                        <rect key="frame" x="49.5" y="48.5" width="176" height="28.5"/>
+
+                                        <rect key="frame" x="49.5" y="66" width="176" height="45.5"/>
+
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfl-SS-Awp">
-                                                <rect key="frame" x="0.0" y="0.0" width="32" height="28.5"/>
+                                                <rect key="frame" x="0.0" y="0.5" width="32" height="45.5"/>
                                                 <state key="normal" image="#poetry"/>
                                                 <connections>
                                                     <action selector="poetryButtonTapped:" destination="f6G-cU-wL9" eventType="touchUpInside" id="lct-mt-b2K"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TT0-sy-A79">
-                                                <rect key="frame" x="72" y="0.0" width="32" height="28.5"/>
+
+                                                <rect key="frame" x="72" y="0.5" width="32" height="45.5"/>
+
                                                 <state key="normal" image="#sketch"/>
                                                 <connections>
                                                     <action selector="sketchButtonTapped:" destination="f6G-cU-wL9" eventType="touchUpInside" id="eVf-TZ-hhg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hX7-jk-3JV">
-                                                <rect key="frame" x="144" y="0.0" width="32" height="28.5"/>
+
+                                                <rect key="frame" x="144" y="0.5" width="32" height="45.5"/>
+
                                                 <state key="normal" image="#pottery"/>
                                                 <connections>
                                                     <action selector="ceramicButtonTapped:" destination="f6G-cU-wL9" eventType="touchUpInside" id="ztZ-Tk-VBD"/>
@@ -180,7 +192,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7D6-L8-e8e">
-                                <rect key="frame" x="10" y="331.5" width="355" height="165.5"/>
+                                <rect key="frame" x="10" y="297" width="355" height="165.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="(name of artist)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daW-zD-aB6" customClass="UILabelX" customModule="Root" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="20.5"/>
@@ -240,7 +252,7 @@
                             <constraint firstItem="9H3-Av-E3T" firstAttribute="leading" secondItem="5iM-85-rLN" secondAttribute="leading" constant="50" id="P0b-Ph-XII"/>
                             <constraint firstItem="SJg-RB-fvh" firstAttribute="leading" secondItem="5iM-85-rLN" secondAttribute="leading" constant="166" id="Tgs-9x-EBl"/>
                             <constraint firstItem="KBS-0v-TDJ" firstAttribute="top" secondItem="WCe-kv-3DK" secondAttribute="top" id="YS7-ll-M7q"/>
-                            <constraint firstItem="7D6-L8-e8e" firstAttribute="top" secondItem="KBS-0v-TDJ" secondAttribute="bottom" constant="64.5" id="Yrd-qO-b0v"/>
+                            <constraint firstItem="7D6-L8-e8e" firstAttribute="top" secondItem="KBS-0v-TDJ" secondAttribute="bottom" constant="30" id="Yrd-qO-b0v"/>
                             <constraint firstItem="5iM-85-rLN" firstAttribute="trailing" secondItem="7D6-L8-e8e" secondAttribute="trailing" constant="10" id="b1w-g4-YeO"/>
                             <constraint firstItem="KBS-0v-TDJ" firstAttribute="leading" secondItem="5iM-85-rLN" secondAttribute="leading" id="dsb-Eu-rI8"/>
                             <constraint firstItem="nvR-S2-ioD" firstAttribute="top" secondItem="WCe-kv-3DK" secondAttribute="top" id="e9v-Bj-fZM"/>
@@ -251,7 +263,7 @@
                             <constraint firstItem="T9N-Gx-Drl" firstAttribute="leading" secondItem="5iM-85-rLN" secondAttribute="leading" constant="10" id="sk8-OG-CAw"/>
                             <constraint firstItem="5iM-85-rLN" firstAttribute="trailing" secondItem="9H3-Av-E3T" secondAttribute="trailing" constant="50" id="uUl-IK-h9d"/>
                             <constraint firstItem="nvR-S2-ioD" firstAttribute="leading" secondItem="5iM-85-rLN" secondAttribute="leading" id="xTH-gC-5Un"/>
-                            <constraint firstItem="7D6-L8-e8e" firstAttribute="top" secondItem="nvR-S2-ioD" secondAttribute="bottom" constant="64.5" id="zss-8x-rxh"/>
+                            <constraint firstItem="7D6-L8-e8e" firstAttribute="top" secondItem="nvR-S2-ioD" secondAttribute="bottom" constant="30" id="zss-8x-rxh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5iM-85-rLN"/>
                     </view>
