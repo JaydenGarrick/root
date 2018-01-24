@@ -106,8 +106,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9H3-Av-E3T">
                                 <rect key="frame" x="50" y="502" width="275" height="77"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="112-Uo-rTM">
-                                        <rect key="frame" x="74.5" y="0.0" width="126" height="28.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="112-Uo-rTM">
+                                        <rect key="frame" x="49.5" y="0.0" width="176" height="28.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOn-BK-UIZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="28.5"/>
@@ -117,14 +117,14 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfk-WD-VJM">
-                                                <rect key="frame" x="47" y="0.0" width="32" height="28.5"/>
+                                                <rect key="frame" x="72" y="0.0" width="32" height="28.5"/>
                                                 <state key="normal" image="#music"/>
                                                 <connections>
                                                     <action selector="musicButtonTapped:" destination="f6G-cU-wL9" eventType="touchUpInside" id="nxB-va-EnZ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwS-Qr-dIu">
-                                                <rect key="frame" x="94" y="0.0" width="32" height="28.5"/>
+                                                <rect key="frame" x="144" y="0.0" width="32" height="28.5"/>
                                                 <state key="normal" image="#photography"/>
                                                 <connections>
                                                     <action selector="photoButtonTapped:" destination="f6G-cU-wL9" eventType="touchUpInside" id="RlN-9G-DF7"/>
@@ -132,8 +132,8 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="tPw-o5-E02">
-                                        <rect key="frame" x="74.5" y="48.5" width="126" height="28.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="tPw-o5-E02">
+                                        <rect key="frame" x="49.5" y="48.5" width="176" height="28.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfl-SS-Awp">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="28.5"/>
@@ -143,14 +143,14 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TT0-sy-A79">
-                                                <rect key="frame" x="47" y="0.0" width="32" height="28.5"/>
+                                                <rect key="frame" x="72" y="0.0" width="32" height="28.5"/>
                                                 <state key="normal" image="#sketch"/>
                                                 <connections>
                                                     <action selector="sketchButtonTapped:" destination="f6G-cU-wL9" eventType="touchUpInside" id="eVf-TZ-hhg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hX7-jk-3JV">
-                                                <rect key="frame" x="94" y="0.0" width="32" height="28.5"/>
+                                                <rect key="frame" x="144" y="0.0" width="32" height="28.5"/>
                                                 <state key="normal" image="#pottery"/>
                                                 <connections>
                                                     <action selector="ceramicButtonTapped:" destination="f6G-cU-wL9" eventType="touchUpInside" id="ztZ-Tk-VBD"/>
@@ -160,7 +160,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBS-0v-TDJ" userLabel="Add Profile Pic Button">
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBS-0v-TDJ" userLabel="Add Profile Pic Button">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
