@@ -9,12 +9,14 @@
 import UIKit
 import MapKit
 
-class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
+class ListFeedViewController: UIViewController {
 
     
     // MARK: - Constants and Variables
     var interestArray: [Event] = []
     var localFeed: Bool = true
+    let blockedUserNotification = Notification.Name("User Was Blocked")
+    
     
     // CoreLocation
     let locationManager = CLLocationManager()
@@ -30,6 +32,16 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
     
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        
+        // Core Location
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        getLocation()
+       
+        NotificationCenter.default.addObserver(self, selector: #selector(userWasBlocked(notification:)), name: blockedUserNotification, object: nil)
+    
         
         if UserController.shared.loggedInUser?.isArtist == false {
             self.navigationItem.rightBarButtonItem = nil
@@ -89,8 +101,15 @@ class ListFeedViewController: UIViewController, CLLocationManagerDelegate  {
         }
     }
     
-  
-    
+    // MARK: - Observer functions
+    @objc func userWasBlocked(notification: Notification) {
+       // If a user is blocked, fetch events, excluding the newly blocked user
+        EventController.shared.fetchEvents(usersLocation: usersLocation) { (success) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     // MARK: - Navigation
     
@@ -202,6 +221,16 @@ extension ListFeedViewController {
         
         navigationItem.titleView = imageView
         
+    }
+}
+
+extension ListFeedViewController: CLLocationManagerDelegate {
+    // Gets the users current location
+    func getLocation() {
+        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            guard let coordinate = locations.last?.coordinate else { return }
+            usersLocation = coordinate
+        }
     }
 }
 

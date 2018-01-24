@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class CreateEventViewController: UIViewController, UITextFieldDelegate {
+class CreateEventViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
 
     
     // MARK: - Constants and Variables
@@ -19,6 +19,9 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
     var activityIndicator = UIActivityIndicatorView()
     let datePicker = UIDatePicker()
     var dateOfEvent: Date? = Date()
+    let locationManager = CLLocationManager()
+    var usersLocation = CLLocationCoordinate2D()
+
     
    
     // MARK: - IBOutlets
@@ -36,6 +39,9 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         self.navigationController?.isNavigationBarHidden = false
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
 
         
         self.hideKeyboardWhenTappedAround()
@@ -45,6 +51,13 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         pickerController.delegate = self
         nameOfArtistLabel.text = UserController.shared.loggedInUser?.username
 
+    }
+    
+    func getLocation() {
+        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            guard let coordinate = locations.last?.coordinate else { return }
+            usersLocation = coordinate
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -161,16 +174,29 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
             
             EventController.shared.createEventWith(name: name, eventImage: eventImageData, dataAndTime: dateOfEvent, description: description, venue: venue, artist: [user], typeOfEvent: typeOfEvent) { (success) in
                 if success {
-                    
-                    // FIXME: - Geocode location here aswell
-                    let newEvent = Event(name: name, eventImage: eventImageData, dateAndTime: dateOfEvent, description: description, venue: venue, creatorID: (UserController.shared.loggedInUser?.appleUserRef)!, typeOfEvent: typeOfEvent, coordinate: CLLocationCoordinate2D(latitude: 40.761836, longitude: -111.890746))
-                    EventController.shared.fetchedEvents.append(newEvent)
-                    
-                    print("Success! :)")
-                    DispatchQueue.main.async {
-                        
-                        self.navigationController?.popViewController(animated: true)
-                    }
+                    EventController.shared.fetchEvents(usersLocation: self.usersLocation, completion: { (success) in
+                        if success {
+                            // Current date plus 24 hours
+                            let dateToCheckFromAsDouble = Date().timeIntervalSince1970 + 86400 // 86400 represents 24 hours
+                            let dateToCheckFrom = Date(timeIntervalSince1970: dateToCheckFromAsDouble)
+                            for event in EventController.shared.fetchedEvents {
+                                if event.dateAndTime < dateToCheckFrom && event.dateAndTime > Date()  {
+                                    for alreadyFetchedEvent in EventController.shared.eventHappeningWithinTwentyFour {
+                                        if event != alreadyFetchedEvent {
+                                            EventController.shared.eventHappeningWithinTwentyFour.append(event)
+                                        }
+                                    }
+                                }
+                            }
+                            self.performSegue(withIdentifier: "tabBarID", sender: self)
+                            if UserController.shared.loggedInUser?.isArtist == false {
+                                self.navigationController?.navigationBar.isHidden = true
+                            }
+                            print("Success fetching events after creating event! :)")
+                        } else {
+                            print("Failure fetching events within 50 miles. :(")
+                        }
+                    })
                 } else {
                     print("Failure! :(")
                 }
@@ -258,6 +284,7 @@ extension CreateEventViewController {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
         let dateAsString = dateFormatter.string(from: datePicker.date)
         timeDateTextField.text = dateAsString
         dateOfEvent = datePicker.date

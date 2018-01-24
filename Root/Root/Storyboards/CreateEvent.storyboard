@@ -17,6 +17,14 @@
         </array>
     </customFonts>
     <scenes>
+        <!--TabBarController-->
+        <scene sceneID="Jcd-GO-W4f">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TabBarController" id="4B6-F7-vK4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D19-Zk-jah" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-862" y="1896"/>
+        </scene>
         <!--Search View Controller-->
         <scene sceneID="Fr5-wy-0OD">
             <objects>
@@ -257,6 +265,7 @@
                         <outlet property="timeDateTextField" destination="L0X-vs-49s" id="v0o-pa-XrN"/>
                         <outlet property="titleOfEventTextField" destination="n2b-hj-zIb" id="VSL-QK-kWQ"/>
                         <outlet property="typeOfEventTextField" destination="T9N-Gx-Drl" id="Hu3-Sz-42I"/>
+                        <segue destination="4B6-F7-vK4" kind="presentation" identifier="tabBarID" id="vcK-ZS-KXt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GvQ-r8-Agp" userLabel="First Responder" sceneMemberID="firstResponder"/>

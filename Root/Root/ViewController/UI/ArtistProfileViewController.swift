@@ -23,13 +23,20 @@ class ArtistProfileViewController: UIViewController {
     @IBOutlet weak var artistBioLabel: UILabel!
     @IBOutlet weak var artistWebsiteURLButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var blockerUserButton: UIButton!
     
     // MARK: - View Did Load / UpdateViews function
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Delegate DataSource
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // Block user button gone if it's on users profile
+        if artist?.username == UserController.shared.loggedInUser?.username && artist?.fullName == UserController.shared.loggedInUser?.fullName {
+            blockerUserButton.isHidden = true
+        }
         
         // Update The Views
         updateViews()

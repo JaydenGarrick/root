@@ -36,7 +36,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bwL-18-dG0">
-                                <rect key="frame" x="0.0" y="102.5" width="375" height="564.5"/>
+                                <rect key="frame" x="0.0" y="102" width="375" height="564.5"/>
                                 <color key="backgroundColor" red="1" green="0.95287805800000003" blue="0.94816809889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.15343365070000001" green="0.65313899519999996" blue="0.59311699870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.1441808939" green="0.61391872169999995" blue="0.54964023829999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -189,7 +189,7 @@
                 <viewControllerPlaceholder storyboardName="CreateEvent" id="Q6M-eL-ORs" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uad-Jh-UDV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1260" y="-473"/>
+            <point key="canvasLocation" x="1180" y="-739"/>
         </scene>
         <!--EventDetail-->
         <scene sceneID="vQ7-NI-KfB">
@@ -197,7 +197,7 @@
                 <viewControllerPlaceholder storyboardName="EventDetail" id="guE-es-VaN" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n3E-Wf-UVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1347.2" y="-263.56821589205401"/>
+            <point key="canvasLocation" x="1248" y="-128"/>
         </scene>
         <!--Feed-->
         <scene sceneID="Na7-xw-8Oc">
