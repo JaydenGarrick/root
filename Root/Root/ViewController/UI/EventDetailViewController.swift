@@ -37,6 +37,13 @@ class EventDetailViewController: UIViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
+        // Handle Nav Bar
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "Tint")
+        
         // Delegate
         self.commentsTableView.dataSource = self
         self.commentsTableView.delegate = self
@@ -47,7 +54,7 @@ class EventDetailViewController: UIViewController {
             let loggedInUserProfilePictureAsData = loggedInUser.profilePicture
             else { return }
         
-        let loggedInUserProfilePictureAsImage = UIImage(data: loggedInUserProfilePictureAsData)
+        //let loggedInUserProfilePictureAsImage = UIImage(data: loggedInUserProfilePictureAsData)
         //newCommentUserProfilePicture.image = loggedInUserProfilePictureAsImage
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -84,19 +91,21 @@ class EventDetailViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func postCommentButtonTapped(_ sender: UIButton) {
-        
-        guard let text = newCommentTextField.text,
-            let event = self.event,
-            let loggedInUser = UserController.shared.loggedInUser
-            else { return }
-        self.newCommentTextField.text = ""
-        CommentController.shared.createNewCommentWith(text: text, event: event, loggedInUser: loggedInUser) { (success) in
+        if newCommentTextField.text == "" {
+            self.fillOutRequiredFields()
+        } else {
+            guard let text = newCommentTextField.text,
+                let event = self.event,
+                let loggedInUser = UserController.shared.loggedInUser
+                else { return }
+            self.newCommentTextField.text = ""
+            CommentController.shared.createNewCommentWith(text: text, event: event, loggedInUser: loggedInUser) { (success) in
                 DispatchQueue.main.async {
                     self.commentsTableView.reloadData()
+                }
             }
         }
     }
-    
 }
 
 // MARK: - Update Views Function
