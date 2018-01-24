@@ -170,8 +170,7 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
 
 extension CreateProfPicVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        view.endEditing(true)
-        
+        textField.resignFirstResponder()
         return true
     }
 }

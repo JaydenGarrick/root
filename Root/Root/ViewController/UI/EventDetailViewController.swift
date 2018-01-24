@@ -27,10 +27,10 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var streetAddressLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var commentsTableView: UITableView!
-    @IBOutlet weak var newCommentUserProfilePicture: UIImageView!
     @IBOutlet weak var newCommentTextField: UITextField!
     @IBOutlet weak var postCommentButton: UIButton!
-  //  @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     
     
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class EventDetailViewController: UIViewController {
         self.commentsTableView.dataSource = self
         self.commentsTableView.delegate = self
         newCommentTextField.delegate = self
-        
+        self.scrollView.delegate = self
         guard let event = event,
             let loggedInUser = UserController.shared.loggedInUser,
             let loggedInUserProfilePictureAsData = loggedInUser.profilePicture
