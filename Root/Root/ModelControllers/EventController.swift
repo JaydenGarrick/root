@@ -80,8 +80,11 @@ class EventController {
         let blockedUsersPredicate = NSPredicate(format: "NOT(creatorID IN %@)", loggedInUser.blockedUsersRefs)
         let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [maxLatitudePredicate, maxLongitudePredicate, minLatitudePredicate, minLongitudePredicate, blockedUsersPredicate])
         
+        let sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         
         let query = CKQuery(recordType: "Event", predicate: compoundPredicate)
+        query.sortDescriptors = sortDescriptors
+        
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
             if let error = error {
                 print("Error fetching events: \(error.localizedDescription)")
