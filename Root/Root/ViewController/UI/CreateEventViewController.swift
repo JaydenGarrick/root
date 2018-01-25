@@ -230,10 +230,16 @@ extension CreateEventViewController: SearchViewControllerDelegate {
                 print("Error reverse geocoding while creating event: \(error.localizedDescription)")
             }
             guard let placemark = placemarks?.first else { return }
-            self.addVenueButton.setTitle("\(placemark.name!), \(placemark.postalCode!), \(placemark.administrativeArea!), \(placemark.subThoroughfare!), \(placemark.locality!)", for: .normal)
-            
+            guard let name = placemark.name,
+                let postalCode = placemark.postalCode,
+                let administrativeArea = placemark.administrativeArea,
+                let subThoroughFare = placemark.subThoroughfare,
+                let locality = placemark.locality else {
+                    self.geoCodeAlert()
+                    return
+            }
+            self.addVenueButton.setTitle("\(name), \(postalCode), \(administrativeArea), \(subThoroughFare), \(locality)", for: .normal)
         }
-        
     }
     
     
@@ -288,6 +294,17 @@ extension CreateEventViewController {
         dateOfEvent = datePicker.date
         
         self.view.endEditing(true)
+    }
+}
+
+// MARK: - Setting up alert
+extension CreateEventViewController {
+    func geoCodeAlert() {
+        let alertController = UIAlertController(title: "☹️", message: "We were unable to find that location.", preferredStyle: .alert)
+        alertController.view.tintColor = UIColor(named: "Tint")
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(action)
+        present(alertController, animated: true)
     }
 }
 
