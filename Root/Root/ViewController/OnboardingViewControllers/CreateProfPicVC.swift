@@ -88,14 +88,13 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
                 let interests = self.interests,
                 let websiteURL = websiteURLTextField.text,
                 let isArtist = self.isArtist
-                else { return }
+                else { alert(error: "Something is missing line 91") ; return  }
             
             UserController.shared.createUserWith(username: username, fullName: fullName, profilePicture: profilePictureAsData, bio: "", homeTown: hometown, interests: interests, websiteURL: websiteURL, isArtist: isArtist) { (success) in
                 if success {
-                    guard let user = UserController.shared.loggedInUser else { return }
+                    guard let user = UserController.shared.loggedInUser else { self.alert(error: "Line 95") ; return }
                     print(user.username, user.fullName, user.bio, user.homeTown, user.appleUserRef, user.isArtist)
-                    
-                    
+
                     EventController.shared.fetchEvents(usersLocation: self.usersLocation, completion: { (success) in
                         if success {
                             // Current date plus 24 hours
@@ -106,36 +105,27 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
                                     EventController.shared.eventHappeningWithinTwentyFour.append(event)
                                 }
                             }
-                            self.performSegue(withIdentifier: "SegueToTabBarID", sender: self)
-                            if UserController.shared.loggedInUser?.isArtist == false {
-                                self.navigationController?.navigationBar.isHidden = true
-                            }
                             print("Success fetching events within 50 miles! :)")
                             DispatchQueue.main.async {
-                                //                    self.navigationController?.dismiss(animated: true, completion: nil)
                                 self.performSegue(withIdentifier: "SegueToTabBarID", sender: self)
                             }
-                            
-                            
                         } else {
+                            self.alert(error: "Line 113")
                             print("Failure fetching events within 50 miles. :(")
                         }
                     })
-                    print("\(String(describing: UserController.shared.loggedInUser?.cloudKitRecordID)) \(String(describing: UserController.shared.loggedInUser?.fullName)), \(String(describing: UserController.shared.loggedInUser?.appleUserRef))")
-                    
                 }
             }
-            
         }
     }
-
-
-
-// MARK: - Image picker delegate methods
+    
+    
+    
+    // MARK: - Image picker delegate methods
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
       
-        picker
+        
         guard let profilePicture = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
        // let chosenImage = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
         profilePictureImageView.image = profilePicture
@@ -177,6 +167,19 @@ extension CreateProfPicVC: UITextFieldDelegate {
 }
 
 
+
+// MARK: - DELETE ME LATER
+extension CreateProfPicVC {
+    
+    func alert(error: String) {
+        let alertController = UIAlertController(title: "Shit what's the error?", message: "\(error)", preferredStyle: .alert)
+        let action = UIAlertAction(title: "🙃🙃🙃🙃🙃🙃🙃🙃", style: .default, handler: nil)
+        alertController.addAction(action)
+        present(alertController, animated: true)
+    }
+    
+    
+}
 
 
 
