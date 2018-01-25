@@ -8,14 +8,19 @@
 
 import UIKit
 import MessageUI
+import CoreLocation
 
-class EventDetailViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class EventDetailViewController: UIViewController, MFMailComposeViewControllerDelegate, CLLocationManagerDelegate{
     
     // MARK: - Constants and Variables
     var event: Event?
     var artist: User?
     var loggedInUser: User?
     let blockedUserNotification = Notification.Name("User Was Blocked")
+    
+    // Core Location
+    let locationManager = CLLocationManager()
+    var usersLocation = CLLocationCoordinate2D()
     
     static let bottomSpacing: CGFloat = 20.0
     
@@ -38,7 +43,12 @@ class EventDetailViewController: UIViewController, MFMailComposeViewControllerDe
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
-        
+        // Core Location
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        getLocation()
         
         // Handle Nav Bar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -84,7 +94,43 @@ class EventDetailViewController: UIViewController, MFMailComposeViewControllerDe
     }
     
     @objc func blockUserButtonTapped() {
-        print("Working")
+        guard let event = self.event else { return }
+        let eventActionAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let blockUserAction = UIAlertAction(title: "Block user", style: .destructive) { (action) in
+            // Confirm that the user wants to block a user
+            let confirmationAlertController = UIAlertController(title: "Are you sure you want to block this user?", message: nil, preferredStyle: .alert)
+            let blockAction = UIAlertAction(title: "Block user", style: .destructive, handler: { (action) in
+                self.blockUser(any: nil)
+                EventController.shared.fetchEvents(usersLocation: self.usersLocation, completion: { (success) in
+                    DispatchQueue.main.async {
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
+                })
+            })
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
+            })
+            
+            confirmationAlertController.addAction(blockAction)
+            confirmationAlertController.addAction(cancelAction)
+            self.present(confirmationAlertController, animated: true, completion: nil)
+            
+        }
+        
+        let reportAction = UIAlertAction(title: "Report", style: .default) { (action) in
+            let body = "I found the following event offensive: \n \(event.title) \n\n Event information (please do not delete): \n \(event.ckRecordID)"
+            
+            self.report(body: body)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            eventActionAlertController.dismiss(animated: true, completion: nil)
+        }
+        
+        eventActionAlertController.addAction(blockUserAction)
+        eventActionAlertController.addAction(reportAction)
+        eventActionAlertController.addAction(cancelAction)
+        present(eventActionAlertController, animated: true, completion: nil)
+        
     }
     
     // MARK: - Navigation
@@ -117,8 +163,11 @@ class EventDetailViewController: UIViewController, MFMailComposeViewControllerDe
     
     // MARK: - Other functions
     
-    func blockUser(indexPath: IndexPath) {
+    func blockUser(any: Any?) {
+        if any != nil {
         guard let event = self.event else { return }
+        
+        let indexPath = any as! IndexPath
         
         let comment = CommentController.shared.eventComments[indexPath.row]
         
@@ -136,27 +185,41 @@ class EventDetailViewController: UIViewController, MFMailComposeViewControllerDe
                 })
             })
         })
-    }
-    
-    func reportUser(indexPath: IndexPath) {
+        } else {
+            guard let artist = self.artist else { return }
+            UserController.shared.block(user: artist, completion: { (success) in
+                
+            })
             
-            let mailComposeViewController = MFMailComposeViewController()
-            mailComposeViewController.mailComposeDelegate = self
-            
-            // Check to see if user has email enabled on their phone (a default alertview will present from if statement below).
-            if !MFMailComposeViewController.canSendMail() {
-                
-            } else {
-                
-                // If user does have mail
-                mailComposeViewController.setToRecipients(["fmartin0212@gmail.com"])
-                mailComposeViewController.setSubject("Offensive material")
-                mailComposeViewController.setMessageBody("I found the following comment offensive: \n\n\"\(CommentController.shared.eventComments[indexPath.row].text)\" \n\n \n \n Comment information (do not delete) \(CommentController.shared.eventComments[indexPath.row].creatorID))", isHTML: false)
-                
-                self.present(mailComposeViewController, animated: true, completion: nil)
-            }
         }
     }
+    
+    func report(body: String) {
+    
+        let mailComposeViewController = MFMailComposeViewController()
+        mailComposeViewController.mailComposeDelegate = self
+        
+        // Check to see if user has email enabled on their phone (a default alertview will present from if statement below).
+        if !MFMailComposeViewController.canSendMail() {
+            
+        } else {
+            
+            // If user does have mail
+            mailComposeViewController.setToRecipients(["fmartin0212@gmail.com"])
+            mailComposeViewController.setSubject("Offensive material")
+            mailComposeViewController.setMessageBody(body, isHTML: false)
+            //
+            self.present(mailComposeViewController, animated: true, completion: nil)
+        }
+    }
+    
+    func getLocation() {
+        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            guard let coordinate = locations.last?.coordinate else { return }
+            usersLocation = coordinate
+        }
+    }
+}
 
 // MARK: - Update Views Function
 extension EventDetailViewController {
@@ -215,7 +278,7 @@ extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource 
             // Confirmation alert controller
             let confirmationAlertController = UIAlertController(title: "Are you sure you want to block this user?", message: nil, preferredStyle: .alert)
             let blockAction = UIAlertAction(title: "Block user", style: .destructive, handler: { (action) in
-                self.blockUser(indexPath: indexPath)
+                self.blockUser(any: indexPath)
             })
             let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
             })
@@ -232,14 +295,17 @@ extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource 
            
             let blockAndReportAction = UIAlertAction(title: "Block & Report", style: .destructive, handler: { (action) in
                 // block user
-                self.blockUser(indexPath: indexPath)
+                self.blockUser(any: indexPath)
                 // report user
-                self.reportUser(indexPath: indexPath)
+                let body = "I found the following comment offensive: \n\n\"\(CommentController.shared.eventComments[indexPath.row].text)\" \n\n \n \n Comment information (please do not delete) \(CommentController.shared.eventComments[indexPath.row].creatorID))"
+                self.report(body: body)
+                
             })
             
             let reportAction = UIAlertAction(title: "Report", style: .default, handler: { (action) in
                 //report user
-                self.reportUser(indexPath: indexPath)
+                let body = "I found the following comment offensive: \n\n\"\(CommentController.shared.eventComments[indexPath.row].text)\" \n\n \n \n Comment information (do not delete) \(CommentController.shared.eventComments[indexPath.row].creatorID))"
+                self.report(body: body)
             })
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
