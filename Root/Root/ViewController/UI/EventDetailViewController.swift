@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import MessageUI
 
-class EventDetailViewController: UIViewController {
-
+class EventDetailViewController: UIViewController, MFMailComposeViewControllerDelegate {
+    
     // MARK: - Constants and Variables
     var event: Event?
     var artist: User?
     var loggedInUser: User?
     let blockedUserNotification = Notification.Name("User Was Blocked")
+    
     static let bottomSpacing: CGFloat = 20.0
     
     // MARK: - IBOutlets
@@ -32,10 +34,11 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        
+        
         
         // Handle Nav Bar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -45,6 +48,7 @@ class EventDetailViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor(named: "Tint")
         
         // Delegate
+        
         self.commentsTableView.dataSource = self
         self.commentsTableView.delegate = self
         newCommentTextField.delegate = self
@@ -70,7 +74,7 @@ class EventDetailViewController: UIViewController {
                 self.updateViews()
             }
             CommentController.shared.fetchCommentsForCurrent(event: event, completion: { (success) in
-              
+                
                 DispatchQueue.main.async {
                     self.commentsTableView.reloadData()
                 }
@@ -78,7 +82,7 @@ class EventDetailViewController: UIViewController {
         }
         
     }
-        
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToArtistProfileSegue" {
@@ -106,7 +110,49 @@ class EventDetailViewController: UIViewController {
             }
         }
     }
-}
+    
+    // MARK: - Other functions
+    
+    func blockUser(indexPath: IndexPath) {
+        guard let event = self.event else { return }
+        
+        let comment = CommentController.shared.eventComments[indexPath.row]
+        
+        CommentController.shared.fetchCommentCreator(comment: comment, completion: { (user) in
+            guard let user = user else { return }
+            
+            UserController.shared.block(user: user, completion: { (success) in
+                
+                CommentController.shared.fetchCommentsForCurrent(event: event, completion: { (success) in
+                    
+                    DispatchQueue.main.async {
+                        NotificationCenter.default.post(name: self.blockedUserNotification, object: self)
+                        self.commentsTableView.reloadData()
+                    }
+                })
+            })
+        })
+    }
+    
+    func reportUser(indexPath: IndexPath) {
+            
+            let mailComposeViewController = MFMailComposeViewController()
+            mailComposeViewController.mailComposeDelegate = self
+            
+            // Check to see if user has email enabled on their phone (a default alertview will present from if statement below).
+            if !MFMailComposeViewController.canSendMail() {
+                
+            } else {
+                
+                // If user does have mail
+                mailComposeViewController.setToRecipients(["fmartin0212@gmail.com"])
+                mailComposeViewController.setSubject("Offensive material")
+                mailComposeViewController.setMessageBody("I found the following comment offensive: \n\n\"\(CommentController.shared.eventComments[indexPath.row].text)\" \n\n \n \n Comment information (do not delete) \(CommentController.shared.eventComments[indexPath.row].creatorID))", isHTML: false)
+                
+                self.present(mailComposeViewController, animated: true, completion: nil)
+            }
+        }
+    }
 
 // MARK: - Update Views Function
 extension EventDetailViewController {
@@ -134,6 +180,8 @@ extension EventDetailViewController {
     }
 }
 
+
+
 // MARK: - TableView Delegate and DataSource
 extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -157,32 +205,54 @@ extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let blockAction = UITableViewRowAction(style: .normal, title: "Block user") { (rowAction, indexPath) in
+        
+        // "Block user" action upon swipe
+        let blockUserRowAction = UITableViewRowAction(style: .default, title: "Block user") { (rowAction, indexPath) in
+            // Confirmation alert controller
             let confirmationAlertController = UIAlertController(title: "Are you sure you want to block this user?", message: nil, preferredStyle: .alert)
             let blockAction = UIAlertAction(title: "Block user", style: .destructive, handler: { (action) in
-                guard let event = self.event else { return }
-                let comment = CommentController.shared.eventComments[indexPath.row]
-                CommentController.shared.fetchCommentCreator(comment: comment, completion: { (user) in
-                    guard let user = user else { return }
-                    UserController.shared.block(user: user, completion: { (success) in
-                        CommentController.shared.fetchCommentsForCurrent(event: event, completion: { (success) in
-                            DispatchQueue.main.async {
-                                NotificationCenter.default.post(name: self.blockedUserNotification, object: self)
-                                tableView.reloadData()
-                            }
-                        })
-                    })
-                })
+                self.blockUser(indexPath: indexPath)
             })
             let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
             })
+            
             confirmationAlertController.addAction(blockAction)
             confirmationAlertController.addAction(cancelAction)
             self.present(confirmationAlertController, animated: true, completion: nil)
         }
-        blockAction.backgroundColor = .red
-        return [blockAction]
+        blockUserRowAction.backgroundColor = .red
+        
+        // "Report offensive" action upon swipe
+        let reportOffensiveRowAction = UITableViewRowAction(style: .default, title: "Report as offensive") { (rowAction, indexPath) in
+            let confirmationAlert = UIAlertController(title: "Would you also like to block this user?", message: nil, preferredStyle: .alert)
+           
+            let blockAndReportAction = UIAlertAction(title: "Block & Report", style: .destructive, handler: { (action) in
+                // block user
+                self.blockUser(indexPath: indexPath)
+                // report user
+                self.reportUser(indexPath: indexPath)
+            })
+            
+            let reportAction = UIAlertAction(title: "Report", style: .default, handler: { (action) in
+                //report user
+                self.reportUser(indexPath: indexPath)
+            })
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+            })
+            
+            confirmationAlert.addAction(blockAndReportAction)
+            confirmationAlert.addAction(reportAction)
+            confirmationAlert.addAction(cancelAction)
+            
+            self.present(confirmationAlert, animated: true, completion: nil)
+            
+        }
+        reportOffensiveRowAction.backgroundColor = .purple
+        
+        return [reportOffensiveRowAction, blockUserRowAction]
     }
+    
 }
 
 
@@ -201,11 +271,25 @@ extension EventDetailViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-       // scrollView.setContentOffset(CGPoint.init(x: 0, y: 0), animated: true)
+        // scrollView.setContentOffset(CGPoint.init(x: 0, y: 0), animated: true)
     }
     
+}
+
+
+// MARK: - Mail Compose View Delegate Methods
+extension EventDetailViewController {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension EventDetailViewController: UINavigationControllerDelegate {
+    // Need this in order to get the mail compose view controller delegate to function properly.
     
 }
+
+
 
 
 

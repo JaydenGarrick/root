@@ -188,10 +188,8 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, CLLocati
                                     }
                                 }
                             }
-                            self.performSegue(withIdentifier: "tabBarID", sender: self)
-                            if UserController.shared.loggedInUser?.isArtist == false {
-                                self.navigationController?.navigationBar.isHidden = true
-                            }
+                                self.performSegue(withIdentifier: "tabBarID", sender: self)
+                
                             print("Success fetching events after creating event! :)")
                         } else {
                             print("Failure fetching events within 50 miles. :(")
