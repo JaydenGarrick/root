@@ -58,6 +58,7 @@ class EventController {
                     completion(true)
                 } else {
                     completion(false)
+                    return
                 }
             })
         

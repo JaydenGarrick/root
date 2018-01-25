@@ -37,10 +37,28 @@ class UserController {
             self.modifyRecords([record], perRecordCompletion: nil, completion: { (records, error) in
                 
                 // If there is no user in users, call save else run modify records
+                if records?.isEmpty == true {
+                    self.saveUser(user: user, completion: { (success) in
+                        if success {
+                            completion(true)
+                        } else {
+                            completion(false)
+                            return
+                        }
+                    })
+                }
                 
                 if let error = error {
-                    print("There was an error saving the current record. \(error)")
-                    completion(false) ; return
+                    self.saveUser(user: user, completion: { (success) in
+                        if success {
+                            completion(true)
+                        } else {
+                            print("Error saving user to database: \(error.localizedDescription)")
+                            completion(false)
+                            return
+                        }
+                    })
+                   
                 }
                 // apple gives us the record right back so that we can use it/access the metadata that now exists
                 guard let records = records,
@@ -150,6 +168,22 @@ class UserController {
 
     }
     
+    func saveUser(user: User, completion: @escaping ((Bool)->Void)) {
+        let record = CKRecord(user: user)
+        
+        publicDataBase.save(record) { (_, error) in
+            if let error = error {
+                print("Error creating user: \(error.localizedDescription)")
+                completion(false)
+            } else {
+                completion(true)
+            }
+        }
+        
+        
+        
+    }
+    
     func fetchEventsFor(user: User, completion: @escaping (Bool) -> Void) {
         guard let creatorID = user.cloudKitRecordID else { completion(false) ; return }
         
@@ -188,4 +222,6 @@ class UserController {
         }
         
     }
+    
+
 }
