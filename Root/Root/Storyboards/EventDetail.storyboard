@@ -516,7 +516,7 @@
                                                     <constraint firstAttribute="height" constant="125" id="4Dw-Vb-dQc"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HR9-ms-LOG" userLabel="UserProfPicImageView" customClass="UIImageViewX" customModule="Root" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HR9-ms-LOG" userLabel="UserProfPicImageView" customClass="UIImageViewX" customModule="Root" customModuleProvider="target">
                                                 <rect key="frame" x="110" y="159" width="155" height="142"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="HR9-ms-LOG" secondAttribute="height" multiplier="25:23" id="8RT-XU-kR8"/>
@@ -644,7 +644,7 @@
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o95-20-wFQ">
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o95-20-wFQ">
                                                 <rect key="frame" x="110" y="159" width="155" height="142"/>
                                                 <connections>
                                                     <segue destination="qLk-5K-YLA" kind="show" identifier="ToArtistProfileSegue" id="sIn-n3-evv"/>
