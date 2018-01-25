@@ -23,7 +23,7 @@
                 <viewControllerPlaceholder storyboardName="TabBarController" id="4B6-F7-vK4" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D19-Zk-jah" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-862" y="1896"/>
+            <point key="canvasLocation" x="-858" y="1941"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="Fr5-wy-0OD">
@@ -39,14 +39,14 @@
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Enter Venue Name..." translatesAutoresizingMaskIntoConstraints="NO" id="88W-iO-3ti">
                                 <rect key="frame" x="0.0" y="20" width="375" height="56"/>
-                                <color key="barTintColor" red="0.99963706730000002" green="0.97668772940000004" blue="0.97943061590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" name="Pink"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="SdJ-zb-3eT" id="ge8-uv-pYH"/>
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xby-ZP-xMo">
-                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                                <rect key="frame" x="0.0" y="76" width="375" height="539"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" name="Tint"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -56,28 +56,59 @@
                                     <outlet property="delegate" destination="SdJ-zb-3eT" id="KPc-7F-aap"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7y-6s-9YW" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
+                                <rect key="frame" x="160" y="623" width="54" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Cancel"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animate" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animateDelay">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animateFrom">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="SdJ-zb-3eT" eventType="touchUpInside" id="Tbs-Ln-8Dm"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="Pink"/>
                         <color key="tintColor" name="Tint"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="xjd-5a-dtM" firstAttribute="top" secondItem="xby-ZP-xMo" secondAttribute="bottom" id="0Nz-T5-6rH"/>
+                            <constraint firstItem="xjd-5a-dtM" firstAttribute="top" secondItem="M7y-6s-9YW" secondAttribute="bottom" constant="8" id="6Cp-0F-sPa"/>
                             <constraint firstItem="xby-ZP-xMo" firstAttribute="leading" secondItem="g3i-Qj-nM0" secondAttribute="leading" id="6v5-dV-dBJ"/>
                             <constraint firstItem="xby-ZP-xMo" firstAttribute="top" secondItem="88W-iO-3ti" secondAttribute="bottom" id="8D7-0w-Gpd"/>
                             <constraint firstItem="88W-iO-3ti" firstAttribute="top" secondItem="P4m-zv-RCt" secondAttribute="bottom" id="CwM-MJ-cvI"/>
+                            <constraint firstItem="M7y-6s-9YW" firstAttribute="leading" secondItem="Kfz-DZ-g7S" secondAttribute="leading" constant="160" id="GLx-Kl-nhR"/>
                             <constraint firstAttribute="trailing" secondItem="xby-ZP-xMo" secondAttribute="trailing" id="XnN-aj-oN3"/>
+                            <constraint firstItem="Kfz-DZ-g7S" firstAttribute="trailing" secondItem="M7y-6s-9YW" secondAttribute="trailing" constant="161" id="aTY-G6-n6M"/>
                             <constraint firstAttribute="trailing" secondItem="88W-iO-3ti" secondAttribute="trailing" id="pGx-bG-mVE"/>
                             <constraint firstItem="xby-ZP-xMo" firstAttribute="top" secondItem="88W-iO-3ti" secondAttribute="bottom" id="qcF-MU-E5k"/>
+                            <constraint firstItem="M7y-6s-9YW" firstAttribute="top" secondItem="xby-ZP-xMo" secondAttribute="bottom" constant="8" id="stG-Oy-nwK"/>
                             <constraint firstItem="88W-iO-3ti" firstAttribute="leading" secondItem="g3i-Qj-nM0" secondAttribute="leading" id="w0k-6s-gkC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kfz-DZ-g7S"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="jJi-mi-9zU" appends="YES" id="0QX-9u-uH0"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="searchResultsTableView" destination="xby-ZP-xMo" id="PcR-Xs-h9l"/>
+                        <outlet property="swipteGest" destination="jJi-mi-9zU" id="aDJ-Px-jnN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DKk-hl-A7A" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="jJi-mi-9zU">
+                    <rectEdge key="edges" left="YES"/>
+                    <connections>
+                        <action selector="swipeLeft:" destination="SdJ-zb-3eT" id="h4u-Ee-nPM"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-276" y="1486"/>
+            <point key="canvasLocation" x="-276" y="1485.6071964017992"/>
         </scene>
         <!--Create Event View Controller-->
         <scene sceneID="eAK-eh-ktt">
@@ -87,7 +118,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddEventImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nvR-S2-ioD">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddEventImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nvR-S2-ioD">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nvR-S2-ioD" secondAttribute="height" multiplier="4:3" constant="19" id="iB8-gu-HSy"/>
@@ -160,7 +191,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBS-0v-TDJ" userLabel="Add Profile Pic Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBS-0v-TDJ" userLabel="Add Profile Pic Button">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -255,7 +286,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5iM-85-rLN"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cbb-EU-Vfg"/>
+                    <navigationItem key="navigationItem" id="cbb-EU-Vfg">
+                        <barButtonItem key="backBarButtonItem" title=" " id="zT1-fr-6R1">
+                            <color key="tintColor" name="Tint"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addVenueButton" destination="Fal-DP-DYP" id="yHf-gs-Zxq"/>
                         <outlet property="eventDescriptionTextField" destination="y62-VL-ovS" id="A4y-4G-XwY"/>
@@ -280,7 +315,10 @@
         <image name="#poetry" width="32" height="32"/>
         <image name="#pottery" width="32" height="32"/>
         <image name="#sketch" width="32" height="32"/>
-        <image name="AddEventImage" width="207" height="121"/>
+        <image name="AddEventImage" width="363" height="212"/>
+        <namedColor name="Pink">
+            <color red="1" green="0.95300000905990601" blue="0.94800001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Tint">
             <color red="0.14399999380111694" green="0.61400002241134644" blue="0.55000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

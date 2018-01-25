@@ -33,7 +33,7 @@ class ListFeedViewController: UIViewController {
     
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        
+        //createEventButton.
         // Core Location
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -41,13 +41,13 @@ class ListFeedViewController: UIViewController {
         locationManager.startUpdatingLocation()
         getLocation()
         NotificationCenter.default.addObserver(self, selector: #selector(userWasBlocked(notification:)), name: blockedUserNotification, object: nil)
-       
-    
         
+        // If user is not a creator, they are unable to create an event.
         if UserController.shared.loggedInUser?.isArtist == false {
             self.navigationItem.rightBarButtonItem = nil
         }
         
+        // Sets the ROOT image on NavBar
         setImageOnNavBar()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -73,6 +73,9 @@ class ListFeedViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        createEventButton.isEnabled = false
+        createEventButton.isEnabled = true
+
         tableView.reloadData()
     }
     
@@ -215,21 +218,23 @@ extension ListFeedViewController: UITableViewDelegate, UITableViewDataSource, Ev
 extension ListFeedViewController {
     func setImageOnNavBar() {
         
-        let navController = navigationController!
+       
         
         let image = #imageLiteral(resourceName: "NavigationBarImage")
         let imageView = UIImageView(image: image)
         
-        let bannerWidth = navController.navigationBar.frame.size.width
-        let bannerHeight = navController.navigationBar.frame.size.height
-        
-        let bannerX = bannerWidth / 2 - image.size.width / 2
-        let bannerY = bannerHeight / 2 - image.size.height / 2
-        
-        imageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
+//        let bannerWidth = navController.navigationBar.frame.size.width
+//        let bannerHeight = navController.navigationBar.frame.size.height
+//
+//        let bannerX = bannerWidth / 2 - image.size.width / 2
+//        let bannerY = bannerHeight / 2 - image.size.height / 2
+//
+//        imageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
         imageView.contentMode = .scaleAspectFit
+        //imageView.backgroundColor = .black
         
         navigationItem.titleView = imageView
+        
         
     }
 }
