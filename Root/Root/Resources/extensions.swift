@@ -37,7 +37,11 @@ extension UIViewController {
         let editProfileButtonAction = UIAlertAction(title: "Edit Profile", style: .default) { (_) in
             self.performSegue(withIdentifier: "SegueID", sender: self)
         }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
         actionSheetController.addAction(editProfileButtonAction)
+        actionSheetController.addAction(cancelAction)
+        
         present(actionSheetController, animated: true)
         
     }
