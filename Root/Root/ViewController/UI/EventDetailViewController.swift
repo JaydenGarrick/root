@@ -174,7 +174,7 @@ class EventDetailViewController: UIViewController, MFMailComposeViewControllerDe
         CommentController.shared.fetchCommentCreator(comment: comment, completion: { (user) in
             guard let user = user else { return }
             
-            UserController.shared.block(user: user, completion: { (success) in
+            UserController.shared.block(user: user, vc: self, completion: { (success) in
                 
                 CommentController.shared.fetchCommentsForCurrent(event: event, completion: { (success) in
                     
@@ -187,7 +187,7 @@ class EventDetailViewController: UIViewController, MFMailComposeViewControllerDe
         })
         } else {
             guard let artist = self.artist else { return }
-            UserController.shared.block(user: artist, completion: { (success) in
+            UserController.shared.block(user: artist, vc: self, completion: { (success) in
                 
             })
             
@@ -293,7 +293,7 @@ extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource 
         let reportOffensiveRowAction = UITableViewRowAction(style: .default, title: "Report as offensive") { (rowAction, indexPath) in
             let confirmationAlert = UIAlertController(title: "Would you also like to block this user?", message: nil, preferredStyle: .alert)
            
-            let blockAndReportAction = UIAlertAction(title: "Block & Report", style: .destructive, handler: { (action) in
+            let blockAndReportAction = UIAlertAction(title: "Block & report", style: .destructive, handler: { (action) in
                 // block user
                 self.blockUser(any: indexPath)
                 // report user

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Jayden Garrick. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CloudKit
 
 class UserController {
@@ -161,28 +161,33 @@ class UserController {
             UserController.shared.eventsCreated = eventsCreated
             
             // Below is the translation for the flatmap above.
-//            var eventsFetched: [Event] = []
-//            for record in records {
-//                guard let event = Event(ckRecord: record) else { completion(false) ; return }
-//
-//                print(event.name)
-//            }
-               completion(true)
+            //            var eventsFetched: [Event] = []
+            //            for record in records {
+            //                guard let event = Event(ckRecord: record) else { completion(false) ; return }
+            //
+            //                print(event.name)
+            //            }
+            completion(true)
         }
         
     }
     
-    func block(user: User, completion: @escaping (Bool) -> Void) {
+    func block(user: User, vc: UIViewController, completion: @escaping (Bool) -> Void) {
         guard let loggedInUser = UserController.shared.loggedInUser,
             let blockedUserCloudKitRecordID = user.cloudKitRecordID else { completion(false) ; return }
-      
-        let newBlockedUserRef = CKReference(recordID: blockedUserCloudKitRecordID, action: .none)
-        loggedInUser.blockedUsersRefs.append(newBlockedUserRef)
-        
-        let records = [CKRecord(user: loggedInUser)]
-        self.modifyRecords(records, perRecordCompletion: nil) { (records, error) in
-            completion(true)
+        if loggedInUser.cloudKitRecordID == blockedUserCloudKitRecordID {
+            let alertController = UIAlertController(title: "Cannot block yourself", message: nil, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            vc.present(alertController, animated: true, completion: nil)
+        } else {
+            let newBlockedUserRef = CKReference(recordID: blockedUserCloudKitRecordID, action: .none)
+            loggedInUser.blockedUsersRefs.append(newBlockedUserRef)
+            
+            let records = [CKRecord(user: loggedInUser)]
+            self.modifyRecords(records, perRecordCompletion: nil) { (records, error) in
+                completion(true)
+            }
         }
-        
     }
 }

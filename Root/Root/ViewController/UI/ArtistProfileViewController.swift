@@ -78,7 +78,7 @@ class ArtistProfileViewController: UIViewController {
             let blockUserAction = UIAlertAction(title: "Block user", style: .destructive, handler: { (action) in
                 guard let artist = self.artist
                     else { return }
-                UserController.shared.block(user: artist, completion: { (success) in
+                UserController.shared.block(user: artist, vc: self, completion: { (success) in
                     EventController.shared.fetchEvents(usersLocation: self.usersLocation, completion: { (success) in
                         DispatchQueue.main.async {
                             self.navigationController?.popToRootViewController(animated: true)
