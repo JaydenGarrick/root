@@ -73,8 +73,11 @@ class ListFeedViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        createEventButton.isEnabled = false
-        createEventButton.isEnabled = true
+        // Handle bug where button is always highlighted
+        if UserController.shared.loggedInUser?.isArtist == true {
+            createEventButton.isEnabled = false
+            createEventButton.isEnabled = true
+        }
 
         tableView.reloadData()
     }
