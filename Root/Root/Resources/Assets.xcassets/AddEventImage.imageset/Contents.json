@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Artboard.png",
+      "filename" : "AddEventImageButton.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Artboard-1.png",
+      "filename" : "AddEventImageButton-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Artboard-2.png",
+      "filename" : "AddEventImageButton-2.png",
       "scale" : "3x"
     }
   ],
