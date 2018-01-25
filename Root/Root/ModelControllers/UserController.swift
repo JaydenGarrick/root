@@ -35,6 +35,9 @@ class UserController {
             let record = CKRecord(user: user)
             
             self.modifyRecords([record], perRecordCompletion: nil, completion: { (records, error) in
+                
+                // If there is no user in users, call save else run modify records
+                
                 if let error = error {
                     print("There was an error saving the current record. \(error)")
                     completion(false) ; return
@@ -79,7 +82,7 @@ class UserController {
     func modifyRecords(_ records: [CKRecord], perRecordCompletion: ((_ record: CKRecord?, _ error: Error?) -> Void)?, completion: ((_ records: [CKRecord]?, _ error: Error?) -> Void)?) {
         
         let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
-        operation.savePolicy = .changedKeys
+        operation.savePolicy = .changedKeys // MAYBE CHANGE TO ALL KEYS
         operation.queuePriority = .high
         operation.qualityOfService = .userInteractive
         
