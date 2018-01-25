@@ -96,10 +96,11 @@ class EventDetailViewController: UIViewController, MFMailComposeViewControllerDe
     @objc func blockUserButtonTapped() {
         guard let event = self.event else { return }
         let eventActionAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
+        eventActionAlertController.view.tintColor = UIColor(named: "Tint")
         let blockUserAction = UIAlertAction(title: "Block user", style: .destructive) { (action) in
             // Confirm that the user wants to block a user
             let confirmationAlertController = UIAlertController(title: "Are you sure you want to block this user?", message: nil, preferredStyle: .alert)
+            confirmationAlertController.view.tintColor = UIColor(named: "Tint")
             let blockAction = UIAlertAction(title: "Block user", style: .destructive, handler: { (action) in
                 self.blockUser(any: nil)
                 EventController.shared.fetchEvents(usersLocation: self.usersLocation, completion: { (success) in
@@ -118,7 +119,7 @@ class EventDetailViewController: UIViewController, MFMailComposeViewControllerDe
         }
         
         let reportAction = UIAlertAction(title: "Report", style: .default) { (action) in
-            let body = "I found the following event offensive: \n \(event.title) \n\n Event information (please do not delete): \n \(event.ckRecordID)"
+            let body = "I found the following event offensive: \n \(String(describing: event.title)) \n\n Event information (please do not delete): \n \(String(describing: event.ckRecordID))"
             
             self.report(body: body)
         }

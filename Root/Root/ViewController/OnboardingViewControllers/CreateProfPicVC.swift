@@ -71,7 +71,7 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     @IBAction func doneButtonTapped(_ sender: UIButton) {
         
-        if profilePictureAsData == nil {
+        if profilePictureAsData == nil && websiteURLTextField.text == "" {
             self.fillOutRequiredFields()
         } else {
             activityIndicator.center = self.view.center
