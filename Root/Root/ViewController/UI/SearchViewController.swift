@@ -20,17 +20,29 @@ class SearchViewController: UIViewController {
     var searchResults = [MKLocalSearchCompletion]()
     weak var delegate: SearchViewControllerDelegate?
     
+    @IBOutlet var swipteGest: UIScreenEdgePanGestureRecognizer!
     @IBOutlet weak var searchResultsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
        
         
         searchCompleter.delegate = self
     }
 
+    
+    // MARK: - IBActions
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func swipeLeft(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension SearchViewController: UISearchBarDelegate {
