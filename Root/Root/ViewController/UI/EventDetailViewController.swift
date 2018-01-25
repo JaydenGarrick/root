@@ -118,7 +118,7 @@ class EventDetailViewController: UIViewController, MFMailComposeViewControllerDe
             
         }
         
-        let reportAction = UIAlertAction(title: "Report", style: .default) { (action) in
+        let reportAction = UIAlertAction(title: "Report as offensive", style: .default) { (action) in
             let body = "I found the following event offensive: \n \(String(describing: event.title)) \n\n Event information (please do not delete): \n \(String(describing: event.ckRecordID))"
             
             self.report(body: body)
