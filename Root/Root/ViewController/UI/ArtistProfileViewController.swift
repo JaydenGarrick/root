@@ -23,7 +23,7 @@ class ArtistProfileViewController: UIViewController {
     @IBOutlet weak var artistBioLabel: UILabel!
     @IBOutlet weak var artistWebsiteURLButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var blockerUserButton: UIButton!
+   
     
     // MARK: - View Did Load / UpdateViews function
     override func viewDidLoad() {
@@ -35,7 +35,7 @@ class ArtistProfileViewController: UIViewController {
         
         // Block user button gone if it's on users profile
         if artist?.username == UserController.shared.loggedInUser?.username && artist?.fullName == UserController.shared.loggedInUser?.fullName {
-            blockerUserButton.isHidden = true
+            navigationItem.rightBarButtonItem = nil
         }
         
         // Update The Views
@@ -46,6 +46,7 @@ class ArtistProfileViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.tintColor = UIColor(named: "Tint")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "•••", style: .plain, target: self, action: #selector(blockUserButtonTapped))
         
         guard let artist = artist else { return }
         
@@ -72,30 +73,7 @@ class ArtistProfileViewController: UIViewController {
 
     // MARK: - IBActions
     @IBAction func profileActionButtonTapped(_ sender: UIButton) {
-        let actionSheetAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let blockUserAction = UIAlertAction(title: "Block user", style: .destructive) { (action) in
-            let confirmationAlertController = UIAlertController(title: "Are you sure you want to block this user?", message: nil, preferredStyle: .alert)
-            let blockUserAction = UIAlertAction(title: "Block user", style: .destructive, handler: { (action) in
-                guard let artist = self.artist
-                    else { return }
-                UserController.shared.block(user: artist, vc: self, completion: { (success) in
-                    EventController.shared.fetchEvents(usersLocation: self.usersLocation, completion: { (success) in
-                        DispatchQueue.main.async {
-                            self.navigationController?.popToRootViewController(animated: true)
-                        }
-                    })
-                })
-                
-            })
-            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
-                
-            })
-            confirmationAlertController.addAction(blockUserAction)
-            confirmationAlertController.addAction(cancelAction)
-            self.present(confirmationAlertController, animated: true, completion: nil)
-        }
-        actionSheetAlertController.addAction(blockUserAction)
-        self.present(actionSheetAlertController, animated: true, completion: nil)
+     
     }
    
     // MARK: - Navigation
@@ -140,6 +118,36 @@ extension ArtistProfileViewController: UITableViewDelegate, UITableViewDataSourc
         return 111
     }
     
+}
+
+// Handling Blocking a user
+extension ArtistProfileViewController {
+    @objc func blockUserButtonTapped() {
+        let actionSheetAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let blockUserAction = UIAlertAction(title: "Block user", style: .destructive) { (action) in
+            let confirmationAlertController = UIAlertController(title: "Are you sure you want to block this user?", message: nil, preferredStyle: .alert)
+            let blockUserAction = UIAlertAction(title: "Block user", style: .destructive, handler: { (action) in
+                guard let artist = self.artist
+                    else { return }
+                UserController.shared.block(user: artist, vc: self, completion: { (success) in
+                    EventController.shared.fetchEvents(usersLocation: self.usersLocation, completion: { (success) in
+                        DispatchQueue.main.async {
+                            self.navigationController?.popToRootViewController(animated: true)
+                        }
+                    })
+                })
+                
+            })
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
+                
+            })
+            confirmationAlertController.addAction(blockUserAction)
+            confirmationAlertController.addAction(cancelAction)
+            self.present(confirmationAlertController, animated: true, completion: nil)
+        }
+        actionSheetAlertController.addAction(blockUserAction)
+        self.present(actionSheetAlertController, animated: true, completion: nil)
+    }
 }
 
 

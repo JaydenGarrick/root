@@ -114,6 +114,9 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
                             print("Failure fetching events within 50 miles. :(")
                         }
                     })
+                } else {
+                    self.alert(error: "Error line 118")
+                    return
                 }
             }
         }
@@ -172,13 +175,12 @@ extension CreateProfPicVC: UITextFieldDelegate {
 extension CreateProfPicVC {
     
     func alert(error: String) {
-        let alertController = UIAlertController(title: "Shit what's the error?", message: "\(error)", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "what's the error?", message: "\(error)", preferredStyle: .alert)
         let action = UIAlertAction(title: "🙃🙃🙃🙃🙃🙃🙃🙃", style: .default, handler: nil)
         alertController.addAction(action)
         present(alertController, animated: true)
     }
-    
-    
+
 }
 
 
