@@ -47,8 +47,12 @@ class EventDetailViewController: UIViewController, MFMailComposeViewControllerDe
         self.navigationController?.view.backgroundColor = .clear
         self.navigationController?.navigationBar.tintColor = UIColor(named: "Tint")
         
-        // Delegate
         
+       
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "•••", style: .plain, target: self, action: #selector(blockUserButtonTapped))
+      
+
+        // Delegate
         self.commentsTableView.dataSource = self
         self.commentsTableView.delegate = self
         newCommentTextField.delegate = self
@@ -61,11 +65,7 @@ class EventDetailViewController: UIViewController, MFMailComposeViewControllerDe
         //let loggedInUserProfilePictureAsImage = UIImage(data: loggedInUserProfilePictureAsData)
         //newCommentUserProfilePicture.image = loggedInUserProfilePictureAsImage
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
-        self.navigationController?.navigationBar.tintColor = UIColor(named: "Tint")
+        
         
         UserController.shared.fetchEventCreator(event: event) { (user) in
             guard let user = user else { return }
@@ -81,6 +81,10 @@ class EventDetailViewController: UIViewController, MFMailComposeViewControllerDe
             })
         }
         
+    }
+    
+    @objc func blockUserButtonTapped() {
+        print("Working")
     }
     
     // MARK: - Navigation
@@ -248,7 +252,7 @@ extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource 
             self.present(confirmationAlert, animated: true, completion: nil)
             
         }
-        reportOffensiveRowAction.backgroundColor = .purple
+        reportOffensiveRowAction.backgroundColor = UIColor(named: "Tint")
         
         return [reportOffensiveRowAction, blockUserRowAction]
     }
