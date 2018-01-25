@@ -75,6 +75,7 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
             self.fillOutRequiredFields()
         } else {
             activityIndicator.center = self.view.center
+            activityIndicator.tintColor = UIColor(named: "Tint")
             activityIndicator.hidesWhenStopped = true
             activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
             view.addSubview(activityIndicator)

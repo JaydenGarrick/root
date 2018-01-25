@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="azC-2b-01S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wbu-33-w7d">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -158,6 +158,83 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gRo-ba-z1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1072.8" y="-174.06296851574214"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xzv-uP-MZX">
+            <objects>
+                <viewController id="Rrp-PZ-nU0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NCE-GK-tAd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1900"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ah-t8-VwP">
+                                <rect key="frame" x="16" y="64" width="343" height="1792"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRm-E4-qfg">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="1792"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <mutableString key="text">Root - Local Art Finder App End User License AgreementThis End User License Agreement (“Agreement”) is between you and Root - Local Art Finder and governs use of this app made available through the Apple App Store. By installing the Root - Local Art Finder App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Root - Local Art Finder App.In order to ensure Root - Local Art Finder provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the "Report as offensive" feature found under each post.1. Parties This Agreement is between you and Root - Local Art Finder only, and not Apple, Inc. (“Apple”). Notwithstanding the foregoing, you acknowledge that Apple and its subsidiaries are third party beneficiaries of this Agreement and Apple has the right to enforce this Agreement against you. Root - Local Art Finder, not Apple, is solely responsible for the Root - Local Art Finder App and its content.2. Privacy Root - Local Art Finder may collect and use information about your usage of the Root - Local Art Finder App, including certain types of information from and about your device. Root - Local Art Finder may use this information, as long as it is in a form that does not personally identify you, to measure the use and performance of the Root - Local Art Finder App.3. Limited License Root - Local Art Finder grants you a limited, non-exclusive, non-transferable, revocable license to use the Root - Local Art Finder App for your personal, non-commercial purposes. You may only use the Root - Local Art Finder App on Apple devices that you own or control and as permitted by the App Store Terms of Service.4. Age Restrictions By using the Root - Local Art Finder App, you represent and warrant that (a) you are 17 years of age or older and you agree to be bound by this Agreement; (b) if you are under 17 years of age, you have obtained verifiable consent from a parent or legal guardian; and (c) your use of the Root - Local Art Finder App does not violate any applicable law or regulation. Your access tothe Root - Local Art Finder App may be terminated without warning if Root - Local Art Finder believes, in its sole discretion, that you are under the age of 17 years and have not obtained verifiable consent from a parent or legal guardian. Ifyou are a parent or legal guardian and you provide your consent to your child's
+use of the Root - Local Art Finder App, you agree to be bound by this Agreement in respect to your child's use of the Root - Local Art Finder App.5. Objectionable Content Policy Content may not be submitted to Root - Local Art Finder, who will moderate all content and ultimately decide whether or not to post a submission to the extent such content includes, is in conjunction with, or alongside any, Objectionable Content. Objectionable Content includes, but is not limited to: (i) sexually explicit materials; (ii) obscene, defamatory, libelous, slanderous, violent and/or unlawful content or profanity; (iii) content that infringes upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary right, or that is deceptive or fraudulent; (iv) content that promotes the use or sale of illegal or regulated substances, tobacco products, ammunition and/or firearms; and (v) gambling, including without limitation, any online casino, sports books, bingo or poker.6. Warranty Root - Local Art Finder disclaims all warranties about the Root - Local Art Finder App to the fullest extent permitted by law. To the extent any warranty exists under law that cannot be disclaimed, Root - Local Art Finder, not Apple, shall be solely responsible for such warranty.7. Maintenance and Support Root - Local Art Finder does provide minimal maintenance or support for it but not to the extent that any maintenance or support is required by applicable law, Root - Local Art Finder, not Apple, shall be obligated to furnish any such maintenance or support.8. Product Claims Root - Local Art Finder, not Apple, is responsible for addressing any claims by you relating to the Root - Local Art Finder App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the Root - Local Art Finder App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.9. Third Party Intellectual Property Claims Root - Local Art Finder shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Root - Local Art Finder App. To the extent Root - Local Art Finder is required to provide indemnification by applicable law, Root - Local Art Finder, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Root - Local Art Finder App or your use of it infringes any third party intellectual property right.Agree Decline</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" shipmentTrackingNumber="YES"/>
+                                    </textView>
+                                </subviews>
+                            </scrollView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ie-Ob-w0h" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
+                                <rect key="frame" x="191" y="1864" width="183.5" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Tint"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="tintColor" name="Tint"/>
+                                <state key="normal" title="Agree">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLm-Sp-xh4" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="1864" width="183.5" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Tint"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="tintColor" name="Tint"/>
+                                <state key="normal" title="Decline">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="nkb-gX-YIK"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kKF-qY-d78"/>
+                    <size key="freeformSize" width="375" height="1900"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SjI-hx-TP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="856.79999999999995" y="1050.6746626686659"/>
         </scene>
         <!--Create Email, Password Screen-->
         <scene sceneID="PYH-ox-BLn">
@@ -650,7 +727,7 @@
         <!--Item 1-->
         <scene sceneID="Ri7-92-3QV">
             <objects>
-                <navigationController storyboardIdentifier="createAccountNavController" automaticallyAdjustsScrollViewInsets="NO" id="azC-2b-01S" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="azC-2b-01S" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item 1" id="UVv-lJ-oMX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7CN-Hj-iJn">
@@ -664,7 +741,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xkc-3j-PEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="260" y="-174"/>
+            <point key="canvasLocation" x="-169" y="-174"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8kn-jB-NGh">
+            <objects>
+                <navigationController storyboardIdentifier="createAccountNavController" automaticallyAdjustsScrollViewInsets="NO" id="Wbu-33-w7d" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="C98-HZ-fOg">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Rrp-PZ-nU0" kind="relationship" relationship="rootViewController" id="Gvz-Lc-eja"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lmB-os-bAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-38" y="526"/>
         </scene>
     </scenes>
     <resources>
@@ -683,6 +778,12 @@
         <image name="users" width="64" height="64"/>
         <namedColor name="Tint">
             <color red="0.14399999380111694" green="0.61400002241134644" blue="0.55000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Tint">
+            <color red="0.1439999938" green="0.61400002239999996" blue="0.55000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Tint">
+            <color red="0.1439999938" green="0.61400002239999996" blue="0.55000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>

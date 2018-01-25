@@ -83,6 +83,14 @@ class ArtistProfileViewController: UIViewController {
             let urlAsString = (artistWebsiteURLButton.titleLabel?.text)!
             destinationVC.websiteURLAsString = urlAsString
         }
+        
+        if segue.identifier == "eventDetailVC" {
+            guard let destinationVC = segue.destination as? EventDetailViewController,
+            let indexPath = tableView.indexPathForSelectedRow,
+            let events = UserController.shared.eventsCreated else { return }
+            let event = events[indexPath.row]
+            destinationVC.event = event
+        }
     }
 }
 
@@ -124,8 +132,11 @@ extension ArtistProfileViewController: UITableViewDelegate, UITableViewDataSourc
 extension ArtistProfileViewController {
     @objc func blockUserButtonTapped() {
         let actionSheetAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        actionSheetAlertController.view.tintColor = UIColor(named: "Tint")
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let blockUserAction = UIAlertAction(title: "Block user", style: .destructive) { (action) in
             let confirmationAlertController = UIAlertController(title: "Are you sure you want to block this user?", message: nil, preferredStyle: .alert)
+            confirmationAlertController.view.tintColor = UIColor(named: "Tint")
             let blockUserAction = UIAlertAction(title: "Block user", style: .destructive, handler: { (action) in
                 guard let artist = self.artist
                     else { return }
@@ -146,6 +157,7 @@ extension ArtistProfileViewController {
             self.present(confirmationAlertController, animated: true, completion: nil)
         }
         actionSheetAlertController.addAction(blockUserAction)
+        actionSheetAlertController.addAction(cancelAction)
         self.present(actionSheetAlertController, animated: true, completion: nil)
     }
 }
