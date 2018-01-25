@@ -50,6 +50,10 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         }
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        mapView.reloadInputViews()
+    }
 
     // MARK: - IBActions
    
