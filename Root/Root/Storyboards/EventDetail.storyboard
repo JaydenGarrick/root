@@ -396,26 +396,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5w-bs-DK5">
-                                <rect key="frame" x="325" y="0.0" width="50" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="LoV-bh-LGa"/>
-                                </constraints>
-                                <state key="normal" title="•••">
-                                    <color key="titleColor" name="Tint"/>
-                                </state>
-                                <connections>
-                                    <action selector="profileActionButtonTapped:" destination="qLk-5K-YLA" eventType="touchUpInside" id="p97-2Q-eeY"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95287805800000003" blue="0.94816809889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="VTO-S5-amA" firstAttribute="top" secondItem="Dmz-l0-Jb9" secondAttribute="top" id="7OW-Ob-aCm"/>
                             <constraint firstItem="Ubp-0C-mBc" firstAttribute="top" secondItem="VTO-S5-amA" secondAttribute="bottom" constant="8" id="8uJ-pR-us8"/>
                             <constraint firstItem="soi-IX-2dJ" firstAttribute="trailing" secondItem="Ubp-0C-mBc" secondAttribute="trailing" constant="5" id="9aK-aR-T8V"/>
-                            <constraint firstItem="soi-IX-2dJ" firstAttribute="top" secondItem="M5w-bs-DK5" secondAttribute="top" constant="20" id="BPR-H0-P4r"/>
-                            <constraint firstItem="soi-IX-2dJ" firstAttribute="trailing" secondItem="M5w-bs-DK5" secondAttribute="trailing" id="HfS-QG-1dG"/>
                             <constraint firstItem="soi-IX-2dJ" firstAttribute="trailing" secondItem="dHD-LX-cjl" secondAttribute="trailing" constant="5" id="Jhc-ZG-8bP"/>
                             <constraint firstItem="yk1-px-wfC" firstAttribute="trailing" secondItem="soi-IX-2dJ" secondAttribute="trailing" id="KOm-QG-Zgv"/>
                             <constraint firstItem="8KD-OQ-Ivo" firstAttribute="top" secondItem="Ubp-0C-mBc" secondAttribute="bottom" constant="8" id="OsD-th-r6c"/>
@@ -437,7 +423,6 @@
                         <outlet property="artistProfilePictureImageView" destination="VTO-S5-amA" id="6xW-9A-otq"/>
                         <outlet property="artistUserNameLabel" destination="Ubp-0C-mBc" id="fpB-0u-HxA"/>
                         <outlet property="artistWebsiteURLButton" destination="dHD-LX-cjl" id="qXk-Ka-h2r"/>
-                        <outlet property="blockerUserButton" destination="M5w-bs-DK5" id="Db2-Y0-iDh"/>
                         <outlet property="tableView" destination="yk1-px-wfC" id="P11-3e-YoH"/>
                     </connections>
                 </viewController>
