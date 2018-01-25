@@ -51,10 +51,10 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
     // MARK: - IBActions
     
     @IBAction func addProfPictButtonTapped(_ sender: UIButton) {
-        
         pickerController.allowsEditing = true
         pickerController.sourceType = .photoLibrary
-        pickerController.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        //pickerController.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+
         present(pickerController, animated: true, completion: nil)
         
     }
@@ -135,9 +135,9 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
       
+        picker
         guard let profilePicture = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
        // let chosenImage = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
-        
         profilePictureImageView.image = profilePicture
         profilePictureImageView.contentMode = .scaleAspectFit
         //profilePictureImageView.image = profilePicture
@@ -148,14 +148,15 @@ class CreateProfPicVC: UIViewController, UIImagePickerControllerDelegate, UINavi
         }
         let profilePictureAsData = UIImagePNGRepresentation(profilePicture)
         self.profilePictureAsData = profilePictureAsData
-        
-
-        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+    
+    
+    
+    
     
     
     // Gets the users current location
