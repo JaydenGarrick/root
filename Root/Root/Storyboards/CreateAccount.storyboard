@@ -159,82 +159,128 @@
             </objects>
             <point key="canvasLocation" x="1072.8" y="-174.06296851574214"/>
         </scene>
-        <!--View Controller-->
+        <!--End User License Agreement-->
         <scene sceneID="xzv-uP-MZX">
             <objects>
-                <viewController id="Rrp-PZ-nU0" sceneMemberID="viewController">
+                <viewController id="Rrp-PZ-nU0" customClass="AgreementViewController" customModule="Root" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NCE-GK-tAd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ah-t8-VwP">
-                                <rect key="frame" x="16" y="64" width="343" height="1792"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ah-t8-VwP">
+                                <rect key="frame" x="0.0" y="64" width="375" height="1836"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRm-E4-qfg">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="1792"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRm-E4-qfg">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1773"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <mutableString key="text">Root - Local Art Finder App End User License AgreementThis End User License Agreement (“Agreement”) is between you and Root - Local Art Finder and governs use of this app made available through the Apple App Store. By installing the Root - Local Art Finder App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Root - Local Art Finder App.In order to ensure Root - Local Art Finder provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the "Report as offensive" feature found under each post.1. Parties This Agreement is between you and Root - Local Art Finder only, and not Apple, Inc. (“Apple”). Notwithstanding the foregoing, you acknowledge that Apple and its subsidiaries are third party beneficiaries of this Agreement and Apple has the right to enforce this Agreement against you. Root - Local Art Finder, not Apple, is solely responsible for the Root - Local Art Finder App and its content.2. Privacy Root - Local Art Finder may collect and use information about your usage of the Root - Local Art Finder App, including certain types of information from and about your device. Root - Local Art Finder may use this information, as long as it is in a form that does not personally identify you, to measure the use and performance of the Root - Local Art Finder App.3. Limited License Root - Local Art Finder grants you a limited, non-exclusive, non-transferable, revocable license to use the Root - Local Art Finder App for your personal, non-commercial purposes. You may only use the Root - Local Art Finder App on Apple devices that you own or control and as permitted by the App Store Terms of Service.4. Age Restrictions By using the Root - Local Art Finder App, you represent and warrant that (a) you are 17 years of age or older and you agree to be bound by this Agreement; (b) if you are under 17 years of age, you have obtained verifiable consent from a parent or legal guardian; and (c) your use of the Root - Local Art Finder App does not violate any applicable law or regulation. Your access tothe Root - Local Art Finder App may be terminated without warning if Root - Local Art Finder believes, in its sole discretion, that you are under the age of 17 years and have not obtained verifiable consent from a parent or legal guardian. Ifyou are a parent or legal guardian and you provide your consent to your child's
-use of the Root - Local Art Finder App, you agree to be bound by this Agreement in respect to your child's use of the Root - Local Art Finder App.5. Objectionable Content Policy Content may not be submitted to Root - Local Art Finder, who will moderate all content and ultimately decide whether or not to post a submission to the extent such content includes, is in conjunction with, or alongside any, Objectionable Content. Objectionable Content includes, but is not limited to: (i) sexually explicit materials; (ii) obscene, defamatory, libelous, slanderous, violent and/or unlawful content or profanity; (iii) content that infringes upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary right, or that is deceptive or fraudulent; (iv) content that promotes the use or sale of illegal or regulated substances, tobacco products, ammunition and/or firearms; and (v) gambling, including without limitation, any online casino, sports books, bingo or poker.6. Warranty Root - Local Art Finder disclaims all warranties about the Root - Local Art Finder App to the fullest extent permitted by law. To the extent any warranty exists under law that cannot be disclaimed, Root - Local Art Finder, not Apple, shall be solely responsible for such warranty.7. Maintenance and Support Root - Local Art Finder does provide minimal maintenance or support for it but not to the extent that any maintenance or support is required by applicable law, Root - Local Art Finder, not Apple, shall be obligated to furnish any such maintenance or support.8. Product Claims Root - Local Art Finder, not Apple, is responsible for addressing any claims by you relating to the Root - Local Art Finder App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the Root - Local Art Finder App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.9. Third Party Intellectual Property Claims Root - Local Art Finder shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Root - Local Art Finder App. To the extent Root - Local Art Finder is required to provide indemnification by applicable law, Root - Local Art Finder, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Root - Local Art Finder App or your use of it infringes any third party intellectual property right.Agree Decline</mutableString>
+                                        <mutableString key="text">Root - Local Art Finder App End User License Agreement
+This End User License Agreement (“Agreement”) is between you and Root - Local Art Finder and governs use of this app made available through the Apple App Store. By installing the Root - Local Art Finder App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Root - Local Art Finder App.
+In order to ensure Root - Local Art Finder provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the "Report as offensive" feature found under each post.
+1. Parties This Agreement is between you and Root - Local Art Finder only, and not Apple, Inc. (“Apple”). Notwithstanding the foregoing, you acknowledge that Apple and its subsidiaries are third party beneficiaries of this Agreement and Apple has the right to enforce this Agreement against you. Root - Local Art Finder, not Apple, is solely responsible for the Root - Local Art Finder App and its content.
+2. Privacy Root - Local Art Finder may collect and use information about your usage of the Root - Local Art Finder App, including certain types of information from and about your device. Root - Local Art Finder may use this information, as long as it is in a form that does not personally identify you, to measure the use and performance of the Root - Local Art Finder App.
+3. Limited License Root - Local Art Finder grants you a limited, non-exclusive, non-transferable, revocable license to use the Root - Local Art Finder App for your personal, non-commercial purposes. You may only use the Root - Local Art Finder App on Apple devices that you own or control and as permitted by the App Store Terms of Service.
+4. Age Restrictions By using the Root - Local Art Finder App, you represent and warrant that (a) you are 17 years of age or older and you agree to be bound by this Agreement; (b) if you are under 17 years of age, you have obtained verifiable consent from a parent or legal guardian; and (c) your use of the Root - Local Art Finder App does not violate any applicable law or regulation. Your access to
+the Root - Local Art Finder App may be terminated without warning if Root - Local Art Finder believes, in its sole discretion, that you are under the age of 17 years and have not obtained verifiable consent from a parent or legal guardian. If
+you are a parent or legal guardian and you provide your consent to your child's
+use of the Root - Local Art Finder App, you agree to be bound by this Agreement in respect to your child's use of the Root - Local Art Finder App.
+5. Objectionable Content Policy Content may not be submitted to Root - Local Art Finder, who will moderate all content and ultimately decide whether or not to post a submission to the extent such content includes, is in conjunction with, or alongside any, Objectionable Content. Objectionable Content includes, but is not limited to: (i) sexually explicit materials; (ii) obscene, defamatory, libelous, slanderous, violent and/or unlawful content or profanity; (iii) content that infringes upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary right, or that is deceptive or fraudulent; (iv) content that promotes the use or sale of illegal or regulated substances, tobacco products, ammunition and/or firearms; and (v) gambling, including without limitation, any online casino, sports books, bingo or poker.
+6. Warranty Root - Local Art Finder disclaims all warranties about the Root - Local Art Finder App to the fullest extent permitted by law. To the extent any warranty exists under law that cannot be disclaimed, Root - Local Art Finder, not Apple, shall be solely responsible for such warranty.
+7. Maintenance and Support Root - Local Art Finder does provide minimal maintenance or support for it but not to the extent that any maintenance or support is required by applicable law, Root - Local Art Finder, not Apple, shall be obligated to furnish any such maintenance or support.
+8. Product Claims Root - Local Art Finder, not Apple, is responsible for addressing any claims by you relating to the Root - Local Art Finder App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the Root - Local Art Finder App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.
+9. Third Party Intellectual Property Claims Root - Local Art Finder shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Root - Local Art Finder App. To the extent Root - Local Art Finder is required to provide indemnification by applicable law, Root - Local Art Finder, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Root - Local Art Finder App or your use of it infringes any third party intellectual property right.
+Agree Decline</mutableString>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" shipmentTrackingNumber="YES"/>
                                     </textView>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ie-Ob-w0h" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1800" width="183.5" height="36"/>
+                                        <color key="backgroundColor" name="Tint"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="4pn-kB-Lid"/>
+                                            <constraint firstAttribute="width" constant="183.5" id="bLA-9S-Am0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <color key="tintColor" name="Tint"/>
+                                        <state key="normal" title="Decline">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLm-Sp-xh4" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
+                                        <rect key="frame" x="191" y="1800" width="183.5" height="36"/>
+                                        <color key="backgroundColor" name="Tint"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="1kp-Yw-iFZ"/>
+                                            <constraint firstAttribute="width" constant="183.5" id="Thy-Yk-6D9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <color key="tintColor" name="Tint"/>
+                                        <state key="normal" title="Agree">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="FIC-pm-dEF" kind="show" id="y6A-gY-Qbe"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <color key="backgroundColor" red="0.99963909387588501" green="1" blue="0.99975615739822388" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eRm-E4-qfg" secondAttribute="trailing" id="00R-kh-Hfp"/>
+                                    <constraint firstItem="eRm-E4-qfg" firstAttribute="centerX" secondItem="9Ah-t8-VwP" secondAttribute="centerX" id="Chx-bM-bb8"/>
+                                    <constraint firstAttribute="bottom" secondItem="5ie-Ob-w0h" secondAttribute="bottom" id="JtA-eG-wjJ"/>
+                                    <constraint firstItem="eRm-E4-qfg" firstAttribute="centerY" secondItem="9Ah-t8-VwP" secondAttribute="centerY" constant="-31.5" id="MTf-Ue-ah0"/>
+                                    <constraint firstItem="eRm-E4-qfg" firstAttribute="leading" secondItem="9Ah-t8-VwP" secondAttribute="leading" id="SXq-HD-7NC"/>
+                                    <constraint firstItem="eRm-E4-qfg" firstAttribute="top" secondItem="9Ah-t8-VwP" secondAttribute="top" id="chX-eN-ffA"/>
+                                    <constraint firstItem="BLm-Sp-xh4" firstAttribute="leading" secondItem="5ie-Ob-w0h" secondAttribute="trailing" constant="7.5" id="dcN-lW-dzE"/>
+                                    <constraint firstAttribute="trailing" secondItem="BLm-Sp-xh4" secondAttribute="trailing" id="eA1-Xr-PAP"/>
+                                    <constraint firstAttribute="bottom" secondItem="BLm-Sp-xh4" secondAttribute="bottom" id="eTS-2F-tDo"/>
+                                    <constraint firstItem="5ie-Ob-w0h" firstAttribute="leading" secondItem="9Ah-t8-VwP" secondAttribute="leading" id="fhR-Bg-eBp"/>
+                                    <constraint firstAttribute="bottom" secondItem="BLm-Sp-xh4" secondAttribute="bottom" id="wWS-mG-J8J"/>
+                                    <constraint firstAttribute="bottom" secondItem="eRm-E4-qfg" secondAttribute="bottom" constant="63" id="wzk-oz-4bA"/>
+                                    <constraint firstAttribute="trailing" secondItem="BLm-Sp-xh4" secondAttribute="trailing" id="zIn-Uq-ZrM"/>
+                                </constraints>
                             </scrollView>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ie-Ob-w0h" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
-                                <rect key="frame" x="191" y="1864" width="183.5" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Tint"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                <color key="tintColor" name="Tint"/>
-                                <state key="normal" title="Agree">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLm-Sp-xh4" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="1864" width="183.5" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Tint"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                <color key="tintColor" name="Tint"/>
-                                <state key="normal" title="Decline">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9Ah-t8-VwP" firstAttribute="leading" secondItem="nkb-gX-YIK" secondAttribute="leading" id="QLj-xJ-cd8"/>
+                            <constraint firstItem="9Ah-t8-VwP" firstAttribute="bottom" secondItem="nkb-gX-YIK" secondAttribute="bottom" id="YvD-nM-UJX"/>
+                            <constraint firstItem="9Ah-t8-VwP" firstAttribute="trailing" secondItem="nkb-gX-YIK" secondAttribute="trailing" id="dfk-WD-aKZ"/>
+                            <constraint firstItem="9Ah-t8-VwP" firstAttribute="top" secondItem="nkb-gX-YIK" secondAttribute="top" id="tfe-wJ-WUM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nkb-gX-YIK"/>
                     </view>
-                    <navigationItem key="navigationItem" id="kKF-qY-d78"/>
+                    <navigationItem key="navigationItem" title="End User License Agreement" id="kKF-qY-d78"/>
                     <size key="freeformSize" width="375" height="1900"/>
+                    <connections>
+                        <outlet property="scrollView" destination="9Ah-t8-VwP" id="WE7-PN-gyt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SjI-hx-TP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856.79999999999995" y="1050.6746626686659"/>
+            <point key="canvasLocation" x="-170" y="1100"/>
         </scene>
         <!--Create Email, Password Screen-->
         <scene sceneID="PYH-ox-BLn">
@@ -727,6 +773,7 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
         <!--Item 1-->
         <scene sceneID="Ri7-92-3QV">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xkc-3j-PEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="azC-2b-01S" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item 1" id="UVv-lJ-oMX"/>
                     <toolbarItems/>
@@ -739,7 +786,6 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                         <segue destination="FIC-pm-dEF" kind="relationship" relationship="rootViewController" id="MOG-W5-Zm1"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xkc-3j-PEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-169" y="-174"/>
         </scene>
@@ -759,7 +805,7 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lmB-os-bAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-38" y="526"/>
+            <point key="canvasLocation" x="-1114" y="1101"/>
         </scene>
     </scenes>
     <resources>
@@ -779,14 +825,9 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
         <namedColor name="Tint">
             <color red="0.14399999380111694" green="0.61400002241134644" blue="0.55000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Tint">
-            <color red="0.1439999938" green="0.61400002239999996" blue="0.55000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Tint">
-            <color red="0.1439999938" green="0.61400002239999996" blue="0.55000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2M2-sU-qXw"/>
+        <segue reference="y6A-gY-Qbe"/>
     </inferredMetricsTieBreakers>
 </document>
