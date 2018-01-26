@@ -46,6 +46,15 @@ extension UIViewController {
         
     }
     
+    func licenseDeclinedAlert() {
+        let declinedAlertController = UIAlertController(title: "You can't use Root unless you agree.", message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+        }
+        declinedAlertController.view.tintColor = UIColor(named: "Tint")
+        declinedAlertController.addAction(okAction)
+        present(declinedAlertController, animated: true, completion: nil)
+    }
+    
     
 }
 

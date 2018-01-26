@@ -25,6 +25,11 @@ class WelcomeViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         
+        let createAccountStoryboard = UIStoryboard(name: "CreateAccount", bundle: nil)
+        let agreementViewController = createAccountStoryboard.instantiateViewController(withIdentifier: "agreementViewController")
+        self.present(agreementViewController, animated: true, completion: nil)
+        
+        
     }
 
     

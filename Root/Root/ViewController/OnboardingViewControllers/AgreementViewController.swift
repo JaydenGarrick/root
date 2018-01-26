@@ -14,8 +14,21 @@ class AgreementViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let point = CGPoint(x: 0, y: 0)
-        scrollView.setContentOffset(point, animated: false)
+        print(scrollView.contentOffset)
+        print(scrollView.contentInset)
+        scrollView.setContentOffset(CGPoint(x: 150, y: 100), animated: true)
+        scrollView.contentOffset = CGPoint(x: 200, y: 200)
+        print(scrollView.contentOffset)
+        print(scrollView.contentInset)
+        
+    }
+    
+    @IBAction func agreeButtonTapped(_ sender: UIButtonX) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func declineButtonTapped(_ sender: UIButtonX) {
+        self.licenseDeclinedAlert()
     }
     
     
