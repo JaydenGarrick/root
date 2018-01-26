@@ -42,6 +42,7 @@
 		81A238CF2016B3E200CF2445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81A238CE2016B3E200CF2445 /* Assets.xcassets */; };
 		81EDF41820042E35006E69EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDF41720042E35006E69EA /* AppDelegate.swift */; };
 		81EDF42220042E35006E69EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EDF42020042E35006E69EA /* LaunchScreen.storyboard */; };
+		B7650377201AA83A00145524 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7650376201AA83A00145524 /* AgreementViewController.swift */; };
 		B7DE16B320069053003C8126 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B220069053003C8126 /* WelcomeViewController.swift */; };
 		B7DE16B52006908C003C8126 /* CreateUsernameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B42006908C003C8126 /* CreateUsernameVC.swift */; };
 		B7DE16B7200690B6003C8126 /* CreateInterestsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE16B6200690B6003C8126 /* CreateInterestsVC.swift */; };
@@ -95,6 +96,7 @@
 		81EDF41720042E35006E69EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81EDF42120042E35006E69EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81EDF42320042E35006E69EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7650376201AA83A00145524 /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 		B7DE16B220069053003C8126 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		B7DE16B42006908C003C8126 /* CreateUsernameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameVC.swift; sourceTree = "<group>"; };
 		B7DE16B6200690B6003C8126 /* CreateInterestsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInterestsVC.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				B7DE16B220069053003C8126 /* WelcomeViewController.swift */,
+				B7650376201AA83A00145524 /* AgreementViewController.swift */,
 				B7DE16B42006908C003C8126 /* CreateUsernameVC.swift */,
 				B7DE16B6200690B6003C8126 /* CreateInterestsVC.swift */,
 				B7DE16B8200690D8003C8126 /* CreateProfPicVC.swift */,
@@ -374,6 +377,7 @@
 				B7DE16B7200690B6003C8126 /* CreateInterestsVC.swift in Sources */,
 				81EDF41820042E35006E69EA /* AppDelegate.swift in Sources */,
 				81707D10200EA57600478691 /* UIImageViewX.swift in Sources */,
+				B7650377201AA83A00145524 /* AgreementViewController.swift in Sources */,
 				81707D14200EA57600478691 /* UITextFieldX.swift in Sources */,
 				CA73062C20116280008A7C00 /* WebViewController.swift in Sources */,
 				811F270E20052E3E00A9B47C /* EventController.swift in Sources */,
