@@ -66,7 +66,7 @@ class EventDetailViewController: UIViewController, MFMailComposeViewControllerDe
         self.commentsTableView.dataSource = self
         self.commentsTableView.delegate = self
         newCommentTextField.delegate = self
-        self.scrollView.delegate = self
+        //self.scrollView.delegate = self
         guard let event = event,
             let loggedInUser = UserController.shared.loggedInUser,
             let loggedInUserProfilePictureAsData = loggedInUser.profilePicture
