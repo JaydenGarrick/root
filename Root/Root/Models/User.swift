@@ -79,6 +79,7 @@ class User {
         let photoData = try? Data(contentsOf: profilePicture.fileURL)
         let blockedUsersRefs = ckRecord["blockedUsersRefs"] as? [CKReference] ?? []
     
+        
         self.username = username
         self.fullName = fullName
         self.profilePicture = photoData
