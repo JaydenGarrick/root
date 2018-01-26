@@ -173,7 +173,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRm-E4-qfg">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1817"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <mutableString key="text">Root - Local Art Finder App End User License Agreement
+                                        <string key="text">Root - Local Art Finder App End User License Agreement
 This End User License Agreement (“Agreement”) is between you and Root - Local Art Finder and governs use of this app made available through the Apple App Store. By installing the Root - Local Art Finder App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Root - Local Art Finder App.
 In order to ensure Root - Local Art Finder provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the "Report as offensive" feature found under each post.
 1. Parties This Agreement is between you and Root - Local Art Finder only, and not Apple, Inc. (“Apple”). Notwithstanding the foregoing, you acknowledge that Apple and its subsidiaries are third party beneficiaries of this Agreement and Apple has the right to enforce this Agreement against you. Root - Local Art Finder, not Apple, is solely responsible for the Root - Local Art Finder App and its content.
@@ -188,7 +188,9 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
 7. Maintenance and Support Root - Local Art Finder does provide minimal maintenance or support for it but not to the extent that any maintenance or support is required by applicable law, Root - Local Art Finder, not Apple, shall be obligated to furnish any such maintenance or support.
 8. Product Claims Root - Local Art Finder, not Apple, is responsible for addressing any claims by you relating to the Root - Local Art Finder App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the Root - Local Art Finder App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.
 9. Third Party Intellectual Property Claims Root - Local Art Finder shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Root - Local Art Finder App. To the extent Root - Local Art Finder is required to provide indemnification by applicable law, Root - Local Art Finder, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Root - Local Art Finder App or your use of it infringes any third party intellectual property right.
+
 </mutableString>
+
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" shipmentTrackingNumber="YES"/>
@@ -777,7 +779,9 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
         <!--Item 1-->
         <scene sceneID="Ri7-92-3QV">
             <objects>
+
                 <navigationController storyboardIdentifier="createAccountNavController" automaticallyAdjustsScrollViewInsets="NO" id="azC-2b-01S" sceneMemberID="viewController">
+
                     <tabBarItem key="tabBarItem" title="Item 1" id="UVv-lJ-oMX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7CN-Hj-iJn">
