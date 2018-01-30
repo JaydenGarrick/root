@@ -364,4 +364,3 @@ extension EventDetailViewController: UINavigationControllerDelegate {
 
 
 
-

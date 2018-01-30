@@ -76,7 +76,7 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, CLLocati
         
         pickerController.allowsEditing = true
         pickerController.sourceType = .photoLibrary
-        pickerController.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+//        pickerController.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(pickerController, animated: true, completion: nil)
         
     }

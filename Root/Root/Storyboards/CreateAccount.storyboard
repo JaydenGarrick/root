@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -22,46 +23,192 @@
         </array>
     </customFonts>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="IjZ-eY-KbQ">
+            <objects>
+                <viewController id="aMy-DL-6uP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HUT-st-jKg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InitialWelcomePicture" translatesAutoresizingMaskIntoConstraints="NO" id="hkm-CC-Lzl">
+                                <rect key="frame" x="0.0" y="-8" width="414" height="744"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="htq-Og-Occ">
+                                <rect key="frame" x="12" y="32" width="390" height="692"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kdi-yq-8Ra">
+                                        <rect key="frame" x="170" y="0.0" width="50" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="ax2-vQ-2LR"/>
+                                            <constraint firstAttribute="height" constant="1" id="lVs-5W-KtN"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="ax2-vQ-2LR"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="ax2-vQ-2LR"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VgU-Mw-RQ6">
+                                        <rect key="frame" x="103.00000000000001" y="174.33333333333334" width="184.33333333333337" height="90.000000000000028"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33l-8u-9Pb">
+                                                <rect key="frame" x="0.0" y="0.0" width="184.33333333333334" height="65.666666666666671"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="65.5" id="RWh-DQ-Td0"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="50"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <size key="shadowOffset" width="0.0" height="2"/>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you an..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szy-GP-Poa">
+                                                <rect key="frame" x="43.333333333333336" y="65.666666666666657" width="97.333333333333314" height="24.333333333333329"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-MediumItalic" family="Avenir Next" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <size key="shadowOffset" width="-1" height="1"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="394-9f-TYn">
+                                        <rect key="frame" x="147" y="437.66666666666669" width="96" height="80.000000000000057"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9L-av-ScX" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="40"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.55383675229999996" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                                <state key="normal" title="Art Seeker">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Gc-e8-TDI" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="40" width="96" height="40"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.55383675229999996" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                                <state key="normal" title="Creator">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="444-L9-QvH">
+                                        <rect key="frame" x="170" y="691" width="50" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="jht-IS-BPt"/>
+                                            <constraint firstAttribute="height" constant="1" id="ycz-yB-5MH"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="jht-IS-BPt"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="jht-IS-BPt"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <variation key="heightClass=compact" axis="horizontal"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4CR-wQ-9fC" firstAttribute="trailing" secondItem="htq-Og-Occ" secondAttribute="trailing" constant="12" id="4DT-dY-6Kz"/>
+                            <constraint firstAttribute="trailing" secondItem="hkm-CC-Lzl" secondAttribute="trailing" id="QGy-LD-rB6"/>
+                            <constraint firstItem="htq-Og-Occ" firstAttribute="leading" secondItem="4CR-wQ-9fC" secondAttribute="leading" constant="12" id="Rva-zT-GgY"/>
+                            <constraint firstAttribute="bottom" secondItem="hkm-CC-Lzl" secondAttribute="bottom" id="XUO-9V-yHx"/>
+                            <constraint firstItem="htq-Og-Occ" firstAttribute="top" secondItem="4CR-wQ-9fC" secondAttribute="top" constant="12" id="XoZ-Gp-tRe"/>
+                            <constraint firstItem="4CR-wQ-9fC" firstAttribute="bottom" secondItem="htq-Og-Occ" secondAttribute="bottom" constant="12" id="YeV-ZY-umY"/>
+                            <constraint firstItem="hkm-CC-Lzl" firstAttribute="topMargin" secondItem="HUT-st-jKg" secondAttribute="topMargin" id="qJw-NL-7Z7"/>
+                            <constraint firstItem="hkm-CC-Lzl" firstAttribute="leading" secondItem="HUT-st-jKg" secondAttribute="leading" id="slO-rk-glk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4CR-wQ-9fC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Xg-qh-PHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1662" y="-872"/>
+        </scene>
         <!--Welcome Screen-->
         <scene sceneID="eP2-vx-c1x">
             <objects>
                 <viewController id="FIC-pm-dEF" userLabel="Welcome Screen" customClass="WelcomeViewController" customModule="Root" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bpO-1m-VKf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InitialWelcomePicture" translatesAutoresizingMaskIntoConstraints="NO" id="FLd-EH-kaU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMu-xp-90Q">
-                                <rect key="frame" x="0.0" y="85" width="375" height="65.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65.5" id="A8u-zm-BDk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="50"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="0.0" height="2"/>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you an..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBh-Bl-dzg">
-                                <rect key="frame" x="0.0" y="194.5" width="375" height="24.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-MediumItalic" family="Avenir Next" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="-1" height="1"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v69-te-vZk">
-                                <rect key="frame" x="74" y="256" width="227" height="86"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="o3M-i6-TTZ">
+                                <rect key="frame" x="12" y="185" width="390" height="386"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMu-xp-90Q">
+                                        <rect key="frame" x="103.00000000000001" y="0.0" width="184.33333333333337" height="65.666666666666671"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65.5" id="A8u-zm-BDk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="50"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="0.0" height="2"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you an..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBh-Bl-dzg">
+                                        <rect key="frame" x="146.33333333333334" y="129.66666666666669" width="97.333333333333343" height="24.333333333333343"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-MediumItalic" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="-1" height="1"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imh-PN-RVW" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="227" height="86"/>
+                                        <rect key="frame" x="115" y="218" width="160" height="52"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="0.55383675229999996" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                        <inset key="contentEdgeInsets" minX="32" minY="12" maxX="32" maxY="12"/>
                                         <state key="normal" title="Art Seeker">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -81,26 +228,11 @@
                                             <segue destination="hDP-Pt-0vW" kind="show" identifier="ToArtSeekerCreateUsernameSegue" id="2M2-sU-qXw"/>
                                         </connections>
                                     </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.55383675230061347" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Imh-PN-RVW" secondAttribute="trailing" id="6LW-Ut-oHR"/>
-                                    <constraint firstAttribute="height" constant="86" id="BfC-Pf-5nW"/>
-                                    <constraint firstAttribute="bottom" secondItem="Imh-PN-RVW" secondAttribute="bottom" id="Kgc-T9-pAT"/>
-                                    <constraint firstItem="Imh-PN-RVW" firstAttribute="width" secondItem="v69-te-vZk" secondAttribute="width" id="MFa-Ji-cBT"/>
-                                    <constraint firstAttribute="width" constant="227" id="N9f-cH-65A"/>
-                                    <constraint firstItem="Imh-PN-RVW" firstAttribute="top" secondItem="v69-te-vZk" secondAttribute="top" id="Vha-cP-gWB"/>
-                                    <constraint firstItem="Imh-PN-RVW" firstAttribute="leading" secondItem="v69-te-vZk" secondAttribute="leading" id="jev-l6-I6t"/>
-                                    <constraint firstItem="Imh-PN-RVW" firstAttribute="height" secondItem="v69-te-vZk" secondAttribute="height" id="rpe-4n-atz"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XxP-yQ-wyw">
-                                <rect key="frame" x="74" y="379" width="227" height="86"/>
-                                <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWy-y9-4oH" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="227" height="86"/>
+                                        <rect key="frame" x="115" y="334" width="160" height="52"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="0.55383675229999996" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                        <inset key="contentEdgeInsets" minX="32" minY="12" maxX="32" maxY="12"/>
                                         <state key="normal" title="Creator">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -120,34 +252,22 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.55000000000000004" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="227" id="1Ce-TX-ARO"/>
-                                    <constraint firstItem="sWy-y9-4oH" firstAttribute="leading" secondItem="XxP-yQ-wyw" secondAttribute="leading" id="4FY-iZ-bMo"/>
-                                    <constraint firstAttribute="trailing" secondItem="sWy-y9-4oH" secondAttribute="trailing" id="4ZM-tI-Y4l"/>
-                                    <constraint firstItem="sWy-y9-4oH" firstAttribute="top" secondItem="XxP-yQ-wyw" secondAttribute="top" id="J06-OG-Hsm"/>
-                                    <constraint firstAttribute="height" constant="86" id="ba3-8J-SFS"/>
-                                    <constraint firstAttribute="bottom" secondItem="sWy-y9-4oH" secondAttribute="bottom" id="phi-NC-E30"/>
+                                    <constraint firstItem="sWy-y9-4oH" firstAttribute="width" secondItem="Imh-PN-RVW" secondAttribute="width" id="yjm-RW-6mo"/>
                                 </constraints>
-                            </view>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XxP-yQ-wyw" firstAttribute="top" secondItem="v69-te-vZk" secondAttribute="bottom" constant="37" id="2Gp-d8-xkA"/>
-                            <constraint firstItem="XxP-yQ-wyw" firstAttribute="centerX" secondItem="v69-te-vZk" secondAttribute="centerX" id="59v-nk-CbK"/>
-                            <constraint firstItem="mMu-xp-90Q" firstAttribute="centerX" secondItem="Pby-tu-W7Y" secondAttribute="centerX" id="86W-QU-mUB"/>
-                            <constraint firstItem="mMu-xp-90Q" firstAttribute="leading" secondItem="Pby-tu-W7Y" secondAttribute="leading" id="Ei8-6y-BDR"/>
-                            <constraint firstItem="yBh-Bl-dzg" firstAttribute="trailing" secondItem="mMu-xp-90Q" secondAttribute="trailing" id="LOQ-el-Zak"/>
+                            <constraint firstItem="o3M-i6-TTZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Pby-tu-W7Y" secondAttribute="top" constant="16" id="0cn-4U-ewa"/>
+                            <constraint firstItem="Pby-tu-W7Y" firstAttribute="leading" secondItem="o3M-i6-TTZ" secondAttribute="leading" constant="-12" id="Gk7-iV-yKD"/>
                             <constraint firstItem="FLd-EH-kaU" firstAttribute="leading" secondItem="Pby-tu-W7Y" secondAttribute="leading" id="MzO-IM-sZU"/>
-                            <constraint firstItem="mMu-xp-90Q" firstAttribute="top" secondItem="Pby-tu-W7Y" secondAttribute="top" constant="65" id="QjI-II-GL1"/>
                             <constraint firstItem="FLd-EH-kaU" firstAttribute="top" secondItem="bpO-1m-VKf" secondAttribute="top" id="RLD-hz-Ui6"/>
                             <constraint firstItem="FLd-EH-kaU" firstAttribute="trailing" secondItem="Pby-tu-W7Y" secondAttribute="trailing" id="Skl-8q-F3v"/>
                             <constraint firstItem="FLd-EH-kaU" firstAttribute="bottom" secondItem="Pby-tu-W7Y" secondAttribute="bottom" id="Vth-5N-qo1"/>
-                            <constraint firstItem="yBh-Bl-dzg" firstAttribute="top" secondItem="mMu-xp-90Q" secondAttribute="bottom" constant="44" id="Whq-zb-F7z"/>
-                            <constraint firstItem="Pby-tu-W7Y" firstAttribute="trailing" secondItem="mMu-xp-90Q" secondAttribute="trailing" id="gjJ-oi-LvT"/>
-                            <constraint firstItem="v69-te-vZk" firstAttribute="centerX" secondItem="yBh-Bl-dzg" secondAttribute="centerX" id="mCJ-sX-xl8"/>
-                            <constraint firstItem="yBh-Bl-dzg" firstAttribute="leading" secondItem="mMu-xp-90Q" secondAttribute="leading" id="vKI-Xf-cgp"/>
-                            <constraint firstItem="v69-te-vZk" firstAttribute="top" secondItem="yBh-Bl-dzg" secondAttribute="bottom" constant="37" id="wlp-pa-0hR"/>
+                            <constraint firstItem="o3M-i6-TTZ" firstAttribute="centerY" secondItem="Pby-tu-W7Y" secondAttribute="centerY" priority="900" id="mJP-Ek-ONZ"/>
+                            <constraint firstItem="Pby-tu-W7Y" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="o3M-i6-TTZ" secondAttribute="bottom" constant="32" id="mQX-Sl-49d"/>
+                            <constraint firstItem="Pby-tu-W7Y" firstAttribute="trailing" secondItem="o3M-i6-TTZ" secondAttribute="trailing" constant="12" id="wul-4R-hlf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pby-tu-W7Y"/>
                     </view>
@@ -172,8 +292,8 @@
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRm-E4-qfg">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1817"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <mutableString key="text">Root - Local Art Finder App End User License Agreement
+                                        <color key="backgroundColor" name="CellBackground"/>
+                                        <string key="text">Root - Local Art Finder App End User License Agreement
 This End User License Agreement (“Agreement”) is between you and Root - Local Art Finder and governs use of this app made available through the Apple App Store. By installing the Root - Local Art Finder App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Root - Local Art Finder App.
 In order to ensure Root - Local Art Finder provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the "Report as offensive" feature found under each post.
 1. Parties This Agreement is between you and Root - Local Art Finder only, and not Apple, Inc. (“Apple”). Notwithstanding the foregoing, you acknowledge that Apple and its subsidiaries are third party beneficiaries of this Agreement and Apple has the right to enforce this Agreement against you. Root - Local Art Finder, not Apple, is solely responsible for the Root - Local Art Finder App and its content.
@@ -189,14 +309,13 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
 8. Product Claims Root - Local Art Finder, not Apple, is responsible for addressing any claims by you relating to the Root - Local Art Finder App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the Root - Local Art Finder App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.
 9. Third Party Intellectual Property Claims Root - Local Art Finder shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Root - Local Art Finder App. To the extent Root - Local Art Finder is required to provide indemnification by applicable law, Root - Local Art Finder, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Root - Local Art Finder App or your use of it infringes any third party intellectual property right.
 
-</mutableString>
-
+</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" shipmentTrackingNumber="YES"/>
                                     </textView>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ie-Ob-w0h" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1844" width="183.5" height="36"/>
+                                        <rect key="frame" x="0.0" y="1844" width="183.66666666666666" height="36"/>
                                         <color key="backgroundColor" name="Tint"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="4pn-kB-Lid"/>
@@ -223,7 +342,7 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLm-Sp-xh4" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
-                                        <rect key="frame" x="191" y="1844" width="183.5" height="36"/>
+                                        <rect key="frame" x="191" y="1844" width="183.66666666666663" height="36"/>
                                         <color key="backgroundColor" name="Tint"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="1kp-Yw-iFZ"/>
@@ -251,7 +370,7 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.99963909387588501" green="1" blue="0.99975615739822388" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="CellBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="eRm-E4-qfg" secondAttribute="trailing" id="00R-kh-Hfp"/>
                                     <constraint firstItem="eRm-E4-qfg" firstAttribute="centerX" secondItem="9Ah-t8-VwP" secondAttribute="centerX" id="Chx-bM-bb8"/>
@@ -293,14 +412,14 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
             <objects>
                 <viewController id="hDP-Pt-0vW" userLabel="Create Email, Password Screen" customClass="CreateUsernameVC" customModule="Root" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Iy-ld-Vzi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BikePicture" translatesAutoresizingMaskIntoConstraints="NO" id="8yQ-CJ-UPA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(User)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJr-H8-GCh">
-                                <rect key="frame" x="0.0" y="99" width="375" height="66"/>
+                                <rect key="frame" x="0.0" y="99" width="414" height="66"/>
                                 <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -311,7 +430,7 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                                 </variation>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Fullname..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hdk-gh-FMd" customClass="UITextFieldX" customModule="Root" customModuleProvider="target">
-                                <rect key="frame" x="74" y="228" width="227" height="30"/>
+                                <rect key="frame" x="74" y="228" width="266" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.55000000000000004" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" name="Tint"/>
                                 <constraints>
@@ -328,7 +447,7 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Username..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LQT-Ou-orN" customClass="UITextFieldX" customModule="Root" customModuleProvider="target">
-                                <rect key="frame" x="74" y="293" width="227" height="30"/>
+                                <rect key="frame" x="74" y="293" width="266" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.55000000000000004" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" name="Tint"/>
                                 <constraints>
@@ -345,7 +464,7 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter hometown..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="irk-q9-ITW" customClass="UITextFieldX" customModule="Root" customModuleProvider="target">
-                                <rect key="frame" x="74" y="358" width="227" height="30"/>
+                                <rect key="frame" x="74" y="358" width="266" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.55000000000000004" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" name="Tint"/>
                                 <constraints>
@@ -362,7 +481,7 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usb-Gh-L2m">
-                                <rect key="frame" x="0.0" y="614" width="375" height="36"/>
+                                <rect key="frame" x="0.0" y="683" width="414" height="36"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Next">
@@ -422,20 +541,20 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
             <objects>
                 <viewController id="ewb-hN-XoS" customClass="CreateInterestsVC" customModule="Root" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nha-l3-xcm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhatArtInterests" translatesAutoresizingMaskIntoConstraints="NO" id="xLm-0k-enR">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CUY-5l-mOB">
-                                <rect key="frame" x="56.5" y="250" width="262.5" height="167"/>
+                                <rect key="frame" x="62" y="276" width="290" height="184"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="eZR-kF-uG1">
-                                        <rect key="frame" x="0.0" y="0.0" width="262.5" height="78.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="87"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwO-hX-Iuu" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="78.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86.666666666666671" height="87"/>
                                                 <color key="backgroundColor" red="0.75272142887115479" green="0.71018975973129272" blue="0.66565769910812378" alpha="0.65606271404109584" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="#paintings"/>
                                                 <userDefinedRuntimeAttributes>
@@ -454,7 +573,7 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTn-bc-SkY" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
-                                                <rect key="frame" x="92.5" y="0.0" width="77.5" height="78.5"/>
+                                                <rect key="frame" x="101.66666666666666" y="0.0" width="86.666666666666657" height="87"/>
                                                 <color key="backgroundColor" red="0.75272142887115479" green="0.71018975973129272" blue="0.66565769910812378" alpha="0.65606271404109584" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="#music"/>
                                                 <userDefinedRuntimeAttributes>
@@ -473,7 +592,7 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYR-jC-zEp" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
-                                                <rect key="frame" x="185" y="0.0" width="77.5" height="78.5"/>
+                                                <rect key="frame" x="203.33333333333331" y="0.0" width="86.666666666666686" height="87"/>
                                                 <color key="backgroundColor" red="0.75272142887115479" green="0.71018975973129272" blue="0.66565769910812378" alpha="0.65606271404109584" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="#photography"/>
                                                 <userDefinedRuntimeAttributes>
@@ -494,10 +613,10 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Z5G-ui-BHU">
-                                        <rect key="frame" x="0.0" y="88.5" width="262.5" height="78.5"/>
+                                        <rect key="frame" x="0.0" y="97" width="290" height="87"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASd-TT-t6I" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="78.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86.666666666666671" height="87"/>
                                                 <color key="backgroundColor" red="0.75272142887115479" green="0.71018975973129272" blue="0.66565769910812378" alpha="0.65606271404109584" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="#poetry"/>
                                                 <userDefinedRuntimeAttributes>
@@ -519,7 +638,7 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zu-ob-swv" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
-                                                <rect key="frame" x="92.5" y="0.0" width="77.5" height="78.5"/>
+                                                <rect key="frame" x="101.66666666666666" y="0.0" width="86.666666666666657" height="87"/>
                                                 <color key="backgroundColor" red="0.75272142887115479" green="0.71018975973129272" blue="0.66565769910812378" alpha="0.65606271404109584" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="#sketch"/>
                                                 <userDefinedRuntimeAttributes>
@@ -541,7 +660,7 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xb9-LG-nPA" customClass="UIButtonX" customModule="Root" customModuleProvider="target">
-                                                <rect key="frame" x="185" y="0.0" width="77.5" height="78.5"/>
+                                                <rect key="frame" x="203.33333333333331" y="0.0" width="86.666666666666686" height="87"/>
                                                 <color key="backgroundColor" red="0.75272142887115479" green="0.71018975973129272" blue="0.66565769910812378" alpha="0.65606271404109584" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="#pottery"/>
                                                 <userDefinedRuntimeAttributes>
@@ -567,7 +686,7 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OQY-t6-ucQ" customClass="UITextViewX" customModule="Root" customModuleProvider="target">
-                                <rect key="frame" x="48" y="472" width="281" height="70"/>
+                                <rect key="frame" x="52.333333333333343" y="515" width="310.66666666666663" height="70"/>
                                 <color key="backgroundColor" red="0.75630682706832886" green="0.71382194757461548" blue="0.66933614015579224" alpha="0.64429045376712324" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="hgn-9q-UDW"/>
@@ -588,7 +707,7 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What type of art are you seeking?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvv-bL-oSU">
-                                <rect key="frame" x="57.5" y="140" width="260" height="24.5"/>
+                                <rect key="frame" x="77.333333333333343" y="147" width="259.66666666666663" height="24.333333333333343"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -596,7 +715,7 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(User)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIN-4y-69g">
-                                <rect key="frame" x="0.0" y="66" width="375" height="66.5"/>
+                                <rect key="frame" x="0.0" y="66" width="414" height="73.666666666666686"/>
                                 <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -607,7 +726,7 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="maf-U4-7B7">
-                                <rect key="frame" x="0.0" y="611" width="375" height="36"/>
+                                <rect key="frame" x="0.0" y="680" width="414" height="36"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Next">
@@ -662,14 +781,14 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
             <objects>
                 <viewController id="CcV-up-0J1" customClass="CreateProfPicVC" customModule="Root" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ch9-nA-j9H">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddProfLaunch" translatesAutoresizingMaskIntoConstraints="NO" id="Ef4-1M-gRn">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eo-9f-b7F">
-                                <rect key="frame" x="0.0" y="611" width="375" height="36"/>
+                                <rect key="frame" x="0.0" y="680" width="414" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Cq5-WN-KLo"/>
                                 </constraints>
@@ -684,7 +803,7 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Website URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vLo-pp-ebQ" customClass="UITextFieldX" customModule="Root" customModuleProvider="target">
-                                <rect key="frame" x="74" y="406" width="227" height="30"/>
+                                <rect key="frame" x="93.666666666666686" y="420.33333333333331" width="227" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.55000000000000004" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" name="Tint"/>
                                 <constraints>
@@ -697,7 +816,7 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(User)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEW-DY-282">
-                                <rect key="frame" x="0.0" y="102" width="375" height="66"/>
+                                <rect key="frame" x="0.0" y="102" width="414" height="66"/>
                                 <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -708,13 +827,13 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqa-Ch-dDX">
-                                <rect key="frame" x="117" y="216" width="142.5" height="140"/>
+                                <rect key="frame" x="129" y="216" width="157.33333333333337" height="154.33333333333337"/>
                                 <connections>
                                     <action selector="addProfPictButtonTapped:" destination="CcV-up-0J1" eventType="touchUpInside" id="3Gp-XO-Fu0"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddProfPicTempImage" translatesAutoresizingMaskIntoConstraints="NO" id="LlF-ir-zFa" userLabel="Prof Picture" customClass="UIImageViewX" customModule="Root" customModuleProvider="target">
-                                <rect key="frame" x="112" y="216" width="152.5" height="140"/>
+                                <rect key="frame" x="123.66666666666667" y="216" width="168.33333333333331" height="154.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LlF-ir-zFa" secondAttribute="height" multiplier="25:23" id="zOG-aS-38g"/>
                                 </constraints>
@@ -779,13 +898,11 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
         <!--Item 1-->
         <scene sceneID="Ri7-92-3QV">
             <objects>
-
                 <navigationController storyboardIdentifier="createAccountNavController" automaticallyAdjustsScrollViewInsets="NO" id="azC-2b-01S" sceneMemberID="viewController">
-
                     <tabBarItem key="tabBarItem" title="Item 1" id="UVv-lJ-oMX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7CN-Hj-iJn">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -799,19 +916,22 @@ use of the Root - Local Art Finder App, you agree to be bound by this Agreement 
         </scene>
     </scenes>
     <resources>
-        <image name="#music" width="32" height="32"/>
-        <image name="#paintings" width="32" height="32"/>
-        <image name="#photography" width="32" height="32"/>
-        <image name="#poetry" width="32" height="32"/>
-        <image name="#pottery" width="32" height="32"/>
-        <image name="#sketch" width="32" height="32"/>
-        <image name="AddProfLaunch" width="676" height="449"/>
-        <image name="AddProfPicTempImage" width="141" height="142"/>
-        <image name="BikePicture" width="1512" height="2016"/>
-        <image name="InitialWelcomePicture" width="1224" height="1632"/>
-        <image name="WhatArtInterests" width="1504" height="2256"/>
+        <image name="#music" width="21" height="21"/>
+        <image name="#paintings" width="21" height="21"/>
+        <image name="#photography" width="21" height="21"/>
+        <image name="#poetry" width="21" height="21"/>
+        <image name="#pottery" width="21" height="21"/>
+        <image name="#sketch" width="21" height="21"/>
+        <image name="AddProfLaunch" width="450" height="299"/>
+        <image name="AddProfPicTempImage" width="94" height="94"/>
+        <image name="BikePicture" width="1008" height="1344"/>
+        <image name="InitialWelcomePicture" width="816" height="1088"/>
+        <image name="WhatArtInterests" width="1002" height="1504"/>
         <image name="home" width="64" height="64"/>
         <image name="users" width="64" height="64"/>
+        <namedColor name="CellBackground">
+            <color red="1" green="0.97600001096725464" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Tint">
             <color red="0.14399999380111694" green="0.61400002241134644" blue="0.55000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
