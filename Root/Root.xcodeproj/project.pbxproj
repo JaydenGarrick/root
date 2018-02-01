@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81066515201B952300BC47AC /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81066516201B952300BC47AC /* IQKeyboardManagerSwift.framework */; };
 		811F26FD20052AD100A9B47C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F26FC20052AD100A9B47C /* Event.swift */; };
 		811F26FF20052AE200A9B47C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F26FE20052AE200A9B47C /* User.swift */; };
 		811F270120052AFC00A9B47C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F270020052AFC00A9B47C /* Comment.swift */; };
@@ -55,9 +56,14 @@
 		CA73062C20116280008A7C00 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73062B20116280008A7C00 /* WebViewController.swift */; };
 		CAFF0D4D200681F300A3657D /* CreateEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFF0D4C200681F300A3657D /* CreateEvent.storyboard */; };
 		CAFF0D4F20068EAD00A3657D /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */; };
+		FB01937E2D73D7220D58CE8F /* Pods_Root.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079813183AC50CE2297BF670 /* Pods_Root.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		079813183AC50CE2297BF670 /* Pods_Root.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Root.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BA37CF0386B8EA995A027BE /* Pods-Root.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Root.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Root/Pods-Root.debug.xcconfig"; sourceTree = "<group>"; };
+		59ACBD0CC0D2B3DBC1BE7950 /* Pods-Root.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Root.release.xcconfig"; path = "Pods/Target Support Files/Pods-Root/Pods-Root.release.xcconfig"; sourceTree = "<group>"; };
+		81066516201B952300BC47AC /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		811F26FC20052AD100A9B47C /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		811F26FE20052AE200A9B47C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		811F270020052AFC00A9B47C /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -115,13 +121,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81066515201B952300BC47AC /* IQKeyboardManagerSwift.framework in Frameworks */,
 				811F27172005301000A9B47C /* CloudKit.framework in Frameworks */,
+				FB01937E2D73D7220D58CE8F /* Pods_Root.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		762B91D32682F8324AC33368 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2BA37CF0386B8EA995A027BE /* Pods-Root.debug.xcconfig */,
+				59ACBD0CC0D2B3DBC1BE7950 /* Pods-Root.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		811F26FA20051F1400A9B47C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,7 +189,9 @@
 		811F27152005301000A9B47C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				81066516201B952300BC47AC /* IQKeyboardManagerSwift.framework */,
 				811F27162005301000A9B47C /* CloudKit.framework */,
+				079813183AC50CE2297BF670 /* Pods_Root.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -210,6 +229,7 @@
 				81EDF41620042E35006E69EA /* Root */,
 				81EDF41520042E35006E69EA /* Products */,
 				811F27152005301000A9B47C /* Frameworks */,
+				762B91D32682F8324AC33368 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -254,10 +274,10 @@
 			children = (
 				81707D1A200FAA7600478691 /* ListFeedViewController.swift */,
 				819B5F712006839A00106459 /* MapFeedViewController.swift */,
-				CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */,
 				817D0510200AC8EA0096390C /* SearchViewController.swift */,
-				81A238C62011801800CF2445 /* ProfileViewController.swift */,
+				CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */,
 				B7FCED82200BFA6D00690301 /* EditProfileTableViewController.swift */,
+				81A238C62011801800CF2445 /* ProfileViewController.swift */,
 				81A238C82011848900CF2445 /* ArtistProfileViewController.swift */,
 				81A238CA201187C500CF2445 /* EventDetailViewController.swift */,
 				CA73062B20116280008A7C00 /* WebViewController.swift */,
@@ -281,9 +301,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81EDF42620042E35006E69EA /* Build configuration list for PBXNativeTarget "Root" */;
 			buildPhases = (
+				99CEDBA13B48A03F7DCD29EA /* [CP] Check Pods Manifest.lock */,
 				81EDF41020042E35006E69EA /* Sources */,
 				81EDF41120042E35006E69EA /* Frameworks */,
 				81EDF41220042E35006E69EA /* Resources */,
+				5E80599E842328B984D5782A /* [CP] Embed Pods Frameworks */,
+				F531CF97EE924F2881B682E5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -356,6 +379,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E80599E842328B984D5782A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Root/Pods-Root-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Root/Pods-Root-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99CEDBA13B48A03F7DCD29EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Root-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F531CF97EE924F2881B682E5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Root/Pods-Root-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		81EDF41020042E35006E69EA /* Sources */ = {
@@ -524,6 +601,7 @@
 		};
 		81EDF42720042E35006E69EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BA37CF0386B8EA995A027BE /* Pods-Root.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Root/Root.entitlements;
@@ -541,6 +619,7 @@
 		};
 		81EDF42820042E35006E69EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59ACBD0CC0D2B3DBC1BE7950 /* Pods-Root.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Root/Root.entitlements;
