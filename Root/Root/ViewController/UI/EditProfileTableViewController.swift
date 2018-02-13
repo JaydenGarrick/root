@@ -26,7 +26,6 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.hideKeyboardWhenTappedAround()
         
         // Clear navbar setup
@@ -34,16 +33,12 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
-        
         self.hideKeyboardWhenTappedAround()
-        
         pickerController.delegate = self
-        
         
         // Set user's properties on VC
         guard let user = UserController.shared.loggedInUser,
             let data = user.profilePicture else { return }
-        
         if user.isArtist == false {
             websiteURLTextField.isHidden = true
         }
@@ -54,15 +49,11 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
         let websiteURLAsString = user.websiteURL
         self.interests = user.interests
         updateInterestsTextView()
-        
         userProfilePictureImageView.image = image
         usernameLabel.text = username
         fullNameTextField.text = fullName
         bioTextField.text = user.bio
         websiteURLTextField.text = websiteURLAsString
-        
-        //        interestsTextView.text =
-        
     }
     
     
@@ -70,7 +61,6 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
     @IBAction func cancelBarButtonItemTapped(_ sender: UIBarButtonItem) {
         unsavedChangesAlert()
     }
-    
     
     @IBAction func saveBarButtonTapped(_ sender: UIBarButtonItem) {
         if fullNameTextField.text == "" || websiteURLTextField.text == "" || interestsTextField.text == "" {
@@ -83,8 +73,8 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
                 let websiteURL = websiteURLTextField.text,
                 let profilePicture = profilePictureAsData
                 else { return }
-            
-            
+
+            // Update User
             UserController.shared.updateUser(user: user, fullName: fullName, profilePicture: profilePicture, bio: bio, homeTown: user.homeTown, interests: self.interests, websiteURL: websiteURL) { (success) in
                 DispatchQueue.main.async {
                     print("success")
@@ -178,12 +168,8 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
         
         //        userProfilePictureImageView.contentMode = .scaleAspectFit
         userProfilePictureImageView.image = profilePicture
-        //userProfilePictureImageView.image = profilePicture
-        
         DispatchQueue.main.async {
-            
             self.dismiss(animated: true, completion: nil)
-            
         }
         let profilePictureAsData = UIImagePNGRepresentation(profilePicture)
         self.profilePictureAsData = profilePictureAsData
@@ -194,7 +180,6 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
     }
     
     func updateInterestsTextView() {
-        
         var textFieldText: String = ""
         for interest in self.interests {
             textFieldText += " \(interest)"
@@ -205,7 +190,6 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-
         return 3
     }
     

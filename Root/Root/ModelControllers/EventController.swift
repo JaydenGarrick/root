@@ -31,9 +31,9 @@ class EventController {
     func createEventWith(name: String, eventImage: Data, dataAndTime: Date, description: String, venue: String, artist: [User], typeOfEvent: String, completion: @escaping (Bool) -> Void) {
         
         // Fetch User ID
-//        guard let refToCreatorID = UserController.shared.loggedInUser?.appleUserRef else { completion(false) ; return }
         guard let userRecordID = UserController.shared.loggedInUser?.cloudKitRecordID else { completion(false) ; return }
         let refToCreator = CKReference(recordID: userRecordID, action: .none)
+        
         // Geocoding venue into coordinates
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(venue, completionHandler: { (placemarks, error) in
@@ -46,11 +46,8 @@ class EventController {
             guard let placemarks = placemarks else { completion(false) ; return }
             guard let coordinate = placemarks.first?.location?.coordinate else { completion(false) ; return }
             
-           
-            
             // Initializing event
             let event = Event(name: name, eventImage: eventImage, dateAndTime: dataAndTime, description: description, venue: venue, creatorID: refToCreator, typeOfEvent: typeOfEvent, coordinate: coordinate)
-            
             
             // Saving event
             self.save(event: event, completion: { (success) in
@@ -61,8 +58,6 @@ class EventController {
                     return
                 }
             })
-        
-        
         })
         
     }
@@ -80,12 +75,10 @@ class EventController {
         let minLongitudePredicate = NSPredicate(format: "longitude > %f", userLocation.coordinate.longitude - 0.724)
         let blockedUsersPredicate = NSPredicate(format: "NOT(creatorID IN %@)", loggedInUser.blockedUsersRefs)
         let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [maxLatitudePredicate, maxLongitudePredicate, minLatitudePredicate, minLongitudePredicate, blockedUsersPredicate])
-        
         let sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-        
         let query = CKQuery(recordType: "Event", predicate: compoundPredicate)
         query.sortDescriptors = sortDescriptors
-        
+    
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
             if let error = error {
                 print("Error fetching events: \(error.localizedDescription)")
@@ -118,7 +111,6 @@ class EventController {
     
     func deleteEvent(event: Event, completion: @escaping ((Bool)->Void)) {
         guard let recordID = event.ckRecordID else { completion(false) ; return }
-        
         publicDataBase.delete(withRecordID: recordID) { (_, error) in
             if let error = error {
                 completion(false)
@@ -127,9 +119,8 @@ class EventController {
                 completion(true)
             }
         }
-        
-        
     }
+    
 }
 
 

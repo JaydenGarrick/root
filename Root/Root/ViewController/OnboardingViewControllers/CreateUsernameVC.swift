@@ -13,7 +13,6 @@ class CreateUsernameVC: UIViewController, UITextFieldDelegate {
     var isArtist: Bool?
     
     // MARK: - IBOutlets
-    
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -21,16 +20,12 @@ class CreateUsernameVC: UIViewController, UITextFieldDelegate {
     
     
     override func viewDidLoad() {
-       
-        self.hideKeyboardWhenTappedAround()
+        super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround()
         fullNameTextField.delegate = self
         usernameTextField.delegate = self
         hometownTextField.delegate = self
-        
-        
-        super.viewDidLoad()
-        
         setUserLabel()
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -38,7 +33,6 @@ class CreateUsernameVC: UIViewController, UITextFieldDelegate {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -68,7 +62,6 @@ class CreateUsernameVC: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: - Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if fullNameTextField.text == "" || usernameTextField.text == "" || hometownTextField.text == "" {
             self.fillOutRequiredFields()
@@ -76,11 +69,10 @@ class CreateUsernameVC: UIViewController, UITextFieldDelegate {
             if segue.identifier == "ToCreateInterestsSegue" {
                 guard let destinationVC = segue.destination as? CreateInterestsVC
                     else { return }
-                
                 let fullName = fullNameTextField.text
                 let username = usernameTextField.text
                 let hometown = hometownTextField.text
-                
+        
                 destinationVC.isArtist = self.isArtist
                 destinationVC.fullName = fullName
                 destinationVC.username = username

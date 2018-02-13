@@ -37,11 +37,9 @@ class Event: NSObject, MKAnnotation {
     fileprivate var temporaryImageURL: URL {
         
         // Must write to temporary directory to be able to pass image file path url to CKAsset
-        
         let temporaryDirectory = NSTemporaryDirectory()
         let temporaryDirectoryURL = URL(fileURLWithPath: temporaryDirectory)
         let fileURL = temporaryDirectoryURL.appendingPathComponent(UUID().uuidString).appendingPathExtension("jpg")
-        
         try? eventImage?.write(to: fileURL, options: [.atomic])
         
         return fileURL
@@ -95,7 +93,6 @@ class Event: NSObject, MKAnnotation {
 extension CKRecord {
     
     convenience init(event: Event) {
-        
         let recordID = event.ckRecordID ?? CKRecordID(recordName: UUID().uuidString)
         let eventImageAsset = CKAsset(fileURL: event.temporaryImageURL)
         self.init(recordType: "Event", recordID: recordID)

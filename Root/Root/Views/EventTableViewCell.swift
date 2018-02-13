@@ -17,13 +17,12 @@ class EventTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var dateEventLabel: UILabel!
-    //@IBOutlet weak var typeOfArtImageView: UIImageView!
     @IBOutlet weak var typeOfArtLabel: UILabel!
     @IBOutlet weak var eventPictureImageView: UIImageView!
     @IBOutlet weak var backgroundShadowView: UIView!
     
+    // Delegate
     weak var delegate: EventTableViewCellDelegate?
-    
 
     override func awakeFromNib() {
         // backgroundShadowView.backgroundColor = .whi

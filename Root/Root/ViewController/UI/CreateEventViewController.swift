@@ -10,7 +10,6 @@ import UIKit
 import MapKit
 
 class CreateEventViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
-
     
     // MARK: - Constants and Variables
     var profilePictureAsData: Data? = nil
@@ -22,8 +21,6 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, CLLocati
     let locationManager = CLLocationManager()
     var usersLocation = CLLocationCoordinate2D()
 
-    
-   
     // MARK: - IBOutlets
     @IBOutlet weak var eventPictureImageView: UIImageView!
     @IBOutlet weak var nameOfArtistLabel: UILabel!
@@ -37,17 +34,12 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, CLLocati
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.navigationController?.isNavigationBarHidden = false
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
-
-        
         self.hideKeyboardWhenTappedAround()
-        
         createDatePicker()
-        
         pickerController.delegate = self
         nameOfArtistLabel.text = UserController.shared.loggedInUser?.username
 
@@ -72,14 +64,12 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, CLLocati
     
     // MARK: - IBAction Functions
     @IBAction func addProfilePictureButton(_ sender: Any) {
-            
-        
         pickerController.allowsEditing = true
         pickerController.sourceType = .photoLibrary
 //        pickerController.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(pickerController, animated: true, completion: nil)
-        
     }
+    
     @IBAction func paintButtonTapped(_ sender: UIButton) {
         if self.interests.contains("#paintings") {
             self.interests.removeAll(keepingCapacity: false)
@@ -151,7 +141,6 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, CLLocati
     }
     
     @IBAction func doneButtonTapped(_ sender: UIButton) {
-        
         if titleOfEventTextField.text == "" || eventDescriptionTextField.text == "" || addVenueButton.titleLabel?.text == "Add Venue" || profilePictureAsData == nil || timeDateTextField.text == "" || typeOfEventTextField.text == "" {
             self.fillOutRequiredFields()
         } else {
@@ -162,7 +151,6 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, CLLocati
             view.addSubview(activityIndicator)
             activityIndicator.startAnimating()
             sender.isEnabled = false
-            
             guard let name = titleOfEventTextField.text,
                 let description = eventDescriptionTextField.text,
                 let venue = addVenueButton.titleLabel?.text,
@@ -170,9 +158,6 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, CLLocati
                 let dateOfEvent = dateOfEvent,
                 let typeOfEvent = typeOfEventTextField.text,
                 let user = UserController.shared.loggedInUser else { return }
-            
-            
-            
             EventController.shared.createEventWith(name: name, eventImage: eventImageData, dataAndTime: dateOfEvent, description: description, venue: venue, artist: [user], typeOfEvent: typeOfEvent) { (success) in
                 if success {
                     EventController.shared.fetchEvents(usersLocation: self.usersLocation, completion: { (success) in
@@ -224,7 +209,6 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, CLLocati
 extension CreateEventViewController: SearchViewControllerDelegate {
     func updateLongLat(long: Double, lat: Double) {
         let geocoder = CLGeocoder()
-        
         let location = CLLocation(latitude: lat, longitude: long)
         geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
             if let error = error {
@@ -249,21 +233,19 @@ extension CreateEventViewController: SearchViewControllerDelegate {
 // MARK: - ImagePicker Delegate and Functions
 extension CreateEventViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
         guard let profilePicture = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
        // let chosenImage = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
-        
         eventPictureImageView.image = profilePicture
         eventPictureImageView.contentMode = .scaleAspectFill
         //eventPictureImageView.image = profilePicture
         DispatchQueue.main.async {
-
             self.dismiss(animated: true, completion: nil)
             self.eventPictureImageView.alpha = 1
         }
         let profilePictureAsData = UIImagePNGRepresentation(profilePicture)
         self.profilePictureAsData = profilePictureAsData
     }
+    
 }
 
 // MARK: - Setting up DatePicker as keyboard for Date
@@ -271,14 +253,11 @@ extension CreateEventViewController {
     
     func createDatePicker() {
         datePicker.datePickerMode = .dateAndTime
-        
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
         toolbar.setItems([doneButton], animated: true)
-        doneButton.tintColor = UIColor(named: "Tint")
-        
+        doneButton.tintColor = UIColor(named: "Tint")        
         timeDateTextField.inputAccessoryView = toolbar
         timeDateTextField.inputView = datePicker
         

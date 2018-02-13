@@ -19,21 +19,16 @@ class CommentController {
     var commentCreators: [User] = []
     
     func createNewCommentWith(text: String, event: Event, loggedInUser: User, completion: @escaping (Bool) ->Void) {
-        
         guard let eventCKRecordID = event.ckRecordID,
             let userCKRecordID = loggedInUser.cloudKitRecordID else { return }
         let creatorID = CKReference(recordID: userCKRecordID, action: .deleteSelf)
         let eventID = CKReference(recordID: eventCKRecordID, action: .deleteSelf)
-        
         let newComment = Comment(text: text, creatorID: creatorID, eventID: eventID)
-        
         self.eventComments.append(newComment)
         completion(true)
-        
         save(comment: newComment) { (success) in
             completion(true)
         }
-        
 
     }
     
@@ -48,16 +43,11 @@ class CommentController {
         let query = CKQuery(recordType: "Comment", predicate: compoundPredicate)
         
         let sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
-
         query.sortDescriptors = sortDescriptors
-        
         publicDataBase.perform(query, inZoneWith: nil) { (records, error) in
             guard let records = records else { return }
-            
             let eventComments = records.flatMap { Comment(ckRecord: $0) }
-
             self.eventComments = eventComments
-            
             completion(true)
         }
         
@@ -72,7 +62,6 @@ class CommentController {
                 print("There was an error fetching the comment creator: \(error)")
                 completion(nil)
                 return
-                
             }
             guard let records = records else { return }
             let firstCommentCreatorRecord = records[0]
@@ -83,8 +72,7 @@ class CommentController {
     
     
     func save(comment: Comment, completion: @escaping ((Bool)->Void)) {
-        let record = CKRecord(comment: comment)
-        
+        let record = CKRecord(comment: comment)        
         publicDataBase.save(record) { (_, error) in
             if let error = error {
                 print("Error saving comment: \(error.localizedDescription)")

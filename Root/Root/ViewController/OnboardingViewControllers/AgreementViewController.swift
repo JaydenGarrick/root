@@ -20,7 +20,6 @@ class AgreementViewController: UIViewController {
         scrollView.contentOffset = CGPoint(x: 200, y: 200)
         print(scrollView.contentOffset)
         print(scrollView.contentInset)
-        
     }
     
     @IBAction func agreeButtonTapped(_ sender: UIButtonX) {
@@ -30,16 +29,5 @@ class AgreementViewController: UIViewController {
     @IBAction func declineButtonTapped(_ sender: UIButtonX) {
         self.licenseDeclinedAlert()
     }
-    
-    
-    /*
-     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

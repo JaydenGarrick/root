@@ -15,7 +15,8 @@ protocol SearchViewControllerDelegate :  class {
 }
 
 class SearchViewController: UIViewController {
-
+    
+    // MARK: - Variables and Constants
     var searchCompleter = MKLocalSearchCompleter()
     var searchResults = [MKLocalSearchCompletion]()
     weak var delegate: SearchViewControllerDelegate?
@@ -25,11 +26,6 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        
-       
-        
         searchCompleter.delegate = self
     }
 
@@ -48,9 +44,9 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         searchCompleter.queryFragment = searchText
     }
+    
 }
 
 extension SearchViewController: MKLocalSearchCompleterDelegate {
@@ -68,7 +64,6 @@ extension SearchViewController: MKLocalSearchCompleterDelegate {
         let attributedText = NSMutableAttributedString(string: text)
         let regular = UIFont.systemFont(ofSize: size)
         attributedText.addAttribute(NSAttributedStringKey.font, value:regular, range:NSMakeRange(0, text.count))
-        
         let bold = UIFont.boldSystemFont(ofSize: size)
         for value in ranges {
             attributedText.addAttribute(NSAttributedStringKey.font, value:bold, range:value.rangeValue)
@@ -101,23 +96,17 @@ extension SearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
         let completion = searchResults[indexPath.row]
-        
         let searchRequest = MKLocalSearchRequest(completion: completion)
         let search = MKLocalSearch(request: searchRequest)
         search.start { (response, error) in
-            
             guard let response = response else { return }
-            
             let coordinate = response.mapItems[0].placemark.coordinate
             let longitude = coordinate.longitude
             let latitude = coordinate.latitude
-            
             print(String(describing: coordinate))
             self.delegate?.updateLongLat(long: longitude, lat: latitude)
         }
-        
         dismiss(animated: true, completion: nil)
     }
 }

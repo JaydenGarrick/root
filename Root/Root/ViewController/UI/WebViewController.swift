@@ -12,9 +12,7 @@ import WebKit
 class WebViewController: UIViewController {
     
     var websiteURLAsString: String?
-    
     @IBOutlet weak var urlLinkWebView: WKWebView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +21,6 @@ class WebViewController: UIViewController {
         guard let url = URL(string: "https://\(websiteURLAsString)") else { return }
         let request = URLRequest(url: url)
         urlLinkWebView.load(request)
-
     }
 
 

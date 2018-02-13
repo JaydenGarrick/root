@@ -89,13 +89,9 @@ class CreateInterestsVC: UIViewController {
     }
     
     override func viewDidLoad() {
-
         super.viewDidLoad()
-        
         self.dismissKeyboard()
-     
         setUserLabel()
-    
     }
     
     func setUserLabel() {
@@ -121,7 +117,6 @@ class CreateInterestsVC: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if interestsTextView.text == "" {
             self.fillOutRequiredFields()
         } else {
