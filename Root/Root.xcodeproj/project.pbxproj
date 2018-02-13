@@ -276,11 +276,11 @@
 				819B5F712006839A00106459 /* MapFeedViewController.swift */,
 				817D0510200AC8EA0096390C /* SearchViewController.swift */,
 				CAFF0D4E20068EAD00A3657D /* CreateEventViewController.swift */,
-				B7FCED82200BFA6D00690301 /* EditProfileTableViewController.swift */,
 				81A238C62011801800CF2445 /* ProfileViewController.swift */,
 				81A238C82011848900CF2445 /* ArtistProfileViewController.swift */,
 				81A238CA201187C500CF2445 /* EventDetailViewController.swift */,
 				CA73062B20116280008A7C00 /* WebViewController.swift */,
+				B7FCED82200BFA6D00690301 /* EditProfileTableViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";

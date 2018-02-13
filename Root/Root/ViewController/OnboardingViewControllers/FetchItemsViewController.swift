@@ -13,11 +13,10 @@ class FetchItemsViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     var usersLocation = CLLocationCoordinate2D()
-
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Core Location
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -25,7 +24,6 @@ class FetchItemsViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         getLocation()
         performFetches()
-   
     }
     
     // Gets the users current location
@@ -39,20 +37,16 @@ class FetchItemsViewController: UIViewController, CLLocationManagerDelegate {
     
     // Performs fetches
     func performFetches() {
-        
         UserController.shared.fetchCurrentUser { (success) in
-           
             if !success {
                 DispatchQueue.main.async {
-                    
                     let createAccountStoryboard = UIStoryboard(name: "CreateAccount", bundle: nil)
                     let welcomeViewController = createAccountStoryboard.instantiateViewController(withIdentifier: "createAccountNavController")
                     self.present(welcomeViewController, animated: true, completion: nil)
                     print("Couldn't get current user")
-                    
                 }
-            } else {
                 
+            } else {
                 EventController.shared.fetchEvents(usersLocation: self.usersLocation, completion: { (success) in
                     if success {
                         // Current date plus 24 hours
@@ -76,7 +70,5 @@ class FetchItemsViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
     }
-
-   
-
+    
 }

@@ -20,9 +20,7 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     // IBOutlets
     @IBOutlet weak var mapView: MKMapView!
     
-    
     override func viewDidLoad() {
-       
         super.viewDidLoad()
         print("\(EventController.shared.eventHappeningWithinTwentyFour.count) is the amount of events within 24hours")
         
@@ -46,7 +44,6 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         } else {
             mapView.removeAnnotations(EventController.shared.eventHappeningWithinTwentyFour)
             mapView.showAnnotations(interestArray, animated: true)
-
         }
 
     }
@@ -56,7 +53,6 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     }
 
     // MARK: - IBActions
-   
     @IBAction func feedToggled(_ sender: UISegmentedControl) {
         interestArray = []
         if sender.selectedSegmentIndex == 1 {
@@ -73,7 +69,6 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
                                 }
                             }
                         }
-                       
                         print(interestArray.count)
                     }
                 }
@@ -91,20 +86,16 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     // MARK: - Mapkit Delegate functions
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard let annotation = annotation as? Event else { return nil }
-        
         var view: MKAnnotationView! = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationID")
-        
         if view == nil {
             view = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationID")
             view.canShowCallout = true
         } else {
             view.annotation = annotation
         }
-        
         let detailViewButton = UIButton(frame: CGRect(x: 0, y: 0, width: 59, height: 59))
         detailViewButton.setImage(#imageLiteral(resourceName: "add"), for: .normal)
         let event = view.annotation as? Event
-        
         view.canShowCallout = true
         view.rightCalloutAccessoryView = detailViewButton
         //view.image = UIImage(named: event!.typeOfEvent.trimmingCharacters(in: .whitespaces))
@@ -126,19 +117,15 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         if event?.typeOfEvent == " #pottery" {
             view.image = #imageLiteral(resourceName: "AnnotationCeramic")
         }
-
         print("\(event!.typeOfEvent.trimmingCharacters(in: .whitespaces))")
         view.annotation = annotation
-       
         return view
     }
     
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        
         if control == view.rightCalloutAccessoryView {
             if let event = view.annotation as? Event {
-                
                 self.eventToPass = event
                 print("\(String(describing: eventToPass?.name)) is the name of the event that is seguewaying")
                 performSegue(withIdentifier: "MapFeedSegue", sender: self)
@@ -151,32 +138,26 @@ class MapFeedViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         if segue.identifier == "MapFeedSegue" {
             let destinationVC = segue.destination as? EventDetailViewController
             destinationVC?.event = eventToPass
-            
         }
     }
     
 }
 
 extension MapFeedViewController {
+    
     func setImageOnNavBar() {
-        
         let navController = navigationController!
-        
         let image = #imageLiteral(resourceName: "NavigationBarImage")
         let imageView = UIImageView(image: image)
-        
         let bannerWidth = navController.navigationBar.frame.size.width
         let bannerHeight = navController.navigationBar.frame.size.height
-        
         let bannerX = bannerWidth / 2 - image.size.width / 2
         let bannerY = bannerHeight / 2 - image.size.height / 2
-        
         imageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
         imageView.contentMode = .scaleAspectFit
-        
         navigationItem.titleView = imageView
-        
     }
+    
 }
 
 

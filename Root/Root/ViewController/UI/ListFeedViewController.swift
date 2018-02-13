@@ -28,12 +28,10 @@ class ListFeedViewController: UIViewController {
     @IBOutlet weak var createEventButton: UIBarButtonItem!
     
     // MARK: - ViewDidLoad / ViewWillAppear
-    
     override func viewDidLoad() {
-    
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        //createEventButton.
+        
         // Core Location
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -55,7 +53,6 @@ class ListFeedViewController: UIViewController {
         self.navigationController?.view.backgroundColor = .clear
         //self.navigationController?.isToolbarHidden = false
         
-        
         // Delegate / DataSource
         tableView.dataSource = self
         tableView.delegate = self
@@ -68,8 +65,6 @@ class ListFeedViewController: UIViewController {
         refreshControl.tintColor = UIColor(named: "Tint")
         refreshControl.addTarget(self, action: #selector(didPullForRefresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,7 +73,6 @@ class ListFeedViewController: UIViewController {
             createEventButton.isEnabled = false
             createEventButton.isEnabled = true
         }
-
         tableView.reloadData()
     }
     
@@ -86,7 +80,6 @@ class ListFeedViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func feedToggled(_ sender: UISegmentedControl) {
-       
         interestArray = []
         if sender.selectedSegmentIndex == 1 {
             localFeed = false
@@ -128,7 +121,6 @@ class ListFeedViewController: UIViewController {
     }
     
     // MARK: - Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if localFeed == true {
             if segue.identifier == "EventDetailIdentifier" {
@@ -136,7 +128,6 @@ class ListFeedViewController: UIViewController {
                 let destinationVC = segue.destination as! EventDetailViewController
                 let event = EventController.shared.fetchedEvents[indexPath.row]
                 destinationVC.event = event
-                
             }
         } else {
             if segue.identifier == "EventDetailIdentifier" {
@@ -155,7 +146,6 @@ extension ListFeedViewController: UITableViewDelegate, UITableViewDataSource, Ev
         print(EventController.shared.fetchedEvents.count)
     }
     
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 127
     }
@@ -166,7 +156,6 @@ extension ListFeedViewController: UITableViewDelegate, UITableViewDataSource, Ev
         } else {
             return interestArray.count
         }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -176,9 +165,7 @@ extension ListFeedViewController: UITableViewDelegate, UITableViewDataSource, Ev
             let event = EventController.shared.fetchedEvents[indexPath.row]
             let eventImage = UIImage(data: event.eventImage!)
             let dateFormatter = DateFormatter()
-            
             dateFormatter.dateStyle = .full
-            
             cell.eventPictureImageView.image = eventImage
             cell.dateEventLabel.text = dateFormatter.string(from: event.dateAndTime)
             cell.typeOfArtLabel.text = event.typeOfEvent
@@ -188,9 +175,7 @@ extension ListFeedViewController: UITableViewDelegate, UITableViewDataSource, Ev
             let event = interestArray[indexPath.row]
             let eventImage = UIImage(data: event.eventImage!)
             let dateFormatter = DateFormatter()
-            
             dateFormatter.dateStyle = .full
-            
             cell.eventPictureImageView.image = eventImage
             cell.dateEventLabel.text = "\(event.venue) \(dateFormatter.string(from: event.dateAndTime))"
             cell.typeOfArtLabel.text = event.typeOfEvent
@@ -210,35 +195,17 @@ extension ListFeedViewController: UITableViewDelegate, UITableViewDataSource, Ev
             cell.alpha = 1.0
             cell.layer.transform = CATransform3DIdentity
         }
-        
-        
     }
-    
     
 }
 
 // Sets Image of NavBar
 extension ListFeedViewController {
     func setImageOnNavBar() {
-        
-       
-        
         let image = #imageLiteral(resourceName: "NavigationBarImage")
         let imageView = UIImageView(image: image)
-        
-//        let bannerWidth = navController.navigationBar.frame.size.width
-//        let bannerHeight = navController.navigationBar.frame.size.height
-//
-//        let bannerX = bannerWidth / 2 - image.size.width / 2
-//        let bannerY = bannerHeight / 2 - image.size.height / 2
-//
-//        imageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
         imageView.contentMode = .scaleAspectFit
-        //imageView.backgroundColor = .black
-        
         navigationItem.titleView = imageView
-        
-        
     }
 }
 
@@ -252,7 +219,6 @@ extension ListFeedViewController: CLLocationManagerDelegate {
     }
     
     @objc func didPullForRefresh() {
-        
         EventController.shared.fetchEvents(usersLocation: usersLocation) { (success) in
             if success {
                 DispatchQueue.main.async {
@@ -261,8 +227,8 @@ extension ListFeedViewController: CLLocationManagerDelegate {
                 }
             }
         }
-        
     }
+    
 }
 
 

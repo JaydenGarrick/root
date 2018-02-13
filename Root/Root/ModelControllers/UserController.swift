@@ -47,7 +47,6 @@ class UserController {
                         }
                     })
                 }
-                
                 if let error = error {
                     self.saveUser(user: user, completion: { (success) in
                         if success {
@@ -60,6 +59,7 @@ class UserController {
                     })
                    
                 }
+                
                 // apple gives us the record right back so that we can use it/access the metadata that now exists
                 guard let records = records,
                     let record = records.first,
@@ -68,13 +68,11 @@ class UserController {
                 self.loggedInUser = user
                 completion(true)
             })
-            
         }
     }
     
     func updateUser(user: User, fullName: String, profilePicture: Data?, bio: String, homeTown: String, interests: [String], websiteURL: String, completion: @escaping (Bool)-> Void) {
-        
-//        let updatedUser = User(username: user.username, fullName: fullName, profilePicture: profilePicture, bio: bio, homeTown: homeTown, interests: interests, websiteURL: websiteURL, isArtist: user.isArtist, appleUserRef: user.appleUserRef)
+
         user.fullName = fullName
         user.bio = bio
         user.interests = interests
@@ -82,10 +80,8 @@ class UserController {
         user.profilePicture = profilePicture
         
         let updatedUserRecord = CKRecord(user: user)
-        
         var recordsToSave: [CKRecord] = []
         recordsToSave.append(updatedUserRecord)
-        
         let operation = CKModifyRecordsOperation(recordsToSave: recordsToSave, recordIDsToDelete: nil)
         operation.savePolicy = .changedKeys
         operation.queuePriority = .high
@@ -110,9 +106,7 @@ class UserController {
             
             (completion?(records, error))!
         }
-        
         CKContainer.default().publicCloudDatabase.add(operation)
-        
     }
     
     // Fetches current User
@@ -120,16 +114,12 @@ class UserController {
         
         // Fetch the apple user record ID tied to the user's iCloud account
         CKContainer.default().fetchUserRecordID { (appleUserRecordID, error) in
-            
             if let error = error {
                 print("There was an error fetching current user record ID. Error: \(error)")
                 completion(false) ; return
             }
-            
             guard let appleUserRecordID = appleUserRecordID else { completion(false) ; return }
-            
             let predicate = NSPredicate(format: "appleUserRef == %@", appleUserRecordID)
-            
             let query = CKQuery(recordType: "User", predicate: predicate)
             
             CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil, completionHandler: { (records, error) in
@@ -151,9 +141,7 @@ class UserController {
     func fetchEventCreator(event: Event, completion: @escaping((User?)->Void)) {
         
         let eventRefID = event.creatorID
-        
         let predicate = NSPredicate(format: "recordID == %@", eventRefID)
-        
         let query = CKQuery(recordType: "User", predicate: predicate)
         publicDataBase.perform(query, inZoneWith: nil) { (records, error) in
             if let error = error {
@@ -170,7 +158,6 @@ class UserController {
     
     func saveUser(user: User, completion: @escaping ((Bool)->Void)) {
         let record = CKRecord(user: user)
-        
         publicDataBase.save(record) { (_, error) in
             if let error = error {
                 print("Error creating user: \(error.localizedDescription)")
@@ -179,31 +166,17 @@ class UserController {
                 completion(true)
             }
         }
-        
-        
-        
     }
     
     func fetchEventsFor(user: User, completion: @escaping (Bool) -> Void) {
         guard let creatorID = user.cloudKitRecordID else { completion(false) ; return }
-        
         let predicate = NSPredicate(format: "creatorID == %@", creatorID)
         let query = CKQuery(recordType: "Event", predicate: predicate)
         
         publicDataBase.perform(query, inZoneWith: nil) { (records, error) in
             guard let records = records else { completion(false) ; return }
-            
             let eventsCreated = records.flatMap({Event(ckRecord: $0)})
-            
             UserController.shared.eventsCreated = eventsCreated
-            
-            // Below is the translation for the flatmap above.
-            //            var eventsFetched: [Event] = []
-            //            for record in records {
-            //                guard let event = Event(ckRecord: record) else { completion(false) ; return }
-            //
-            //                print(event.name)
-            //            }
             completion(true)
         }
         

@@ -60,11 +60,9 @@ class ArtistProfileViewController: UIViewController {
 
     
     func updateViews() {
-        
         guard let artist = artist,
             let data = artist.profilePicture else { return }
         let artistProfilePictureAsImage = UIImage(data: data)
-        
         artistProfilePictureImageView.image = artistProfilePictureAsImage
         artistUserNameLabel.text = artist.username
         artistBioLabel.text = artist.bio
@@ -73,7 +71,6 @@ class ArtistProfileViewController: UIViewController {
 
     // MARK: - IBActions
     @IBAction func profileActionButtonTapped(_ sender: UIButton) {
-     
     }
    
     // MARK: - Navigation
@@ -112,9 +109,7 @@ extension ArtistProfileViewController: UITableViewDelegate, UITableViewDataSourc
         let event = eventsCreated[indexPath.row]
         let eventImage = UIImage(data: event.eventImage!)
         let dateFormatter = DateFormatter()
-        
-        dateFormatter.dateStyle = .full
-        
+        dateFormatter.dateStyle = .full        
         cell.eventPictureImageView.image = eventImage
         cell.dateEventLabel.text = dateFormatter.string(from: event.dateAndTime)
         cell.typeOfArtLabel.text = event.typeOfEvent

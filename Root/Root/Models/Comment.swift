@@ -45,11 +45,8 @@ class Comment {
 extension CKRecord {
     
     convenience init(comment: Comment) {
-        
         let recordID = comment.cloudKitRecordID ?? CKRecordID(recordName: UUID().uuidString)
-        
-        self.init(recordType: "Comment", recordID: recordID)
-        
+        self.init(recordType: "Comment", recordID: recordID)        
         self.setValue(comment.text, forKey: "text")
         self.setValue(comment.creatorID, forKey: "creatorID")
         self.setValue(comment.eventID, forKey: "eventID")
