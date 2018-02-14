@@ -14,12 +14,14 @@ class AgreementViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(scrollView.contentOffset)
-        print(scrollView.contentInset)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+
         scrollView.setContentOffset(CGPoint(x: 150, y: 100), animated: true)
         scrollView.contentOffset = CGPoint(x: 200, y: 200)
-        print(scrollView.contentOffset)
-        print(scrollView.contentInset)
+  
     }
     
     @IBAction func agreeButtonTapped(_ sender: UIButtonX) {
